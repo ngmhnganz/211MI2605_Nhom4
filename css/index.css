@@ -64,6 +64,7 @@ section {
     padding-bottom: 80px;
 }
 section .title{
+    color: var(--text-color);
     font-family: var(--font);
     font-weight: bold;
     font-size: 36px;
