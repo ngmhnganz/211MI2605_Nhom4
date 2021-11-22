@@ -3,6 +3,12 @@
     --secondary-color :#FFD5AC;
     --text-color: #333;
     --font : 'Montserrat', sans-serif;  
+    --thin : 100;
+    --extra-light : 200;
+    --medium : 500;
+    --semi-bold : 600;
+    --bold : 700;
+    --black : 900;
     }
 .background-primary-color {
     background-color: var(--primary-color);

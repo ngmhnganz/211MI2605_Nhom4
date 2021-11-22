@@ -1,5 +1,5 @@
 .recipe-container{
-    height: 100%;
+    height: auto;
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
@@ -7,7 +7,7 @@
 }
 
 .recipe-img {
-    height: 50%;
+    height: 200px;
 }
 
 .recipe-img img{
@@ -44,7 +44,7 @@
     }
     
     .recipe-img {
-        height: 100%;
+        height: auto;
         flex: 2
     }   
     .recipe-detail{
@@ -67,12 +67,17 @@
 @media  (min-width:740px) and (max-width:1023px) {
     .recipe-detail{
         font-size: 16px;
+        height: 100px;
     }
 
     .recipe-description {
         font-size: 14px;
         -webkit-line-clamp: 3; /* number of lines to show */
                 line-clamp: 3; 
+    }
+
+    .recipe-img {
+        height: 100px;
     }
 } 
 

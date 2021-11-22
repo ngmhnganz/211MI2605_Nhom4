@@ -1,0 +1,46 @@
+@import url(./constant.css);
+.footer-nav{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+}
+.nav {
+    text-align: start;
+    color: white;
+    font-family: var(--font);  
+    font-weight: var(--regular);
+    font-size: 14px;
+}
+.nav li{
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style: none;
+    font-weight: var(--extra-light);
+    
+}
+
+.footer-logo {
+    display: none !important;
+}
+
+@media  (max-width:739px) {
+    .nav{
+        font-size: 16px;
+    }
+} 
+
+@media  (min-width:740px) and (max-width:1023px) {
+    .nav{
+        font-size: 16px;
+    }
+} 
+
+@media  (min-width:1024px) {
+.footer-logo {
+    display: block !important;
+}
+    
+}
