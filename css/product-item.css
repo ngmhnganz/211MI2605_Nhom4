@@ -1,6 +1,6 @@
-@import url(./constant.css);
- 
 .product-container {
+    text-decoration: none;
+    color: unset;
     background-color: white;
     padding: 10px   ;
     display: flex;

@@ -1,3 +1,7 @@
 {
-    "liveServer.settings.port": 5502
+    "liveServer.settings.port": 5502,
+    "liveServer.settings.multiRootWorkspaceName": "211MI2605_Nhom4",
+    "discord.largeImageIdling": "Đang chết",
+    "discord.smallImage": "\"sắp chết\"",
+    "discord.lowerDetailsIdling": ""
 }

@@ -68,7 +68,7 @@ onValue(productRef, (snapshot) => {
     let htmls = productList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
-             <div class="product-container">
+             <a href="./sanpham/san-pham.html?=${product.productID}" class="product-container">
                  <div class="product-img">
                      <img src="${product.productImg}" alt="">
                  </div>
@@ -79,9 +79,8 @@ onValue(productRef, (snapshot) => {
                          <i class="fas fa-plus-circle"></i>
                      </div>
                  </div>
-             </div>
-         </div>
-        `
+             </a>
+         </div>`
     })
     $('.product').innerHTML = htmls.join('');
 });
@@ -103,24 +102,24 @@ onValue(monngonRef, (snapshot) => {
         //
     }
     
-     // đựa dữ liệu vào thẻ html
+   //  đựa dữ liệu vào thẻ html
     let htmls = monngonList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
-             <div class="product-container" style="
-             box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%);">
-                 <div class="product-img">
-                     <img src="${product.productImg}" alt="">
-                 </div>
-                 <div class="product-detail">
-                     <p>${product.productName}</p>
-                     <div class="product-info"> 
-                         <p>$${product.productPrice}</p>
-                         <i class="fas fa-plus-circle"></i>
-                     </div>
-                 </div>
-             </div>
-         </div>
+            <a href="./sanpham/san-pham.html?=${product.productID}" class="product-container" style="box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%);">
+                    <div class="product-img">
+                        <img src="${product.productImg}" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <p>${product.productName}</p>
+                        <div class="product-info"> 
+                            <p>$${product.productPrice}</p>
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                    </div>
+            </a>
+           
+        </div>
         `
     })
     $('.mon-ngon-cua-ngay-product').innerHTML = htmls.join('');

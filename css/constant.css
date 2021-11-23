@@ -1,6 +1,7 @@
 :root{
     --primary-color: #F58A42;
     --secondary-color :#FFD5AC;
+    --sub-light-color:#C8CBD0;
     --text-color: #3F414E;
     --font : 'Montserrat', sans-serif;  
     --thin : 100;
@@ -10,6 +11,26 @@
     --bold : 700;
     --black : 900;
     }
+
+
+*{ 
+    box-sizing: border-box; 
+    /* outline: 1px solid red;  */
+}
+
+body{
+    margin: 0;
+    height: auto;
+}
+
+.clear{
+    clear: both;
+}
+
+.containerTrung{
+    text-align: center;
+}
+    
 .background-primary-color {
     background-color: var(--primary-color);
 }
