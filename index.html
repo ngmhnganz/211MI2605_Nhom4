@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/grid_system.css" type="text/css" />
-    <link rel="stylesheet" href="./css/navigation.css" type="text/css" />
     <link rel="stylesheet" href="./css/index.css" type="text/css"/>
     <link rel="stylesheet" href="./css/recipe-item.css" type="text/css"/>
-    <link rel="stylesheet" href="./css/footer.css" type="text/css"/>
     <link rel="stylesheet" href="./css/constant.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href="./css/product-item.css" type="text/css"/>
 
     <!-- Latest compiled and minified CSS -->
@@ -24,55 +22,18 @@
 
     <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css"/>
     <title>Trang chủ</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="./lib/jQuery.js" type="text/javascript"></script>
+    <script> 
+        $(function(){
+          $("#header").load("../component/header.html"); 
+          $("#footer").load("../component/footer.html"); 
+        });
+        </script>   
 </head>
 <body>
 
     <!-- ! Header và thanh navigation -->
-    <div class="header">
-        <div class="grid wide containerTrung">
-            <div class="row">
-                <div class="col l-2">
-                    <div class="logo">
-                        <a class="logo-img" href="./index.html">
-                        </a>
-                    </div>
-                </div>
-                <div class="col l-8 pc-navigation">
-                    <div class="category">
-                        <div class="category-item">
-                            <a href="./san-pham.html">SẢN PHẨM</a>
-                            <div class="category-container">
-                                <div>
-                                    <a href="">NGUYÊN LIỆU</a>
-                                    <a href="">DỤNG CỤ</a>
-                                    <a href="">CHẾ BIẾN SẴN</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="category-item">
-                            <a href="./cong-thuc.html">CÔNG THỨC</a>
-                        </div>
-
-                        <div class="category-item">
-                            <a href="./ve-chung-toi.html">VỀ CHÚNG TÔI</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-2 m-4 c-4 mg-r">
-                    <div class="icon">
-                        <div id="icon-item">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="icon-item">
-                            <i class="fas fa-shopping-basket" href="./gio-hang.html"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="header"></div>
     
     <!-- ! Banner -->
     <div class="containerTrung background-primary-color" style="padding:150px 0px 50px 0px">
@@ -99,8 +60,6 @@
      
     </div>
     
-
-
     <!-- ! Hôm nay ăn gì -->
     <section class="containerTrung hom-nay-an-gi background-secondary-color">
         <div class="grid wide">
@@ -156,7 +115,6 @@
         </div>
     </section>
 
-
     <!-- !Thực đơn hôm nay -->
     <section class="containerTrung background-secondary-color">
         <div class="grid wide">
@@ -173,44 +131,8 @@
     </section>
 
     <!-- ! footer -->
-    <footer class="containerTrung footer background-primary-color">
-        <div class="grid wide">
-            <div class="row">
-                <div class="col footer-nav footer-logo l-2">
-                    <img src="./assets/img/logo.png" alt="">
-                </div>
-                
-                <div class="col l-4 m-12 c-12 footer-nav">
-                    <ul class="nav">
-                        Bạn muốn gặp Trứng hở
-                        <li>669 Quốc lộ 1A khu phố 3 Thủ Đức</li>
-                        <li>Tel: 0982921920</li>
-                        <li>Thời gian mở cửa: 9h30 - 22h30</li>
-                        <li>Tất cả các ngày trong tuần</li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-12 c-12 footer-nav">
-                    <ul class="nav">
-                        Thông tin website
-                        <li>Cửa hàng</li>
-                        <li>Công thức</li>
-                        <li>Về chúng tôi</li>
-                        <li>Đăng nhập</li>
-                        <li>Đăng ký</li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-12 c-12 footer-nav">
-                    <ul class="nav">
-                        Điều khoản và chính sách
-                        <li>Chính sách mua hàng</li>
-                        <li>Hướng dẫn đặt hàng</li>
-                        <li>Chính sách</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </footer>
+   <div id="footer"></div>
+    <script src="./data/firebase-config.json" type="text/javascript"></script>
     <script src="./script/index.js" async type="module"></script>
 </body>
 </html>
