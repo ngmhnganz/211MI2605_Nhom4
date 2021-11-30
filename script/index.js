@@ -63,7 +63,7 @@ onValue(productRef, (snapshot) => {
     let htmls = productList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
-             <a href="./sanpham/san-pham.html?=${product.productID}" class="product-container">
+             <a href="./sanpham/san-pham.html?id=${product.productID}" class="product-container">
                  <div class="product-img">
                      <img src="${product.productImg}" alt="">
                  </div>
@@ -101,7 +101,7 @@ onValue(monngonRef, (snapshot) => {
     let htmls = monngonList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
-            <a href="./sanpham/san-pham.html?=${product.productID}" class="product-container" style="box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%);">
+            <a href="./sanpham/san-pham.html?id=${product.productID}" class="product-container" style="box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%);">
                     <div class="product-img">
                         <img src="${product.productImg}" alt="">
                     </div>

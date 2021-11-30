@@ -19,15 +19,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-const sanphamID = window.location.href.split('=')[1];
+const params = new URLSearchParams(window.location.search)
+const sanphamID =Object.fromEntries(params.entries()).id
 //? bind document
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 var sanpham;
 var productRef = query(ref(database, 'NguyenLieu'), orderByChild('productID') , equalTo(sanphamID) );
 onValue(productRef, (snapshot)=> {
-    const params = new URLSearchParams(window.location.search)
-    console.log( Object.fromEntries(params.entries()))
+    
     var sanpham = Object.values( snapshot.val() )[0];
     $('.sanpham-info').innerHTML = `
             <div class="row">
