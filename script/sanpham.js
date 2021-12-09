@@ -21,6 +21,7 @@ const database = getDatabase(app);
 
 const params = new URLSearchParams(window.location.search)
 const sanphamID =Object.fromEntries(params.entries()).id
+
 //? bind document
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
