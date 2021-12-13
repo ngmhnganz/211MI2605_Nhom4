@@ -2,17 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, onValue, child, get } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 
-let requestURL = '../data/firebase-config.json';
-let request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-
-request.onload = function() {
-  const data = request.response;
-
-  const app = initializeApp(data)
-  const database = getDatabase(app);
+const app = initializeApp(config)
+const database = getDatabase(app);
 
 //? bind document
 const $ = document.querySelector.bind(document);
@@ -180,7 +171,5 @@ bannerBtns.forEach(function(btn, index) {
 })
 
 
-
-}
 // Initialize Firebase
 
