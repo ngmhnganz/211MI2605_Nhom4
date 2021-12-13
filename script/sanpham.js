@@ -17,7 +17,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+
 
 const params = new URLSearchParams(window.location.search)
 const sanphamID =Object.fromEntries(params.entries()).id
@@ -25,6 +25,8 @@ const sanphamID =Object.fromEntries(params.entries()).id
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 var sanpham;
+
+const database = getDatabase(app);
 var productRef = query(ref(database, 'NguyenLieu'), orderByChild('productID') , equalTo(sanphamID) );
 onValue(productRef, (snapshot)=> {
     

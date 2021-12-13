@@ -1,4 +1,3 @@
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, onValue, child, get } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
@@ -11,7 +10,7 @@ request.send();
 
 request.onload = function() {
   const data = request.response;
-  console.log(data)
+
   const app = initializeApp(data)
   const database = getDatabase(app);
 
@@ -22,13 +21,12 @@ const $$ = document.querySelectorAll.bind(document);
 
 //? query element
 const bannerBtns = $$('.banner-btn');
-console.log(bannerBtns)
 
 //? data
 const bannerList= [
     {
         bannerImg: "./assets/img/1.jpg",
-        bannerLink :""
+        bannerLink:""
     },
     {
         bannerImg: "./assets/img/2.jpg",
@@ -41,14 +39,17 @@ const bannerList= [
 ]
 var currentBannerIndex =0;
 
-//? render data from api
+// trỏ vào đường dẫn dữ lớp dữ liệu muốn lấy
 var productRef = ref(database, 'NguyenLieu');
+console.log(productRef)
+var htmls;
+// hàm lấy giá trị
 onValue(productRef, (snapshot) => {
     const productList =[]
     let i=0;
-     
     //láy dữ liệu về từ firebase
     try {
+        // bỏ từng child vào mảng
         snapshot.forEach(function(child){
             productList.push(child.val())
             i++;
@@ -58,9 +59,8 @@ onValue(productRef, (snapshot) => {
     catch{
         //
     }
-    
-     // đựa dữ liệu vào thẻ html
-    let htmls = productList.map(product => {
+     // đưa dữ liệu vào thẻ html
+    htmls = productList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
              <a href="./sanpham/san-pham.html?id=${product.productID}" class="product-container">
@@ -97,7 +97,7 @@ onValue(monngonRef, (snapshot) => {
         //
     }
     
-   //  đựa dữ liệu vào thẻ html
+   // dựa dữ liệu vào thẻ html
     let htmls = monngonList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
