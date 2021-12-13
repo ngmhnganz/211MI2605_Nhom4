@@ -21,15 +21,18 @@ const database = getDatabase(app);
 
 const params = new URLSearchParams(window.location.search)
 const sanphamID =Object.fromEntries(params.entries()).id
+var id = parseInt(sanphamID);
 
 //? bind document
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 var sanpham;
-var productRef = query(ref(database, 'NguyenLieu'), orderByChild('productID') , equalTo(sanphamID) );
+var productRef = query(ref(database, 'NguyenLieu'), orderByChild('productID') , equalTo(id) );
+console.log(sanphamID)
 onValue(productRef, (snapshot)=> {
-    
+    console.log(productRef)
     var sanpham = Object.values( snapshot.val() )[0];
+    
     $('.sanpham-info').innerHTML = `
             <div class="row">
             <div class="col l-6 m-6 c-12">

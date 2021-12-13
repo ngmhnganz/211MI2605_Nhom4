@@ -17,22 +17,22 @@ console.log(type)
 switch (type) {
     case "NguyenLieu" : {
         type = "Nguyên liệu"
-        tiltleDes =" Đây là NguyenLie"
+        tiltleDes ="Một chiếc bánh ngon chỉ có thể đến từ  những nguyên liệu tươi, sạch và an toàn. "
         break;
     }
     case "DungCu" : {
         type = "Dụng cụ"
-        tiltleDes =" Đây là NguyenLie"
+        tiltleDes ="Đã làm bánh thì không thể thiếu những dụng cụ chất lượng"
         break;
     }
     case "Combo" : {
         type = "Combo"
-        tiltleDes =" Đây là NguyenLie"
+        tiltleDes ="Combo - một phần không thể thiếu cho những người bận rộn nhưng vẫn muốn ăn ngon"
         break;
     }
     case undefined: {
         type = "Sản phẩm"
-        tiltleDes =" Đây là Sản Phẩm"
+        tiltleDes ="Đầy đủ - Tiện lợi - Chất lượng"
         break;
     }
 }
