@@ -2,44 +2,19 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, onValue, child, query, orderByChild, equalTo} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 
-let requestURL = '../../data/firebase-config.json';
-let request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
+// let requestURL ="/data/firebase-config.json";
+// let request = new XMLHttpRequest();
+// request.open('GET', requestURL);
+// request.responseType = 'json';
+// request.send();
+// jQuery.getJSON("../data/firebase-config.json", function(data){
 
-const params = new URLSearchParams(window.location.search)
-var type =Object.fromEntries(params.entries()).type
-console.log(type)
-var tiltleDes
-console.log(type)
+// })
 
-switch (type) {
-    case "NguyenLieu" : {
-        type = "Nguyên liệu"
-        tiltleDes ="Một chiếc bánh ngon chỉ có thể đến từ  những nguyên liệu tươi, sạch và an toàn. "
-        break;
-    }
-    case "DungCu" : {
-        type = "Dụng cụ"
-        tiltleDes ="Đã làm bánh thì không thể thiếu những dụng cụ chất lượng"
-        break;
-    }
-    case "Combo" : {
-        type = "Combo"
-        tiltleDes ="Combo - một phần không thể thiếu cho những người bận rộn nhưng vẫn muốn ăn ngon"
-        break;
-    }
-    case undefined: {
-        type = "Sản phẩm"
-        tiltleDes ="Đầy đủ - Tiện lợi - Chất lượng"
-        break;
-    }
-}
-console.log(type)
-request.onload = function() {
-    const data = request.response;
-    const app = initializeApp(data)
+fetch("../data/firebase-config.json")
+    .then(response => response.json())
+    .then(function(json){
+    const app = initializeApp(json)
     const database = getDatabase(app);
 
     //? bind document
@@ -91,5 +66,36 @@ request.onload = function() {
         })
         $('.product').innerHTML = htmls.join('');
     });
+    })
+const params = new URLSearchParams(window.location.search)
+var type =Object.fromEntries(params.entries()).type
+console.log(type)
+var tiltleDes
+console.log(type)
+
+switch (type) {
+    case "NguyenLieu" : {
+        type = "Nguyên liệu"
+        tiltleDes ="Một chiếc bánh ngon chỉ có thể đến từ  những nguyên liệu tươi, sạch và an toàn. "
+        break;
+    }
+    case "DungCu" : {
+        type = "Dụng cụ"
+        tiltleDes ="Đã làm bánh thì không thể thiếu những dụng cụ chất lượng"
+        break;
+    }
+    case "Combo" : {
+        type = "Combo"
+        tiltleDes ="Combo - một phần không thể thiếu cho những người bận rộn nhưng vẫn muốn ăn ngon"
+        break;
+    }
+    case undefined: {
+        type = "Sản phẩm"
+        tiltleDes ="Đầy đủ - Tiện lợi - Chất lượng"
+        break;
+    }
 }
+console.log(type)
+    
+// }
    
