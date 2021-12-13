@@ -1,16 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, onValue, child, query, orderByChild, equalTo} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
-import data from '../data/firebase-config.json' assert { type: "json" };
-// let requestURL ="/data/firebase-config.json";
-// let request = new XMLHttpRequest();
-// request.open('GET', requestURL);
-// request.responseType = 'json';
-// request.send();
-// jQuery.getJSON("../data/firebase-config.json", function(data){
 
-// })
-console.log(data)
 const params = new URLSearchParams(window.location.search)
 var type =Object.fromEntries(params.entries()).type
 var tiltleDes
@@ -37,7 +27,7 @@ switch (type) {
         break;
     }
 }
-const app = initializeApp(data)
+const app = initializeApp(config)
 const database = getDatabase(app);
 
 //? bind document
