@@ -29,11 +29,26 @@ const bannerList= [
     },
 ]
 var currentBannerIndex =0;
+//? xử lý chuyển banner
+function loadCurrentBanner() {
+    //Todo đang bị bug glitch khi chuyển banner
+    jQuery('.banner-img img').fadeOut(300, function(){
+        $('.banner-img img').src = bannerList[currentBannerIndex].bannerImg;
+    })
+    .fadeIn(300)
+  
+}
+loadCurrentBanner();
 
-// trỏ vào đường dẫn dữ lớp dữ liệu muốn lấy
+bannerBtns.forEach(function(btn, index) {
+    btn.onclick = function(){
+        currentBannerIndex=index
+        loadCurrentBanner();
+    }
+})
+
+
 var productRef = ref(database, 'NguyenLieu');
-console.log(productRef)
-var htmls;
 // hàm lấy giá trị
 onValue(productRef, (snapshot) => {
     const productList =[]
@@ -51,7 +66,7 @@ onValue(productRef, (snapshot) => {
         //
     }
      // đưa dữ liệu vào thẻ html
-    htmls = productList.map(product => {
+    var htmls = productList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
              <a href="./sanpham/san-pham.html?id=${product.productID}" class="product-container">
@@ -151,24 +166,6 @@ onValue(recipeRef, (snapshot) => {
 
 
 
-
-//? xử lý chuyển banner
-function loadCurrentBanner() {
-    //Todo đang bị bug glitch khi chuyển banner
-    jQuery('.banner-img img').fadeOut(300, function(){
-        $('.banner-img img').src = bannerList[currentBannerIndex].bannerImg;
-    })
-    .fadeIn(300)
-  
-}
-loadCurrentBanner();
-
-bannerBtns.forEach(function(btn, index) {
-    btn.onclick = function(){
-        currentBannerIndex=index
-        loadCurrentBanner();
-    }
-})
 
 
 // Initialize Firebase
