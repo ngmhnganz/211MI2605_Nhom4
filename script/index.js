@@ -6,12 +6,9 @@ const app = initializeApp(config)
 const database = getDatabase(app);
 
 //? bind document
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
 
 
 //? query element
-const bannerBtns = $$('.banner-btn');
 
 //? data
 const bannerList= [
@@ -32,15 +29,15 @@ var currentBannerIndex =0;
 //? xử lý chuyển banner
 function loadCurrentBanner() {
     //Todo đang bị bug glitch khi chuyển banner
-    jQuery('.banner-img img').fadeOut(300, function(){
-        $('.banner-img img').src = bannerList[currentBannerIndex].bannerImg;
+    $('.banner-img img').fadeOut(300, function(){
+        $('.banner-img img').attr('src',bannerList[currentBannerIndex].bannerImg)
     })
     .fadeIn(300)
   
 }
 loadCurrentBanner();
 
-bannerBtns.forEach(function(btn, index) {
+document.querySelectorAll('.banner-btn').forEach(function(btn, index) {
     btn.onclick = function(){
         currentBannerIndex=index
         loadCurrentBanner();
@@ -83,7 +80,7 @@ onValue(productRef, (snapshot) => {
              </a>
          </div>`
     })
-    $('.product').innerHTML = htmls.join('');
+    $('.product').html( htmls.join(''))
 });
 
 var monngonRef = ref(database, 'NguyenLieu');
@@ -123,7 +120,7 @@ onValue(monngonRef, (snapshot) => {
         </div>
         `
     })
-    $('.mon-ngon-cua-ngay-product').innerHTML = htmls.join('');
+    $('.mon-ngon-cua-ngay-product').html(htmls.join(''));
 });
 
 var recipeRef = ref(database, 'CongThuc');
@@ -161,7 +158,7 @@ onValue(recipeRef, (snapshot) => {
     </div>
         `
     })
-    $('.thuc-don-hom-nay-recipe').innerHTML = htmls.join('');
+    $('.thuc-don-hom-nay-recipe').html(htmls.join(''))
 });
 
 
