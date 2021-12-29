@@ -17,8 +17,20 @@
     <!-- Header -->
     <div w3-include-html="../component/header.html"></div>
 
-    
-    
+    <!--Banner-->
+    <div class="containerTrung background-primary-color" style="padding:150px 0px 50px 0px">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
+                    <!-- ?banner imgage -->
+                    <div class="banner-img">
+                        <img id="hinh_banner"  alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </div>
 
     <!--Title-->
     <div class="grid wide container">
@@ -29,23 +41,58 @@
         </div>
     </div>
 
-    <!--Bộ lọc-->
-    <div class="grid wide">
+    <!-- Bộ lọc--> 
+    <div class="grid wide" style="background: rgb(236, 235, 234); padding: 10px;">
         <div class="gia">
-            <button>
+            <button id="btnSapXep" >
                 <span>Sắp xếp theo</span>
                 <i class="fas fa-angle-down"></i>
             </button>
         </div>
-
     </div>
+    <div class="grid wide" style="padding: 0px;margin-top: 0px;">
+        <div id="container-An">
+            <div class="select-price">
+                <p>Giá giảm dần</p>
+            </div>
+            <div class="select-price">
+                <p>Giá tăng dần</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script type="text/javascript">
+    
+        document.getElementById("btnSapXep").onclick =  function open() {
+            var x = document.getElementById("container-An");
+            if (x.style.display == "none") 
+            {
+                x.style.display = "block";
+            } else 
+            {
+                x.style.display = "none";
+            }
+        }
+    </script> -->
+
+   
+
+    
+    
+    
+
+    
     
     <!--List sản phẩm-->
-    <div class="grid wide">
+    <div class="grid wide" style="margin-top: 10px;">
         <div class="row product">
 
         </div>
     </div>
+    
+    <!--Pagination-->
+    <div w3-include-html="../component/pagination.html"></div>
+    
 
     <!--Footer-->
     <div w3-include-html="../component/footer.html"></div>
