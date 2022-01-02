@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LOPHOC>
+    <sinhvien>
+        <mssv>K194111632</mssv>
+        <id>#anhthu</id>
+        <hoTen>Vũ Nguyễn Anh Thư</hoTen>
+        <ngaySinh>1/9/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0779695415</sdt>
+        <email>thuvna19411c@st.uel.edu.vn</email>
+        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
+        <photoTron>../assets/img/logo.png </photoTron>
+        <soThich>Thích ăn, thích ngủ</soThich>
+        <cauChamNgon>No pain No gain</cauChamNgon>
+        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
+        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+    </sinhvien>
+
+    <sinhvien>
+        <mssv>K194111615</mssv>
+        <hoTen>Nguyễn Minh Ngân</hoTen>
+        <id>#minhngan</id>
+        <ngaySinh>1/9/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0779695415</sdt>
+        <email>thuvna19411c@st.uel.edu.vn</email>
+        <soThich>Thích ăn, thích ngủ</soThich>
+        <cauChamNgon>No pain No gain</cauChamNgon>
+        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
+        <photoTron>../assets/img/logo.png </photoTron>
+        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
+        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+    </sinhvien>
+
+    <sinhvien>
+        <mssv>K194111640</mssv>
+        <hoTen>Huỳnh Kim Xuân</hoTen>
+        <id>#kimxuan</id>
+        <ngaySinh>1/9/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0779695415</sdt>
+        <email>thuvna19411c@st.uel.edu.vn</email>
+        <soThich>Thích ăn, thích ngủ</soThich>
+        <cauChamNgon>No pain No gain</cauChamNgon>
+        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
+        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
+        <photoTron>../assets/img/logo.png </photoTron>
+        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+    </sinhvien>
+
+    <sinhvien>
+        <mssv>K194111629</mssv>
+        <hoTen>Võ Nguyễn Anh Thi</hoTen>
+        <id>#anhthi</id>
+        <ngaySinh>1/9/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0779695415</sdt>
+        <email>thuvna19411c@st.uel.edu.vn</email>
+        <soThich>Thích ăn, thích ngủ</soThich>
+        <cauChamNgon>No pain No gain</cauChamNgon>
+        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
+        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
+        <photoTron>../assets/img/logo.png </photoTron>
+        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+    </sinhvien>
+
+    <sinhvien>
+        <mssv>K194111623</mssv>
+        <hoTen>Trần Thị Anh Phương</hoTen>
+        <id>#anhphuong</id>
+        <ngaySinh>1/9/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0779695415</sdt>
+        <email>thuvna19411c@st.uel.edu.vn</email>
+        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
+        <soThich>Thích ăn, thích ngủ</soThich>
+        <cauChamNgon>No pain No gain</cauChamNgon>
+        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
+        <photoTron>../assets/img/logo.png </photoTron>
+        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+    </sinhvien>
+</LOPHOC>
+
