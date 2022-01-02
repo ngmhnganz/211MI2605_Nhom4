@@ -37,6 +37,27 @@ nav .navbar{
   align-items: center;
   height: 100%;
 }
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon-item {
+  position:static;
+  height: 40px;
+  width: 40px;
+  padding: 20px 20px 20px 20px;
+}
+
+.icon-item i{
+  font-size: 40px;
+}
+
+.icon-item:hover {
+  color: #ddd;
+  cursor: pointer;
+}
 .navbar .logo a{
   justify-self: center;
   justify-content: center;
