@@ -30,8 +30,4 @@
    navLinks.classList.toggle("show1");
   }
 
-  let jsArrow = document.querySelector(".js-arrow");
-  jsArrow.onclick = function() {
-   navLinks.classList.toggle("show3");
-  }
   
