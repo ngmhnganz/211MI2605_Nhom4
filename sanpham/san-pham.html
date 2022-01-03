@@ -5,65 +5,141 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../data/firebase-config.js"></script>
+    <script src="../lib/jQuery.js"></script>
     <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href="../css/header.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/product-item.css" type="text/css"/>
     <link rel="stylesheet" href="../css/footer.css" type="text/css"/>
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href="../css/san-pham.css" type="text/css"/>
-    
     <title>Sản phẩm</title>
 </head>
-<body>
+<body onload="loadUI()">
     <!-- ! Header và thanh navigation -->
-    <div class="header">
-        <div class="grid wide containerTrung">
-            <div class="row">
-                <div class="col l-2">
-                    <div class="logo">
-                        <a class="logo-img" href="./index.html">
-                        </a>
-                    </div>
-                </div>
-                <div class="col l-8 pc-navigation">
-                    <div class="category">
-                        <div class="category-item">
-                            <a href="./san-pham.html">SẢN PHẨM</a>
-                            <div class="category-container">
-                                <div>
-                                    <a href="">NGUYÊN LIỆU</a>
-                                    <a href="">DỤNG CỤ</a>
-                                    <a href="">CHẾ BIẾN SẴN</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="category-item">
-                            <a href="./cong-thuc.html">CÔNG THỨC</a>
-                        </div>
-
-                        <div class="category-item">
-                            <a href="./ve-chung-toi.html">VỀ CHÚNG TÔI</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-2 m-4 c-4 mg-r">
-                    <div class="icon">
-                        <div id="icon-item">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="icon-item">
-                            <i class="fas fa-shopping-basket" href="./gio-hang.html"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="header">
     </div>
     
-    <div class="containerTrung" style="margin-top: 200px;">    
+    <div class="containerTrung">    
         <div class="grid wide sanpham-info">
+            <div class="row">
+                <div class="col l-6 m-6 c-12">
+                    <img id ="sanpham-img" alt="">
+                </div>
+                <div class="col l-6 m-6 c-12 sanpham-des">
+                    <p id="sanpham-name"></p>
+                    <p id="sanpham-price"></p>
+                    <p id="sanpham-type"></p>
+                    <p id="sanpham-detail"></p>
+                    <form action="" method="post" class="sanpham-form">
+                        <div class="btn-decrease btn-amount" onclick="minusItem()">-</div>
+                        <div id="sanpham-amount">1</div>
+                        <div class="btn-increase btn-amount" onclick="plusItem()">+</div>
+                    </form>
+                    <button class="btn">Đặt hàng</button>
+                </div>
+            </div>
+            <div class="row line">
+            </div>
+            <section id="info">
+                <div class="row">
+                
+                    <div class="col c-4 m-4 info-tab" id="tab-gioithieu"  onclick="tab(1)">
+                        Giới thiệu
+                    </div>
+                    <div class="col c-4 m-4 l-6 info-tab" id="tab-chitiet" onclick="tab(2)">
+                        Chi tiết
+                    </div>
+                    <div class="col c-4 m-4 l-6 info-tab"id="tab-binhluan"  onclick="tab(3)">
+                        Bình luận
+                    </div>
+                </div>
+                <div class="row info-tab-content">
+                    <div class="col c-12 m-12 l-12" id="m_sanpham-detail"></div>
+                    <div class="col c-12 m-12 l-12" id="m_sanpham-descrip">bình luậ
+                    </div>
+                    <div class="col c-12 m-12 l-12" id="m_sanpham-comment">các bình luận
+                    </div>
+                </div>
+            </section>
+            
         </div>
     </div>
-    <script src="../script/sanpham.js" async type="module"></script>
+
+    <section class="suggestion background-sub-color">
+        <div class="grid wide container">
+            <div class="row">
+                <div class="col c-12 l-12 m12" id= "title">
+                        Sản phẩm tương tự
+                </div>
+            </div>
+            <div class="row suggest-products">
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="../script/getSanPham.js" async type="module"></script>
+    <script>
+    
+        function loadUI(){
+            $("#footer").load("../component/footer.html"); 
+            $('#header').load("../component/header.html")
+            $('#tab-gioithieu').css("color", "")
+                    $('#tab-chitiet').css("color", "var(--primary-color)")
+                    $('#tab-binhluan').css("color", "")
+                    $('#m_sanpham-detail').css("display","none")
+                    $('#m_sanpham-descrip').css("display","block")
+                    $('#m_sanpham-comment').css("display","none")
+        }
+
+        var amount =1
+        function plusItem() {
+            amount+=1;
+            $('#sanpham-amount').text(amount)
+            console.log(amount)
+        }
+
+        function minusItem() {
+            if (amount!=1){
+                amount-=1;
+                $('#sanpham-amount').text(amount)
+                console.log(amount)
+            }          
+        }
+
+        function tab(index) {
+            switch (index) {
+                case 1: {
+                    $('#tab-gioithieu').css("color", "var(--primary-color)")
+                    $('#tab-chitiet').css("color", "")
+                    $('#tab-binhluan').css("color", "")
+                    $('#m_sanpham-detail').css("display","block")
+                    $('#m_sanpham-descrip').css("display","none")
+                    $('#m_sanpham-comment').css("display","none")
+                    break;
+                }
+                case 2: {
+                    $('#tab-gioithieu').css("color", "")
+                    $('#tab-chitiet').css("color", "var(--primary-color)")
+                    $('#tab-binhluan').css("color", "")
+                    $('#m_sanpham-detail').css("display","none")
+                    $('#m_sanpham-descrip').css("display","block")
+                    $('#m_sanpham-comment').css("display","none")
+                    break;
+                }
+                case 3: {
+                    $('#tab-gioithieu').css("color", "")
+                    $('#tab-chitiet').css("color", "")
+                    $('#tab-binhluan').css("color", "var(--primary-color)")
+                    $('#m_sanpham-detail').css("display","none")
+                    $('#m_sanpham-descrip').css("display","none")
+                    $('#m_sanpham-comment').css("display","block")
+                    break;
+                }
+            }
+        }
+
+    </script>
 </body>
 </html>

@@ -6,12 +6,9 @@ const app = initializeApp(config)
 const database = getDatabase(app);
 
 //? bind document
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
 
 
 //? query element
-const bannerBtns = $$('.banner-btn');
 
 //? data
 const bannerList= [
@@ -29,11 +26,26 @@ const bannerList= [
     },
 ]
 var currentBannerIndex =0;
+//? xử lý chuyển banner
+function loadCurrentBanner() {
+    //Todo đang bị bug glitch khi chuyển banner
+    $('.banner-img img').fadeOut(300, function(){
+        $('.banner-img img').attr('src',bannerList[currentBannerIndex].bannerImg)
+    })
+    .fadeIn(300)
+  
+}
+loadCurrentBanner();
 
-// trỏ vào đường dẫn dữ lớp dữ liệu muốn lấy
+document.querySelectorAll('.banner-btn').forEach(function(btn, index) {
+    btn.onclick = function(){
+        currentBannerIndex=index
+        loadCurrentBanner();
+    }
+})
+
+
 var productRef = ref(database, 'NguyenLieu');
-console.log(productRef)
-var htmls;
 // hàm lấy giá trị
 onValue(productRef, (snapshot) => {
     const productList =[]
@@ -51,7 +63,7 @@ onValue(productRef, (snapshot) => {
         //
     }
      // đưa dữ liệu vào thẻ html
-    htmls = productList.map(product => {
+    var htmls = productList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
              <a href="./sanpham/san-pham.html?id=${product.productID}" class="product-container">
@@ -68,7 +80,7 @@ onValue(productRef, (snapshot) => {
              </a>
          </div>`
     })
-    $('.product').innerHTML = htmls.join('');
+    $('.product').html( htmls.join(''))
 });
 
 var monngonRef = ref(database, 'NguyenLieu');
@@ -108,7 +120,7 @@ onValue(monngonRef, (snapshot) => {
         </div>
         `
     })
-    $('.mon-ngon-cua-ngay-product').innerHTML = htmls.join('');
+    $('.mon-ngon-cua-ngay-product').html(htmls.join(''));
 });
 
 var recipeRef = ref(database, 'CongThuc');
@@ -146,29 +158,11 @@ onValue(recipeRef, (snapshot) => {
     </div>
         `
     })
-    $('.thuc-don-hom-nay-recipe').innerHTML = htmls.join('');
+    $('.thuc-don-hom-nay-recipe').html(htmls.join(''))
 });
 
 
 
-
-//? xử lý chuyển banner
-function loadCurrentBanner() {
-    //Todo đang bị bug glitch khi chuyển banner
-    jQuery('.banner-img img').fadeOut(300, function(){
-        $('.banner-img img').src = bannerList[currentBannerIndex].bannerImg;
-    })
-    .fadeIn(300)
-  
-}
-loadCurrentBanner();
-
-bannerBtns.forEach(function(btn, index) {
-    btn.onclick = function(){
-        currentBannerIndex=index
-        loadCurrentBanner();
-    }
-})
 
 
 // Initialize Firebase

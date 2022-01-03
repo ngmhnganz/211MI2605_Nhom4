@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cong thuc</title>
+    <script src="../script/includeHTML.js"></script>
+    <script src="../data/firebase-config.js"></script>
+    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
+    <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
+    <link rel="stylesheet" href="../css/danhsach-congthuc.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/recipe-item.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <div w3-include-html="../component/header.html"></div>
+
+    <!-- ! Banner -->
+    <div class="containerTrung background-primary-color" style="padding:150px 0px 50px 0px">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
+                    <!-- ?banner imgage -->
+                    <div class="banner-img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <div class="banner-dot">
+                        <!-- ?start banner -->
+                            <span class="banner-btn"></span>
+                            <span class="banner-btn"></span>
+                            <span class="banner-btn"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Công thức -->
+    <section class="containerTrung background-secondary-color">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <p class="title">
+                        CÔNG THỨC
+                    </p>
+                </div>
+            </div>
+           
+        
+        <div class="row list-recipe">
+        </div>
+        </div> 
+
+
+        <!--Pagination-->
+        <div w3-include-html="../component/pagination.html"></div>
+        
+    </section>
+
+    
+    
+
+    <!--Footer-->
+    <div w3-include-html="../component/footer.html"></div>
+
+    <script>
+        includeHTML();
+    </script>
+    <script src="../lib/jQuery.js"></script>
+    <script src="../script/danhsach-congthuc.js" async type="module"></script>
+
+</body>
+</html>
