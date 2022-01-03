@@ -127,11 +127,12 @@
   }
   
   .team .team_member p.role{
-    color: #ccc;
+    color: var(--secondary-color);
     margin: 12px 0;
     font-size: 14px;
     font-family:var(--font);
     text-transform: uppercase;
+    font-weight: bold;
   }
 
   .team .team_member p{
@@ -139,7 +140,7 @@
     margin: 12px 0;
     font-size: 14px;
     font-family:var(--font);
-    text-transform: uppercase;
+    
     
   }
 
@@ -159,6 +160,7 @@
     width: 100px;
     height: 100px;
     padding: 5px;
+    border-radius: 50%;
   }
 
   /*phần từng thông tin thành viên*/

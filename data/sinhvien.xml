@@ -9,29 +9,29 @@
         <lop>K19411C</lop>
         <sdt>0779695415</sdt>
         <email>thuvna19411c@st.uel.edu.vn</email>
-        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
-        <photoTron>../assets/img/logo.png </photoTron>
+        <photoVuong>../assets/img/HinhVuong_Thu.png </photoVuong>
+        <photoTron>../assets/img/HinhTron_Thu.png </photoTron>
         <soThich>Thích ăn, thích ngủ</soThich>
         <cauChamNgon>No pain No gain</cauChamNgon>
         <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
-        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+        <gioiThieu>Buổi chiều khuôn viên, mây trời xanh ngát, bước chân trên đường vẫn chưa phai nhạt. Có thấy bơ vơ ngày tháng đợi chờ, nơi ấy bây giờ còn có mùa xuân, có dáng nghiêng nghiêng nụ cười thật gần. </gioiThieu>
     </sinhvien>
 
     <sinhvien>
         <mssv>K194111615</mssv>
-        <hoTen>Nguyễn Minh Ngân</hoTen>
         <id>#minhngan</id>
-        <ngaySinh>1/9/2001</ngaySinh>
+        <hoTen>Nguyễn Minh Ngân</hoTen>
+        <ngaySinh>12/3/2001</ngaySinh>
         <gioiTinh>Nữ</gioiTinh>
         <lop>K19411C</lop>
-        <sdt>0779695415</sdt>
-        <email>thuvna19411c@st.uel.edu.vn</email>
-        <soThich>Thích ăn, thích ngủ</soThich>
+        <sdt>0961118724</sdt>
+        <email>ngannm19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_Ngan.png </photoVuong>
+        <photoTron>../assets/img/HinhTron_Ngan.png </photoTron>
+        <soThich>Thích chơi Minecraft</soThich>
         <cauChamNgon>No pain No gain</cauChamNgon>
-        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
-        <photoTron>../assets/img/logo.png </photoTron>
-        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
-        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+        <fb>https://www.facebook.com/ngmhngan/</fb>
+        <gioiThieu>Buổi sáng Hà Nội mùa hè chợt đổ mùa đông, nếu ai mà giữ lời hứa mùa đông giống mùa hè thì họ thua rồi.</gioiThieu>
     </sinhvien>
 
     <sinhvien>
@@ -53,19 +53,19 @@
 
     <sinhvien>
         <mssv>K194111629</mssv>
-        <hoTen>Võ Nguyễn Anh Thi</hoTen>
         <id>#anhthi</id>
-        <ngaySinh>1/9/2001</ngaySinh>
+        <hoTen>Võ Nguyễn Anh Thi</hoTen>
+        <ngaySinh>16/08/2001</ngaySinh>
         <gioiTinh>Nữ</gioiTinh>
         <lop>K19411C</lop>
-        <sdt>0779695415</sdt>
-        <email>thuvna19411c@st.uel.edu.vn</email>
-        <soThich>Thích ăn, thích ngủ</soThich>
-        <cauChamNgon>No pain No gain</cauChamNgon>
-        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
-        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
-        <photoTron>../assets/img/logo.png </photoTron>
-        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+        <sdt>0356776396</sdt>
+        <email>thivna19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_Thi.png</photoVuong>
+        <photoTron>../assets/img/HinhTron_Thi.png </photoTron>
+        <soThich> không có </soThich>
+        <cauChamNgon>Nơi nào có sự sống nơi đó công lý </cauChamNgon>
+        <fb>https://www.facebook.com/nim.nisb/</fb>
+        <gioiThieu> Sấm sét bầu trời, Fang Ninja, Kuwaga Raijer. Đối mặt với bóng đêm tiêu diệt bóng đêm, đối mặt với ánh sáng, tiêu diệt ánh sáng. Lightening speed gouraijer, xuất hiện. </gioiThieu>
     </sinhvien>
 
     <sinhvien>
