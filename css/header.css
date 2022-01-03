@@ -1,5 +1,6 @@
 @import url(../css/constant.css);
 .header {
+    height: 10vh;
     z-index: 1;
     position: fixed;
     background: white;
@@ -16,7 +17,7 @@
 }
 
 .category {
-    height: 100px;
+    height: 10vh    ;
     display: flex;
     justify-content: space-between;  
     margin: 0 50px 0 50px;
@@ -24,8 +25,8 @@
 }
 
 .category-item {
-    height: 100px;
-    line-height: 100px;
+    height: 10vh    ;
+    line-height: 10vh   ;
     font-family: var(--font);
     font-weight: regular;
     margin: 0;
@@ -49,7 +50,7 @@
 .category-container{
     display: none;
     position: absolute;
-    top: 100px;
+    top: 10vh   ;
     bottom: auto;
     left: 0;
     right: 0;
