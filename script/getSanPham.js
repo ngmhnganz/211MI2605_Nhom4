@@ -7,7 +7,6 @@ const databaseRef = ref(database);
 const params = new URLSearchParams(window.location.search)
 const sanphamID =Object.fromEntries(params.entries()).id
 var id = parseInt(sanphamID);
-//? bind document
 
 api(databaseRef)
 function api(ref) {
@@ -51,7 +50,6 @@ function api(ref) {
                 </a>
             </div>`
             })
-            console.log($('.suggest-product'))
             $('.suggest-products').html(htmls.join(''));        
         })
     })
