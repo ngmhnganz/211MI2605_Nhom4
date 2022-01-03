@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cong thuc</title>
+    <script src="../lib/jQuery.js"></script>
     <script src="../script/includeHTML.js"></script>
     <script src="../data/firebase-config.js"></script>
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
@@ -12,10 +13,16 @@
     <link rel="stylesheet" href="../css/danhsach-congthuc.css" type="text/css"/>
     <link rel="stylesheet" href="../css/recipe-item.css" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+         $(function(){
+          $("#header").load("../component/header.html"); 
+          $("#footer").load("../component/footer.html"); 
+        });
+    </script>
 </head>
 <body>
     <!-- Header -->
-    <div w3-include-html="../component/header.html"></div>
+    <div id="header"></div>
 
     <!-- ! Banner -->
     <div class="containerTrung background-primary-color" style="padding:150px 0px 50px 0px">
@@ -62,17 +69,9 @@
         <div w3-include-html="../component/pagination.html"></div>
         
     </section>
-
-    
-    
-
     <!--Footer-->
-    <div w3-include-html="../component/footer.html"></div>
-
-    <script>
-        includeHTML();
-    </script>
-    <script src="../lib/jQuery.js"></script>
+    <div id="footer"></div>
+    
     <script src="../script/danhsach-congthuc.js" async type="module"></script>
 
 </body>
