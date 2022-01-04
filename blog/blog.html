@@ -4,62 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bánh mì Việt Nam</title>
+
     <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href="../css/navigation.css" type="text/css" />
     <link rel="stylesheet" href="../css/footer.css" type="text/css"/>
     <link rel="stylesheet" href="../css/blog.css" type="text/css"/>
     <link rel="stylesheet" href="./css/product-item.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/header_responsive.css" type="text/css"/>
     
 
-    <title>Bánh mì Việt Nam</title>
+    <script src="../script/header.js"></script>
+    <script src="../script/includeHTML.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
     <!-- ! Header và thanh navigation -->
-    <div class="header">
-        <div class="grid wide containerTrung">
-            <div class="row">
-                <div class="col l-2">
-                    <div class="logo">
-                        <a class="logo-img" href="./index.html">
-                        </a>
-                    </div>
-                </div>
-                <div class="col l-8 pc-navigation">
-                    <div class="category">
-                        <div class="category-item">
-                            <a href="./san-pham.html">SẢN PHẨM</a>
-                            <div class="category-container">
-                                <div>
-                                    <a href="">NGUYÊN LIỆU</a>
-                                    <a href="">DỤNG CỤ</a>
-                                    <a href="">CHẾ BIẾN SẴN</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="category-item">
-                            <a href="./cong-thuc.html">CÔNG THỨC</a>
-                        </div>
-
-                        <div class="category-item">
-                            <a href="./ve-chung-toi.html">VỀ CHÚNG TÔI</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-2 m-4 c-4 mg-r">
-                    <div class="icon">
-                        <div id="icon-item">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="icon-item">
-                            <i class="fas fa-shopping-basket" href="./gio-hang.html"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div w3-include-html="../component/header.html"></div>
     <!-- !Banner-->
     <div class="mySlides w3-display-container w3-center">
         <img class="w3-image" src="/assets/img/blog/banner.jpg"  style="width:100%">
@@ -69,7 +30,6 @@
     </div>
     
     <!-- !Content-->
-    <div >
         <div class="grid wide">
             <div class="row">
                 <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
@@ -84,49 +44,41 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
+        
+
 
     <!-- !Image-->
     <!-- Container (Portfolio Section) -->
 <!-- <div class="w3-content w3-container w3-padding-64" id="portfolio"> -->
     <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-    <div class="grid wide">
+
         <div class="row">
 
     <!-- <div class="row w3-row-padding w3-center" style="object-fit: contain;"> -->
-        <div class="column col m-3">
+        <div class="col c-6 l-6 m-6 mg-t mg-r mg-l mg-b">
             <img src="../assets/img/blog/HoaMa1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
         </div>
-        <div class="column col m-3">
+        <div class="col c-6 l-6 m-6 mg-t mg-r mg-l mg-b">
             <img src="../assets/img/blog/HoaMa2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
         </div>
     </div>
 
     <!-- <div class="row w3-row-padding w3-center w3-section" style="object-fit: contain;"> -->
         <div class="row">
-        <div class="column col m-3">
+            <div class="col c-6 l-6 m-6 mg-t mg-r mg-l mg-b">
             <img src="../assets/img/blog/HoaMa3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
         </div>
-        <div class="column col m-3">
+        <div class="col c-6 l-6 m-6 mg-t mg-r mg-l mg-b">
             <img src="../assets/img/blog/HoaMa4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
         </div>
     </div>
 
-<!-- Modal for full size images on click--> 
-    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption" class="w3-opacity w3-large"></p>
-        </div>
-    </div>
-    </div>
+
 </div>
 </div>
 
  <!-- !Content-->
-    <div class="grid wide">
+
         <div class="row">
             <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
                 <p>
@@ -135,9 +87,9 @@
                 </p>
             </div>
         </div>
-    </div>
 
-    <div class="grid wide">
+
+
         <div class="row">
 
     <!-- <div class="row w3-row-padding w3-center" style="object-fit: contain;"> -->
@@ -153,7 +105,7 @@
         </div>
     </div>
 
-    <div class="grid wide">
+
         <div class="row">
             <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
                 <p>
@@ -162,13 +114,13 @@
                 </p>
             </div>
         </div>
-    </div>
+
 
     <!-- !Image-->
     <!-- Container (Portfolio Section) -->
 <!-- <div class="w3-content w3-container w3-padding-64" id="portfolio"> -->
     <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-    <div class="grid wide">
+
         <div class="row">
 
     <!-- <div class="row w3-row-padding w3-center" style="object-fit: contain;"> -->
@@ -190,16 +142,8 @@
         </div>
     </div>
 
-<!-- Modal for full size images on click--> 
-    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption" class="w3-opacity w3-large"></p>
-        </div>
-    </div>
-    </div>
-</div>
+
+
 </div>
 
      <!-- !Content-->
@@ -213,6 +157,8 @@
             </div>
         </div>
     </div>
+
+</div>
 
 
 
@@ -232,4 +178,9 @@
         <div class="row thuc-don-hom-nay-recipe">
         </div>
     </section>
+    <script>
+        includeHTML();
+    
+      </script>
 </body>
+</html>

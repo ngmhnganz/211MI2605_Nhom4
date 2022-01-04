@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog</title>
+
   <link rel="stylesheet" href="../css/danhsach_blog.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"/>
   <link rel="stylesheet" href="../css/recipe-item.css" type="text/css"/>
@@ -11,7 +13,6 @@
   <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
   <link rel="stylesheet" href="../css/product-item.css" type="text/css"/>
   <link rel="stylesheet" href="../css/index.css" type="text/css"/>
-  <link rel="stylesheet" href="../css/san-pham.css" type="text/css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;500;600;700;900&display=swap" rel="stylesheet">
@@ -33,46 +34,50 @@
     <div class="grid wide">
         <div class="row">
             <div class="col l-12 m-12 c-12">
-                <p class="title">
+                <h1 class="title" style="text-align:center">
                     BLOG 
-                </p>
+                </h1>
             </div>
         </div>
 
         <div class="grid wide">
+
           <div class="row mon-ngon-cua-ngay">
-            <div class="col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b" >
-              <img src="../assets/img/monancuangay.jpg" alt="">
-
-          </div>
-              <div class="col l-6 m-6 c-12 mg-t mg-r mg-l mg-b ">
-                  <div class="row mon-ngon-description">
-                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores impedit atque doloremque quos repellat, sint, nulla numquam eligendi ratione accusantium blanditiis accusamus laudantium perferendis similique. Tenetur tempora velit ducimus quam?</p>
-                     <button class="btn">Xem thêm</button>
-                  </div>
-                  <div class="row">
-                      <div class="col l-3 m-6 l-o-9 m-o-6 mon-ngon-seemore">
-
-                      </div>
-                  </div>
+            <div class="col l-2 c-1"></div>          
+            <div class="col l-4 m-6 c-12 img mg-t mg-r mg-l mg-b" >
+              <img src="../assets/img/blog/banner.jpg" alt="">
+            </div>
+            <div class="col l-4 m-5 c-12 mg-t mg-r mg-l mg-b ">
+              <div class="row mon-ngon-description">
+                <p>Cách đây không lâu, bánh mì Việt Nam đã vinh dự đứng đầu top 10 món ăn đường phố được yêu thích nhất thế giới. Đó chính là một niềm vinh dự lớn cho ẩm thực Việt Nam. Vậy món bánh này có gì đặc biệt?</p>
+                <button id="btnXemThem1" class="btn">Xem thêm</button>
               </div>
+              <div class="row">
+                <div class="col l-3 m-6 l-o-9 m-o-6 mon-ngon-seemore">
+
+                </div>
+              </div>
+            </div>
+
               
           </div>
           </div>
-  
+
         </div>
+      
 
 
         <div class="grid wide">
           <div class="row mon-ngon-cua-ngay">
-            <div class="col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b" >
+            <div class="col l-2 c-1"></div> 
+            <div class="col l-4 m-6 c-12 img mg-t mg-r mg-l mg-b" >
               <img src="../assets/img/monancuangay.jpg" alt="">
 
           </div>
-              <div class="col l-6 m-6 c-12 mg-t mg-r mg-l mg-b ">
+              <div class="col l-4 m-5 c-12 mg-t mg-r mg-l mg-b ">
                   <div class="row mon-ngon-description">
-                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores impedit atque doloremque quos repellat, sint, nulla numquam eligendi ratione accusantium blanditiis accusamus laudantium perferendis similique. Tenetur tempora velit ducimus quam?</p>
-                     <button class="btn">Xem thêm</button>
+                     <p>Ngày Valentine bạn có thể sáng tạo nên những món tráng miệng độc đáo và vô cùng thơm ngon. Những hương vị tuyệt vời mà Team Trứng tổng hợp dưới đây sẽ cho bạn những ý tưởng thú vị làm những món ăn đặc biệt chỉ riêng có vào dịp Valentine.</p>
+                     <button id="btnXemThem2" class="btn">Xem thêm</button>
                   </div>
                   <div class="row">
                       <div class="col l-3 m-6 l-o-9 m-o-6 mon-ngon-seemore">
@@ -93,6 +98,14 @@
   
   <script>
     includeHTML();
+    
+    document.getElementById("btnXemThem1").onclick = function () {
+        location.href = "./blog.html";
+    };
+    document.getElementById("btnXemThem2").onclick = function () {
+        location.href = "./blog2.html";
+    };
+
   </script>
 </body>
 </html>
