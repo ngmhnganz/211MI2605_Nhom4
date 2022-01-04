@@ -40,6 +40,9 @@ $(document).ready(function(){
 //     document.getElementById("address").focus();
 // });
 
+
+
+
 // xử lý upload hình lên, chưa đc
   $(document).ready(function(){
     $("img").click(function(){
@@ -54,30 +57,22 @@ $(document).ready(function(){
     });
 });
 
-// xử lý nút lưu
+
 const Name = document.getElementById('Name');
 const birthday = document.getElementById('birthday');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const address = document.getElementById('address');
 
+// xử lý nút lưu
 document.getElementById("btnSave").addEventListener("click", function() {
-    checkInputs();
+    alert("Bạn đã lưu thành công!")
 });
 
 function checkInputs(){
-    const NameValue = Name.value.trim();
     const birthdayValue = birthday.value.trim();
     const emailValue = email.value.trim();
-    const phoneValue = phone.value.trim();
     const addressValue = address.value.trim();
-
-    if(NameValue === '') {
-		setErrorFor(Name, 'Tên người dùng không được để trống');
-	} else {
-		setSuccessFor(Name);
-	}
-    
 }
 
 function setErrorFor(input, message) {
@@ -100,5 +95,23 @@ document.getElementById("Name").addEventListener('blur', function(){
 	} else {
 		setSuccessFor(Name);
 	}
+})
+
+//xử lý kiểm tra số điện thoại
+document.getElementById("phone").addEventListener('blur', function(){
+    var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+    const phoneValue = phone.value.trim();
+
+    if(phoneValue !== ''){
+        if(vnf_regex.test(phoneValue) == false){
+            setErrorFor(phone,"Số điện thoại của bạn không đúng định dạng!");
+        }
+        else{
+            setSuccessFor(phone);
+        }
+    }
+    else{
+        setErrorFor(phone,"Số điện thoại không được để trống");
+    }
 })
 

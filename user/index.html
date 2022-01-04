@@ -115,12 +115,11 @@
                                 <input type="radio" name="gioitinh" value="Nam" checked="checked" id="nam"><label>Nam</label>
                                 <input type="radio" name="gioitinh" value="Nữ" id="nu"><label>Nữ</label>
                             </div>
-                            <div class="form-control">
+                            <div class="ngaysinh-container">
                                 <label for="birthday">Ngày sinh</label>
-                                <input type="text" id="birthday" placeholder="DD/MM/YYYY" value="Test thôi">
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
+                                Ngày: <select id="date" class="input_birthday"></select>
+                                Tháng: <select id="month" class="input_birthday" ></select>
+                                Năm: <select id="year" class="input_birthday" ></select>
                             </div>
                             <div class="form-control">
                                 <label for="birthday">Email</label>
@@ -234,6 +233,23 @@
     <script>
         includeHTML();
     </script>
+
+    <script>
+        // chọn ngày tháng năm
+        var select = document.getElementById("date");
+        for(i = 01; i <= 31; i++){
+            select.options[select.options.length] = new Option(i,i);
+        }
+        var select = document.getElementById("month");
+        for(i =1; i <= 12; i++){
+            select.options[select.options.length] = new Option(i,i);
+        }
+        var select = document.getElementById("year");
+        for(i = 1900; i <= 2021; i++){
+            select.options[select.options.length] = new Option(i,i);
+        }
+    </script>    
+
     <script src="../lib/jQuery.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="../script/user.js" async type="module"></script>

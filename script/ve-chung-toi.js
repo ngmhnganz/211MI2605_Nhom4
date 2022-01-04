@@ -33,7 +33,7 @@ function myFunction(xml){
 
     anhthu = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
             x[0].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-            " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b' style='margin-top: 20px;'><div class='ten-thanhvien'>" +
+            " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
             x[0].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
             "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
             x[0].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -52,7 +52,7 @@ function myFunction(xml){
 
     minhngan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
     x[1].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b' style='margin-top: 20px;'><div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
     x[1].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[1].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -71,7 +71,7 @@ function myFunction(xml){
 
     kimxuan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
     x[2].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b' style='margin-top: 20px;'><div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
     x[2].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[2].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -89,7 +89,7 @@ function myFunction(xml){
     /*anh thi */
     anhthi = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
     x[3].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b' style='margin-top: 20px;'><div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
     x[3].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[3].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -107,7 +107,7 @@ function myFunction(xml){
     /*anh phương */
     anhphuong = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
     x[4].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b' style='margin-top: 20px;'><div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
     x[4].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[4].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 

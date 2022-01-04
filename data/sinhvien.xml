@@ -36,19 +36,19 @@
 
     <sinhvien>
         <mssv>K194111640</mssv>
-        <hoTen>Huỳnh Kim Xuân</hoTen>
         <id>#kimxuan</id>
-        <ngaySinh>1/9/2001</ngaySinh>
+        <hoTen>Huỳnh Kim Xuân</hoTen>
+        <ngaySinh>22/04/2001</ngaySinh>
         <gioiTinh>Nữ</gioiTinh>
         <lop>K19411C</lop>
-        <sdt>0779695415</sdt>
-        <email>thuvna19411c@st.uel.edu.vn</email>
-        <soThich>Thích ăn, thích ngủ</soThich>
-        <cauChamNgon>No pain No gain</cauChamNgon>
-        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
-        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
-        <photoTron>../assets/img/logo.png </photoTron>
-        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+        <sdt>0932191506</sdt>
+        <email>xuanhk19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_kimxuan.png </photoVuong>
+        <photoTron>../assets/img/HinhTron_kimxuan.png </photoTron>
+        <soThich>Thích đọc truyện tranh</soThich>
+        <cauChamNgon>What doesn't kill you make you stronger</cauChamNgon>
+        <fb>https://www.facebook.com/kimxuan.sunhuynh/</fb>
+        <gioiThieu>Vì tôi mơ được ăn thoả thích, vì tôi thấy rất vui vào những lúc ăn no. Giấc mơ đồ ăn ngập tràn ngập tràn muôn năm</gioiThieu>
     </sinhvien>
 
     <sinhvien>
@@ -70,19 +70,19 @@
 
     <sinhvien>
         <mssv>K194111623</mssv>
-        <hoTen>Trần Thị Anh Phương</hoTen>
         <id>#anhphuong</id>
-        <ngaySinh>1/9/2001</ngaySinh>
+        <hoTen>Trần Thị Anh Phương</hoTen>
+        <ngaySinh>12/02/2001</ngaySinh>
         <gioiTinh>Nữ</gioiTinh>
         <lop>K19411C</lop>
-        <sdt>0779695415</sdt>
-        <email>thuvna19411c@st.uel.edu.vn</email>
-        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
-        <soThich>Thích ăn, thích ngủ</soThich>
-        <cauChamNgon>No pain No gain</cauChamNgon>
-        <photoVuong>./assets/img/monancuangay.jpg </photoVuong>
-        <photoTron>../assets/img/logo.png </photoTron>
-        <gioiThieu>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </gioiThieu>
+        <sdt>0963532278</sdt>
+        <email>phuongtta19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_anhphuong.png </photoVuong>
+        <photoTron>../assets/img/HinhTron_anhphuong.png </photoTron>
+        <soThich>Thích học lập trình</soThich>
+        <cauChamNgon>No pain No gain No sleep</cauChamNgon>
+        <fb>https://www.facebook.com/PPongPongg/</fb>
+        <gioiThieu>Thức giấc lại thấy mình phản chiếu trong gương, Tàn úa vào xác xơ, Mong một bình minh có gì khác hơn, Như là nỗi đau lần đầu (nỗi đau lần đầu), Như là bài hát nghe từ nhiều năm về trước</gioiThieu>
     </sinhvien>
 </LOPHOC>
 
