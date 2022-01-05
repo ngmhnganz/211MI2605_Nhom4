@@ -2,7 +2,7 @@
   let navbar = document.querySelector(".navbar");
   let searchBox = document.querySelector(".search-box .bx-search");
   let searchBoxCancel = document.querySelector(".search-box .bx-x");
-  let userBox = document.querySelector(".userbox .fa-user-circle");
+  // let userBox = document.querySelector(".userbox .menu");
   
   searchBox.addEventListener("click", ()=>{
     navbar.classList.toggle("showInput");
@@ -12,14 +12,9 @@
       searchBox.classList.replace("bx-x" ,"bx-search");
     }
   });
-  userBox.addEventListener("click"), ()=>{
-    navbar.classList.toggle("showInput");
-    if(navbar.classList.contains("showInput")){
-      searchBox.classList.replace("fa-user-circle" ,"bx-x");
-    }else {
-      searchBox.classList.replace("bx-x" ,"fa-user-circle");
-    }
-  }
+  // userBox.addEventListener("click"), ()=>{
+  //   userBox.classList.toggle('active')
+  // }
   
   // sidebar open close js code
   let navLinks = document.querySelector(".nav-links");
@@ -32,6 +27,11 @@
   }
   menuCloseBtn.onclick = function() {
   navLinks.style.left = "-100%";
+  }
+
+  function menuToggle(){
+    const toggleMenu = document.querySelector(".action .menu");
+    toggleMenu.classList.toggle("active");
   }
   
   
