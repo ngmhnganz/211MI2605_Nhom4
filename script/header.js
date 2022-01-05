@@ -29,12 +29,6 @@
   navLinks.style.left = "-100%";
   }
 
-  function menuToggle(){
-    const toggleMenu = document.querySelector(".action .menu");
-    toggleMenu.classList.toggle("active");
-  }
-  
-  
   // sidebar submenu open close js code
   let htmlcssArrow = document.querySelector(".htmlcss-arrow");
   htmlcssArrow.onclick = function() {
