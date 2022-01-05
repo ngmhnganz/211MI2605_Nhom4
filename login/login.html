@@ -5,16 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css" type="text/css"/>
-        <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.4-web/css/all.css"
+    <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.4-web/css/all.css"
     <title>Đăng ký</title>
     <script src="../lib/jQuery.js"></script>
-    <style>
-
-    </style>
-    
+    <script src="../script/includeHTML.js"></script>
 </head>
 <body onload="initUI()">
-    <div id="header"></div>
+    <div id="header" w3-include-html="../component/header.html"></div>
     <button id="myBtn">Register</button>
 
 <!-- The Modal -->
@@ -35,54 +32,69 @@
                       <a class="ssignup">Đăng ký</a>
                     </li>
                 </ul>
-                <div id="login">
-                  <h3> ĐĂNG NHẬP</h3>
+                <div id="login" class="login">
+                  <h4 class="title"> ĐĂNG NHẬP</h4>
                   <form style="text-align: center;" class="cd-form">
                     <div style="display: inline-block">
-                    <div class="fieldset txtbox">
+                      <div class="fieldset txtbox">
                         <input class="has-padding" type="email" id="email" placeholder="Nhập email" required >
-                    </div>
+                      </div>
 
-                    <div class="fieldset txtbox">
+                      <div class="fieldset txtbox">
                         <input class="has-padding password" type="password" id="password" placeholder="Mật khẩu" required>
-                        <i id ="hide-password"class="fas fa-eye"style = "cursor:pointer"> </i>
+                        <i id ="hide-password"class="fas fa-eye"> </i>
+                      </div>
+
+                      <input type="submit" value="Đăng nhập">
                     </div>
-                    <input type="submit" value="Đăng nhập">
-                  </div>
-                    
-                    
                   </form>
-                  <p class="cd-form-bottom-message"> <a href="#0">Quên mật khẩu?</a></p>
+                  <p> <a href="#0" class="forgot">Quên mật khẩu?</a></p>
                 </div>
-                <div id="register">
+                <div id="register" style="text-align: center;">
                    <!-- log in form -->
-                   <h3 style="text-align: center;"> ĐĂNG KÝ</h3>
+                   <h4 class="title"> ĐĂNG KÝ</h4>
                    <form style="text-align: center;" class="cd-form">
-                    <p class="fieldset">
+                    <div style="display: inline-block" class="register fieldset txtbox ">
+                      <div class="fieldset txtbox" >
                         <input class="has-padding" type=text id="name" placeholder="Nhập tên" pattern="[A-Za-z]+" required>
-                    </p>
+                      </div>
                       
-                    <p class="fieldset">
+                      <div class="fieldset txtbox">
                         <input class="has-padding" type="email" id="email" placeholder="Nhập email" required >
-                    </p>
+                      </div>
             
-                    <p class="fieldset">
+                      <div class="fieldset txtbox">
                         <input class="has-padding password" type="password" id="password2" placeholder="Mật khẩu" required>
                         <i id ="hide-password2"class="fas fa-eye"> </i>
-                    </p>            
-                    <p class="fieldset">
+                      </div>         
+                         
+                      <div class="fieldset txtbox">
                         <input class="has-padding password" type="password" id="password1" placeholder="Nhập lại mật khẩu" required>
                         <i id ="hide-password1"class="fas fa-eye"> </i>
-                    </p>
-                    <p class="fieldset">
+                      </div>
+                    </div>
+                      <p class="fieldset">
                         <input type="checkbox" id="accept-terms">
                         <label for="accept-terms">Tôi đồng ý với 
                           <a href="#0">Điều khoản & Chính sách</a>
                         </label>
                       </p>
-                    <input type="submit" value="Đăng ký">
+                      <input type="submit" value="Đăng ký">
+                  
                   </form>
                   
+                </div>
+                <div id="reset">
+                  <h4 class="title"> QUÊN MẬT KHẨU </h4>
+                  <form style="text-align: center;" class="cd-form">
+                    <div style="display: inline-block">
+                      <div class="fieldset txtbox">
+                        <input class="has-padding" type="email" id="email" placeholder="Nhập email" required >
+                      </div>         
+                      <input type="submit" value="Gửi">
+                    </div>
+                  </form>
+                  <p> <a href="#0" class="back">Đăng nhập?</a></p>
                 </div>
             </div>
             
@@ -102,11 +114,20 @@
       $form_signup = $form_modal.find('#register'),
       $form_modal_tab = $('.cd-switcher'),
       $tab_login = $form_modal_tab.children('li').eq(0).children('a'),
-      $tab_signup = $form_modal_tab.children('li').eq(1).children('a');
+      $tab_signup = $form_modal_tab.children('li').eq(1).children('a'),
+      $form_forgot_password = $form_modal.find('#reset');
 
       $('.cd-switcher').click(function() {
         event.preventDefault();
           ( $(event.target).is( $tab_login) ) ? login_selected() : signup_selected();
+      });
+      $('.forgot').click(function(){
+        event.preventDefault();
+        forgot_password_selected();
+      });
+      $('.back').click(function(){
+        event.preventDefault();
+        login_selected();
       });
 
   function login_selected(){
@@ -114,12 +135,19 @@
     $form_signup.removeClass('is-selected');
     $tab_login.addClass('selected');
     $tab_signup.removeClass('selected');
+    $form_forgot_password.removeClass('is-selected');
   }
   function signup_selected(){
     $form_login.removeClass('is-selected');
     $form_signup.addClass('is-selected');
     $tab_login.removeClass('selected');
     $tab_signup.addClass('selected');
+    $form_forgot_password.removeClass('is-selected');
+  }
+  function forgot_password_selected(){
+    $form_login.removeClass('is-selected');
+    $form_signup.removeClass('is-selected');
+    $form_forgot_password.addClass('is-selected');
   }
   $("#hide-password").click(function(){
     if ($("#password").attr("type") === "password") {
@@ -142,7 +170,14 @@
             $("#password2").attr("type", "password");
     }
   });
-  
-</script>
 
+//         //back to login from the forgot-password form
+//         $back_to_login_link.on('click', function(event){
+//           event.preventDefault();
+//           login_selected();
+//         }
+// </script>
+<script>
+   includeHTML();
+</script>
 </html>
