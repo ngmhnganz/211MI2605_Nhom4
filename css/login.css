@@ -14,7 +14,11 @@
   animation-duration: 0.4s;
   border: 6px solid #F58A42;
   }
-  /* Add Animation */
+  div.fieldset.fieldset.txtbox i{
+    margin-top: 7px;
+    margin-left: 5px;
+  }
+    /* Add Animation */
   @-webkit-keyframes animatetop {
   from {top:-300px; opacity:0} 
   to {top:0; opacity:1}
@@ -85,9 +89,19 @@
   .cd-switcher a.selected {
   cursor:default;
   }
+  .fieldset {
+    display: flex;
+    padding-left: 100px;
+  }
   .fieldset i:hover{
     cursor: pointer;
   }
+  .fieldset.txtbox{
+    display: flex;
+    padding: 0px 0px 10px 10px;
+
+  }
+
   .cd-switcher a {
     height: 70px;
     line-height: 70px;
