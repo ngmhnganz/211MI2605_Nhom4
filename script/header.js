@@ -12,9 +12,6 @@
       searchBox.classList.replace("bx-x" ,"bx-search");
     }
   });
-  // userBox.addEventListener("click"), ()=>{
-  //   userBox.classList.toggle('active')
-  // }
   
   // sidebar open close js code
   let navLinks = document.querySelector(".nav-links");
