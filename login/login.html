@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css" type="text/css"/>
+        <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.4-web/css/all.css"
+    <title>Đăng ký</title>
+    <script src="../lib/jQuery.js"></script>
+    <style>
+
+    </style>
+    
+</head>
+<body onload="initUI()">
+    <div id="header"></div>
+    <button id="myBtn">Register</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+        <div class="sep" style="text-align: center;">
+            <div class="left">
+                <img class="imglogin" src="/assets/img/login.png"  >
+            </div>
+            <div class="right" >
+                <ul class="cd-switcher" >
+                    <li>
+                      <a class="slogin">Đăng nhập</a>
+                    </li>
+                    <li>
+                      <a class="ssignup">Đăng ký</a>
+                    </li>
+                </ul>
+                <div id="login">
+                  <h3> ĐĂNG NHẬP</h3>
+                  <form style="text-align: center;" class="cd-form">
+                    <p class="fieldset">
+                        <input class="has-padding" type="email" id="email" placeholder="Nhập email" required >
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="has-padding password" type="password" id="password" placeholder="Mật khẩu" required>
+                        <i id ="hide-password"class="fas fa-eye"style = "cursor:pointer"> </i>
+                    </p>
+                    
+                    <input type="submit" value="Đăng nhập">
+                  </form>
+                  <p class="cd-form-bottom-message"> <a href="#0">Quên mật khẩu?</a></p>
+                </div>
+                <div id="register">
+                   <!-- log in form -->
+                   <h3 style="text-align: center;"> ĐĂNG KÝ</h3>
+                   <form style="text-align: center;" class="cd-form">
+                    <p class="fieldset">
+                        <input class="has-padding" type=text id="name" placeholder="Nhập tên" pattern="[A-Za-z]+" required>
+                    </p>
+                      
+                    <p class="fieldset">
+                        <input class="has-padding" type="email" id="email" placeholder="Nhập email" required >
+                    </p>
+            
+                    <p class="fieldset">
+                        <input class="has-padding password" type="password" id="password2" placeholder="Mật khẩu" required>
+                        <i id ="hide-password2"class="fas fa-eye"> </i>
+                    </p>            
+                    <p class="fieldset">
+                        <input class="has-padding password" type="password" id="password1" placeholder="Nhập lại mật khẩu" required>
+                        <i id ="hide-password1"class="fas fa-eye"> </i>
+                    </p>
+                    <p class="fieldset">
+                        <input type="checkbox" id="accept-terms">
+                        <label for="accept-terms">Tôi đồng ý với 
+                          <a href="#0">Điều khoản & Chính sách</a>
+                        </label>
+                      </p>
+                    <input type="submit" value="Đăng ký">
+                  </form>
+                  
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+
+</div>
+</body>
+<script>
+  function initUI(){
+    login_selected()
+  }
+  
+  var  $form_modal = $('.right'),
+      $form_login = $form_modal.find('#login'),
+      $form_signup = $form_modal.find('#register'),
+      $form_modal_tab = $('.cd-switcher'),
+      $tab_login = $form_modal_tab.children('li').eq(0).children('a'),
+      $tab_signup = $form_modal_tab.children('li').eq(1).children('a');
+
+      $('.cd-switcher').click(function() {
+        event.preventDefault();
+          ( $(event.target).is( $tab_login) ) ? login_selected() : signup_selected();
+      });
+
+  function login_selected(){
+    $form_login.addClass('is-selected');
+    $form_signup.removeClass('is-selected');
+    $tab_login.addClass('selected');
+    $tab_signup.removeClass('selected');
+  }
+  function signup_selected(){
+    $form_login.removeClass('is-selected');
+    $form_signup.addClass('is-selected');
+    $tab_login.removeClass('selected');
+    $tab_signup.addClass('selected');
+  }
+  $("#hide-password").click(function(){
+    if ($("#password").attr("type") === "password") {
+            $("#password").attr("type", "text");
+    } else {
+            $("#password").attr("type", "password");
+    }
+  });
+  $("#hide-password1").click(function(){
+    if ($("#password1").attr("type") === "password") {
+            $("#password1").attr("type", "text");
+    } else {
+            $("#password1").attr("type", "password");
+    }
+  });
+  $("#hide-password2").click(function(){
+    if ($("#password2").attr("type") === "password") {
+            $("#password2").attr("type", "text");
+    } else {
+            $("#password2").attr("type", "password");
+    }
+  });
+  
+</script>
+
+</html>
