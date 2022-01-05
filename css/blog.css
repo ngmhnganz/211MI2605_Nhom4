@@ -4218,7 +4218,7 @@
   *
   * ------------------------------------------------------------------- */
  .s-footer {
-     background-color : var(--color-gray-4);
+     background-color : var(--primary-color);
      font-weight      : 300;
      padding-top      : var(--vspace-4_5);
      padding-bottom   : var(--vspace-3_5);
@@ -4279,7 +4279,7 @@
      padding-top : var(--vspace-0_25);
      font-size   : var(--text-sm);
      line-height : var(--vspace-0_75);
-     color       : var(--color-gray-14);
+     color       : var(--text-color);
  }
  
  .s-footer__bottom a {
@@ -4390,14 +4390,14 @@
      height           : 6rem;
      width            : 6rem;
      border-radius    : 50%;
-     background-color : var(--color-gray-7);
+     background-color : var(--secondary-color);
      transition       : all .3s;
      position         : relative;
  }
  
  .ss-go-top a:focus,
  .ss-go-top a:hover {
-     background-color : black;
+     background-color : var(--primary-color)
  }
  
  .ss-go-top a:focus svg path,
@@ -4411,7 +4411,7 @@
  }
  
  .ss-go-top svg path {
-     stroke : black;
+     stroke : white
  }
  
  .ss-go-top.link-is-visible {
