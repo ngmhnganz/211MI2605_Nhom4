@@ -3,6 +3,7 @@
     --secondary-color :#FFD5AC;
     --sub-light-color:#C8CBD0;
     --text-color: #3F414E;
+    --sub-text-color: #A1A4B2;
     --font : 'Montserrat', sans-serif;  
     --thin : 100;
     --extra-light : 200;
@@ -36,6 +37,10 @@ body{
 }
 .background-secondary-color {
     background-color: var(--secondary-color);
+}
+
+.background-sub-color {
+    background-color: #FEFEFE;
 }
 
 .mg-b{
