@@ -1,12 +1,18 @@
 @import url(./constant.css);
 h3{
     text-align: center;
-    margin-top: 80px;
     font-family: var(--font);
     color: var(--primary-color);
+    font-size: 24px;
 }
 .cart-page{
     margin: 80px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+.total-price{
+    margin-top: 20px;
     background-color: white;
     border-radius: 20px;
     padding: 20px;
@@ -43,10 +49,6 @@ td input{
     text-align: center;
     font-family: var(--font);
 }
-.total-price table{
-    border-top: 1px solid var(--sub-light-color);
-    width: 100%;
-}
 td:last-child{
     text-align: right;
 }
@@ -56,7 +58,7 @@ td:last-child{
     text-align: center;
     color: var(--primary-color);
 }
-button{
+.btnthanhtoan{
     background-color: var(--primary-color);
     color: white;
     font-size: 24px;
@@ -72,29 +74,91 @@ button{
 }
 .qty{
     width: 1vw;
-
+    border-top: 1px solid var(--sub-light-color);
 }
 #totalCost{
-    text-align: end;
-    width: 100px;
-}
-.qty table{
-    margin-right: 0;
+    text-align:center;
+    display: block;
+    border: none;
+    border-top: 1px solid var(--sub-light-color);
 }
 .cart-info-row{
     width: 80%;
+    max-width: 600px;
+    border-top: 1px solid var(--sub-light-color);
 }
 
 @media  (max-width:739px) {
     .cart-info{
         font-size: 14px;
+    }
+    .icon
+    {
+        width: 16px;
+        height: 16px;
+    }
+    .icon-cancel{
+        width: 16px;
+    }
+    #productQty{
+        width: 15px;
+        font-size: 14px;
+        padding: 0;
+    }
+    .prod-img{
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+    #totalCost{
+        font-size: 14px;
+        width: 80px;
+    height: 80px;
+    line-height: 100px;
+    }
+    .cart-page{
+        padding: 15px;
+        margin: 80px 40px 0px 40px;
+    }
+    .total-price{
+        margin: 20px 40px;
+    }
 } 
 
 @media  (min-width:740px) and (max-width:1023px) {
     .cart-info{
         font-size: 16px;
-} 
+    }
+    #totalCost{
+        font-size: 14px;
+        width: 80px;
+    height: 80px;
+    line-height: 100px;
+    }
+    .cart-page{
+        padding: 20px;
+        margin: 150px 80px 0px 80px;
+    }
+    .total-price{
+        margin: 20px 80px;
+    }
+}
 
 @media  (min-width:1024px) {
-
+    #totalCost{
+        font-size: 20px;
+        width: 120px;
+    height: 100px;
+    line-height: 100px;
+    }
+    .cart-page{
+        padding: 20px;
+        margin: 150px 80px 0px 80px;
+    }
+    .icon-cancel{
+        width: 24px;
+    }
+    .total-price{
+        margin: 20px 80px;
+    }
 }

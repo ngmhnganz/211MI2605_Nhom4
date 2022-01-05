@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+    <script src="../lib/jQuery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/giohang.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/thanhtoan.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
+    <script> 
+        $(function(){
+          $("#header").load("../component/header.html"); 
+          $("#footer").load("../component/footer.html"); 
+        });
+        </script>   
+</head>
+<body class="background-secondary-color">
+    <div id="header"></div>
+    <div class="base">
+        <div class="grid wide">
+            <div class="row" style="position: relative;">
+                <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b">
+                    <div class="address-title">
+                        <img src="../assets/img/ic_address.svg"/>
+                        Địa chỉ nhận hàng
+                    </div>
+                </div>
+
+                <div class="col l-6 m-6 c-12 mg-t mg-r mg-l mg-b">
+                    <div class="address-detail">
+                        Tên người nhận: Nguyễn Thị Lung Linh<br/>
+                        Số điện thoại: 0987987987<br/>
+                        Địa chỉ: Ngôi nhà hạnh phúc
+                    </div>
+                </div>  
+                
+                <div class="col l-2 m-2 c-12 mg-t mg-r mg-l mg-b">
+                    <a href="#" class="changeAdd">Đổi địa chỉ</a>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="cart-page" style="margin-top: 20px;">
+        <h3>NỘI DUNG THANH TOÁN</h3>
+        <div class="product"></div>
+        <div class="base">
+            <div class="grid wide">
+                <div class="row">
+                    <input id="makm" type="text" name="makm" placeholder="Nhập mã khuyến mãi của bạn"/>
+                    <button class="smallbutton">SỬ DỤNG</button>
+                </div>
+            </div>
+        </div>
+        <div class="payment">
+            <b class="pm-title">PHƯƠNG THỨC THANH TOÁN</b>
+            <div class="grid wide">
+                <div class="pm-item">
+                    <input name="pm-method" type="radio" value="COD"/>Giao hàng tận nơi (COD)
+                </div>
+                <div class="pm-item">
+                    <input name="pm-method" type="radio" value="COD"/>Zalopay
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Tổng tiền hàng</td>
+                    <td>50.000 đ</td>
+                </tr>
+                <tr>
+                    <td>Khuyến mãi</td>
+                    <td>-5.000 đ</td>
+                </tr>
+                <tr>
+                    <td>Phí vận chuyển</td>
+                    <td>10.000 đ</td>
+                </tr>
+                <tr>
+                    <td><b>Tổng thanh toán</b></td>
+                    <td><b>55.000 đ</b></td>
+                </tr>
+            </table>
+            <button class="btnthanhtoan">Thanh toán</button>
+        </div>
+    <div id="footer"></div>
+    <script src="../script/giohang.js" async type="module"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.add-title{
+    font-family: var(--font );
+    color: var(--primary-color);
+    font-size: 24px;
+    font-style: var(--medium);
+}
+table{
+    padding: 5px;
+    width: 100%;
+    border-top: 1px solid var(--sub-light-color);
+}

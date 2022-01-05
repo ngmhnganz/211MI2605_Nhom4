@@ -41,26 +41,29 @@ onValue(productRef, (snapshot) => {
         return `
         <table>
         <tr class="${product.productID}">
+        <td>
+        <img class="prod-img" src="${product.productImg}"/>
+        </td>
         <td class="cart-info-row">
             <div class="cart-info">
-                <img class="prod-img" src="${product.productImg}"/>
+
                 <div>
                     <p>${product.productName}</p>
-                    <p id="productPrice">Price: <span id="productPrice_value">${product.productPrice}</span>đ</p>
+                    <p id="productPrice">Giá: <span id="productPrice_value">${product.productPrice}</span> đ</p>
                 </div>
             </div>
         </td>
         <td class="qty">
             <table>
                 <tr class="${product.productID}">
-                    <td><img id="minusQty" class="icon" src="/assets/img/icon-minus.svg" onclick="minusQty()"/></td>
+                    <td><img id="minusQty" class="icon" src="/assets/img/icon-minus.svg" onclick="minusQty();calculateTotal();"/></td>
                     <td><input id="productQty" style="border: none;" value="1" name="proQty" onchange="calculateTotal()"/></td>
-                    <td><img id="addQty" class="icon" src="/assets/img/icon-plus.svg" onclick="addQty()"/></td>
+                    <td><img id="addQty" class="icon" src="/assets/img/icon-plus.svg" onclick="addQty();calculateTotal();"/></td>
                 </tr>
             </table>
         </td>
-        <td id="totalCost">50.000 đ</td>
-        <td>
+        <td id="totalCost"><span>${product.productPrice}</span> đ</td>
+        <td style="border-top: 1px solid var(--sub-light-color);">
             <img class="icon" src="/assets/img/icon-cancel-cart.svg"/>
         </td>
     </tr>

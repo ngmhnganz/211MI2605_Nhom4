@@ -1,0 +1,84 @@
+@import url(./constant.css);
+.base{
+    background-color: white;
+    border-radius: 20px;
+    margin: 80px 80px 10px 80px;    
+    padding: 10px;
+}
+.address-title{
+    font-family: var(--font);
+    font-weight: bold;
+    color:var();
+}
+.changeAdd{
+    position:absolute;
+    bottom: 10px;
+    right: 0;
+    margin-right: 10px;
+}
+@media  (max-width:739px) {
+    .base{
+        margin: 80px 40px 0px 40px;
+    }
+    .smallbutton{
+        font-size: 12px;
+        padding: 8px;
+        width: 20%;
+    }
+    
+} 
+
+@media  (min-width:740px) and (max-width:1023px) {
+    .base{
+        margin: 80px 80px 0px 80px;  
+    }
+}
+
+@media  (min-width:1024px) {
+    .base{
+        margin: 150px 80px 0px 80px;  
+    }
+    .smallbutton{
+        font-size: 24px;
+        padding: 0;
+        width: 15%;
+    }
+    #makm{
+        width: 100%;
+        font-size: 24px;
+        padding: 5px;
+    }
+}
+#makm{
+    width: 78%;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid var(--sub-light-color);
+}
+.smallbutton{
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    border: none;
+    margin-left: 5px;
+}
+.pm-item{
+    background-color: var(--secondary-color);
+    margin: 5px;
+    border-radius: 30px;
+    padding: 10px;
+    font-family: var(--font);
+}
+.pm-title{
+    font-family: var(--font);
+    color: var(--primary-color);
+    padding: 10px;
+}
+.payment{
+    box-shadow: 1px 2px var(--sub-light-color);
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px 20px 10px 20px;    
+    padding: 10px;
+}
