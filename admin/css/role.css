@@ -29,12 +29,12 @@ button{
     padding-left: 20px;
                 
 }
-#Delete{
+.Delete{
     background-color: #FFC183;
 }
 button:hover{
     background-color: #EB8542;
 }
-#Delete:hover{
+.Delete:hover{
     background-color: #EB8542;
 }
