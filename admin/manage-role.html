@@ -12,6 +12,31 @@
     <link rel="stylesheet" href="/admin/css/role.css"
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="/lib/jQuery.js"></script>
+    <script>
+        parser= new DOMParser();
+        xmlDoc=parser.parseFromString(text,"text/xml");
+    
+        function load(){
+        var x,i,table;
+        table="<tr><th> Mã NV </th><th> Tên nhân viên </th><th > Tài khoản </th><th> Chức vụ </th><th> Nơi làm việc </th><th> </th><th> </th></tr>"
+        x=xmlDoc.getElementsByTagName("nhanvien")
+        for(i = 0; i < x.legth; i++){
+            table +="<tr><td class='col c-1' >"+
+                        x[i].getElementsByTagName("MaNV")[0].childNodes[0].nodeValue+
+                        "</td><td class='col c-2'>"+
+                        x[i].getElementsByTagName("HoTen")[0].childNodes[0].nodeValue+
+                        "</td><td class='col c-3'>"+
+                        x[i].getElementsByTagName("TK")[0].childNodes[0].nodeValue+
+                        "</td><td class='col c-2'>"+
+                        x[i].getElementsByTagName("ChucVu")[0].childNodes[0].nodeValue+
+                        "</td><td class='col c-2'>"+
+                        x[i].getElementsByTagName("Noilv")[0].childNodes[0].nodeValue+
+                        "</td></tr>"
+        }
+        document.getElementById("tblRole").innerHTML=table;
+        }
+
+    </script>
 </head>
 <body">
     <div id="admin-container">
@@ -39,7 +64,7 @@
                     <div onload="show()">
                         <table rules="rows" id="tblRole" >
                             <tr>
-                                <th class="col c-1 "> Mã NV </th>
+                                <th class="col c-1"> Mã NV </th>
                                 <th class="col c-2"> Tên nhân viên </th>
                                 <th class="col c-3" > Tài khoản </th>
                                 <th class="col c-2"> Chức vụ </th>
