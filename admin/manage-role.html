@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Phân quyền</title>
     <link rel="stylesheet" href="./css/constant_admin.css">
+    <link rel="stylesheet" href="/css/grid_system.css">
     <link rel="stylesheet" href="/admin/css/admin-header.css">
     <link rel="stylesheet" href="/admin/css/menu.css">
-    <link rel="stylesheet" href="/assets/font/bootstrap-icons-1.7.2/bootstrap-icons.css">
+    <link rel="stylesheet" href="/admin/css/role.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="/lib/jQuery.js"></script>
 </head>
 <body">
@@ -24,15 +26,54 @@
                       $('#admin-header').load('./component/admin-header.html')
                 </script>
             </div>
-            <div id="container-section">
-                <div id="content-section" style="background-color: tomato; height: 100vh;">
-                    //chỗ code đoạn giữa, lúc code nhớ bỏ thuộc tính style
+            <div id="container-section" class="grid">
+                <div id="content-section" class="wide">
+                    <div class="row btntop">
+                        <div class=" btnne">
+                            <button class="btn" id="Create"> <i class="fas fa-plus-circle"></i> Tạo chức vụ</button>
+                        </div>
+                        <div class=" btnne">
+                            <button class="btn" id="Add"><i class="fas fa-user-plus"></i> Thêm nhân viên</button>
+                        </div>
+                    </div>
+                    <div onload="show()">
+                        <table rules="rows" id="tblRole" >
+                            <tr>
+                                <th class="col c-1 "> Mã NV </th>
+                                <th class="col c-2"> Tên nhân viên </th>
+                                <th class="col c-3" > Tài khoản </th>
+                                <th class="col c-2"> Chức vụ </th>
+                                <th class="col c-2" > Nơi làm việc </th>
+                                <th class="col c-1"> </th>
+                                <th class="col c-1"> </th>
+                            </tr>
+                            <tr>
+                                <td class="col c-1" >K19411629</td>
+                                <td class="col c-2">Võ Nguyễn Anh Thi</td>
+                                <td class="col c-3">thivna19411c@uel.edu.vn</td>
+                                <td class="col c-2" >Sinh Viên</td>
+                                <td class="col c-2">UEL</td>
+                                <td class="col c-1"> <button class="btn" id="Change"> Sửa</button></td>
+                                <td class="col c-1"> <button class="btn" id="Delete"> Xóa</button></td>
+                            </tr>
+                            <tr>
+                                <td class="col c-1" id="MaNV"></td>
+                                <td class="col c-2"id="HoTen"></td>
+                                <td class="col c-3" id="TK"></td>
+                                <td class="col c-2" id="ChucVu"></td>
+                                <td class="col c-2" id="Noilv"></td>
+                                <td class="col c-1" > <button class="btn" id="Change"> Sửa</button></td>
+                                <td class="col c-1"> <button class="btn" id="Delete"> Xóa</button></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div id="detail-section"style="background-color: yellow; height: 100vh;">
-                    //chỗ code đoạn bên phải, ko dùng thì bỏ trống, lúc code nhớ bỏ thuộc tính style</div>
+                <div id="detail-section">
+                </div>
             </div>
             
         </div>
     </div>
 </body>
+
 </html>

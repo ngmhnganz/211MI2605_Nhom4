@@ -1,0 +1,40 @@
+table {
+    font-family: sans-serif;
+    width: 100%;
+}
+th,td{
+    padding: 10px;
+    text-align: center;
+}
+th{
+    background-color: rgb(233, 233, 233);
+    text-align: center;
+}
+button{
+    background-color: #F58A42;
+    color:white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+
+}
+
+.btntop{
+    padding-right: 20px;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.btnne{
+    padding-left: 20px;
+                
+}
+#Delete{
+    background-color: #FFC183;
+}
+button:hover{
+    background-color: #EB8542;
+}
+#Delete:hover{
+    background-color: #EB8542;
+}
