@@ -3,7 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase
 import { getDatabase, ref, onValue, child, get } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 
 const app = initializeApp(config)
-console.log(config)
 const database = getDatabase(app);
 
 //? bind document

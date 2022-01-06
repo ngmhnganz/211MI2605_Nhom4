@@ -67,6 +67,87 @@ nav .navbar{
   width: 150px;
   background: url('../assets/img/logo.png') center center / contain no-repeat;
 }
+
+.showUser{
+  display: flex !important;
+}
+
+/* !signed */
+
+.signed{
+  display: none;
+}
+
+/* !unsigned */
+.unsigned{
+  text-align: center;
+  display: none;
+  padding: 10px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.unsigned:hover{
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: var(--medium);
+}
+
+/*!User*/
+.action .user-box{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.action .user-box i{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.action .menu{
+  position: absolute;
+  padding: 0px 5px;
+  background: #fff;
+  width: 185px;
+  box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%)
+}
+.action:hover .menu{
+  visibility: visible;
+  opacity: 1;
+}
+.action .menu ul li{
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+.action .menu ul li i{
+  max-width: 20px;
+  margin-right: 5px;
+  transition: 0.5s;
+}
+.action .menu ul li a{
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+.action .menu ul li:hover a{
+  color: var(--secondary-color);
+}
+
 nav .navbar .nav-links{
   line-height: 70px;
   height: 100%;
@@ -148,7 +229,7 @@ nav .navbar .links li:hover .js-sub-menu{
 }
 .navbar .search-box{
   position: relative;
-   height: 40px;
+  height: 40px;
   width: 40px;
 }
 .navbar .search-box i{
@@ -192,6 +273,65 @@ nav .navbar .links li:hover .js-sub-menu{
   transform: rotate(45deg);
 }
 .search-box .input-box input{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  height: 35px;
+  width: 280px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 16px;
+  border: none;
+}
+/* .user-box */
+.navbar .user-box{
+  position: relative;
+   height: 40px;
+  width: 40px;
+}
+.navbar .user-box i{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: var(--text-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navbar .user-box .input-box{
+  position: absolute;
+  right: calc(100% - 40px);
+  top: 80px;
+  height: 60px;
+  width: 300px;
+  background: var(--secondary-color);
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+.navbar.showInput .user-box .input-box{
+  top: 65px;
+  opacity: 1;
+  pointer-events: auto;
+  background: var(--secondary-color);
+}
+.user-box .input-box::before{
+    content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: var(--secondary-color);
+  right: 10px;
+  top: -6px;
+  transform: rotate(45deg);
+}
+.user-box .input-box input{
   position: absolute;
   top: 50%;
   left: 50%;
