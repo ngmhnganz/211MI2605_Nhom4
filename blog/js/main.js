@@ -1,7 +1,4 @@
-/* ===================================================================
- * Spurgeon 1.0.0 - Main JS
- *
- * ------------------------------------------------------------------- */
+
 
 (function(html) {
 
@@ -206,25 +203,40 @@
 
     /* Back to Top
     * ------------------------------------------------------ */
-    const ssBackToTop = function() {
+    // const ssBackToTop = function() {
 
-        const pxShow = 900;
-        const goTopButton = document.querySelector(".ss-go-top");
+    //     const pxShow = 700;
+    //     const goTopButton = document.querySelector(".ss-go-top");
 
-        if (!goTopButton) return;
+    //     if (!goTopButton) return;
 
-        // Show or hide the button
-        if (window.scrollY >= pxShow) goTopButton.classList.add("link-is-visible");
+    //     // Show or hide the button
+    //     if (window.scrollY >= pxShow) goTopButton.classList.add("link-is-visible");
 
-        window.addEventListener('scroll', function() {
-            if (window.scrollY >= pxShow) {
-                if(!goTopButton.classList.contains('link-is-visible')) goTopButton.classList.add("link-is-visible")
-            } else {
-                goTopButton.classList.remove("link-is-visible")
-            }
-        });
+    //     window.addEventListener('scroll', function() {
+    //         if (window.scrollY >= pxShow) {
+    //             if(!goTopButton.classList.contains('link-is-visible')) goTopButton.classList.add("link-is-visible")
+    //         } else {
+    //             goTopButton.classList.remove("link-is-visible")
+    //         }
+    //     });
 
-    }; // end ssBackToTop
+    // }; 
+    const showOnPx = 100;
+const backToTopButton = document.querySelector(".ss-go-top")
+
+const scrollContainer = () => {
+  return document.documentElement || document.body;
+};
+
+document.addEventListener("scroll", () => {
+  if (scrollContainer().scrollTop > showOnPx) {
+    backToTopButton.classList.add("link-is-visible")
+  } else {
+    backToTopButton.classList.remove("link-is-visible")
+  }
+})
+    // end ssBackToTop
 
 
    /* smoothscroll

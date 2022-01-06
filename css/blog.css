@@ -89,12 +89,24 @@
   * ------------------------------------------------------------------- */
  :root {
  
+    --primary-color: #F58A42;
+    --secondary-color :#FFD5AC;
+    --sub-light-color:#C8CBD0;
+    --text-color: #3F414E;
+    --sub-text-color: #A1A4B2;
+    --font : 'Montserrat', sans-serif;  
+    --thin : 100;
+    --extra-light : 200;
+    --medium : 500;
+    --semi-bold : 600;
+    --bold : 700;
+    --black : 900;
      /* color-1(#04776F)
       * color-2(#DD614A)
       */
      --color-1                      : hsla(176, 93%, 24%, 1);
      --color-2                      : hsla(9, 68%, 58%, 1);
- 
+    
      /* theme color variations
       */
      --color-1-lighter              : hsla(176, 93%, 44%, 1);
