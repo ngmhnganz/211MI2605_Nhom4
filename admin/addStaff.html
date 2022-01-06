@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm nhân viên</title>
+    <link rel="stylesheet" href="./css/constant_admin.css">
+    <link rel="stylesheet" href="/admin/css/admin-header.css">
+    <link rel="stylesheet" href="/admin/css/menu.css">
+    <link rel="stylesheet" href="./css/createRole.css">
+    <link rel="stylesheet" href="/assets/font/bootstrap-icons-1.7.2/bootstrap-icons.css">
+    <script src="/lib/jQuery.js"></script>
+
+    <style>
+        input[type=text]{
+    font-family: var(--font);
+    width: 100%;
+    
+}
+        table{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--font);
+    font-size: 16px;
+}
+td input,select{
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    margin: 5px 0 5px 50px;
+    border-radius: 5px;
+    border: 1px solid var(--sub-light-color);
+}
+td label{
+    width: 100%;
+    font-weight: 600;
+}
+    </style>
+</head>
+<body style="background-color: #f3f3f3;">
+    <div id="admin-container">
+        <div id="menu-section">
+            <script>
+                 $('#menu-section').load('./component/menu.html')
+            </script>
+        </div>
+        <div id="body-section">
+            <div id="admin-header">
+                <script>
+                      $('#admin-header').load('./component/admin-header.html')
+                </script>
+            </div>
+            <div id="container-section">
+                <div id="content-section">
+                    <div class="base">
+                        <table>
+                            <tr>
+                                <td><label for="maNV">Mã NV</label></td>
+                                <td><input name="maNV" type="text" placeholder="Nhập mã nhân viên"/></td>
+                            </tr>
+                            <tr>
+                                <td><label for="tenNV">Tên nhân viên</label></td>
+                                <td><input name="tenNV" type="text" placeholder="Nhập tên nhân viên"/></td>
+                            </tr>
+                            <tr>
+                                <td><label for="accNV">Tài khoản</label></td>
+                                <td><input name="accNV" type="text" placeholder="Nhập tài khoản đăng nhập"/></td>
+                            </tr>
+                            <tr>
+                                <td><label>Chọn chức vụ</label></td>
+                                <td>
+                                    <select>
+                                        <option value="" disabled selected hidden>Chọn chức vụ</option>
+                                        <option value="Nhân viên bán hàng">Nhân viên bán hàng</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Nơi làm việc</label></td>
+                                <td>
+                                    <select>
+                                        <option value="" disabled selected hidden>Chọn nơi làm việc</option>
+                                        <option value="HCM">TP Hồ Chí Minh</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btnLuu">LƯU</button>
+                    </div>
+                </div>
+                <div id="detail-section"style="background-color: yellow; height: 100vh;">
+                    //chỗ code đoạn bên phải, ko dùng thì bỏ trống, lúc code nhớ bỏ thuộc tính style</div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
