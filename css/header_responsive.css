@@ -68,12 +68,31 @@ nav .navbar{
   background: url('../assets/img/logo.png') center center / contain no-repeat;
 }
 
+.showUser{
+  display: flex !important;
+}
+
+/* !signed */
+
+.signed{
+  display: none;
+}
+
+/* !unsigned */
+.unsigned{
+  text-align: center;
+  display: none;
+  padding: 10px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.unsigned:hover{
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: var(--medium);
+}
+
 /*!User*/
-/* .action{
-  position: fixed;
-  top: 20px;
-  right: 30px;
-} */
 .action .user-box{
   position: relative;
   width: 60px;
@@ -210,7 +229,7 @@ nav .navbar .links li:hover .js-sub-menu{
 }
 .navbar .search-box{
   position: relative;
-   height: 40px;
+  height: 40px;
   width: 40px;
 }
 .navbar .search-box i{

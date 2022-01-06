@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css" type="text/css"/>
+    <script src="../data/firebase-config.js"></script>
     <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.4-web/css/all.css"
     <title>Đăng ký</title>
     <script src="../lib/jQuery.js"></script>
@@ -37,15 +38,15 @@
                   <form style="text-align: center;" class="cd-form">
                     <div style="display: inline-block">
                       <div class="fieldset txtbox">
-                        <input class="has-padding inputText" type="email" id="email" placeholder="Nhập email" required >
+                        <input class="has-padding inputText" type="email" id="emailLogin" placeholder="Nhập email" required >
                       </div>
 
                       <div class="fieldset txtbox">
-                        <input class="has-padding password inputText" type="password" id="password" placeholder="Mật khẩu" required>
+                        <input class="has-padding password inputText" type="password" id="passwordLogin" placeholder="Mật khẩu" required>
                         <i id ="hide-password"class="fas fa-eye"> </i>
                       </div>
+                      <button type="button" class="button" id='btnDangNhap'>Đăng nhập</button>
 
-                      <input type="submit" value="Đăng nhập">
                     </div>
                   </form>
                   <p> <a href="#0" class="forgot">Quên mật khẩu?</a></p>
@@ -60,11 +61,11 @@
                       </div>
                       
                       <div class="fieldset txtbox">
-                        <input class="has-padding inputText" type="email" id="email" placeholder="Nhập email" required >
+                        <input class="has-padding inputText" type="email" id="emailSignup" placeholder="Nhập email" required >
                       </div>
             
                       <div class="fieldset txtbox"> 
-                        <input class="has-padding password inputText" type="password" id="password2" placeholder="Mật khẩu" required>
+                        <input class="has-padding password inputText" type="passwordSignup" id="password2" placeholder="Mật khẩu" required>
                         <i id ="hide-password2"class="fas fa-eye"> </i>
                       </div>         
                          
@@ -79,7 +80,7 @@
                           <a href="#0">Điều khoản & Chính sách</a>
                         </label>
                       </p>
-                      <input type="submit" value="Đăng ký">
+                      <button type="button" id="btnDangKy" class="button">Đăng ký</button>
                   
                   </form>
                   
@@ -89,9 +90,9 @@
                   <form style="text-align: center;" class="cd-form">
                     <div style="display: inline-block">
                       <div class="fieldset txtbox">
-                        <input class="has-padding inputText" type="email" id="email" placeholder="Nhập email" required >
-                      </div>         
-                      <input type="submit" value="Gửi">
+                        <input class="has-padding inputText" type="email" id="emailReset" placeholder="Nhập email" required >
+                      </div>        
+                      <button type="button" class="button" id="btnGui">Gửi</button> 
                     </div>
                   </form>
                   <p> <a href="#0" class="back">Đăng nhập?</a></p>
@@ -176,8 +177,9 @@
 //           event.preventDefault();
 //           login_selected();
 //         }
-// </script>
+</script>
 <script>
    includeHTML();
 </script>
+<script src="../script/auth.js" type="module"></script>
 </html>
