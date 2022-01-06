@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về chúng tôi</title>
+    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
+    <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
+    <link rel="stylesheet" href="./css/ve-chung-toi.css" type="text/css"/>
+    <script src="./script/includeHTML.js"></script>
+    <script src="./script/ve-chung-toi.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body onload="show()">
+  <!-- Header -->
+  <div w3-include-html="../component/header.html"></div>
+
+  <!--Hình nhóm-->
+  <div class="hinh-nhom" style="margin-top: 100px;">
+    <img src="./assets/img/hinhNhom.png">
+  </div>
+  <!--Câu chuyện của trứng-->
+  <div class="grid wide">
+    <div class="row">
+      <div class="col l-12 m-12 c-12">
+        <div class="title">
+          Câu chuyện của "Trứng"
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l-4 m-4 c-12 img mg-t mg-r mg-l mg-b hinh-logo">
+        <img src="./assets/img/logo.png" alt="Hình logo">
+      </div>
+      <div class="col l-8 m-8 c-12 img mg-t mg-r mg-l mg-b hinh-logo cauchuyen">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Est quaerat tempora, voluptatum quas facere dolorum aut cumque 
+        nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Est quaerat tempora, voluptatum quas facere dolorum aut cumque 
+        nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Est quaerat tempora, voluptatum quas facere dolorum aut cumque 
+        nihil nulla harum nemo distinctio quam blanditiis dignissimos. </p>
+      </div>
+    </div>
+  </div>
+
+  <!--Đội ngũ nhân viên-->
+
+  <div class="background-primary-color" >
+    <div class="grid wide">
+      <div class="row">
+        <div class="gioithieu">
+          ĐỘI NGŨ NHÂN VIÊN
+        </div>
+      </div>      
+    </div>
+
+    <div class="team" id="team">
+    </div>
+  </div>
+
+  <!--Phần của thư-->
+  <div class="background-secondary-color">
+    <div class="grid wide">
+      <div class="row hang-thanhvien" id="anhthu">
+      </div>
+    </div>
+  </div>
+
+  <!--Phần của ngân-->
+  <div class="grid wide">
+    <div class="row hang-thanhvien" id="minhngan">
+    </div>
+  </div>
+
+  <!--Phần của xuân-->
+  <div class="background-secondary-color">
+    <div class="grid wide">
+      <div class="row hang-thanhvien" id="kimxuan">
+      </div>
+    </div>
+  </div>
+
+
+  <!--Phần của thi-->
+  <div class="grid wide">
+    <div class="row hang-thanhvien" id="anhthi">
+    </div>
+  </div>
+
+  <!--Phần của phương-->
+  <div class="background-secondary-color">
+    <div class="grid wide">
+      <div class="row hang-thanhvien" id="anhphuong">
+      </div>
+    </div>
+  </div>
+
+
+
+    <script>
+        includeHTML();
+    </script>
+</body>
+</html>
