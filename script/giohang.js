@@ -52,6 +52,9 @@ function getData(uid){
         </tr>
         </table>`
         })
+
+        // tính tổng tiền, khuyến mãi, phí vẫn chuyện , tổng thành toán
+
         htmls.push(`
         <div class="total-price">
             <table>
