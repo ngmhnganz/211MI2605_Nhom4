@@ -49,27 +49,27 @@
     <script src="../script/giohang.js" async type="module"></script>
 
     <script>
-        function calculateTotal(){
-            var price = document.getElementById("productPrice_value").innerHTML;
-            console.log(document.getElementById("productPrice_value"))
-            var qty=document.getElementById("productQty").value;
+        function calculateTotal(id){
+            var price = document.getElementById("productPrice_value"+id).innerHTML;
+            console.log(document.getElementById("productPrice_value"+id))
+            var qty=document.getElementById("productQty"+id).value;
             console.log(price)
             var total = parseFloat(price) *  parseFloat(qty);
-            document.getElementById("totalCost").innerHTML= total +"VNĐ";
+            document.getElementById("totalCost"+id).innerHTML= total +"VNĐ";
         }
 
         function delItem(){
             //delete item in cart
         }
-        function addQty(){
+        function addQty(id){
             //thêm số lượng khi nhấn dấu cộng
-            var qty= parseFloat(document.getElementById("productQty").value);
-            document.getElementById("productQty").value=qty+1;
+            var qty= parseFloat(document.getElementById("productQty"+id).value);
+            document.getElementById("productQty"+id).value=qty+1;
         }
-        function minusQty(){
+        function minusQty(id){
             //giảm số lượng khi click dấu trừ
-            var qty=parseFloat(document.getElementById("productQty").value);
-            var classname = document.getElementById('productQty').parentNode.parentElement.attributes.class.value;
+            var qty=parseFloat(document.getElementById("productQty"+id).value);
+            var classname = document.getElementById('productQty'+id).parentNode.parentElement.attributes.class.value;
             if(qty<1){
                 if (confirm("Bạn muốn xóa sản phẩm?")) {
                     document.getElementsByClassName(classname)[0].innerHTML=""
@@ -79,7 +79,7 @@
                     
                 }
             }else{
-            document.getElementById("productQty").value=qty-1;
+            document.getElementById("productQty"+id).value=qty-1;
             }
         }
     </script>

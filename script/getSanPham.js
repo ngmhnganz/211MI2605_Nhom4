@@ -55,7 +55,6 @@ function api(ref) {
     })
 }
 
-
 $('#btnOrder').click(function(){
     var uid = localStorage.getItem('uid');
     set(child(databaseRef,`User/${uid}/userCart/id${id}`), {
@@ -63,5 +62,21 @@ $('#btnOrder').click(function(){
         price: parseFloat($('#sanpham-price').text() ),
         quantity : parseFloat($('#sanpham-amount').text()),
         id: id
+      })
+      .then(()=>{
+        toast({
+            title: "Đặt hành thành công!",
+            message: "Bạn đã thêm thành công sản phẩm "+ $('#sanpham-name').text(),
+            type: "success",
+            duration: 5000
+          });
+      })
+      .error(()=> {
+        toast({
+            title: "Có lỗi xảy ra",
+            message: "Đã có lỗi xảy ra, bạn hãy tải lại trang và thử lại nhé",
+            type: "error",
+            duration: 5000
+          });
       });
 })

@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-import { getDatabase, ref, onValue, child, get, query, orderByChild, equalTo} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+import { getDatabase, ref,  get} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 import { getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 
 const app = initializeApp(config);
@@ -32,79 +32,30 @@ function getData(uid){
                     <img class="prod-img" src="${product.img}"/>
                     <div>
                         <p>${product.name}</p>
-                        <p id="productPrice">Price: <span id="productPrice_value">${product.price}</span>đ</p>
+                        <p id="productPrice">Price: <span id="productPrice_value${product.id}">${product.price}</span>đ</p>
                     </div>
                 </div>
             </td>
             <td class="qty">
                 <table>
                     <tr class="id${product.id}">
-                        <td><img id="minusQty" class="icon" src="/assets/img/icon-minus.svg" onclick="minusQty()"/></td>
-                        <td><input id="productQty" style="border: none;" value="1" name="proQty" onchange="calculateTotal()"/></td>
-                        <td><img id="addQty" class="icon" src="/assets/img/icon-plus.svg" onclick="addQty()"/></td>
+                        <td><img class="icon" src="/assets/img/icon-minus.svg" onclick="minusQty(${product.id})"/></td>
+                        <td><input id="productQty${product.id}" style="border: none;" value="${product.quantity}" name="proQty" onchange="calculateTotal(${product.id})"/></td>
+                        <td><img class="icon" src="/assets/img/icon-plus.svg" onclick="addQty(${product.id})"/></td>
                     </tr>
                 </table>
             </td>
-            <td id="totalCost">50.000 đ</td>
+            <td id="totalCost"${product.id}></td>
             <td>
                 <img class="icon" src="/assets/img/icon-cancel-cart.svg"/>
             </td>
         </tr>
         </table>`
         })
-        console.log(htmls)
+        console.log(cartList)
         $('.product').html(htmls.join(''))
     })
 }
 
-
-
-// onValue(productRef, (snapshot) => {
-//     const productList =[]
-//     let i=0;
-//     //láy dữ liệu về từ firebase
-//     try {
-//         // bỏ từng child vào mảng
-//         snapshot.forEach(function(child){
-//             productList.push(child.val())
-//             i++;
-//             if (i>7) throw 'break';  //forEach không hỗ trợ break nên dùng throw exception để break
-//     })
-//     }
-//     catch{
-//         //
-//     }
-//      //đưa dữ liệu vào thẻ html
-//     htmls = productList.map(product => {
-//         return `
-//         <table>
-//         <tr class="${product.productID}">
-//         <td class="cart-info-row">
-//             <div class="cart-info">
-//                 <img class="prod-img" src="${product.productImg}"/>
-//                 <div>
-//                     <p>${product.productName}</p>
-//                     <p id="productPrice">Price: <span id="productPrice_value">${product.productPrice}</span>đ</p>
-//                 </div>
-//             </div>
-//         </td>
-//         <td class="qty">
-//             <table>
-//                 <tr class="${product.productID}">
-//                     <td><img id="minusQty" class="icon" src="/assets/img/icon-minus.svg" onclick="minusQty()"/></td>
-//                     <td><input id="productQty" style="border: none;" value="1" name="proQty" onchange="calculateTotal()"/></td>
-//                     <td><img id="addQty" class="icon" src="/assets/img/icon-plus.svg" onclick="addQty()"/></td>
-//                 </tr>
-//             </table>
-//         </td>
-//         <td id="totalCost">50.000 đ</td>
-//         <td>
-//             <img class="icon" src="/assets/img/icon-cancel-cart.svg"/>
-//         </td>
-//     </tr>
-//     </table>`
-//     })
-//     $('.product').innerHTML = htmls.join('');
-// });
 
 
