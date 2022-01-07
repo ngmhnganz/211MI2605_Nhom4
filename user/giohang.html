@@ -11,15 +11,12 @@
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href= "../css/danhsach-sanpham.css" type="text/css"/>
     <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
-    <script> 
-        $(function(){
-          $("#header").load("/component/header.html"); 
-          $("#footer").load("/component/footer.html"); 
-        });
-    </script>
+
 </head>
 <body class="background-secondary-color">
-    <div id="header"></div>
+    <div id="header">
+        <script>$("#header").load("/component/header.html"); </script>
+    </div>
     <div class="product small-container cart-page">
         <div class="total-price">
             <table>
@@ -44,7 +41,7 @@
         <button>Thanh toán</button>
     </div>
     
-    <div id="footer" style="margin-top: 30px;"></div>
+    <div id="footer" style="margin-top: 30px;"><script>$("#footer").load("/component/footer.html"); </script></div>
 
     <script src="../script/giohang.js" async type="module"></script>
 

@@ -1,6 +1,6 @@
-import { getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged, updateProfile} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-import { getDatabase, ref, child, get, set} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+import { getDatabase, ref, child, get, set, update} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 
 const app = initializeApp(config)
 const auth = getAuth();
@@ -71,8 +71,6 @@ function get_user_info(id){
     })
 }
 
-
-$('#btnSave').click(function(){})
 //xử lý tabs
 $(document).ready(function(){
     $('.tab-content-item').hide();
@@ -89,34 +87,6 @@ $(document).ready(function(){
         return false;
     });
 });
-//xử lý khi nhấn vào icon chỉnh sửa
-// document.getElementById("edit_name").addEventListener("click", function() {
-//     $("#Name").removeAttr("readonly");
-//     document.getElementById("Name").focus();
-// });
-
-// document.getElementById("edit_birthday").addEventListener("click", function() {
-//     $("#birthday").removeAttr("readonly");
-//     document.getElementById("birthday").focus();
-// });
-
-// document.getElementById("edit_email").addEventListener("click", function() {
-//     $("#email").removeAttr("readonly");
-//     document.getElementById("email").focus();
-// });
-
-// document.getElementById("edit_phone").addEventListener("click", function() {
-//     $("#phone").removeAttr("readonly");
-//     document.getElementById("phone").focus();
-// });
-
-// document.getElementById("edit_address").addEventListener("click", function() {
-//     $("#address").removeAttr("readonly");
-//     document.getElementById("address").focus();
-// });
-
-
-
 
 // xử lý upload hình lên, chưa đc
 $(document).ready(function(){
@@ -141,7 +111,49 @@ const address = document.getElementById('address');
 
 // xử lý nút lưu
 document.getElementById("btnSave").addEventListener("click", function() {
-    alert("Bạn đã lưu thành công!")
+    let updates = {};
+    if ($('#nu').is(":checked"))
+        updates[`User/${auth.currentUser.uid}/userGender`] ="Nữ"
+    else
+        updates[`User/${auth.currentUser.uid}/userGender`] ="Nam"
+    
+    updates[`User/${auth.currentUser.uid}/userAddress`] = address.value.trim();
+
+    let birthday = $('#date').val() +"/"+ $('#month').val() + "/" + $('#year').val()
+
+    updates[`User/${auth.currentUser.uid}/userBirthday`] = birthday;
+    update(ref(database), updates)
+    .then(()=>{
+        toast({
+            title: "Cập nhật thành công",
+            message: "Bạn đã cập nhật thông tin thành công",
+            type: "success",
+            duration: 5000
+          });
+    })
+
+    if (checkValidatePhone() && Name.value.trim()!==""){
+        updateProfile(auth.currentUser, {
+            displayName: Name.value.trim(),
+            phoneNumber: phone.value.trim()
+        })
+        .then(()=>{
+            toast({
+                title: "Cập nhật thành công",
+                message: "Bạn đã cập nhật thông tin thành công",
+                type: "success",
+                duration: 5000
+              });
+        })
+        .catch((error)=>{
+            toast({
+                title: "Cập nhật không thành công",
+                message: "Đã có lỗi xảy ra, vui lòng tải lại trang và thử lại",
+                type: "error",
+                duration: 5000
+              });
+        })
+    }
 });
 
 function checkInputs(){
@@ -173,21 +185,26 @@ document.getElementById("Name").addEventListener('blur', function(){
 })
 
 //xử lý kiểm tra số điện thoại
-document.getElementById("phone").addEventListener('change', function(){
+document.getElementById("phone").addEventListener('blur', function(){
+    var valid = checkValidatePhone()
+})
+
+function checkValidatePhone(){
     var vnf_regex = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
     const phoneValue = phone.value.trim().replace('+84','0');
-    console.log(phoneValue)
-
     if(phoneValue !== ''){
         if(vnf_regex.test(phoneValue) == false){
+            
             setErrorFor(phone,"Số điện thoại của bạn không đúng định dạng!");
+            return false
         }
         else{
-            setSuccessFor(phone);
+            setSuccessFor(phone);      
         }
     }
     else{
         setErrorFor(phone,"Số điện thoại không được để trống");
+        return false  
     }
-})
-
+    return true
+}
