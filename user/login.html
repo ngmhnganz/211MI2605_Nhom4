@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="/assets/font/fontawesome-free-5.15.4-web/css/all.css"
     <title>Đăng ký</title>
     <script src="../lib/jQuery.js"></script>
-    <script src="../script/includeHTML.js"></script>
 </head>
 <body onload="initUI()">
-    <div id="header" w3-include-html="../component/header.html"></div>
+    <div id="header"></div>
+    <script> 
+    $('#header').load('../component/header.html')
+    </script>
     <button id="myBtn">Register</button>
 
 <!-- The Modal -->
@@ -57,7 +59,7 @@
                    <form style="text-align: center;" class="cd-form">
                     <div style="display: inline-block" class="register fieldset txtbox ">
                       <div class="fieldset txtbox" >
-                        <input class="has-padding inputText" type=text id="name" placeholder="Nhập tên" pattern="[A-Za-z]+" required>
+                        <input class="has-padding inputText" type=text id="nameSignup" placeholder="Nhập tên" pattern="[A-Za-z]+" required>
                       </div>
                       
                       <div class="fieldset txtbox">
@@ -65,8 +67,8 @@
                       </div>
             
                       <div class="fieldset txtbox"> 
-                        <input class="has-padding password inputText" type="passwordSignup" id="password2" placeholder="Mật khẩu" required>
-                        <i id ="hide-password2"class="fas fa-eye"> </i>
+                        <input class="has-padding password inputText" type="password" id="passwordSignup" placeholder="Mật khẩu" required>
+                        <i id ="hide-passwordSignup"class="fas fa-eye"> </i>
                       </div>         
                          
                       <div class="fieldset txtbox">
@@ -164,11 +166,11 @@
             $("#password1").attr("type", "password");
     }
   });
-  $("#hide-password2").click(function(){
-    if ($("#password2").attr("type") === "password") {
-            $("#password2").attr("type", "text");
+  $("#hide-passwordSignup").click(function(){
+    if ($("#passwordSignup").attr("type") === "password") {
+            $("#passwordSignup").attr("type", "text");
     } else {
-            $("#password2").attr("type", "password");
+            $("#passwordSignup").attr("type", "password");
     }
   });
 
@@ -177,9 +179,6 @@
 //           event.preventDefault();
 //           login_selected();
 //         }
-</script>
-<script>
-   includeHTML();
 </script>
 <script src="../script/auth.js" type="module"></script>
 </html>

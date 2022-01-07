@@ -1,22 +1,53 @@
-import { getAuth, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+import { getDatabase, ref, set, child} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 const app = initializeApp(config);
+const database = getDatabase(app);
+const myRef = ref(database);
 const auth = getAuth();
-var mUser = auth.currentUser;
 
 $('#btnDangNhap').click(function(){
-    var email = $('#emailLogin').val()
-    var password = $('#passwordLogin').val()
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      localStorage.setItem('uid', userCredential.user.uid);
-      window.location.href = window.location.origin
+  let email = $('#emailLogin').val()
+  let password = $('#passwordLogin').val()
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    localStorage.setItem('uid', userCredential.user.uid);
+    window.location.href = window.location.origin
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode)
+  });
+})
+
+$('#btnDangKy').click(function(){
+  let email = $('#emailSignup').val()
+  let password = $('#passwordSignup').val()
+  let name = $('#nameSignup').val()
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    updateProfile(auth.currentUser, {
+      displayName: name
     })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode)
-    });
+    .then(()=>{
+      let mUser = auth.currentUser;
+      localStorage.setItem('uid', mUser.uid);
+      set(child(myRef,`User/${String(mUser.uid)}`), {
+        userID: String(mUser.uid),
+        userPoint: 0
+      })
+      .then(()=>{
+        window.location.href = window.location.origin
+      })
+    })
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage)
+    // ..
+  });
 })
 
 
