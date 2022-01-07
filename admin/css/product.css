@@ -46,8 +46,30 @@ textarea{
     border: 1px solid var(--sub-light-color);
 }
 
+button {
+  background-color: #F58A42;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+button:hover{
+  background-color: #d47332;
+  border-color: #d47332;
+}
+button.cancel-btn{
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+button.cancel-btn:hover{
+  background-color: #d47332;
+  border-color: #d47332;
+}
 /*! IMG*/
-.product-img-dummy {
+.product-img {
     max-width: 100%;
     height: 15vh;
     display: flex;
@@ -58,7 +80,7 @@ textarea{
     border-radius: 5px;
     border: 1px solid var(--sub-light-color);
 }
-.product-img-dummy img {
+.product-img img {
     max-width: 300px;
     display:none;
     margin-bottom:30px;

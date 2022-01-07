@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sản phẩm</title>
     <link rel="stylesheet" href="./css/constant_admin.css">
     <link rel="stylesheet" href="/admin/css/admin-header.css">
     <link rel="stylesheet" href="/admin/css/menu.css">
@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="/admin/css/grid_system.css">
     <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css"/>
+
     <script src="/lib/jQuery.js"></script>
-    <!-- <script src="./js/product.js"></script> -->
+
 </head>
 <body>
     <div id="admin-container">
@@ -68,9 +69,7 @@
                             <div class="row">
                                         <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
                                             <h4>Mô tả</h4>
-                                            <textarea class="form-control validate"
-                                                        rows="3"
-                                                        required></textarea>
+                                            <textarea class="form-control validate" rows="3" required></textarea>
                                         </div>
                             </div>
                     </div>
@@ -80,17 +79,17 @@
                     <div class="Aproduct-container">
                         <div class="grid wide">
                             <div class="row">
-                                    <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
-                                        <h3>Hình ảnh sản phẩm</h3>
-                                        <hr><br>
-                                        <div class="row">
-                                            <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
-                                                <div class="product-img-dummy mx-auto">
-                                                    <img id="preview_img">
-                                                    <input type="file" accept="image/*" onchange="showPreview(event);">
-                                                </div>
-                                                
+                                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                    <h3>Hình ảnh sản phẩm</h3>
+                                    <hr><br>
+                                    <div class="row">
+                                        <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                            <div class="product-img mx-auto">
+                                                <img id="preview_img">
+                                                <input type="file" accept="image/*" onchange="showPreview(event);">
                                             </div>
+                                                
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -234,6 +233,17 @@
                                         <option value="2">Màu sắc</option>
                                     </select>
                                 </div> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid wide ">
+                        <div class="row no-padding">
+                            <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                <button type="submit">Lưu</button>
+                            </div>
+                            <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                <button class="cancel-btn" onClick="window.location.href='product-list.html';">Hủy</button>
                             </div>
                         </div>
                     </div>
