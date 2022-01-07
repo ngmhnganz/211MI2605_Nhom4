@@ -19,7 +19,6 @@
   // sidebar open close js code
   let navLinks = document.querySelector(".nav-links");
   let menuOpenBtn = document.querySelector(".navbar .bx-menu");
-  console.log(menuOpenBtn)
   let menuCloseBtn = document.querySelector(".nav-links .bx-x");
   menuOpenBtn.onclick = function() {
     console.log("ok")
@@ -45,9 +44,26 @@
   document.querySelector('#btnUserIcon').onclick = function(){
     window.location.href = window.location.origin +"/user/"
   }
-  
-  // let jsArrow = document.querySelector(".js-arrow");
-  // jsArrow.onclick = function() {
-  //  navLinks.classList.toggle("show3");
-  // }
-  
+  document.querySelector("#btnUserCart").onclick = function(){
+    window.location.href = window.location.origin +'/user/giohang.html'
+  }
+  import { getAuth, onAuthStateChanged, signOut} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+        $('.signed').addClass('showUser')
+        $('.unsigned').removeClass('showUser')
+    } else {
+        $('.unsigned').addClass('showUser')
+        $('.signed').removeClass('showUser')
+        console.log("out")
+    }
+  });
+
+  $('#btnSignOut').click(function(){
+    signOut(auth).then(() => {
+        alert('Đã đăng xuất')
+      }).catch((error) => {
+        alert(error.errorMessage)
+      });
+  })

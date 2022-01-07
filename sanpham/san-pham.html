@@ -7,17 +7,13 @@
     <script src="../data/firebase-config.js"></script>
     <script src="../lib/jQuery.js"></script>
     <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
-    <link rel="stylesheet" href="../css/header.css" type="text/css"/>
     <link rel="stylesheet" href="../css/product-item.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/footer.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href="../css/san-pham.css" type="text/css"/>
     <title>Sản phẩm</title>
 </head>
-<body onload="loadUI()">
+<body>
     <!-- ! Header và thanh navigation -->
-    <div id="header">
-    </div>
+    <div id="header"></div>
     
     <div class="containerTrung">    
         <div class="grid wide sanpham-info">
@@ -35,7 +31,7 @@
                         <div id="sanpham-amount">1</div>
                         <div class="btn-increase btn-amount" onclick="plusItem()">+</div>
                     </form>
-                    <button class="btn">Đặt hàng</button>
+                    <button id="btnOrder" class="btn">Đặt hàng</button>
                 </div>
             </div>
             <div class="row line">
@@ -46,7 +42,7 @@
                     <div class="col c-4 m-4 info-tab" id="tab-gioithieu"  onclick="tab(1)">
                         Giới thiệu
                     </div>
-                    <div class="col c-4 m-4 l-6 info-tab" id="tab-chitiet" onclick="tab(2)">
+                    <div class="col c-4 m-4 l-6 info-tab selectedTab" id="tab-chitiet" onclick="tab(2)">
                         Chi tiết
                     </div>
                     <div class="col c-4 m-4 l-6 info-tab"id="tab-binhluan"  onclick="tab(3)">
@@ -55,7 +51,7 @@
                 </div>
                 <div class="row info-tab-content">
                     <div class="col c-12 m-12 l-12" id="m_sanpham-detail"></div>
-                    <div class="col c-12 m-12 l-12" id="m_sanpham-descrip">bình luậ
+                    <div class="col c-12 m-12 l-12 selectedTab-content" id="m_sanpham-descrip">bình luậ
                     </div>
                     <div class="col c-12 m-12 l-12" id="m_sanpham-comment">các bình luận
                     </div>
@@ -81,18 +77,8 @@
 
     <script src="../script/getSanPham.js" async type="module"></script>
     <script>
-    
-        function loadUI(){
-            $("#footer").load("../component/footer.html"); 
-            $('#header').load("../component/header.html")
-            $('#tab-gioithieu').css("color", "")
-                    $('#tab-chitiet').css("color", "var(--primary-color)")
-                    $('#tab-binhluan').css("color", "")
-                    $('#m_sanpham-detail').css("display","none")
-                    $('#m_sanpham-descrip').css("display","block")
-                    $('#m_sanpham-comment').css("display","none")
-        }
-
+        $("#footer").load("../component/footer.html"); 
+        $('#header').load("../component/header.html")
         var amount =1
         function plusItem() {
             amount+=1;
@@ -111,35 +97,34 @@
         function tab(index) {
             switch (index) {
                 case 1: {
-                    $('#tab-gioithieu').css("color", "var(--primary-color)")
-                    $('#tab-chitiet').css("color", "")
-                    $('#tab-binhluan').css("color", "")
-                    $('#m_sanpham-detail').css("display","block")
-                    $('#m_sanpham-descrip').css("display","none")
-                    $('#m_sanpham-comment').css("display","none")
+                    $('#tab-gioithieu').addClass('selectedTab')
+                    $('#tab-chitiet').removeClass('selectedTab')
+                    $('#tab-binhluan').removeClass('selectedTab')
+                    $('#m_sanpham-detail').addClass('selectedTab-content')
+                    $('#m_sanpham-descrip').removeClass('selectedTab-content')
+                    $('#m_sanpham-comment').removeClass('selectedTab-content')
                     break;
                 }
                 case 2: {
-                    $('#tab-gioithieu').css("color", "")
-                    $('#tab-chitiet').css("color", "var(--primary-color)")
-                    $('#tab-binhluan').css("color", "")
-                    $('#m_sanpham-detail').css("display","none")
-                    $('#m_sanpham-descrip').css("display","block")
-                    $('#m_sanpham-comment').css("display","none")
+                    $('#tab-gioithieu').removeClass('selectedTab')
+                    $('#tab-chitiet').addClass('selectedTab')
+                    $('#tab-binhluan').removeClass('selectedTab')
+                    $('#m_sanpham-detail').removeClass('selectedTab-content')
+                    $('#m_sanpham-descrip').addClass('selectedTab-content')
+                    $('#m_sanpham-comment').removeClass('selectedTab-content')
                     break;
                 }
                 case 3: {
-                    $('#tab-gioithieu').css("color", "")
-                    $('#tab-chitiet').css("color", "")
-                    $('#tab-binhluan').css("color", "var(--primary-color)")
-                    $('#m_sanpham-detail').css("display","none")
-                    $('#m_sanpham-descrip').css("display","none")
-                    $('#m_sanpham-comment').css("display","block")
+                    $('#tab-gioithieu').removeClass('selectedTab')
+                    $('#tab-chitiet').removeClass('selectedTab')
+                    $('#tab-binhluan').addClass('selectedTab')
+                    $('#m_sanpham-detail').removeClass('selectedTab-content')
+                    $('#m_sanpham-descrip').removeClass('selectedTab-content')
+                    $('#m_sanpham-comment').addClass('selectedTab-content')
                     break;
                 }
             }
         }
-
     </script>
 </body>
 </html>

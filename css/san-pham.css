@@ -130,25 +130,22 @@
     color: var(--text-color);
     cursor: pointer;
 }
-
+.selectedTab{
+    color: var(--primary-color);
+}
+#m_sanpham-comment,
+#m_sanpham-descrip,
 #m_sanpham-detail {
     display: none;
     color: var(--sub-text-color);
     font-family: var(--font);
     text-align: start;
 }
-#m_sanpham-descrip {
-    display: none;
-    color: var(--sub-text-color);
-    font-family: var(--font);
-    text-align: start;
+
+.selectedTab-content{
+    display: block !important ;
 }
-#m_sanpham-comment {
-    display: none;
-    color: var(--sub-text-color);
-    font-family: var(--font);
-    text-align: start;
-}
+
 .suggestion {
     padding: 2rem 0 4rem 0;
 }
