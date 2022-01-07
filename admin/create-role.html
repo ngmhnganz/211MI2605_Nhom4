@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/constant_admin.css">
     <link rel="stylesheet" href="/admin/css/admin-header.css">
+    <link rel="stylesheet" href="/css/grid_system.css">
     <link rel="stylesheet" href="/admin/css/menu.css">
     <link rel="stylesheet" href="/admin/css/createRole.css">
     <link rel="stylesheet" href="/assets/font/bootstrap-icons-1.7.2/bootstrap-icons.css">
@@ -26,59 +27,67 @@
                 </script>
             </div>
             <div id="container-section">
-                <div id="content-section" style="background-color: tomato; height: 100vh;">
-                    //chỗ code đoạn giữa, lúc code nhớ bỏ thuộc tính style
+                <div id="content-section">
 
-                    <div class="base" >
-                        <div class="row">
-                            <div class="col l-2 m-3 c-4 mg-t mg-r mg-l mg-b" style="    vertical-align: middle;">
-                                <span class="role-title">Tên chức vụ</span>
+                    <div class="grid wide" >
+                        <div class="row base chucvu-container">
+                            <div class="col l-2 m-3 c-4">
+                                <div class="role-title">Tên chức vụ</div>
                             </div>
-                            <div class="col l-10 l-o-2  m-3 m-o-1 c-7 mg-t mg-r mg-l mg-b">
+                            <div class="col l-10 m-9 c-8">
                                 <input class="role" type="text" placeholder="Điền chức vụ"/>
                             </div>
                         </div>
-                        <div style="height: 100%;" class="base">
-                        
-                            <div class="grid wide">
-                                <p class="vaitro-text">VAI TRÒ</p>
-                                <div class="row">
-                                    <div class="col l-1 l-o-2  m-3 m-o-1 c-6 c-o-3 mg-t mg-r mg-l mg-b vaitro">
-                                        <p class="vaitro-title">Sản phẩm</p>
+                               
+                        <div class="row base">
+                            
+                                <div class="col l-12 m-12 c-12 vaitro-text">
+                                    VAI TRÒ
+                                </div>
+                    
+                           
+                                <div class="col l-4 m-4 c-12 vaitro-container" >
+                                    <p class="vaitro-title">Sản phẩm</p>
+                                    <div class="vaitro-box">
                                         <input type="checkbox" value="view" id="view" name="product"/> <label for="view"> Xem sản phẩm</label><br/>
                                         <input type="checkbox" value="create" id="create" name="product"/> <label for="view"> Tạo sản phẩm</label><br/>
                                         <input type="checkbox" value="edit" id="edit" name="product"/> <label for="view"> Sửa sản phẩm</label><br/>
                                         <input type="checkbox" value="delete" id="delete" name="product"/> <label for="view"> Xóa sản phẩm</label><br/>
                                     </div>
-                                    <div class="col l-1 l-o-1  m-3 m-o-1 c-6 c-o-3 mg-t mg-r mg-l mg-b vaitro">
-                                        <p class="vaitro-title">Đơn hàng</p>
+                                    
+                                </div>
+                                <div class="col l-4 m-4 c-12 vaitro-container" >
+                                    <p class="vaitro-title">Đơn hàng</p>
+                                    <div class="vaitro-box">
                                         <input type="checkbox" value="view-ord" id="view-ord" name="order"/> Xem đơn hàng<br/>
                                         <input type="checkbox" value="create-ord" id="create-ord" name="order"/> Tạo đơn hàng<br/>
                                         <input type="checkbox" value="edit-ord" id="edit-ord" name="order"/> Sửa đơn hàng<br/>
                                         <input type="checkbox" value="delete-ord" id="delete-ord" name="order"/> Xóa đơn hàng<br/>
                                         <input type="checkbox" value="change-ord" id="change-ord" name="order"/> Thay đổi trạng thái đơn hàng<br/>
                                     </div>
-                                    <div class="col l-1 l-o-1  m-3 m-o-1 c-6 c-o-3 mg-t mg-r mg-l mg-b vaitro">
-                                        <p class="vaitro-title">Phân quyền</p>
+                                    
+                                </div>
+                                <div class="col l-4 m-4 c-12 vaitro-container" >
+                                    <p class="vaitro-title">Phân quyền</p>
+                                    <div class="vaitro-box">
                                         <input type="checkbox" value="create-role" id="create-role" name="role"/> Tạo mới chức vụ<br/>
                                         <input type="checkbox" value="delete-role" id="delete-role" name="role"/> Xóa chức vụ<br/>
                                         <input type="checkbox" value="add-staff" id="add-staff" name="role"/> Thêm nhân viên<br/>
                                         <input type="checkbox" value="edit-staff" id="edit-staff" name="role"/> Sửa nhân viên<br/>
                                         <input type="checkbox" value="delete-staff" id="delete-staff" name="role"/> Xóa nhân viên<br/>
                                     </div>
+                                    
                                 </div>
-                                
-                            </div>
-                            <div class="row">
+                                    
                                 <div class="col l-4 l-o-4  m-4 m-o-4 c-8 c-o-2 mg-t mg-r mg-l mg-b">
                                     <button class="btnLuu">Lưu</button>
                                 </div>
-                            </div>
                         </div>
+                        
                     </div>
 
                 </div>
-                <div id="detail-section"style="background-color: yellow; height: 100vh;">
+                <div id="detail-section" class="hide-detail">
                     //chỗ code đoạn bên phải, ko dùng thì bỏ trống, lúc code nhớ bỏ thuộc tính style</div>
             </div>
             

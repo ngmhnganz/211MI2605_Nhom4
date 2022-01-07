@@ -1,3 +1,5 @@
+@import url(/css/constant.css);
+
 #admin-container{
     display: flex;
     flex-direction: row;
@@ -21,10 +23,13 @@
 #body-section{
     flex: 1;
     height: 100vh;
+    background-color: var(--background-grey-color);
 }
 #container-section{
+    
     display: flex;
     flex-direction: row;
+    
 }
 
 #content-section{
@@ -32,6 +37,11 @@
 }
 #detail-section{
     flex: 3;
+}
+
+#detail-section.hide-detail{
+    display: none;
+    flex: 0;
 }
 @media (max-width: 576px) { 
     .open-menu{
