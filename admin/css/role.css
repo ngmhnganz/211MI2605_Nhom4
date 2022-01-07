@@ -7,7 +7,7 @@ th,td{
     text-align: center;
 }
 th{
-    background-color: rgb(233, 233, 233);
+    background-color: #FFC183;
     text-align: center;
 }
 button{
@@ -29,12 +29,29 @@ button{
     padding-left: 20px;
                 
 }
-.Delete{
-    background-color: #FFC183;
-}
 button:hover{
     background-color: #EB8542;
 }
-.Delete:hover{
-    background-color: #EB8542;
+i{
+    padding-right: 10px;
+}
+.fas.fa-user-minus{
+    color: #cecece;
+}
+.fas.fa-user-minus:hover{
+    color: #EB8542;
+}
+.fas.fa-edit{
+    color: #F58A42; 
+    padding-right:20px;
+}
+.fas.fa-edit:hover{
+    color: #EB8542;
+}
+.fas.fa-save{
+    color: #F58A42; 
+    padding-right:20px;
+}
+.fas.fa-save:hover{
+    color: #EB8542;
 }
