@@ -57,7 +57,7 @@ section .img img{
     border-radius: 20px;
     object-fit: fit;
 }
-
+/* phần recipe */
 .recipe-ration {
     color: var(--text-color);
     font-weight: 500;
