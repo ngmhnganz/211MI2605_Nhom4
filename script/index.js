@@ -1,11 +1,9 @@
-import { getAuth } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, onValue, child, get } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 
 const app = initializeApp(config)
 const database = getDatabase(app);
-const auth = getAuth();
-const user = auth.currentUser;
+
 //? bind document
 
 

@@ -125,27 +125,26 @@ nav .navbar{
   visibility: visible;
   opacity: 1;
 }
+.action .menu ul {
+  display: block;
+}
 .action .menu ul li{
   padding: 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
+  color: var(--sub-text-color);
   align-items: left;
   justify-content: left;
+}
+
+.action .menu ul li:hover {
+  cursor: pointer;
+  color: var(--text-color);
 }
 .action .menu ul li i{
   max-width: 20px;
   margin-right: 5px;
   transition: 0.5s;
-}
-.action .menu ul li a{
-  display: inline-block;
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-  transition: 0.5s;
-}
-.action .menu ul li:hover a{
-  color: var(--secondary-color);
 }
 
 nav .navbar .nav-links{

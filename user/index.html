@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang cá nhân</title>
-    <script src="../script/includeHTML.js"></script>
+    <script src="../lib/jQuery.js"></script>
     <script src="../data/firebase-config.js"></script>
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
@@ -17,7 +17,11 @@
 </head>
 <body>
     <!-- Header -->
-    <div w3-include-html="../component/header.html"></div>
+    <div id="header">
+        <script>
+            $('#header').load('../component/header.html')
+        </script>
+    </div>
 
      <!-- ! Thông tin chung -->
     <div class="containerTrung background-primary-color" style="padding:110px 0px 10px 0px">
@@ -27,8 +31,8 @@
                     <div class="user-img">
                         <img id="avatar" src="../assets/img/BannerCT_1.jpg" alt="">
                     </div>
-                    <p id="user-name">NGUYỄN Văn A</p>
-                    <p id="user-email">anvan@gmail.com</p>
+                    <p id="user-name"></p>
+                    <p id="user-email"></p>
                 </div>
 
             </div>
@@ -105,7 +109,7 @@
                         <form class="form" >
                             <div class="form-control">
                                 <label for="Name">Họ và tên</label>
-                                <input type="text" id="Name" placeholder="Tên người dùng" value="Test thôi">
+                                <input type="text" id="Name" placeholder="Tên người dùng" value="">
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
@@ -123,21 +127,21 @@
                             </div>
                             <div class="form-control">
                                 <label for="birthday">Email</label>
-                                <input type="text" id="email" placeholder="thuvna19411c@st.uel.edu.vn" value="Test thôi" readonly>
+                                <input type="text" id="email" value="" readonly>
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
                             </div>
                             <div class="form-control">
                                 <label for="phone">Số điện thoại</label>
-                                <input type="text" id="phone" placeholder="Số điện thoại" value="Test thôi">
+                                <input type="text" id="phone" placeholder="Nhập số điện thoại của bạn (vd: 0901234567)" value="">
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
                             </div>
                             <div class="form-control">
                                 <label for="address">Địa chỉ</label>
-                                <input type="text" id="address" placeholder="Địa chỉ" value="Test thôi">
+                                <input type="text" id="address" placeholder="Nhập địa chỉ của bạn" value="">
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
@@ -158,7 +162,7 @@
                     </div>
                     <div class="col l-4 l-o-4 m-6 m-o-3 c-8 c-0-2 mg-t mg-r mg-l mg-b">
                         <div class="diemtichluy-container">
-                            <div class="diem">9999</div>
+                            <div id="diem"></div>
                         </div>
                     </div>
                     <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
@@ -183,57 +187,14 @@
             </div>
                 <!-- Phần trang công thức đã lưu  -->
             <div id="congthucdaluu" class="tab-content-item">
-                <div class="row">
-                    <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b">
-                        <!-- <a  href="./cong-thuc.html?id=${recipe.recipeID}">
-                            <div class="recipe-container">
-                                <div class="recipe-img">
-                                    <img src="${recipe.recipeImage}" alt="">
-                                </div>
-                                <div class="recipe-detail">
-                                        ${recipe.recipeName}
-                                    <div class="recipe-ration">
-                                        Khẩu phần ${recipe.recipeRation} người
-                                    </div>
-                                    <div class="recipe-tag">
-                                        <span>Bột mì</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a> -->
-
-                        <a  href="./cong-thuc.html?id=${recipe.recipeID}">
-                            <div class="recipe-container">
-                                <div class="recipe-img">
-                                    <img src="../assets/img/lava.jpg" alt="">
-                                </div>
-                                <div class="recipe-detail">
-                                    <div class="recipe-name">
-                                        <p>Bánh Lava Socola</p>
-                                        <i class="fas fa-heart fa-lg"></i>
-                                    </div>
-                                    <div class="recipe-ration">
-                                        Khẩu phần 4 người
-                                    </div>
-                                    <div class="recipe-tag">
-                                        <span>Bột mì</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
+                <div class="row" id="likeRecipe">
                 </div>
             </div>
         </div>
                 
             
     </div>
-           
-    <script>
-        includeHTML();
-    </script>
-
+    <script src="../script/user.js" async type="module"></script>
     <script>
         // chọn ngày tháng năm
         var select = document.getElementById("date");
@@ -249,9 +210,6 @@
             select.options[select.options.length] = new Option(i,i);
         }
     </script>    
-
-    <script src="../lib/jQuery.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="../script/user.js" async type="module"></script>
+    
 </body>
 </html>

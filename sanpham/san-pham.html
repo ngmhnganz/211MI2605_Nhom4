@@ -16,7 +16,11 @@
 <body>
     <div id="toast"></div>
     <!-- ! Header và thanh navigation -->
-    <div id="header"></div>
+    <div id="header">
+        <script>
+            $('#header').load("../component/header.html")
+        </script>
+    </div>
     
     <div class="containerTrung">    
         <div class="grid wide sanpham-info">
@@ -76,12 +80,15 @@
         </div>
     </section>
 
-    <div id="footer"></div>
+    <div id="footer">
+        <script>
+            $("#footer").load("../component/footer.html"); 
+        </script>
+    </div>
 
     <script src="../script/getSanPham.js" async type="module"></script>
     <script>
-        $("#footer").load("../component/footer.html"); 
-        $('#header').load("../component/header.html")
+        
         var amount =1
         function plusItem() {
             amount+=1;
