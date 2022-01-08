@@ -1,8 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, get, child, query, orderByChild, equalTo} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
-
 const params = new URLSearchParams(window.location.search)
-console.log(Object.fromEntries(params.entries()))
 var queryType =Object.fromEntries(params.entries()).type
 var sort = Object.fromEntries(params.entries()).sort
 var search = Object.fromEntries(params.entries()).search
@@ -54,7 +52,7 @@ function api(ref) {
         var productList = []
         snapshot.forEach(function(child){
             if (search!=null){
-                if (child.val().productName.includes(search))
+                if (child.val().productName.toLowerCase().includes(search.toLocaleLowerCase()))
                     productList.push(child.val())
             }
             else
