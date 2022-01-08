@@ -5,6 +5,7 @@ const params = new URLSearchParams(window.location.search)
 console.log(Object.fromEntries(params.entries()))
 var queryType =Object.fromEntries(params.entries()).type
 var sort = Object.fromEntries(params.entries()).sort
+var search = Object.fromEntries(params.entries()).search
 var tiltleDes, type, hinhBanner
 switch (queryType) {
     case "NguyenLieu" : {
@@ -52,7 +53,12 @@ function api(ref) {
     .then((snapshot)=>{
         var productList = []
         snapshot.forEach(function(child){
-            productList.push(child.val())
+            if (search!=null){
+                if (child.val().productName.includes(search))
+                    productList.push(child.val())
+            }
+            else
+                productList.push(child.val())
         })
         return productList
     })

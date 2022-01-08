@@ -6,21 +6,16 @@ h3{
     color: var(--primary-color);
 }
 .cart-page{
-    margin: 80px;
+    margin-top: 20vh;
     background-color: white;
     border-radius: 20px;
-    padding: 20px;
+    padding: 0 20px;
 }
 table{
     width: 100%;
     border-collapse: collapse;
 }
-/* small-container{
-    max-width: 1080px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-} */
+
 .prod-img{
     width: 100px;
     height: 100px;
@@ -79,7 +74,19 @@ button{
     margin-right: 0;
 }
 .cart-info-row{
-    width: 80%;
+    width: 70%;
+}
+
+
+/* hide nút tăng giảm */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 @media  (max-width:739px) {

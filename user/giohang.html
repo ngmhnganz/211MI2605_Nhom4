@@ -18,11 +18,11 @@
     <div id="header">
         <script>$("#header").load("/component/header.html"); </script>
     </div>
-    <div class="product small-container cart-page">
+    <div class="grid wide">
+        <div class="product cart-page">
         
+        </div>
     </div>
-    
-    <div id="footer"><script>$("#footer").load("/component/footer.html"); </script></div>
 
     <script src="../script/giohang.js" async type="module"></script>
 
@@ -30,8 +30,11 @@
         function calculateTotal(id){
             console.log("ok")
             var price = document.getElementById("productPrice_value"+id).innerHTML;
-            console.log(document.getElementById("productPrice_value"+id))
             var qty=document.getElementById("productQty"+id).value;
+            if (qty==="0"){
+                document.getElementById("productQty"+id).value='1'
+                qty="1"
+            }
             console.log(price)
             var total = parseFloat(price) *  parseFloat(qty);
             document.getElementById("totalCost"+id).innerHTML= total +"VNĐ";

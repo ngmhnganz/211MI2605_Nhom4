@@ -41,7 +41,7 @@ function getData(uid){
                 <table>
                     <tr class="id${product.id}">
                         <td><img class="icon" src="/assets/img/icon-minus.svg" onclick="minusQty(${product.id})"/></td>
-                        <td><input id="productQty${product.id}" style="border: none;" value="${product.quantity}" name="proQty"/></td>
+                        <td><input type="number" id="productQty${product.id}" style="border: none;" value="${product.quantity}" name="proQty" onchange="calculateTotal(${product.id})"/></td>
                         <td><img class="icon" src="/assets/img/icon-plus.svg" onclick="addQty(${product.id})"/></td>
                     </tr>
                 </table>
