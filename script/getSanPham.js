@@ -19,9 +19,29 @@ function api(ref) {
         $('#sanpham-name').text(sanpham.productName)
         $('#sanpham-price').text(sanpham.productPrice)
         $('#sanpham-type').text(sanpham.productType)
-        $('#sanpham-detail').text(sanpham.productDescription)
-        $('#m_sanpham-detail').text(sanpham.productDescription)
         $('#sanpham-img').attr('src', sanpham.productImg)
+        $('#m_sanpham-descrip').text(sanpham.productDescription)
+
+        let htmlDetail =[]
+
+        if (sanpham.productType==="Combo") htmlDetail.push(`<div id="combo-border">Combo bao gồm:</div> `)
+        let des = sanpham.productDetail.split('#')
+        for (let index = 0; index < des.length; index+=2) {
+            htmlDetail.push(`
+            <div class="sanpham-detail"> <span class="detail_title">${des[index]}</span> <span class="detail_content">${des[index+1]}</span></div>
+            `)
+            
+        }
+        console.log(htmlDetail)
+        $('#detail-container').html(htmlDetail.join(""))
+        $('#m_sanpham-detail').html(htmlDetail.join(''))
+        if (sanpham.productType==="Combo"){
+            $('.detail_title').addClass('flex1')
+            $('.detail_content').addClass('flex1')
+        } else{
+            $('.detail_title').addClass('flex1')
+            $('.detail_content').addClass('flex2')
+        }
         return sanpham.productType
     })
     .then(type => {
