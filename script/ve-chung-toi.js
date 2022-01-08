@@ -24,7 +24,7 @@ function myFunction(xml){
                     " <div class='team_member'> <div class='team_img'> <img src=' " + 
                     x[i].getElementsByTagName("photoTron")[0].childNodes[0].nodeValue + " 'alt='Team_image'></div> <h3> " +
                     x[i].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + "</h3> <p class='role'> " +
-                    x[i].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + "</p> <p>" +
+                    x[i].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + "</p> <p style='text-align:justify'>" +
                     x[i].getElementsByTagName("gioiThieu")[0].childNodes[0].nodeValue + "</p> </div> </a> ";
     }
     document.getElementById("team").innerHTML = thanhvien;
