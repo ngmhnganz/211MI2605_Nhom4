@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang đơn hàng</title>
+    <script src="../lib/jQuery.js"></script>
+    <script src="../data/firebase-config.js"></script>
+    <script src="../script/toast.js"></script>
+    <link rel="stylesheet" href="../css/toast.css" type="text/css" />
+    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
+    <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
+    <link rel="stylesheet" href="../css/order.css" type="text/css"/>
+    <!--Cứu tinh-->
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+</head>
+<body>
+    <div id="toast"></div>
+    <!-- Header -->
+    <div id="header">
+        <script>
+            $('#header').load('../component/header.html')
+        </script>
+    </div>
+
+    <section class="background-secondary-color" style="margin-top: 70px;">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
+                <div class="khung-ngoai">
+                    <p class="title">ĐƠN HÀNG</p>
+                    <div class="tabs">
+                        <ul class="nav-tabs">
+                            <li class="active"><a href="#lichsu">Lịch sử</a></li>
+                            <li ><a href="#dangden">Đang đến</a></li>
+                                    
+                        </ul>
+                    </div>
+                        
+
+                     <!--Phần nội dung của các tabs-->   
+                    <div class="tab-content">
+                        <!-- Phần trang lịch sử  -->
+                        <div id="lichsu" class="tab-content-item">
+                            <div class="donhang">
+                                <div class="dong-dau">
+                                    <div class="dong-dau-left">
+                                        <i class="fas fa-truck"></i>
+                                        <p>Giao hàng thành công</p>
+                                    </div>
+                                    <div class="dong-dau-right">
+                                        <p>Ngày đặt hàng: 04/01/2021</p>
+                                    </div>
+                                </div>
+
+                                <div class="dong-hai">
+                                    <div class="dong-hai-left">
+                                        <img src="../assets/img/lava.jpg">
+                                    </div>
+                                    <div class="dong-hai-center">
+                                        <p class="diachi">78 đường 7749 kskokss ụiwjew</p>
+                                        <p>Số lượng: 6 | Phương thức thanh toán: COD</p>
+                                        <p>Mã đơn hàng: 001459657</p>
+                                    </div>
+                                    <div class="dong-hai-right">
+                                        <p>421.000 đ</p>
+                                        <input type="button" value="Đặt lại" id="btnDatLai">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Phần trang đang đến  -->
+                        <div id="dangden" class="tab-content-item">
+                            <div class="donhang">
+                                <div class="dong-dau">
+                                    <div class="dong-dau-left">
+                                        <i class="fas fa-truck"></i>
+                                        <p>Giao hàng thành công</p>
+                                    </div>
+                                    <div class="dong-dau-right">
+                                        <p>Ngày đặt hàng: 04/01/2021</p>
+                                    </div>
+                                </div>
+
+                                <div class="dong-hai">
+                                    <div class="dong-hai-left">
+                                        <img src="../assets/img/lava.jpg">
+                                    </div>
+                                    <div class="dong-hai-center">
+                                        <p class="diachi">78 đường 7749 kskokss ụiwjew</p>
+                                        <p>Số lượng: 6 | Phương thức thanh toán: COD</p>
+                                        <p>Mã đơn hàng: 001459657</p>
+                                    </div>
+                                    <div class="dong-hai-right">
+                                        <p>421.000 đ</p>
+                                        <input type="button" value="Hủy đơn" id="btnHuyDon">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Phần modal-->
+                     <div class="modal" id="myModal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p class="title">CHI TIẾT ĐƠN HÀNG</p>
+                        
+                            <div class="thong-tin-gio-hang">
+                                <p class="tieude">Thông tin giỏ hàng</p>
+                                <div class="dong-san-pham">
+                                    <p class="ten-sp">Combo làm bánh flan</p>
+                                    <p class="soluong-sp">1</p>
+                                    <p class="gia-sp">69.000 đ</p>
+                                </div>
+                                <div class="dong-san-pham">
+                                    <p class="ten-sp">Combo làm bánh flan</p>
+                                    <p class="soluong-sp">1</p>
+                                    <p class="gia-sp">69.000 đ</p>
+                                </div>
+                            </div>
+
+                            <div class="nguoi-nhan-thanh-toan">
+                                <div class="thong-tin-nguoi-nhan">
+                                    <p class="tieude">Thông tin người nhận</p>
+                                    <p class="nguoi-nhan">Nguyễn Văn A</p>
+                                    <p class="nguoi-nhan">09089990283</p>
+                                    <p class="nguoi-nhan">67 dường 22 quận xyc Hồ Chí Minh</p>
+                                </div>
+                                <div class="thong-tin-thanh-toan">
+                                    <p class="tieude">Thông tin thanh toán</p>
+                                    <p class="thanh-toan">Thanh toán bằng tiền mặt</p>
+                                </div>
+                            </div>
+
+                            <div class="tien-hang">
+                                <div class="tung-dong">
+                                    <p>Tổng tiền hàng</p>
+                                    <p>213.000 đ</p>
+                                </div>
+                                <div class="tung-dong">
+                                    <p>Phí vận chuyển</p>
+                                    <p>15.000 đ</p>
+                                </div>
+                                <div class="tung-dong">
+                                    <p>Tổng thanh toán</p>
+                                    <p>228.000 đ</p>
+                                </div>
+                            </div>
+                            <input type="button" value="Hủy đơn" id="btnHuyDon_1">
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </section>
+
+     
+    
+    
+    
+            
+    
+    <script src="../script/order.js" async type="module"></script>
+       
+    
+</body>
+</html>
