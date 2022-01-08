@@ -24,6 +24,7 @@ function getData(uid){
             cartList.push(a)
         })
         var htmls = cartList.map(product => {
+            let total = product.quantity* product.price
             return `
             <table>
             <tr class="id${product.id}">
@@ -40,12 +41,12 @@ function getData(uid){
                 <table>
                     <tr class="id${product.id}">
                         <td><img class="icon" src="/assets/img/icon-minus.svg" onclick="minusQty(${product.id})"/></td>
-                        <td><input id="productQty${product.id}" style="border: none;" value="${product.quantity}" name="proQty" onchange="calculateTotal(${product.id})"/></td>
+                        <td><input id="productQty${product.id}" style="border: none;" value="${product.quantity}" name="proQty"/></td>
                         <td><img class="icon" src="/assets/img/icon-plus.svg" onclick="addQty(${product.id})"/></td>
                     </tr>
                 </table>
             </td>
-            <td id="totalCost"${product.id}></td>
+            <td id="totalCost${product.id}"> ${total} VNĐ</td>
             <td>
                 <img class="icon" src="/assets/img/icon-cancel-cart.svg"/>
             </td>

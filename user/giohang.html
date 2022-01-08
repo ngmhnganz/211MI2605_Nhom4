@@ -28,6 +28,7 @@
 
     <script>
         function calculateTotal(id){
+            console.log("ok")
             var price = document.getElementById("productPrice_value"+id).innerHTML;
             console.log(document.getElementById("productPrice_value"+id))
             var qty=document.getElementById("productQty"+id).value;
@@ -43,14 +44,16 @@
             //thêm số lượng khi nhấn dấu cộng
             var qty= parseFloat(document.getElementById("productQty"+id).value);
             document.getElementById("productQty"+id).value=qty+1;
+            calculateTotal(id)
         }
         function minusQty(id){
             var qty=parseFloat(document.getElementById("productQty"+id).value);
             var classname = document.getElementById('productQty'+id).parentNode.parentElement.attributes.class.value;
-            if(qty<1){
+            if(qty<2){
                
             }else{
             document.getElementById("productQty"+id).value=qty-1;
+            calculateTotal(id)
             }
         }
     </script>
