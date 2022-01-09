@@ -1,10 +1,5 @@
 @import url(./constant.css);
-h3{
-    text-align: center;
-    margin-top: 80px;
-    font-family: var(--font);
-    color: var(--primary-color);
-}
+
 .cart-page{
     margin-top: 20vh;
     background-color: white;
@@ -44,6 +39,20 @@ td input{
     padding: 1rem;
 }
 
+.button-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.button-section .hide{
+    display: none;
+}
+
+.button-section #btnPayment{
+    margin: 1rem 0 1rem 1rem;
+}
+
 td:last-child{
     text-align: right;
 }
@@ -54,13 +63,18 @@ td:last-child{
     color: var(--primary-color);
 }
 button{
-    background-color: var(--primary-color);
+    background-color: var(--text-color);
+    font-family: var(--font);
+    font-weight: var(--medium);
     color: white;
-    font-size: 24px;
-    padding: 10px;
-    width: 100%;
+    font-size: 18px;
+    padding: 10px 20px;
     border-radius: 50px;
+    margin: 0;
+    width: 15%;
     border: none;
+    align-self: center;
+    cursor: pointer;
 }
 .icon
 {
@@ -80,9 +94,9 @@ button{
 }
 
 .product {
-    margin: 2rem 0;
     padding: 1rem ;
 }
+
 
 /* hide nút tăng giảm */
 input::-webkit-outer-spin-button,
@@ -92,7 +106,7 @@ input::-webkit-inner-spin-button {
 }
 
 .checkout-info{
-    
+    margin: 2rem 0;
     padding: 0 1rem;
     
 }

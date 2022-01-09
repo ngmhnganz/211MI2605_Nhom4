@@ -6,21 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng của bạn</title>
     <script src="../lib/jQuery.js" type="text/javascript"></script>
+    <script src="../script/toast.js" type="text/javascript"></script>
     <script src="../data/firebase-config.js" type="text/javascript"></script>
     <link rel="stylesheet" href="../css/giohang.css" type="text/css"/>
     <link rel="stylesheet" href="/css/grid_system.css">
+    <link rel="stylesheet" href="/css/toast.css">
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
-    <link rel="stylesheet" href= "../css/danhsach-sanpham.css" type="text/css"/>
     <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
 
 </head>
 <body class="background-secondary-color">
+    
     <div id="header">
         <script>$("#header").load("/component/header.html"); </script>
     </div>
-    <div class="grid wide cart-page">
-
+    <div id="toast"></div>
+    <div class="grid wide">
+        
         <div class="cart-page">
+            
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <div class="product">
+
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col l-7 m-12 c-12 checkout-info">
                     <div class="info-container">
@@ -50,60 +62,55 @@
                         </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col l-12 m-12 c-12">
-                    <div class="product">
 
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col c-12 m-12 l-12">
                     <div class="total-price">
-                        <div class="checkout-tilte">
-                            Thông tin thanh toán
-                        </div>
-                        <table>
-                            <tr>
-                                <td>Tổng tiền hàng</td>
-                                <td>50.000 đ</td>
-                            </tr>
-                            <tr>
-                                <td>Khuyến mãi</td>
-                                <td>-5.000 đ</td>
-                            </tr>
-                            <tr>
-                                <td>Phí vận chuyển</td>
-                                <td>10.000 đ</td>
-                            </tr>
-                            <tr>
-                                <td>Tổng thanh toán</td>
-                                <td>55.000 đ</td>
-                            </tr>
-                        </table>
+                        
                     </div>
                 </div>
-                
+                <div class="col c-12 m-12 l-12">
+                    <div class="button-section">
+                        <button class="hide" id="btnSaveCart">Lưu giỏ hàng</button>
+                        <button id="btnPayment">Thanh toán</button>
+                    </div>
+                </div>
             </div>
-            
+           
         </div>
     </div>
 
     <script src="../script/giohang.js" async type="module"></script>
-
+    
     <script>
+        let discount = 5000
+        let shippingFee = 10000
+        function setData() {
+            $('#btnSaveCart').removeClass('hide')
+        }
+
         function calculateTotal(id){
-            console.log("ok")
-            var price = document.getElementById("productPrice_value"+id).innerHTML;
+            var price = $("#productPrice_value"+id).text().split(',').join('');
             var qty=document.getElementById("productQty"+id).value;
             if (qty==="0"){
                 document.getElementById("productQty"+id).value='1'
                 qty="1"
             }
-            console.log(price)
+
             var total = parseFloat(price) *  parseFloat(qty);
-            document.getElementById("totalCost"+id).innerHTML= total +"VNĐ";
+
+            $("#totalCost"+id).text(numberWithCommas(total)+ " VNĐ");
+            var sumTotal = $('.totalCost_payment').text().split(',').join('').split(' VNĐ')
+            sumTotal[sumTotal.length-1]="0"
+
+            
+            var result = sumTotal.reduce( (a,b)=> parseFloat(a)+parseFloat(b));
+            $('#checkout_sum').text(numberWithCommas(result)+" đ")
+            $('#checkout_total_payment').text(numberWithCommas(result-discount+shippingFee)+" đ")
+
+            setData()
         }
+
 
         function delItem(){
             //delete item in cart
@@ -113,17 +120,23 @@
             var qty= parseFloat(document.getElementById("productQty"+id).value);
             document.getElementById("productQty"+id).value=qty+1;
             calculateTotal(id)
+            
         }
         function minusQty(id){
             var qty=parseFloat(document.getElementById("productQty"+id).value);
             var classname = document.getElementById('productQty'+id).parentNode.parentElement.attributes.class.value;
             if(qty<2){
-               
+            
             }else{
             document.getElementById("productQty"+id).value=qty-1;
             calculateTotal(id)
             }
         }
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        
     </script>
 </body>
 </html>
