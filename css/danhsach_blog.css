@@ -89,7 +89,7 @@ nav .onglets a{
   color: #2d2d2d;
 }
 
-footer {
+/* footer {
   margin-top: 30px;
   display: flex;
   flex-wrap:wrap;
@@ -98,7 +98,7 @@ footer {
 }
 footer h2{
   font-size: 20px;
-  /* font-family: 'Crimson Text', serif; */
+  font-family: 'Crimson Text', serif;
   margin-top: 20px;
 }
 footer .social-media{
@@ -107,7 +107,7 @@ footer .social-media{
 footer .social-media p{
   font-size: 18px;
   margin-right: 20px;
-}
+} */
 
 @media screen and (max-width: 640px){
   body{
@@ -124,7 +124,7 @@ footer .social-media p{
     margin: 0px;
     max-width: 100%;
   }
-  footer .social-media{
+  /* footer .social-media{
     margin-top: -20px;
-  }
+  } */
 }
