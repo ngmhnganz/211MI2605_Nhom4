@@ -18,9 +18,74 @@
     <div id="header">
         <script>$("#header").load("/component/header.html"); </script>
     </div>
-    <div class="grid wide">
-        <div class="product cart-page">
-        
+    <div class="grid wide cart-page">
+
+        <div class="cart-page">
+            <div class="row">
+                <div class="col l-7 m-12 c-12 checkout-info">
+                    <div class="info-container">
+                        <div class="checkout-tilte">
+                            Thông tin người nhận
+                        </div>
+                        <div class="checkout-input">
+                            <input type="text" name="customerName" id="customerName" placeholder="Tên người nhận">
+                            <input type="text" name="customerPhone" id="customerPhone" placeholder="Số điện thoại người nhận">
+                            <input type="text" name="customerAdd" id="customerAdd" placeholder="Địa chỉ người nhận">
+                        </div>
+                    </div>
+                        
+                   
+                </div>
+                <div class="col l-5 m-12 c-12 checkout-info">
+                        <div class="info-container">
+                            <div class="checkout-tilte">
+                                Phương thức thanh toán
+                            </div>
+                            <div class="checkout-radio">
+                                <label for="cash">
+                                <input type="radio" name="payment-method" id="cash" value="cash">Thanh toán bằng tiền mặt</label>
+                                <label for="zalo">
+                                <input type="radio" name="payment-method" id="zalo" value="zalo">Thanh toán bằng zalo</label>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <div class="product">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col c-12 m-12 l-12">
+                    <div class="total-price">
+                        <div class="checkout-tilte">
+                            Thông tin thanh toán
+                        </div>
+                        <table>
+                            <tr>
+                                <td>Tổng tiền hàng</td>
+                                <td>50.000 đ</td>
+                            </tr>
+                            <tr>
+                                <td>Khuyến mãi</td>
+                                <td>-5.000 đ</td>
+                            </tr>
+                            <tr>
+                                <td>Phí vận chuyển</td>
+                                <td>10.000 đ</td>
+                            </tr>
+                            <tr>
+                                <td>Tổng thanh toán</td>
+                                <td>55.000 đ</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            
         </div>
     </div>
 

@@ -9,7 +9,7 @@ h3{
     margin-top: 20vh;
     background-color: white;
     border-radius: 20px;
-    padding: 0 20px;
+    padding:20px;
 }
 table{
     width: 100%;
@@ -38,10 +38,12 @@ td input{
     text-align: center;
     font-family: var(--font);
 }
-.total-price table{
-    border-top: 1px solid var(--sub-light-color);
-    width: 100%;
+.total-price{
+    background-color: var(--sub-background-color);
+    border-radius: 1rem;
+    padding: 1rem;
 }
+
 td:last-child{
     text-align: right;
 }
@@ -77,6 +79,10 @@ button{
     width: 70%;
 }
 
+.product {
+    margin: 2rem 0;
+    padding: 1rem ;
+}
 
 /* hide nút tăng giảm */
 input::-webkit-outer-spin-button,
@@ -85,6 +91,51 @@ input::-webkit-inner-spin-button {
     margin: 0; 
 }
 
+.checkout-info{
+    
+    padding: 0 1rem;
+    
+}
+
+    .info-container{
+        background-color: var(--sub-background-color);
+        padding: 1rem 1rem 2rem 1rem;
+        border-radius: 1em;
+        height: 100%;
+    }
+
+    .checkout-tilte{
+        font-family: var(--font);
+        font-weight: var(--semi-bold);
+        color: var(--text-color);
+    }
+
+    .checkout-radio,
+    .checkout-input{
+        margin: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .checkout-input{
+        justify-content: space-evenly;
+    }
+
+    .checkout-radio{
+        margin-top: 1rem;
+    }
+
+    .checkout-input input[type=text]{
+        border: none;
+        padding: 0.8em 1rem;
+        border-radius: 0.5em;
+        margin: 5px 0;
+    }
+    
+    .checkout-radio label{
+        margin-bottom: 1rem;
+    }
+
 input[type=number] {
     -moz-appearance:textfield;
 }
@@ -92,12 +143,24 @@ input[type=number] {
 @media  (max-width:739px) {
     .cart-info{
         font-size: 14px;}
+
+    .checkout-info{
+
+        padding: 1rem 0;
+        
+    }
 }
 
 @media  (min-width:740px) and (max-width:1023px) {
     .cart-info{
         font-size: 16px;
-} }
+    }
+    .checkout-info{
+
+        padding: 1rem 0;
+        
+    } 
+}
 
 @media  (max-width:415px) {
     .cart-page{

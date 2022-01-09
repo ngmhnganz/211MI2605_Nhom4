@@ -57,26 +57,7 @@ function getData(uid){
         // tính tổng tiền, khuyến mãi, phí vẫn chuyện , tổng thành toán
 
         htmls.push(`
-        <div class="total-price">
-            <table>
-                <tr>
-                    <td>Tổng tiền hàng</td>
-                    <td>50.000 đ</td>
-                </tr>
-                <tr>
-                    <td>Khuyến mãi</td>
-                    <td>-5.000 đ</td>
-                </tr>
-                <tr>
-                    <td>Phí vận chuyển</td>
-                    <td>10.000 đ</td>
-                </tr>
-                <tr>
-                    <td>Tổng thanh toán</td>
-                    <td>55.000 đ</td>
-                </tr>
-            </table>
-        </div>
+       
         <button>Thanh toán</button>`)
         console.log(htmls)
         $('.product').html(htmls.join(''))
