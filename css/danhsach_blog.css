@@ -98,7 +98,7 @@ footer {
 }
 footer h2{
   font-size: 20px;
-  font-family: 'Crimson Text', serif;
+  /* font-family: 'Crimson Text', serif; */
   margin-top: 20px;
 }
 footer .social-media{
