@@ -5,19 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sản phẩm</title>
-    <script src="../script/includeHTML.js"></script>
     <script src="../data/firebase-config.js"></script>
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href= "../css/danhsach-sanpham.css" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
     <script src="../lib/jQuery.js"></script>
     <script>
-        function loadComponent() {
-            $("#header").load("../component/header.html"); 
-            $("#footer").load("../component/footer.html"); 
-        }
-       
         var lastScrollTop = 0, delta = 5;
         $(window).scroll(function(event){
             var st = $(this).scrollTop();
@@ -35,9 +29,9 @@
     });
     </script>
 </head>
-<body onload="loadComponent()">
+<body>
     <!-- Header -->
-    <div  id="header"></div>
+    <div  id="header"><script>$("#header").load("../component/header.html"); </script></div>
     <!--Banner-->
     <div class="containerTrung background-primary-color" style="padding:150px 0px 50px 0px">
         <div class="grid wide">
@@ -93,15 +87,10 @@
     </div>
     
     <!--Pagination-->
-    <div w3-include-html="../component/pagination.html"></div>
+    <div id="pagination"> <script>$("#pagination").load("../component/pagination.html");</script> </div>
     
-
     <!--Footer-->
-    <div id="footer"></div>
-
-    <script>
-        includeHTML();
-    </script>
+    <div id="footer"><script>$("#footer").load("../component/footer.html");</script></div>
 
     <script src="../script/danhsach-sanpham.js" async type="module"></script>
     

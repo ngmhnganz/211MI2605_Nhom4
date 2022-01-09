@@ -1,0 +1,67 @@
+@import url(/css/constant.css);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.close_menu {
+    font-size: 16pt;
+    align-self: end;
+    padding: 10px;
+    margin: 10px;
+}
+
+.close_menu:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10000px;
+    cursor: pointer;
+}
+#menu-logo img{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+#AppName {
+    font-family: var(--font);
+    font-weight: var(--bold);
+    font-size: 18pt;
+    margin: 5vh 0;
+}
+
+#menu_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+.menuItem{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font);
+}
+
+.menuItem{
+    font-weight: var(--regular);
+}
+
+.menuItem a {
+    padding: 10px;
+    margin-bottom: 1vh;
+    color: white;
+    text-decoration: none;
+}
+
+.current-menu{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: var(--semi-bold)
+}
+
+#menuItem a i {
+    margin-right: 10px;
+}

@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../data/firebase-config.js"></script>
     <script src="../lib/jQuery.js"></script>
+    <script src="../script/toast.js"></script>
     <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
-    <link rel="stylesheet" href="../css/header.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/toast.css" type="text/css" />
     <link rel="stylesheet" href="../css/product-item.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/footer.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href="../css/san-pham.css" type="text/css"/>
     <title>Sản phẩm</title>
 </head>
-<body onload="loadUI()">
+<body>
+    <div id="toast"></div>
     <!-- ! Header và thanh navigation -->
     <div id="header">
+        <script>
+            $('#header').load("../component/header.html")
+        </script>
     </div>
     
     <div class="containerTrung">    
@@ -28,14 +31,23 @@
                 <div class="col l-6 m-6 c-12 sanpham-des">
                     <p id="sanpham-name"></p>
                     <p id="sanpham-price"></p>
-                    <p id="sanpham-type"></p>
-                    <p id="sanpham-detail"></p>
-                    <form action="" method="post" class="sanpham-form">
-                        <div class="btn-decrease btn-amount" onclick="minusItem()">-</div>
-                        <div id="sanpham-amount">1</div>
-                        <div class="btn-increase btn-amount" onclick="plusItem()">+</div>
-                    </form>
-                    <button class="btn">Đặt hàng</button>
+                    
+                    <div id="detail-container">
+                        <div  id="combo-border">Combo bao gồm:</div> 
+                        <div class="sanpham-detail"> <span class="detail_title">Đường kính</span> <span class="detail_content">150g</span></div>
+                        <div class="sanpham-detail"> <span class="detail_title">Đường kính</span> <span class="detail_content">150g</span></div>
+                        <div class="sanpham-detail"><span class="detail_title">Đường kính</span> <span class="detail_content">150g</span></div>
+                    </div>
+                    
+                    <div id="button-section">
+                        <div class="sanpham-form">
+                            <div class="btn-decrease btn-amount" onclick="minusItem()">-</div>
+                            <div id="sanpham-amount">1</div>
+                            <div class="btn-increase btn-amount" onclick="plusItem()">+</div>
+                        </div>
+                        <button id="btnOrder" class="btn">Đặt hàng</button>
+                    </div>
+                    
                 </div>
             </div>
             <div class="row line">
@@ -44,20 +56,27 @@
                 <div class="row">
                 
                     <div class="col c-4 m-4 info-tab" id="tab-gioithieu"  onclick="tab(1)">
-                        Giới thiệu
-                    </div>
-                    <div class="col c-4 m-4 l-6 info-tab" id="tab-chitiet" onclick="tab(2)">
                         Chi tiết
                     </div>
+                    <div class="col c-4 m-4 l-6 info-tab selectedTab" id="tab-chitiet" onclick="tab(2)">
+                        Giới thiệu
+                    </div>
                     <div class="col c-4 m-4 l-6 info-tab"id="tab-binhluan"  onclick="tab(3)">
-                        Bình luận
+                        Vận chuyển
                     </div>
                 </div>
                 <div class="row info-tab-content">
-                    <div class="col c-12 m-12 l-12" id="m_sanpham-detail"></div>
-                    <div class="col c-12 m-12 l-12" id="m_sanpham-descrip">bình luậ
+                    <div class="col c-12 m-12 l-12" id="m_sanpham-detail">
                     </div>
-                    <div class="col c-12 m-12 l-12" id="m_sanpham-comment">các bình luận
+                    <div class="col c-12 m-12 l-12 selectedTab-content" id="m_sanpham-descrip">
+                    </div>
+                    <div class="col c-12 m-12 l-12" id="m_sanpham-comment">
+                        <ul>
+                            Thời gian vận chuyển
+                            <li>Hà nội: 1-2 ngày</li>
+                            <li>Miền Trung: 3-5 ngày</li>
+                            <li>Miền Nam: 5-7 ngày</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -77,27 +96,33 @@
         </div>
     </section>
 
-    <div id="footer"></div>
+    <div id="footer">
+        <script>
+            $("#footer").load("../component/footer.html"); 
+        </script>
+    </div>
 
     <script src="../script/getSanPham.js" async type="module"></script>
     <script>
-    
-        function loadUI(){
-            $("#footer").load("../component/footer.html"); 
-            $('#header').load("../component/header.html")
-            $('#tab-gioithieu').css("color", "")
-                    $('#tab-chitiet').css("color", "var(--primary-color)")
-                    $('#tab-binhluan').css("color", "")
-                    $('#m_sanpham-detail').css("display","none")
-                    $('#m_sanpham-descrip').css("display","block")
-                    $('#m_sanpham-comment').css("display","none")
-        }
-
+        
         var amount =1
         function plusItem() {
             amount+=1;
             $('#sanpham-amount').text(amount)
             console.log(amount)
+        }
+        console.log($(window).width())
+        window.onresize = function(){
+            if ($(window).width()>= 1024){
+                if ( $('#tab-gioithieu').hasClass('selectedTab')){
+                    $('#tab-gioithieu').removeClass('selectedTab')
+                    $('#tab-chitiet').addClass('selectedTab')
+                    $('#tab-binhluan').removeClass('selectedTab')
+                    $('#m_sanpham-detail').removeClass('selectedTab-content')
+                    $('#m_sanpham-descrip').addClass('selectedTab-content')
+                    $('#m_sanpham-comment').removeClass('selectedTab-content')
+                }
+            } 
         }
 
         function minusItem() {
@@ -111,35 +136,34 @@
         function tab(index) {
             switch (index) {
                 case 1: {
-                    $('#tab-gioithieu').css("color", "var(--primary-color)")
-                    $('#tab-chitiet').css("color", "")
-                    $('#tab-binhluan').css("color", "")
-                    $('#m_sanpham-detail').css("display","block")
-                    $('#m_sanpham-descrip').css("display","none")
-                    $('#m_sanpham-comment').css("display","none")
+                    $('#tab-gioithieu').addClass('selectedTab')
+                    $('#tab-chitiet').removeClass('selectedTab')
+                    $('#tab-binhluan').removeClass('selectedTab')
+                    $('#m_sanpham-detail').addClass('selectedTab-content')
+                    $('#m_sanpham-descrip').removeClass('selectedTab-content')
+                    $('#m_sanpham-comment').removeClass('selectedTab-content')
                     break;
                 }
                 case 2: {
-                    $('#tab-gioithieu').css("color", "")
-                    $('#tab-chitiet').css("color", "var(--primary-color)")
-                    $('#tab-binhluan').css("color", "")
-                    $('#m_sanpham-detail').css("display","none")
-                    $('#m_sanpham-descrip').css("display","block")
-                    $('#m_sanpham-comment').css("display","none")
+                    $('#tab-gioithieu').removeClass('selectedTab')
+                    $('#tab-chitiet').addClass('selectedTab')
+                    $('#tab-binhluan').removeClass('selectedTab')
+                    $('#m_sanpham-detail').removeClass('selectedTab-content')
+                    $('#m_sanpham-descrip').addClass('selectedTab-content')
+                    $('#m_sanpham-comment').removeClass('selectedTab-content')
                     break;
                 }
                 case 3: {
-                    $('#tab-gioithieu').css("color", "")
-                    $('#tab-chitiet').css("color", "")
-                    $('#tab-binhluan').css("color", "var(--primary-color)")
-                    $('#m_sanpham-detail').css("display","none")
-                    $('#m_sanpham-descrip').css("display","none")
-                    $('#m_sanpham-comment').css("display","block")
+                    $('#tab-gioithieu').removeClass('selectedTab')
+                    $('#tab-chitiet').removeClass('selectedTab')
+                    $('#tab-binhluan').addClass('selectedTab')
+                    $('#m_sanpham-detail').removeClass('selectedTab-content')
+                    $('#m_sanpham-descrip').removeClass('selectedTab-content')
+                    $('#m_sanpham-comment').addClass('selectedTab-content')
                     break;
                 }
             }
         }
-
     </script>
 </body>
 </html>

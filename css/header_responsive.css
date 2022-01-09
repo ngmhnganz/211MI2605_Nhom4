@@ -68,12 +68,31 @@ nav .navbar{
   background: url('../assets/img/logo.png') center center / contain no-repeat;
 }
 
+.showUser{
+  display: flex !important;
+}
+
+/* !signed */
+
+.signed{
+  display: none;
+}
+
+/* !unsigned */
+.unsigned{
+  text-align: center;
+  display: none;
+  padding: 10px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.unsigned:hover{
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: var(--medium);
+}
+
 /*!User*/
-/* .action{
-  position: fixed;
-  top: 20px;
-  right: 30px;
-} */
 .action .user-box{
   position: relative;
   width: 60px;
@@ -92,7 +111,6 @@ nav .navbar{
 }
 .action .menu{
   position: absolute;
-  right: 25px;
   padding: 0px 5px;
   background: #fff;
   width: 185px;
@@ -101,33 +119,32 @@ nav .navbar{
   transition: 0.5s;
   visibility: hidden;
   opacity: 0;
-  box-shadow: 2px 2px 0px 0px rgb(207 207 207 / 25%);
+  box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%)
 }
-.action .menu.active{
+.action:hover .menu{
   visibility: visible;
   opacity: 1;
+}
+.action .menu ul {
+  display: block;
 }
 .action .menu ul li{
   padding: 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
+  color: var(--sub-text-color);
   align-items: left;
   justify-content: left;
+}
+
+.action .menu ul li:hover {
+  cursor: pointer;
+  color: var(--text-color);
 }
 .action .menu ul li i{
   max-width: 20px;
   margin-right: 5px;
   transition: 0.5s;
-}
-.action .menu ul li a{
-  display: inline-block;
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-  transition: 0.5s;
-}
-.action .menu ul li:hover a{
-  color: var(--secondary-color);
 }
 
 nav .navbar .nav-links{
@@ -211,7 +228,7 @@ nav .navbar .links li:hover .js-sub-menu{
 }
 .navbar .search-box{
   position: relative;
-   height: 40px;
+  height: 40px;
   width: 40px;
 }
 .navbar .search-box i{

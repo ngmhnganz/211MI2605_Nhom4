@@ -13,7 +13,7 @@
 .line {
     background-color: var(--secondary-color);
     height: 1px;
-    margin: 2rem;
+    margin-top: 2rem;
 }
 
 .sanpham-des {
@@ -35,13 +35,6 @@
     margin-bottom: 20px;
 }
 
-#sanpham-type {
-    font-size: 20px;
-    font-weight: var(--bold);
-    color: var(--sub-text-color);
-    margin-bottom: 20px;
-}
-
 #sanpham-price {
     font-size: 36px;
     font-weight: var(--bold);
@@ -49,25 +42,64 @@
     margin-bottom: 20px;
 } 
 
-#sanpham-detail{
+#detail-container{
+    width: 100%;
+}
+
+.sanpham-detail{
+    font-weight: var(--medium);
+    text-align: start;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+
+#combo-border{
+    width: 100%;
+    text-align: start;
+    color: var(--primary-color);
+    font-weight: var(--medium);
+}
+
+.sanpham-detail .detail_title{
+    color: var(--text-color);
+}
+
+.sanpham-detail .detail_content{
     color: var(--sub-text-color);
-    font-size: 16px;
+}
+.flex1{
+    flex: 1;
+}
+
+.flex2{
+    flex: 2;
 }
 
 /* ?form */
-.sanpham-form{
-    margin-bottom: 40px;
+.sanpham-form{  
     display: flex;
     flex-direction: row;
     justify-content: start;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    
+    border-radius: 1rem;
+    border: 2px solid var(--primary-color);
+    overflow: hidden;
+    margin-right: 1rem;
 }
+
+    .btn-increase{
+        border-left: 2px solid var(--primary-color);
+    }
+
+    .btn-decrease{
+        border-right: 2px solid var(--primary-color);
+    }
+
     .sanpham-form div{
         width: 40px;
-        height: 40px;
-        line-height: 40px;
+        height:50px;
+        line-height: 50px;
         font-size: 20px;
         font-family: var(--font);
         font-weight: var(--semi-bold);
@@ -110,11 +142,20 @@
     color: white;
 }
 
+#button-section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+}
+
 .info-tab{
     font-family: var(--font);
     font-weight: var(--light);
     font-size: 20px;
     color: var(--sub-text-color);
+    padding: 1rem 0;
 }
 
 .info-tab-content {
@@ -130,25 +171,25 @@
     color: var(--text-color);
     cursor: pointer;
 }
-
+.selectedTab{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+#m_sanpham-comment,
+#m_sanpham-descrip,
 #m_sanpham-detail {
     display: none;
     color: var(--sub-text-color);
+    font-weight: var(--medium);
     font-family: var(--font);
     text-align: start;
 }
-#m_sanpham-descrip {
-    display: none;
-    color: var(--sub-text-color);
-    font-family: var(--font);
-    text-align: start;
+
+.selectedTab-content{
+    display: flex !important ;
+    flex-direction: column;
 }
-#m_sanpham-comment {
-    display: none;
-    color: var(--sub-text-color);
-    font-family: var(--font);
-    text-align: start;
-}
+
 .suggestion {
     padding: 2rem 0 4rem 0;
 }
@@ -163,6 +204,12 @@
     .btn {
         width: 100%;
     }
+
+    #combo-border,
+    #detail-container {
+        display: none !important;
+    }
+    
 } 
 
 @media  (min-width:740px) and (max-width:1023px) {
@@ -179,11 +226,11 @@
     #sanpham-price {
         font-size: 25px;
     }
-    #sanpham-type {
-        font-size: 16px;
-    }
-    #sanpham-detail {
-        display: none;
+    
+    
+    #combo-border,
+    #detail-container {
+        display: none !important;
     }
     .sanpham-form div {
         width: 40px;

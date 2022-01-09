@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-import { getDatabase, ref, child, get, query, orderByChild, equalTo, limitToFirst} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+import { getDatabase, ref, child, get, query, orderByChild, equalTo, limitToFirst, set} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 const app = initializeApp(config);
 const database = getDatabase(app);
 const databaseRef = ref(database);
@@ -19,9 +19,29 @@ function api(ref) {
         $('#sanpham-name').text(sanpham.productName)
         $('#sanpham-price').text(sanpham.productPrice)
         $('#sanpham-type').text(sanpham.productType)
-        $('#sanpham-detail').text(sanpham.productDescription)
-        $('#m_sanpham-detail').text(sanpham.productDescription)
         $('#sanpham-img').attr('src', sanpham.productImg)
+        $('#m_sanpham-descrip').text(sanpham.productDescription)
+
+        let htmlDetail =[]
+
+        if (sanpham.productType==="Combo") htmlDetail.push(`<div id="combo-border">Combo bao gồm:</div> `)
+        let des = sanpham.productDetail.split('#')
+        for (let index = 0; index < des.length; index+=2) {
+            htmlDetail.push(`
+            <div class="sanpham-detail"> <span class="detail_title">${des[index]}</span> <span class="detail_content">${des[index+1]}</span></div>
+            `)
+            
+        }
+        console.log(htmlDetail)
+        $('#detail-container').html(htmlDetail.join(""))
+        $('#m_sanpham-detail').html(htmlDetail.join(''))
+        if (sanpham.productType==="Combo"){
+            $('.detail_title').addClass('flex1')
+            $('.detail_content').addClass('flex1')
+        } else{
+            $('.detail_title').addClass('flex1')
+            $('.detail_content').addClass('flex2')
+        }
         return sanpham.productType
     })
     .then(type => {
@@ -54,3 +74,29 @@ function api(ref) {
         })
     })
 }
+
+$('#btnOrder').click(function(){
+    var uid = localStorage.getItem('uid');
+    set(child(databaseRef,`User/${uid}/userCart/id${id}`), {
+        name: $('#sanpham-name').text(),
+        price: parseFloat($('#sanpham-price').text() ),
+        quantity : parseFloat($('#sanpham-amount').text()),
+        id: id
+      })
+      .then(()=>{
+        toast({
+            title: "Đặt hành thành công!",
+            message: "Bạn đã thêm thành công sản phẩm "+ $('#sanpham-name').text(),
+            type: "success",
+            duration: 5000
+          });
+      })
+      .error(()=> {
+        toast({
+            title: "Có lỗi xảy ra",
+            message: "Đã có lỗi xảy ra, bạn hãy tải lại trang và thử lại nhé",
+            type: "error",
+            duration: 5000
+          });
+      });
+})
