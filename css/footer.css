@@ -136,7 +136,7 @@
       * Tint & Shade Generator 
       * (https://maketintsandshades.com/)
       */
-     --color-black                  : #000000;
+     --color-black                  : #000000
      --color-gray-19                : #141415;
      --color-gray-18                : #27292a;
      --color-gray-17                : #3b3d40;
@@ -160,24 +160,24 @@
  
      /* text
       */
-     --color-text                   : var(--color-black);
-     --color-text-dark              : var(--color-black);
+     --color-text                   : #000000;
+     --color-text-dark              : #000000;
      --color-text-light             : var(--color-gray-15);
      --color-placeholder            : var(--color-gray-13);
  
      /* buttons
       */
      --color-btn                    : var(--color-gray-5);
-     --color-btn-text               : var(--color-black);
+     --color-btn-text               : #000000;
      --color-btn-hover              : var(--color-gray-7);
-     --color-btn-hover-text         : var(--color-black);
-     --color-btn-primary            : var(--color-black);
+     --color-btn-hover-text         : #000000;
+     --color-btn-primary            : #000000;
      --color-btn-primary-text       : var(--color-white);
      --color-btn-primary-hover      : var(--color-1);
      --color-btn-primary-hover-text : var(--color-white);
-     --color-btn-stroke             : var(--color-black);
-     --color-btn-stroke-text        : var(--color-black);
-     --color-btn-stroke-hover       : var(--color-black);
+     --color-btn-stroke             : #000000;
+     --color-btn-stroke-text        : #000000;
+     --color-btn-stroke-hover       : #000000;
      --color-btn-stroke-hover-text  : var(--color-white);
  
      /* preloader
@@ -1591,7 +1591,7 @@
  
  mark {
      background : var(--color-1-lighter);
-     color      : var(--color-black);
+     color      : #000000;
  }
  
  /* horizontal rule
@@ -1816,26 +1816,26 @@
  /* --------------------------------------------------------------------
   * ## spacing
   * -------------------------------------------------------------------- */
- fieldset,
- button,
+ fieldset.footer_new,
+ button.footer_new,
  .btn {
      margin-bottom : var(--vspace-0_5);
  }
  
- input,
- textarea,
- select,
- pre,
- blockquote,
- figure,
- figcaption,
- table,
+ input.footer_new,
+ textarea.footer_new,
+ select.footer_new,
+ pre.footer_new,
+ blockquote.footer_new,
+ figure.footer_new,
+ figcaption.footer_new,
+ table.footer_new,
  p.footer_new,
- ul,
- ol,
- dl,
- form,
- img,
+ ul.footer_new,
+ ol.footer_new,
+ dl.footer_new,
+ form.footer_new,
+ img.footer_new,
  .video-container,
  .ss-custom-select {
      margin-bottom : var(--vspace-1);
@@ -2146,7 +2146,7 @@
  input[type="password"]:focus,
  textarea:focus,
  select:focus {
-     color            : var(--color-black);
+     color            : #000000;
      background-color : white;
      box-shadow       : 0 0 5px var(--color-1);
      border           : 1px solid var(--color-1-light);
@@ -2678,7 +2678,7 @@
      color         : white;
      font-size     : 1rem;
      line-height   : 1;
-     background    : var(--color-black);
+     background    : #000000;
      padding       : var(--vspace-0_25);
      border-radius : 4px;
      position      : absolute;
@@ -2694,7 +2694,7 @@
      width            : 0;
      height           : 0;
      border           : 5px solid transparent;
-     border-top-color : var(--color-black, var(--color-black));
+     border-top-color : var(#000000, #000000);
      content          : "";
  }
  
@@ -4230,7 +4230,7 @@
   *
   * ------------------------------------------------------------------- */
  .s-footer {
-     background-color : var(--primary-color);
+     background-color : #F58A42;
      font-weight      : 300;
      padding-top      : var(--vspace-4_5);
      padding-bottom   : var(--vspace-3_5);
@@ -4291,7 +4291,7 @@
      padding-top : var(--vspace-0_25);
      font-size   : var(--text-sm);
      line-height : var(--vspace-0_75);
-     color       : var(--text-color);
+     color       : #3F414E;
  }
  
  .s-footer__bottom a {
@@ -4402,14 +4402,14 @@
      height           : 6rem;
      width            : 6rem;
      border-radius    : 50%;
-     background-color : var(--secondary-color);
+     background-color : #FFD5AC;
      transition       : all .3s;
      position         : relative;
  }
  
  .ss-go-top a:focus,
  .ss-go-top a:hover {
-     background-color : var(--primary-color)
+     background-color : #F58A42
  }
  
  .ss-go-top a:focus svg path,
