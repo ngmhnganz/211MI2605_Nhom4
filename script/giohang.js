@@ -58,7 +58,6 @@ function getData(uid){
         </table>`
         })
         $('.product').html(productHtml.join(''))
-        // tính tổng tiền, khuyến mãi, phí vẫn chuyện , tổng thành toán
         
         let sum = sumTotal.reduce((a,b)=>a+b,0)
         let discount = 5000
@@ -94,9 +93,57 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+$('#btnPayment').click(()=>{
+    var currentdate = new Date(); 
+    console.log(currentdate.getTime())
+    var itemList = $('.product').children()
+    var nameList = $('.productName')
+    var priceList = $('.productPrice')
+    var qtyList = $('.productQty')
+    var cartItem ={}
+    var cart ={}
+    for (let i = 0; i < itemList.length; i++) {
+        cartItem = {
+            'id': itemList[i].id,
+            'name': nameList[i].innerHTML,
+            'price':priceList[i].innerHTML.split(',').join(''),
+            'quantity':qtyList[i].value
+        }
+        let itemID = 'id'+ itemList[i].id;
+        cart[itemID] = cartItem
+    }
+    console.log(cart)
+    let sum =$('#checkout_sum').text()
+    sum = sum.slice(0,sum.length-2)
+    sum = sum.split(',').join('')
+    
+    let dis = 5000
+    let fee = 10000
+    let total = parseFloat(sum)+fee-dis
+    var orderItem = {
+        'addOrder': $('#customerAdd').val(),
+        'customerName' : $('#customerName').val(),
+        'customerPhone': $('#customerPhone').val(),
+        'dateLongOrder' : currentdate.getTime(),
+        'dateOrder':currentdate.getDate()+'/'+(currentdate.getMonth()+1)+'/'+currentdate.getFullYear(),
+        'discountOrder':5000,
+        'idOrder': auth.currentUser.uid+currentdate.getTime(),
+        'imgOrder':$('.prod-img')[0].getAttribute('src'),
+        'itemOrder': cart,
+        'paymetnOrder':'Tiền mặt',
+        'priceOrder': parseFloat(sum),
+        'rewardOrder': total/100,
+        'shippingFeeOrder':fee,
+        "statusOrder":1,
+        'totalOrder':total
+    }
+    let updateOrder ={}
+    updateOrder[`User/${auth.currentUser.uid}/userOrder/${auth.currentUser.uid+currentdate.getTime()}`] = orderItem;
+    update(ref(database),updateOrder)
+})
+
 $('#btnSaveCart').click(()=>{
     let updateCart = {}
-    var IDs = []
     var itemList = $('.product').children()
     var nameList = $('.productName')
     var priceList = $('.productPrice')
@@ -131,28 +178,4 @@ $('#btnSaveCart').click(()=>{
             duration: 5000
           });
     })
-
-    
-    
-
-    // let updateCart = {}
-    // updateCart[`User/${auth.currentUser.uid}/userCart/`] = address.value.trim();
-    // update(ref(database), updates)
-    // .then(()=>{
-    //     toast({
-    //         title: "Cập nhật thành công",
-    //         message: "Bạn đã cập nhật thông tin thành công",
-    //         type: "success",
-    //         duration: 5000
-    //       });
-    // })
-
-    // if (checkValidatePhone() && Name.value.trim()!==""){
-    //     updateProfile(auth.currentUser, {
-    //         displayName: Name.value.trim()
-    //     })
-    //     .then(()=>{
-    //         console.log(auth.currentUser)
-    //     })
-    // }
 })
