@@ -46,6 +46,11 @@ document.querySelector('.unsigned').onclick = function(){
 document.querySelector('#btnUserHome').onclick = function(){
   window.location.href = window.location.origin +"/user/"
 }
+
+document.querySelector('#btnUserOrder').onclick = function(){
+  window.location.href = window.location.origin +"/user/order.html"
+}
+
 document.querySelector('#btnUserIcon').onclick = function(){
   window.location.href = window.location.origin +"/user/"
 }

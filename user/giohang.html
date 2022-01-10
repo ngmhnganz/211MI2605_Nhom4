@@ -43,9 +43,24 @@
                             Thông tin người nhận
                         </div>
                         <div class="checkout-input">
-                            <input type="text" name="customerName" id="customerName" placeholder="Tên người nhận">
-                            <input type="text" name="customerPhone" id="customerPhone" placeholder="Số điện thoại người nhận">
-                            <input type="text" name="customerAdd" id="customerAdd" placeholder="Địa chỉ người nhận">
+                            <div class="form-control">
+                                <input type="text" id="customerName" placeholder="Nhập tên người nhận" value="">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="form-control">
+                                <input type="text" id="customerPhone" placeholder="Số điện thoại người nhận" value="">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="form-control">
+                                <input type="text" id="customerAdd" placeholder="Nhập địa chỉ nhận hàng " value="">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div>
                         </div>
                     </div>
                         
@@ -58,7 +73,7 @@
                             </div>
                             <div class="checkout-radio">
                                 <label for="cash">
-                                <input type="radio" name="payment-method" id="cash" value="cash">Thanh toán bằng tiền mặt</label>
+                                <input type="radio" name="payment-method" checked id="cash" value="cash">Thanh toán bằng tiền mặt</label>
                                 <label for="zalo">
                                 <input type="radio" name="payment-method" id="zalo" value="zalo">Thanh toán bằng zalo</label>
                             </div>
@@ -84,62 +99,5 @@
     </div>
 
     <script src="../script/giohang.js" async type="module"></script>
-    
-    <script>
-        let discount = 5000
-        let shippingFee = 10000
-        function setData() {
-            $('#btnSaveCart').removeClass('hide')
-        }
-
-        function calculateTotal(id){
-            var price = $("#productPrice_value"+id).text().split(',').join('');
-            var qty=document.getElementById("productQty"+id).value;
-            if (qty==="0"){
-                document.getElementById("productQty"+id).value='1'
-                qty="1"
-            }
-
-            var total = parseFloat(price) *  parseFloat(qty);
-
-            $("#totalCost"+id).text(numberWithCommas(total)+ " VNĐ");
-            var sumTotal = $('.totalCost_payment').text().split(',').join('').split(' VNĐ')
-            sumTotal[sumTotal.length-1]="0"
-
-            
-            var result = sumTotal.reduce( (a,b)=> parseFloat(a)+parseFloat(b));
-            $('#checkout_sum').text(numberWithCommas(result)+" đ")
-            $('#checkout_total_payment').text(numberWithCommas(result-discount+shippingFee)+" đ")
-
-            setData()
-        }
-
-
-        function delItem(){
-            //delete item in cart
-        }
-        function addQty(id){
-            //thêm số lượng khi nhấn dấu cộng
-            var qty= parseFloat(document.getElementById("productQty"+id).value);
-            document.getElementById("productQty"+id).value=qty+1;
-            calculateTotal(id)
-            
-        }
-        function minusQty(id){
-            var qty=parseFloat(document.getElementById("productQty"+id).value);
-            var classname = document.getElementById('productQty'+id).parentNode.parentElement.attributes.class.value;
-            if(qty<2){
-            
-            }else{
-            document.getElementById("productQty"+id).value=qty-1;
-            calculateTotal(id)
-            }
-        }
-
-        function numberWithCommas(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        
-    </script>
 </body>
 </html>

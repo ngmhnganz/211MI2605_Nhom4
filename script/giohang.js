@@ -7,6 +7,7 @@ const app = initializeApp(config);
 const database = getDatabase(app);
 const myRef = ref(database);
 const auth = getAuth();
+const vnf_regex = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
 
 onAuthStateChanged(auth, (user) => {
 if (user) {
@@ -18,6 +19,13 @@ if (user) {
 function getData(uid){
     get(myRef)
     .then(snapshot=>{
+        let discount = 5000
+        let shippingFee = 10000
+        
+        $('#customerAdd').val(snapshot.child('User').child(uid).child('userAdd').val())
+        $('#customerName').val(auth.currentUser.displayName)
+        $('#customerPhone').val(snapshot.child('User').child(uid).child('userPhone').val())
+
         var cartList = []
         snapshot.child("User").child(uid).child("userCart").forEach(function(item){
             var a = item.val()
@@ -44,9 +52,9 @@ function getData(uid){
             <td class="qty">
                 <table>
                     <tr class="id${product.id}">
-                        <td><img class="icon" src="/assets/img/icon-minus.svg" onclick="minusQty(${product.id})"/></td>
+                        <td><img class="icon" id='minusQty${product.id}' src="/assets/img/icon-minus.svg" /></td>
                         <td><input class="productQty" type="number" id="productQty${product.id}" style="border: none;" value="${product.quantity}" name="proQty" onchange="calculateTotal(${product.id})"/></td>
-                        <td><img class="icon" src="/assets/img/icon-plus.svg" onclick="addQty(${product.id})"/></td>
+                        <td><img class="icon" id="addQty${product.id}" src="/assets/img/icon-plus.svg"/></td>
                     </tr>
                 </table>
             </td>
@@ -58,10 +66,45 @@ function getData(uid){
         </table>`
         })
         $('.product').html(productHtml.join(''))
+
+        cartList.map(product =>{
+            $(`#delete${product.id}`).click(()=>{
+                $(`#${product.id}`).remove()
+                let item={}
+                item[`User/${auth.currentUser.uid}/userCart/id${product.id}`] = null;
+                update(ref(database),item)
+                calculateTotal(product.id)
+            })
+
+            $(`#addQty${product.id}`).click(()=>{
+                var qty= parseFloat($("#productQty"+product.id).val());
+                $("#productQty"+product.id).val(qty+1);
+                let item={}
+                item[`User/${auth.currentUser.uid}/userCart/id${product.id}/quantity`] = qty+1;
+                update(ref(database),item)
+                calculateTotal(product.id)
+            })
+
+            $(`#minusQty${product.id}`).click(()=>{
+                var qty= parseFloat($("#productQty"+product.id).val());
+                if(qty<2){
+            
+                }
+                else{
+                    $("#productQty"+product.id).val(qty-1);
+                    let item={}
+                    item[`User/${auth.currentUser.uid}/userCart/id${product.id}/quantity`] = qty-1;
+                    update(ref(database),item)
+                    calculateTotal(product.id)
+                }
+            })
+            $(`#productQty${product.id}`).change(()=>{
+                calculateTotal(product.id)
+            })
+        })
         
         let sum = sumTotal.reduce((a,b)=>a+b,0)
-        let discount = 5000
-        let shippingFee = 10000
+       
         var totalHtml =`
         <div class="checkout-tilte">
         Thông tin thanh toán
@@ -93,53 +136,93 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-$('#btnPayment').click(()=>{
-    var currentdate = new Date(); 
-    console.log(currentdate.getTime())
-    var itemList = $('.product').children()
-    var nameList = $('.productName')
-    var priceList = $('.productPrice')
-    var qtyList = $('.productQty')
-    var cartItem ={}
-    var cart ={}
-    for (let i = 0; i < itemList.length; i++) {
-        cartItem = {
-            'id': itemList[i].id,
-            'name': nameList[i].innerHTML,
-            'price':priceList[i].innerHTML.split(',').join(''),
-            'quantity':qtyList[i].value
-        }
-        let itemID = 'id'+ itemList[i].id;
-        cart[itemID] = cartItem
+function calculateTotal(id){
+    let discount = 5000
+    let shippingFee = 10000
+    var price = $("#productPrice_value"+id).text().split(',').join('');
+    var qty=document.getElementById("productQty"+id).value;
+    if (qty==="0"){
+        document.getElementById("productQty"+id).value='1'
+        qty="1"
     }
-    console.log(cart)
-    let sum =$('#checkout_sum').text()
-    sum = sum.slice(0,sum.length-2)
-    sum = sum.split(',').join('')
+
+    var total = parseFloat(price) *  parseFloat(qty);
+
+    $("#totalCost"+id).text(numberWithCommas(total)+ " VNĐ");
+    var sumTotal = $('.totalCost_payment').text().split(',').join('').split(' VNĐ')
+    sumTotal[sumTotal.length-1]="0"
+
     
-    let dis = 5000
-    let fee = 10000
-    let total = parseFloat(sum)+fee-dis
-    var orderItem = {
-        'addOrder': $('#customerAdd').val(),
-        'customerName' : $('#customerName').val(),
-        'customerPhone': $('#customerPhone').val(),
-        'dateLongOrder' : currentdate.getTime(),
-        'dateOrder':currentdate.getDate()+'/'+(currentdate.getMonth()+1)+'/'+currentdate.getFullYear(),
-        'discountOrder':5000,
-        'idOrder': auth.currentUser.uid+currentdate.getTime(),
-        'imgOrder':$('.prod-img')[0].getAttribute('src'),
-        'itemOrder': cart,
-        'paymetnOrder':'Tiền mặt',
-        'priceOrder': parseFloat(sum),
-        'rewardOrder': total/100,
-        'shippingFeeOrder':fee,
-        "statusOrder":1,
-        'totalOrder':total
+    var result = sumTotal.reduce( (a,b)=> parseFloat(a)+parseFloat(b));
+    $('#checkout_sum').text(numberWithCommas(result)+" đ")
+    $('#checkout_total_payment').text(numberWithCommas(result-discount+shippingFee)+" đ")
+
+    $('#btnSaveCart').removeClass('hide')
+}
+
+$('#btnPayment').click(()=>{
+    if (checkValidate()) {
+        var currentdate = new Date(); 
+        var itemList = $('.product').children()
+        if (itemList.length===0){
+            toast({
+                title: "Đã có lỗi xảy",
+                message: "Bạn không thể thanh toán khi giỏ hàng trống",
+                type: "error",
+                duration: 5000
+              });
+        }
+        else
+        {
+            var nameList = $('.productName')
+            var priceList = $('.productPrice')
+            var qtyList = $('.productQty')
+            var cartItem ={}
+            var cart ={}
+            for (let i = 0; i < itemList.length; i++) {
+                cartItem = {
+                    'id': itemList[i].id,
+                    'name': nameList[i].innerHTML,
+                    'price':priceList[i].innerHTML.split(',').join(''),
+                    'quantity':qtyList[i].value
+                }
+                let itemID = 'id'+ itemList[i].id;
+                cart[itemID] = cartItem
+            }
+            let sum =$('#checkout_sum').text()
+            sum = sum.slice(0,sum.length-2)
+            sum = sum.split(',').join('')
+            
+            let dis = 5000
+            let fee = 10000
+            let total = parseFloat(sum)+fee-dis
+            var orderItem = {
+                'addOrder': $('#customerAdd').val(),
+                'customerName' : $('#customerName').val(),
+                'customerPhone': $('#customerPhone').val(),
+                'dateLongOrder' : currentdate.getTime(),
+                'dateOrder':currentdate.getDate()+'/'+(currentdate.getMonth()+1)+'/'+currentdate.getFullYear(),
+                'discountOrder':5000,
+                'idOrder': auth.currentUser.uid+currentdate.getTime(),
+                'imgOrder':$('.prod-img')[0].getAttribute('src'),
+                'itemOrder': cart,
+                'paymentOrder':'Tiền mặt',
+                'priceOrder': parseFloat(sum),
+                'rewardOrder': total/100,
+                'shippingFeeOrder':fee,
+                "statusOrder":2 ,
+                'totalOrder':total
+            }
+            let updateOrder ={}
+            updateOrder[`User/${auth.currentUser.uid}/userOrder/${auth.currentUser.uid+currentdate.getTime()}`] = orderItem;
+            updateOrder[`User/${auth.currentUser.uid}/userCart`] = null;
+            updateOrder[`DonHang/${auth.currentUser.uid+currentdate.getTime()}`] = orderItem;
+            update(ref(database),updateOrder)
+            .then(()=>{
+                window.location.href = window.location.origin+'/user/order.html'
+            })
+        }
     }
-    let updateOrder ={}
-    updateOrder[`User/${auth.currentUser.uid}/userOrder/${auth.currentUser.uid+currentdate.getTime()}`] = orderItem;
-    update(ref(database),updateOrder)
 })
 
 $('#btnSaveCart').click(()=>{
@@ -179,3 +262,36 @@ $('#btnSaveCart').click(()=>{
           });
     })
 })
+
+function checkValidate(){
+    var valid = true
+    if ($('#customerName').val()==null || $('#customerName').val()===''){
+        setErrorFor($('#customerName')[0],"Không được trống")
+        valid = false 
+    }
+    if ($('#customerPhone').val()==null || $('#customerPhone').val()===''){
+        setErrorFor($('#customerPhone')[0],"Không được trống")
+        valid = false 
+    }
+    else {
+        var phoneValue = $('#customerPhone').val().trim().replace('+84','0');
+        if(vnf_regex.test(phoneValue) == false) 
+        {
+            setErrorFor($('#customerPhone')[0],"Số điện thoại không hợp lệ")
+            valid = false
+        }
+    }
+
+    if ($('#customerAdd').val()==null || $('#customerAdd').val()===''){
+        setErrorFor($('#customerAdd')[0],"Không được trống")
+        valid = false 
+    }
+    return valid
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
