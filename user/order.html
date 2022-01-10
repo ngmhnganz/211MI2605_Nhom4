@@ -37,8 +37,6 @@
                                     
                         </ul>
                     </div>
-                        
-
                      <!--Phần nội dung của các tabs-->   
                     <div class="tab-content">
                         <!-- Phần trang lịch sử  -->
@@ -50,72 +48,62 @@
                     </div>
 
                     <!--Phần modal-->
-                     <div class="modal" id="myModal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <p class="title">CHI TIẾT ĐƠN HÀNG</p>
-                        
-                            <div class="thong-tin-gio-hang">
-                                <p class="tieude">Thông tin giỏ hàng</p>
-                                <div class="dong-san-pham">
-                                    <p class="ten-sp">Combo làm bánh flan</p>
-                                    <p class="soluong-sp">1</p>
-                                    <p class="gia-sp">69.000 đ</p>
+                    <div id="myModal">
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <p class="title">CHI TIẾT ĐƠN HÀNG</p>
+                            
+                                <div class="thong-tin-gio-hang">
+                                    <p class="tieude">Thông tin giỏ hàng</p>
+                                    <div class="modal-sanpham">
+                                    </div>
+                                    
                                 </div>
-                                <div class="dong-san-pham">
-                                    <p class="ten-sp">Combo làm bánh flan</p>
-                                    <p class="soluong-sp">1</p>
-                                    <p class="gia-sp">69.000 đ</p>
+    
+                                <div class="nguoi-nhan-thanh-toan">
+                                    <div class="thong-tin-nguoi-nhan">
+                                        <p class="tieude">Thông tin người nhận</p>
+                                        <p class="nguoi-nhan" id="customerName"></p>
+                                        <p class="nguoi-nhan" id="customerPhone"></p>
+                                        <p class="nguoi-nhan" id="customerAdd"></p>
+                                    </div>
+                                    <div class="thong-tin-thanh-toan">
+                                        <p class="tieude">Thông tin thanh toán</p>
+                                        <p class="thanh-toan" id="paymentMethod"></p>
+                                    </div>
                                 </div>
+    
+                                <div class="tien-hang">
+                                    <div class="tung-dong">
+                                        <p>Tổng tiền hàng</p>
+                                        <p id="sum"></p>
+                                    </div>
+                                    <div class="tung-dong">
+                                        <p>Phí vận chuyển</p>
+                                        <p id="fee"></p>
+                                    </div>
+                                    <div class="tung-dong">
+                                        <p>Khuyến mãi</p>
+                                        <p id="discount"></p>
+                                    </div>
+                                    <div class="tung-dong">
+                                        <p>Tổng thanh toán</p>
+                                        <p id="total"></p>
+                                    </div>
+                                </div>
+                                <input type="button" id="btnModal">
+    
                             </div>
-
-                            <div class="nguoi-nhan-thanh-toan">
-                                <div class="thong-tin-nguoi-nhan">
-                                    <p class="tieude">Thông tin người nhận</p>
-                                    <p class="nguoi-nhan">Nguyễn Văn A</p>
-                                    <p class="nguoi-nhan">09089990283</p>
-                                    <p class="nguoi-nhan">67 dường 22 quận xyc Hồ Chí Minh</p>
-                                </div>
-                                <div class="thong-tin-thanh-toan">
-                                    <p class="tieude">Thông tin thanh toán</p>
-                                    <p class="thanh-toan">Thanh toán bằng tiền mặt</p>
-                                </div>
-                            </div>
-
-                            <div class="tien-hang">
-                                <div class="tung-dong">
-                                    <p>Tổng tiền hàng</p>
-                                    <p>213.000 đ</p>
-                                </div>
-                                <div class="tung-dong">
-                                    <p>Phí vận chuyển</p>
-                                    <p>15.000 đ</p>
-                                </div>
-                                <div class="tung-dong">
-                                    <p>Tổng thanh toán</p>
-                                    <p>228.000 đ</p>
-                                </div>
-                            </div>
-                            <input type="button" value="Hủy đơn" id="btnHuyDon_1">
-
-                        </div>
+                        </div>  
                     </div>
-
-
                 </div>
             </div>
-            </div>
         </div>
+     </div>
+</section>
 
-    </section>
-
-     
-    
-    
-    
-            
-    
-    <script src="../script/order.js" async type="module"></script>
+<script src="../script/order.js" async type="module"></script>
        
     
 </body>

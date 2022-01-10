@@ -6,7 +6,6 @@
     border-radius: 20px;
     margin-top: 20px;
     padding:2rem;
-    height: auto;
 }
 
 .title{
@@ -438,14 +437,15 @@ ul {
 }
 
 /*phần modal*/
+
 .modal{
-    display: none; 
+    visibility: collapse;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    bottom: 0;
+    right: 0;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -457,7 +457,7 @@ ul {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid var(--sub-text-color);
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 70%; /* Could be more or less, depending on screen size */
     border-radius: 20px;
 }
 
@@ -585,12 +585,12 @@ ul {
 }
 
 /*responsive cho modal*/
-@media (max-width:376px) {
+@media(max-width:739px) {
     .modal-content {
         width: 95%; /* Could be more or less, depending on screen size */
         border-radius: 20px;
-        margin-top: 90px;
         padding: 10px;
+        margin: 35% auto;
     }
 
     .title{
@@ -667,12 +667,12 @@ ul {
     }
 }
 
-@media (max-width:415px) {
+@media (min-width:740px) and (max-width:1023px) {
     .modal-content {
-        width: 95%; /* Could be more or less, depending on screen size */
+        width: 70%; /* Could be more or less, depending on screen size */
         border-radius: 20px;
-        margin-top: 90px;
         padding: 10px;
+        margin: 25% auto;
     }
 
     .title{
@@ -701,7 +701,7 @@ ul {
 
     .nguoi-nhan-thanh-toan{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         margin-top: 10px;
         
         margin-left: 10px;
@@ -719,6 +719,7 @@ ul {
     
     .thong-tin-nguoi-nhan{
         float: left;
+        margin: 0 10px 0 0;
         width: 100%;
     }
 
@@ -738,7 +739,6 @@ ul {
     .thong-tin-thanh-toan{
         float: left;
         width: 100%;
-        margin-top: 10px;
     }
 
     .tien-hang{
@@ -762,11 +762,10 @@ ul {
     }
 }
 
-@media (max-width:601px) {
+@media (min-width:1024px) {
     .modal-content {
-        width: 95%; /* Could be more or less, depending on screen size */
+        width: 50%; /* Could be more or less, depending on screen size */
         border-radius: 20px;
-        margin-top: 90px;
         padding: 10px;
     }
 
@@ -855,4 +854,4 @@ ul {
         font-weight: bold;
         font-size: 16px;
     }
-}
+} 
