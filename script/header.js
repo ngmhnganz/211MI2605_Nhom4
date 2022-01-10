@@ -1,38 +1,8 @@
-<<<<<<< HEAD
-  // search-box open close js code
-  let navbar = document.querySelector(".navbar");
-  let searchBox = document.querySelector(".search-box .bx-search");
-  let searchBoxCancel = document.querySelector(".search-box .bx-x");
-  // let userBox = document.querySelector(".userbox .menu");
-  
-  searchBox.addEventListener("click", ()=>{
-    navbar.classList.toggle("showInput");
-    if(navbar.classList.contains("showInput")){
-      searchBox.classList.replace("bx-search" ,"bx-x");
-    }else {
-      searchBox.classList.replace("bx-x" ,"bx-search");
-    }
-  });
-  
-  // sidebar open close js code
-  let navLinks = document.querySelector(".nav-links");
-  let menuOpenBtn = document.querySelector(".navbar .bx-menu");
-  console.log(menuOpenBtn)
-  let menuCloseBtn = document.querySelector(".nav-links .bx-x");
-  menuOpenBtn.onclick = function() {
-    console.log("ok")
-  navLinks.style.left = "0";
-  }
-  menuCloseBtn.onclick = function() {
-  navLinks.style.left = "-100%";
-  }
-=======
 import { getAuth, onAuthStateChanged, signOut} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 
 const app = initializeApp(config)
 const auth = getAuth();
->>>>>>> 2cb11de6b45b529f2e3484505d7864e8f293c82d
 
 let navbar = document.querySelector(".navbar");
 let searchBox = document.querySelector(".search-box .bx-search");
@@ -93,9 +63,6 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-<<<<<<< HEAD
-  
-=======
 $('#btnSignOut').click(function(){
   signOut(auth).then(() => {
       window.location.href = window.location.origin
@@ -109,4 +76,3 @@ $('#inputSearch').on("keyup", function(e) {
       window.location.href = window.location.origin+"/sanpham/?search="+$('#inputSearch').val()
   }
 });
->>>>>>> 2cb11de6b45b529f2e3484505d7864e8f293c82d
