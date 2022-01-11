@@ -45,7 +45,7 @@ function loadUI(congthuc) {
 
         <div class="title">
             <p id="title-name"> Cách làm ${congthuc.recipeName}</p>
-            <p id="title-des">${congthuc.recipeShortDescription}</p>
+            <p id="thoigian"></p>
         </div>
     `)
         
@@ -63,4 +63,39 @@ function loadUI(congthuc) {
             </div>
         </div>
     `)
+}
+
+function getDay(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    var thu = today.getDay(); 
+    if(dd <10) {
+        dd = '0' +dd
+    }
+
+    if(thu == '0'){
+        thu = "Chủ nhật"
+    }
+    if(thu == '1'){
+        thu = "Thứ hai"
+    }
+    if(thu == '2'){
+        thu = "Thứ ba"
+    }
+    if(thu == '3'){
+        thu = "Thứ tư"
+    }
+    if(thu == '4'){
+        thu = "Thứ năm"
+    }
+    if(thu == '5'){
+        thu = "Thứ sáu"
+    }
+    if(thu == '6'){
+        thu = "Thứ bảy"
+    }
+    
+    document.getElementById("thoigian").innerHTML= thu +"," + dd+"/"+mm+"/"+yyyy;
 }
