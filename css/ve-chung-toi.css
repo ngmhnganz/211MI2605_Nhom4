@@ -32,8 +32,57 @@
     height: 120px;
   }
 } */
+/*!animayion*/
+.parallax {
+  /* The image used */
+  background-image: url("../assets/img/hinhNhom.png");
 
+  /* Set a specific height */
+  min-height: 500px; 
 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100px; 
+  border: 1px solid black;
+}
+
+#slide {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  background: blue;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
+}
+
+.w3-animate-top{
+  position:relative;
+  animation:animatetop 0.4s
+}
+@keyframes animatetop{
+  from{top:-300px;opacity:0} 
+  to{top:0;opacity:1}
+}
 
 
 .title{
