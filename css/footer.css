@@ -135,9 +135,9 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .footer {
+    /* .footer {
         padding-bottom : 6.4rem;
-    }
+    } */
 
     /* .footer>.row {
         max-width : 900px;
