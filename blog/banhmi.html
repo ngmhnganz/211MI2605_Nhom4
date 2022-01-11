@@ -25,7 +25,21 @@
 
     <link rel="stylesheet" href="../css/blog.css">
     
-
+    <style>
+        .parallax {
+          /* The image used */
+          background-image: url("../assets/img/blog/banner_600.jpg");
+        
+          /* Set a specific height */
+          min-height: 500px; 
+        
+          /* Create the parallax scrolling effect */
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        </style>
 </head>
 
 <body id="top">
@@ -45,7 +59,7 @@
             <div id="header"></div>
             <!-- end header -->
 
-
+            <div class="parallax"></div>
     <!-- page wrap
     ================================================== -->
     <div id="page" class="s-pagewrap">
@@ -59,21 +73,20 @@
 
                         <article class="entry format-standard">
 
-                            <header class="entry__header">
-    
+                            <header class="entry__header">   
                                 <h1 class="entry__title">
                                     BÁNH MÌ VIỆT NAM
                                 </h1>
                             </header>
 
-                            <div class="entry__media">
+                            <!-- <div class="entry__media">
                                 <figure class="featured-image">
                                     <img src="../assets/img/blog/banner_1200.jpg" 
                                       srcset="../assets/img/blog/banner_2400.jpg 2400w, 
                                       ../assets/img/blog/banner_1200.jpg 1200w, 
                                       ../assets/img/blog/banner_600.jpg 600w" sizes="(max-width: 2400px) 100vw, 2400px" alt="">
                                 </figure>
-                            </div>
+                            </div> -->
 
                             <div class="content-primary">
 

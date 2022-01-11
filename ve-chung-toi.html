@@ -11,14 +11,36 @@
     <script src="./script/includeHTML.js"></script>
     <script src="./script/ve-chung-toi.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
+    <style>
+      .parallax {
+        /* The image used */
+        /* background-image: url("./assets/img/hinhNhom.png"); */
+      
+        /* Set a specific height */
+        min-height: 500px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      </style>
+
+
+
 </head>
 <body onload="show()">
   <!-- Header -->
   <div w3-include-html="../component/header.html"></div>
 
   <!--Hình nhóm-->
-  <div class="hinh-nhom" style="margin-top: 100px;">
+  <!-- <div class="hinh-nhom" style="margin-top: 100px;">
     <img src="./assets/img/hinhNhom.png">
+  </div> -->
+  <div class="parallax" style="background-image: url('./assets/img/hinhNhom.png');">
+    
   </div>
   <!--Câu chuyện của trứng-->
   <div class="grid wide">
