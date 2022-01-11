@@ -20,20 +20,33 @@
 
 
   
-  <script src="../script/header.js"></script>
+  <script src="../script/preloader.js"></script>
   <script src="./data/firebase-config.js"></script>
   <script src="../lib/jQuery.js" type="text/javascript"></script>
     <script> 
         $(function(){
           $("#header").load("../component/header.html"); 
           $("#footer").load("../component/footer.html"); 
+          $("#pagination").load("../component/pagination.html");
+          // $("#preloader").load("../component/preloader.html");
         });
     </script>
  
 </head>
 <body>
+  <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+      <div id="loader" class="dots-fade">
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+  </div> -->
+  <div class="preloader"></div>
+
   <!-- !Header -->
-  <div id="header""></div>
+  <div id="header"></div>
 
   <!-- ! BÁNH MÌ -->
   <section style="padding: 80px 0px 0px 0px">
@@ -99,7 +112,7 @@
 
   </section>
   <!--Pagination-->
-  <div w3-include-html="../component/pagination.html"></div>
+  <div id="pagination"></div>
 
   
   
@@ -116,5 +129,5 @@
   
 </body>
 <!--!Footer-->
-<div id="footer" style="padding: 0%;"></div>
+<div id="footer"></div>
 </html>
