@@ -12,53 +12,14 @@
     <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href="../css/congthuc.css" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script>
-        $(function(){
-         $("#header").load("../component/header.html"); 
-         $("#footer").load("../component/footer.html"); 
-       });
-
-       function getDay(){
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1;
-    var yyyy = today.getFullYear();
-    var thu = today.getDay(); 
-    if(dd <10) {
-        dd = '0' +dd
-    }
-
-    if(thu == '0'){
-        thu = "Chủ nhật"
-    }
-    if(thu == '1'){
-        thu = "Thứ hai"
-    }
-    if(thu == '2'){
-        thu = "Thứ ba"
-    }
-    if(thu == '3'){
-        thu = "Thứ tư"
-    }
-    if(thu == '4'){
-        thu = "Thứ năm"
-    }
-    if(thu == '5'){
-        thu = "Thứ sáu"
-    }
-    if(thu == '6'){
-        thu = "Thứ bảy"
-    }
-    
-    document.getElementById("thoigian").innerHTML= thu +", " + dd+"/"+mm+"/"+yyyy;
-}
-
-    
-   </script>
 </head>
-<body onload="getDay()" >
+<body>
     <!-- Header -->
-    <div id="header"></div>
+    <div id="header">
+        <script>
+             $("#header").load("../component/header.html"); 
+        </script>
+    </div>
 
     <!-- Section -->
     <section class="containerTrung">
@@ -66,41 +27,76 @@
             <div class="row"> 
                 <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b recipe-dau">
                     <div class="banner-img">
-                        <img src="../assets/img/1.jpg" alt="">
+                        <img id="recipeImg" src="../assets/img/1.jpg" alt="">
                     </div>
             
                     <div class="title">
                         <div class="title-dong-dau">
-                            <p id="title-name"> Cách làm lava socola</p>
-                            <p id="thoigian"></p>
+                            <p id="title-name"></p>
+                            <p id="thoigian">
+                                <script>
+                                    var today = new Date();
+                                    var dd = today.getDate();
+                                    var mm = today.getMonth() + 1;
+                                    var yyyy = today.getFullYear();
+                                    var thu = today.getDay(); 
+                                    if(dd <10) {
+                                        dd = '0' +dd
+                                    }
+                                    switch (thu) {
+                                        case 0:
+                                            thu = "Chủ nhật"
+                                            break;
+                                        case 1:
+                                            thu = "Thứ hai"
+                                            break;
+                                        case 2:
+                                            thu = "Thứ ba"
+                                            break;
+                                        case 3:
+                                            thu ="Thứ tư"
+                                            break;
+                                        case 4:
+                                            thu = 'Thứ năm'
+                                            break;
+                                        case 5:
+                                            thu ='Thứ sáu'
+                                            break;
+                                        case 6:
+                                            thu='Thứ bảy'
+                                            break;
+                                    }
+                                    $("#thoigian").html(thu +", " + dd+"/"+mm+"/"+yyyy);
+                                </script>
+                            </p>
                         </div>
                         
-                        <p class="des-recipe">"Bánh sữa tươi chiên xù không còn là món ăn xa lạ với nhiều bạn trẻ bởi sự thơm ngon, lạ miệng. Bánh sữa tươi khi ăn vào thơm đậm mùi sữa, mềm mềm sẽ khiến bạn thích mê."</p>
+                        <p class="des-recipe" id="recipeDescrip"></p>
                         
                     </div>
                     <div class="info-recipe">
                         <div class="ration">
-                            <i class="fas fa-utensils fa-3x"></i>
+                            <i class="fas fa-utensils fa-2x"></i>
                             <div class="ration-content">
                                 <p class="tieu-de">Khẩu phần</p>
-                                <p class="noidung">2 người</p>
+                                <p class="noidung" id="recipeRation"></p>
                             </div>
                         </div>
                         <hr class="hr-dung">
                         <div class="ration">
-                            <i class="far fa-clock fa-3x"></i>
+                            <i class="far fa-clock fa-2x"></i>
                             <div class="ration-content">
                                 <p class="tieu-de">Thời gian nấu</p>
-                                <p class="noidung">30 phút</p>
+                                <p class="noidung" id="recipeTime"></p>
                             </div>
                             
                         </div>
                         <hr class="hr-dung">
                         <div class="ration">
-                            <i class="fas fa-bullseye fa-3x"></i>
+                            <i class="fas fa-bullseye fa-2x"></i>
                             <div class="ration-content">
                                 <p class="tieu-de">Mức độ</p>
-                                <p class="noidung">Dễ</p>
+                                <p class="noidung" id="recipeLevel"></p>
                             </div>
                         </div>
                     </div>
@@ -113,7 +109,7 @@
             <div class="row content">
                 <div class="col l-8 m-8 c-12 mg-t mg-r mg-l mg-b content-left">
                     <p class="tieu-de">CÁCH LÀM</p>
-                    <p class="cach-lam">aaaaa</p>
+                    <p class="cach-lam" id='recipeStep'></p>
                 </div>
                 <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b content-right">
                     <div class="yeu-thich">
@@ -127,14 +123,6 @@
                             <label>Chọn tất cả</label>
                         </div>
                         <div class="cac-nguyen-lieu">
-                            <div class="tung-hang">
-                                <input type="checkbox" id="muoi" name="muoi" value="Muối">
-                                <label>Muối</label>
-                            </div>
-                            <div class="tung-hang">
-                                <input type="checkbox" id="muoi" name="muoi" value="Muối">
-                                <label>Muối</label>
-                            </div>
                         </div>
                         <div class="them-vao-gio-hang" id="btnThemVaoGio">
                             <p>Thêm vào giỏ hàng</p>
@@ -181,10 +169,11 @@
         </div>
     </section>
     <!--Footer-->
-    <div id="footer"></div>
-    <script>
-        includeHTML();
-    </script>
-    <!-- <script src="../script/congthuc.js" async type="module"></script> -->
+    <div id="footer">
+        <script>
+            $("#footer").load("../component/footer.html"); 
+        </script>
+    </div>
+    <script src="../script/congthuc.js" async type="module"></script>
 </body>
 </html>
