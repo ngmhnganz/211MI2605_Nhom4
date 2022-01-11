@@ -21,7 +21,7 @@ function myFunction(xml){
     /* list 5 thành viên*/
     for (i=0; i<x.length; i++){
         thanhvien += "<a href=' " +  x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + "'>" + 
-                    " <div class='team_member'> <div class='team_img'> <img src=' " + 
+                    " <div class='team_member' data-aos='fade-up'> <div class='team_img'> <img src=' " + 
                     x[i].getElementsByTagName("photoTron")[0].childNodes[0].nodeValue + " 'alt='Team_image'></div> <h3> " +
                     x[i].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + "</h3> <p class='role'> " +
                     x[i].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + "</p> <p>" +
