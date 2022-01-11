@@ -11,6 +11,8 @@
     <script src="./script/includeHTML.js"></script>
     <script src="./script/ve-chung-toi.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body onload="show()">
   <!-- Header -->
@@ -41,16 +43,16 @@
     </div>
   </div>
   <!--Đội ngũ nhân viên-->
-  <div class="background-primary-color" >
+  <div class="background-primary-color"  >
     <div class="grid wide">
       <div class="row">
-        <div class="gioithieu">
+        <div class="gioithieu" >
           ĐỘI NGŨ NHÂN VIÊN
         </div>
       </div>      
     </div>
 
-    <div class="team" id="team">
+    <div class="team" id="team" >
     </div>
   </div>
 
@@ -90,8 +92,10 @@
       </div>
     </div>
   </div>
-
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
     <script>
         includeHTML();
