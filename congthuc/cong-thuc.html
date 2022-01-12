@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href="../css/congthuc.css" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/recipe-item.css" type="text/css"/>
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -113,8 +114,14 @@
                 </div>
                 <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b content-right">
                     <div class="yeu-thich">
-                        <i class="far fa-heart  fa-2x"></i>
-                        <p class="tieu-de">YÊU THÍCH</p>
+                        Hãy yêu thích công thức để xem lại sau nhé!
+                        <div class="checkbox">  
+                            <input type="checkbox" name="" id="chkLike" value="">  
+                            <div class="box">  
+                                <i id="icHeart" class="far fa-heart"></i>
+                                <div data-text="Thích">Thích</div>  
+                            </div>  
+                        </div> 
                     </div>
                     <div class="nguyen-lieu-can-co">
                         <p class="tieu-de">Nguyên liệu cần có</p>
@@ -142,28 +149,8 @@
                 </div>
             </div>
             <div class="row danh-sach-recipe-khac">
-                <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b moi-recipe">
-                    <img src="../assets/img/lava.jpg">
-                    <div class="tieu-de-moi-recipe">
-                        <p class="ten-recipe-khac">Bánh sữa tươi chiên</p>
-                        <p class="des-recipe-khac">"Bánh sữa tươi chiên xù...</p>
-                    </div>
-                </div>
-                <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b moi-recipe">
-                    <img src="../assets/img/lava.jpg">
-                    <div class="tieu-de-moi-recipe">
-                        <p class="ten-recipe-khac">Bánh sữa tươi chiên</p>
-                        <p class="des-recipe-khac">"Bánh sữa tươi chiên xù...</p>
-                    </div>
-                </div>
-                <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b moi-recipe">
-                    <img src="../assets/img/lava.jpg">
-                    <div class="tieu-de-moi-recipe">
-                        <p class="ten-recipe-khac">Bánh sữa tươi chiên</p>
-                        <p class="des-recipe-khac">"Bánh sữa tươi chiên xù...</p>
-                    </div>
-                </div>
-                
+            
+               
             </div>
             
         </div>

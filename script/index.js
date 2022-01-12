@@ -150,7 +150,7 @@ onValue(recipeRef, (snapshot) => {
             <div class="recipe-detail">
                     ${recipe.recipeName}
                 <div class="recipe-description">
-                    ${recipe.recipeDescription}
+                    ${recipe.recipeShortDescription}
                 </div>
             </div>
         </div>
