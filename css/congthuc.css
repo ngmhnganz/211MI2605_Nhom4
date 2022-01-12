@@ -3,72 +3,850 @@
 
 /* ! Banner */
 
+.banner-img{
+    margin-top: 62px;
+    margin-bottom: -5px;
+}
+
 .banner-img img{
     width: 100%;
-    height: 50%;
-    object-fit:fill;
-    border-radius: 20px;
+    height: 30vh;
+    object-fit: cover;
 }
 /* ! Title */
 
 .title{
-    background-color: white;
+    background-color: var(--primary-color);
     border-radius: 0px 0px 20px 20px;
-    padding: 10px;
+    padding: 20px;
+}
+
+.title-dong-dau{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #title-name{
-    color: var(--text-color);
+    color: white;
     font-family: var(--font);
-    font-weight: bold;
-    font-size: 36px;
+    font-weight: var(--bold);
+    font-size: 26px;
     margin: 0px;
     text-align: left;
+    float: left;
 }
 
-#title-des{
-    color: var(--text-color);
+#thoigian{
+    color: white;
     font-family: var(--font);
     font-size: 20px;
     text-align: left;
+    margin-left: 10px;
+    float: right;
+    text-align: end;
 }
-.khung{
-    background-color: white;
-    border-radius: 20px;
+
+.des-recipe{
+    color: white;
+    font-family: var(--font);
     text-align: left;
+    font-size: 16px;
+    margin: 0px;
+    font-style: italic;
+    
+}
+/* cái mới*/
+
+
+/* cái mới*/
+.info-recipe{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-top: 3px solid #F58A42;
+    border-bottom: 3px solid #F58A42 ;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding: 10px;
+    
+}
+
+.ration{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.fa-utensils, .fa-clock, .fa-bullseye, .fa-heart{
+    color: var(--primary-color);
+
+}
+
+.ration-content{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.tieu-de{
+    font-family: var(--font);
+    color: var(--primary-color);
+    font-weight: var(--medium);
+}
+
+.noidung{
+    font-family: var(--font);
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: var(--extra-light);
+}
+
+.hr-dung{
+    border: 0;
+    border-left: 2px solid #F58A42;
+}
+
+.content-left .tieu-de{
+    text-align: start;
+    font-size: 26px;
+    margin-left: 10px;
+}
+
+.cach-lam{
+    font-family: var(--font);
+    color: var(--text-color);
+    font-size: 16px;
+    text-align: start;
+}
+
+.yeu-thich{
+    background-color: white;
+    border: 2px solid #F58A42;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: 10px;
 }
 
-.khung-title{
+.yeu-thich .tieu-de{
     font-family: var(--font);
     color: var(--primary-color);
-    font-size: 25px;
+    font-size: 26px;
     font-weight: bold;
-    margin: 0px;
+    margin-left: 10px;
 }
-.khung-content{
-    color: var(--text-color);
+.yeu-thich i{
+    cursor: pointer;
+}
+
+.nguyen-lieu-can-co{
+    background-color: white;
+    border: 2px solid #F58A42;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+    cursor:pointer;
+}
+
+.chon-tat-ca{
+    text-align: right;
+    margin-top: 10px;
+
+}
+
+.chon-tat-ca input{
+    border: 2px solid #F58A42;
+    display: inline-block;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+.chon-tat-ca label{
     font-family: var(--font);
-    font-size: 18px;
-    text-align: justify;
+    color: var(--primary-color);
+    font-size: 16px;
 }
-.hang-NVL{
-    display: inline;
-    margin: 15px 0px;
-    width: 100%
+
+.cac-nguyen-lieu{
+    margin-top: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
 }
-.hang-NVL a{
-    text-decoration: none;
-    color: var(--text-color);
+
+.tung-hang{
+    margin-bottom: 5px;
+}
+
+.tung-hang input{
+    margin-right: 5px;
+}
+
+.them-vao-gio-hang{
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    cursor: pointer;
+}
+
+.cong-thuc-khac{
+    margin-top: 10px;
+    
+}
+
+.tieu-de-cong-thuc-khac{
     font-family: var(--font);
-    font-size: 18px;
-    margin-right: 70%;
-    margin-top: 18px;
-    margin-bottom: 18px;
+    color: var(--text-color);
+    font-size: 20px;
+    text-align: start;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
+
+.cong-thuc-khac hr{
+    width: 70%;
+    color: var(--primary-color);
+    border: 0;
+    border-bottom: 2px solid #F58A42;
+}
+
+.moi-recipe{
+    display: flex;
+    flex-direction: row;
+    padding-top: 0px;
+}
+
+.moi-recipe img{
+    object-fit: contain;
+    height: 10vh;
+    width: 10vw;
+}
+
+.ten-recipe-khac{
+    font-family: var(--font);
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.des-recipe-khac{
+    font-family: var(--font);
+    color: #9C9593;
+    font-size: 14px;
+}
+
+
 
 /* ?Responsive */
-@media  (max-width:768px)  {
+@media  (max-width:320px)  {
+    .banner-img{
+        margin-top: 70px;
+        margin-bottom: -5px;
+    }
+
+    .title{
+        background-color: var(--primary-color);
+        border-radius: 0px 0px 20px 20px;
+        padding: 10px;
+    }
+
+    #title-name{
+        color: white;
+        font-family: var(--font);
+        font-weight: bold;
+        font-size: 14px;
+        margin: 0px;
+        text-align: left;
+        float: left;
+    }
     
+    #thoigian{
+        color: white;
+        font-family: var(--font);
+        font-size: 10px;
+        text-align: left;
+        margin-left: 10px;
+        float: right;
+        text-align: end;
+    }
+    
+    .des-recipe{
+        color: white;
+        font-family: var(--font);
+        text-align: left;
+        font-size: 10px;
+        margin: 0px;
+        font-style: italic;
+        margin-top: 5px;
+    }
+
+    .info-recipe{
+        margin-left: 20px;
+        margin-right: 20px;
+        border-top: 3px solid #F58A42;
+        border-bottom: 3px solid #F58A42 ;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 0px;
+    }
+    
+    .ration{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        flex-grow: 1;
+        justify-content: flex-start;
+        text-align: center;
+    
+    }
+    .ration i{
+        font-size: 25px;
+    }
+    .ration-content{
+        flex-grow: 2;
+
+    }
+    
+    .tieu-de{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .noidung{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 14px;
+    }
+    
+    .content-left .tieu-de{
+        text-align: start;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+    
+    .cach-lam{
+        font-family: var(--font);
+        color: var(--text-color);
+        font-size: 14px;
+        text-align: start;
+    }
+    .yeu-thich .tieu-de{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .yeu-thich i{
+        cursor: pointer;
+        font-size: 25px;
+    }
+    
+    .nguyen-lieu-can-co{
+        background-color: white;
+        border: 2px solid #F58A42;
+        border-radius: 20px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    input[type=checkbox] {
+        transform: scale(1.5);
+        cursor:pointer;
+    }
+    
+    .chon-tat-ca{
+        text-align: right;
+        margin-top: 10px;
+    
+    }
+    
+    .chon-tat-ca input{
+        border: 2px solid #F58A42;
+        display: inline-block;
+        border-radius: 2px;
+        margin-right: 5px;
+    }
+    
+    .chon-tat-ca label{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 16px;
+    }
+    
+    .cac-nguyen-lieu{
+        margin-top: 10px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tung-hang{
+        margin-bottom: 5px;
+    }
+    
+    .tung-hang input{
+        margin-right: 5px;
+    }
+
+    .them-vao-gio-hang{
+        width: 70%;
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .moi-recipe img{
+        object-fit: fill;
+        height: 14vh;
+        width: 25vw;
+    }
+        
+    
+    .moi-recipe{
+        display: flex;
+        flex-direction: row;
+        padding-top: 0px;
+    }
+    
+    .tieu-de-moi-recipe{
+        margin-left: 10px;
+    }
+    
+    
+    .ten-recipe-khac{
+        font-family: var(--font);
+        color: var(--text-color);
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .des-recipe-khac{
+        font-family: var(--font);
+        color: #9C9593;
+        font-size: 14px;
+    }
 
 } 
+
+@media (min-width:321px) and (max-width:415px) {
+    .banner-img{
+        margin-top: 70px;
+        margin-bottom: -5px;
+    }
+
+    .title{
+        background-color: var(--primary-color);
+        border-radius: 0px 0px 20px 20px;
+        padding: 10px;
+    }
+
+    #title-name{
+        color: white;
+        font-family: var(--font);
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0px;
+        text-align: left;
+        float: left;
+    }
+    
+    #thoigian{
+        color: white;
+        font-family: var(--font);
+        font-size: 10px;
+        text-align: left;
+        margin-left: 10px;
+        float: right;
+        text-align: end;
+    }
+    
+    .des-recipe{
+        color: white;
+        font-family: var(--font);
+        text-align: left;
+        font-size: 10px;
+        margin: 0px;
+        font-style: italic;
+        margin-top: 5px;
+    }
+
+    .info-recipe{
+        margin-left: 20px;
+        margin-right: 20px;
+        border-top: 3px solid #F58A42;
+        border-bottom: 3px solid #F58A42 ;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 0px;
+    }
+    
+    .ration{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        flex-grow: 1;
+        justify-content: flex-start;
+        text-align: center;
+    
+    }
+    .ration i{
+        font-size: 30px;
+    }
+    .ration-content{
+        flex-grow: 2;
+
+    }
+    
+    .tieu-de{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .noidung{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 14px;
+    }
+    
+    .content-left .tieu-de{
+        text-align: start;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+    
+    .cach-lam{
+        font-family: var(--font);
+        color: var(--text-color);
+        font-size: 14px;
+        text-align: start;
+    }
+    .yeu-thich .tieu-de{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .yeu-thich i{
+        cursor: pointer;
+        font-size: 25px;
+    }
+    
+    .nguyen-lieu-can-co{
+        background-color: white;
+        border: 2px solid #F58A42;
+        border-radius: 20px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    input[type=checkbox] {
+        transform: scale(1.5);
+        cursor:pointer;
+    }
+    
+    .chon-tat-ca{
+        text-align: right;
+        margin-top: 10px;
+    
+    }
+    
+    .chon-tat-ca input{
+        border: 2px solid #F58A42;
+        display: inline-block;
+        border-radius: 2px;
+        margin-right: 5px;
+    }
+    
+    .chon-tat-ca label{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 16px;
+    }
+    
+    .cac-nguyen-lieu{
+        margin-top: 10px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tung-hang{
+        margin-bottom: 5px;
+    }
+    
+    .tung-hang input{
+        margin-right: 5px;
+    }
+
+    .them-vao-gio-hang{
+        width: 70%;
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .moi-recipe img{
+        object-fit: fill;
+        height: 14vh;
+        width: 25vw;
+    }
+        
+    
+    .moi-recipe{
+        display: flex;
+        flex-direction: row;
+        padding-top: 0px;
+    }
+    
+    .tieu-de-moi-recipe{
+        margin-left: 10px;
+    }
+    
+    
+    .ten-recipe-khac{
+        font-family: var(--font);
+        color: var(--text-color);
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .des-recipe-khac{
+        font-family: var(--font);
+        color: #9C9593;
+        font-size: 14px;
+    }
+}
+
+@media (min-width:416px) and (max-width:601px) {
+    .banner-img{
+        margin-top: 70px;
+        margin-bottom: -5px;
+    }
+
+    .title{
+        background-color: var(--primary-color);
+        border-radius: 0px 0px 20px 20px;
+        padding: 10px;
+    }
+
+    #title-name{
+        color: white;
+        font-family: var(--font);
+        font-weight: bold;
+        font-size: 24px;
+        margin: 0px;
+        text-align: left;
+        float: left;
+    }
+    
+    #thoigian{
+        color: white;
+        font-family: var(--font);
+        font-size: 12px;
+        text-align: left;
+        margin-left: 10px;
+        float: right;
+        text-align: end;
+    }
+    
+    .des-recipe{
+        color: white;
+        font-family: var(--font);
+        text-align: left;
+        font-size: 14px;
+        margin: 0px;
+        font-style: italic;
+        margin-top: 5px;
+    }
+
+    .info-recipe{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .ration i{
+       font-size: 35px;
+    }
+
+    .ration{
+        padding: 0px;
+    }
+
+    .ration-content .tieu-de{
+        font-size: 16px;
+    }
+
+    .ration-content .noidung{
+        font-size: 12px;
+    }
+
+    .yeu-thich .tieu-de{
+        font-family: var(--font);
+        color: var(--primary-color);
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .yeu-thich i{
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    .moi-recipe img{
+        object-fit: fill;
+        height: 12vh;
+        width: 22vw;
+    }
+        
+    
+    .moi-recipe{
+        display: flex;
+        flex-direction: row;
+        padding-top: 0px;
+    }
+    
+    .tieu-de-moi-recipe{
+        margin-left: 10px;
+    }
+    
+    
+    .ten-recipe-khac{
+        font-family: var(--font);
+        color: var(--text-color);
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    .des-recipe-khac{
+        font-family: var(--font);
+        color: #9C9593;
+        font-size: 15px;
+    }
+
+
+}
+
+@media (min-width:602px) and (max-width:769px) {
+    #title-name {
+        font-size: 30px;
+    }
+
+    #thoigian{
+        font-size: 16px;
+    }
+
+    .des-recipe{
+        font-size: 16px;
+    }
+    
+    .info-recipe{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .ration i{
+       font-size: 35px;
+    }
+
+    .ration{
+        padding: 0px;
+    }
+
+    .ration-content .tieu-de{
+        font-size: 18px;
+    }
+
+    .ration-content .noidung{
+        font-size: 14px;
+    }
+
+    .yeu-thich .tieu-de{
+       
+        font-size: 16px;
+        
+    }
+    .yeu-thich i{
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .nguyen-lieu-can-co .tieu-de{
+        font-size: 16px;
+    }
+
+    input[type=checkbox] {
+        transform: scale(1);
+    }
+
+    .chon-tat-ca label{
+        font-size: 14px;
+    }
+
+    .chon-tat-ca input, .tung-hang input{
+        margin-right: -1px;
+    }
+
+    .tung-hang label{
+        font-size: 14px;
+    }
+
+    .them-vao-gio-hang{
+        width: 100%;
+        padding: 8px;
+    }
+
+    .them-vao-gio-hang p{
+        font-size: 14px;
+    }
+
+    .moi-recipe img{
+        object-fit: fill;
+        height: 6vh;
+        width: 12vw;
+    }
+        
+    
+    .moi-recipe{
+        display: flex;
+        flex-direction: row;
+        padding-top: 0px;
+        margin-bottom: 20px;
+    }
+    
+    .tieu-de-moi-recipe{
+        margin-left: 10px;
+        text-align: start;
+    }
+    
+    
+    .ten-recipe-khac{
+        font-family: var(--font);
+        color: var(--text-color);
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    .des-recipe-khac{
+        font-family: var(--font);
+        color: #9C9593;
+        font-size: 12px;
+    }
+
+}

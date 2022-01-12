@@ -7,6 +7,12 @@ const auth = getAuth();
 const database = getDatabase(app);
 const databaseRef = ref(database);
 
+const Name = document.getElementById('Name');
+const birthday = document.getElementById('birthday');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const address = document.getElementById('address');
+
 onAuthStateChanged(auth, (user) => {
     if (user) {
         console.log(user)
@@ -14,8 +20,6 @@ onAuthStateChanged(auth, (user) => {
         $('#user-email').text(user.email)
         $('#Name').val(user.displayName)
         $('#email').val(user.email)
-        if (user.phoneNumber && user.phoneNumber!=null)
-            $('#phone').val(user.phoneNumber)
         get_user_info(user.uid);
     }
   })
@@ -24,6 +28,7 @@ function get_user_info(id){
     get(child(databaseRef, `User/${id}`))
     .then((snapshot)=>{
         let mUser = snapshot.val()
+        console.log(mUser)
         if (mUser.userAddress && mUser.userAddress!= null)
             $('#address').val(mUser.userAddress)
         if (mUser.userGender && mUser.userGender != null)
@@ -33,11 +38,15 @@ function get_user_info(id){
                 $('#nam').attr('checked', true)
         if (mUser.userBirthday && mUser.userBirthday!=null){
             var date = mUser.userBirthday.split('/')
-            console.log(date)
             $('#date').val(date[0])
             $('#month').val(parseInt(date[1]))
             $('#year').val(date[2])
         } 
+
+        if (mUser.userPhone && mUser.userPhone!= null){
+            $('#phone').val(mUser.userPhone)
+        }
+
         if (mUser.userPoint && mUser.userPoint!= null){
             $('#diem').text(mUser.userPoint)
         }
@@ -103,11 +112,7 @@ $(document).ready(function(){
 });
 
 
-const Name = document.getElementById('Name');
-const birthday = document.getElementById('birthday');
-const email = document.getElementById('email');
-const phone = document.getElementById('phone');
-const address = document.getElementById('address');
+
 
 // xử lý nút lưu
 document.getElementById("btnSave").addEventListener("click", function() {
@@ -118,6 +123,7 @@ document.getElementById("btnSave").addEventListener("click", function() {
         updates[`User/${auth.currentUser.uid}/userGender`] ="Nam"
     
     updates[`User/${auth.currentUser.uid}/userAddress`] = address.value.trim();
+    updates[`User/${auth.currentUser.uid}/userPhone`] = phone.value.trim();
 
     let birthday = $('#date').val() +"/"+ $('#month').val() + "/" + $('#year').val()
 
@@ -134,24 +140,10 @@ document.getElementById("btnSave").addEventListener("click", function() {
 
     if (checkValidatePhone() && Name.value.trim()!==""){
         updateProfile(auth.currentUser, {
-            displayName: Name.value.trim(),
-            phoneNumber: phone.value.trim()
+            displayName: Name.value.trim()
         })
         .then(()=>{
-            toast({
-                title: "Cập nhật thành công",
-                message: "Bạn đã cập nhật thông tin thành công",
-                type: "success",
-                duration: 5000
-              });
-        })
-        .catch((error)=>{
-            toast({
-                title: "Cập nhật không thành công",
-                message: "Đã có lỗi xảy ra, vui lòng tải lại trang và thử lại",
-                type: "error",
-                duration: 5000
-              });
+            console.log(auth.currentUser)
         })
     }
 });

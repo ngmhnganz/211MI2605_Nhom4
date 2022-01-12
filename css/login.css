@@ -218,3 +218,79 @@
     }
   }
   
+  .form-control {
+    position: relative;
+    margin: 0 2rem;
+  }
+      
+      .form-control label {
+          display: inline-block;
+          margin-bottom: 5px;
+          color: var(--text-color);
+          font-family: var(--font);
+          font-weight: bold;
+          width: 70%;
+          font-size: 16px;
+      }
+      .form-control input {
+          height: 2rem;
+          width: 100%;
+          outline: none;
+          border-radius: 1rem;
+          border: 1px solid var(--sub-text-color);
+          margin: 0.5rem 0;
+          padding: 1.5rem;
+          font-size:16px;
+          color: var(--text-color);
+          font-family: var(--font);
+      }
+      .form-control i {
+          visibility: collapse;
+          position: absolute;
+          top: 1.5em;
+          right: 1em;
+      }
+      .form-control.success i.fa-check-circle {
+          color: #2ecc71;
+          visibility: visible;
+      }
+  
+      .form-control.error i.fa-exclamation-circle {
+          color: #e74c3c;
+          visibility: visible;
+      }
+
+      .form-control.password i#hide-password,
+      .form-control.unhide-password i#unhide-password,
+      .form-control.unhide-password i#unhide-re-sign-up-password,
+      .form-control.unhide-password i#unhide-sign-up-password,
+      .form-control.password i#hide-re-sign-up-password,
+      .form-control.password i#hide-sign-up-password{
+        color: var(--text-color);
+        visibility: visible;
+        cursor: pointer;
+      }
+      .form-control small {
+          color: #e74c3c;
+          position: absolute;
+          bottom: -0.5rem;
+          left: 1rem;
+          font-family: var(--font);
+          font-size: 14px;
+          visibility: collapse;
+      }
+  
+      .form-control.error small {
+          visibility: visible;
+      }
+      .form-control.error {
+          padding-bottom: 0.5rem;
+      }
+  
+      .form-control.success input {
+          border-color: #2ecc71;
+      }
+  
+      .form-control.error input {
+          border-color: #e74c3c;
+      }

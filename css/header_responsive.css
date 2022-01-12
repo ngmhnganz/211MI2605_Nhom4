@@ -5,9 +5,6 @@
   box-sizing: border-box;
   font-family: var(--font);
 }
-body{
-  min-height: 100vh;
-}
 nav{
   position: fixed;
   top: 0;

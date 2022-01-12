@@ -46,6 +46,11 @@ document.querySelector('.unsigned').onclick = function(){
 document.querySelector('#btnUserHome').onclick = function(){
   window.location.href = window.location.origin +"/user/"
 }
+
+document.querySelector('#btnUserOrder').onclick = function(){
+  window.location.href = window.location.origin +"/user/order.html"
+}
+
 document.querySelector('#btnUserIcon').onclick = function(){
   window.location.href = window.location.origin +"/user/"
 }
@@ -70,3 +75,9 @@ $('#btnSignOut').click(function(){
       alert(error.errorMessage)
     });
 })
+
+$('#inputSearch').on("keyup", function(e) {
+  if (e.keyCode == 13) {
+      window.location.href = window.location.origin+"/sanpham/?search="+$('#inputSearch').val()
+  }
+});

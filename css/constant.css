@@ -1,18 +1,18 @@
 :root{
-    --primary-color: #F58A42;
+    --primary-color: #ff954f;
     --secondary-color :#FFD5AC;
     --sub-light-color:#C8CBD0;
+    --sub-background-color:#EFF0F1;
     --text-color: #3F414E;
     --sub-text-color: #A1A4B2;
     --font : 'Montserrat', sans-serif;  
     --thin : 100;
-    --extra-light : 200;
+    --extra-light : 300;
     --medium : 500;
     --semi-bold : 600;
     --bold : 700;
     --black : 900;
     }
-
 
 *{ 
     box-sizing: border-box; 
