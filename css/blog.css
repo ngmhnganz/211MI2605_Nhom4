@@ -319,7 +319,7 @@
   * normalize.css v8.0.1 | MIT License |
   * github.com/necolas/normalize.css
   * -------------------------------------------------------------------- */
- html {
+ /* .blog html {
      line-height              : 1.15;
      -webkit-text-size-adjust : 100%;
  }
@@ -499,7 +499,7 @@
      display : none;
  }
  
- 
+  */
  /* ===================================================================
   * # BASE SETUP
   *
@@ -609,7 +609,7 @@
  
  /* row 
   */
- .row {
+ .blog_row {
      width     : 92%;
      max-width : var(--width-grid-max);
      margin    : 0 auto;
@@ -617,7 +617,7 @@
      flex-flow : row wrap;
  }
  
- .row .row {
+ .blog_row .blog_row {
      width        : auto;
      max-width    : none;
      margin-left  : calc(var(--gutter) * -1);
@@ -639,43 +639,43 @@
  
  /* row utility classes
   */
- .row.row-wrap {
+ .blog_row.row-wrap {
      flex-wrap : wrap;
  }
  
- .row.row-nowrap {
+ .blog_row.row-nowrap {
      flex-wrap : nowrap;
  }
  
- .row.row-y-top {
+ .blog_row.row-y-top {
      align-items : flex-start;
  }
  
- .row.row-y-bottom {
+ .blog_row.row-y-bottom {
      align-items : flex-end;
  }
  
- .row.row-y-center {
+ .blog_row.row-y-center {
      align-items : center;
  }
  
- .row.row-stretch {
+ .blog_row.row-stretch {
      align-items : stretch;
  }
  
- .row.row-baseline {
+ .blog_row.row-baseline {
      align-items : baseline;
  }
  
- .row.row-x-left {
+ .blog_row.row-x-left {
      justify-content : flex-start;
  }
  
- .row.row-x-right {
+ .blog_row.row-x-right {
      justify-content : flex-end;
  }
  
- .row.row-x-center {
+ .blog_row.row-x-center {
      justify-content : center;
  }
  
@@ -988,14 +988,26 @@
  /* --------------------------------------------------------------------
   * ## mobile devices 
   * -------------------------------------------------------------------- */
+  /* @media (max-width: 650px) {
+    .pic_paragrarghbody {
+      display: block;
+      font-size: 80%;
+    }
+    .pic_paragrargh p {
+      position: relative;
+      margin: -3rem 0 2rem 1rem;
+      padding: 1rem;
+      background: rgba(white, 0.8);
+    }
+} */
  @media screen and (max-width: 600px) {
-     .row {
+     .blog_row {
          width         : 100%;
          padding-left  : 6vw;
          padding-right : 6vw;
      }
- 
-     .row .row {
+     
+     .blog_row .blog_row {
          padding-left  : 0;
          padding-right : 0;
      }
@@ -1107,7 +1119,7 @@
  /* stack columns on small screen devices
   */
  @media screen and (max-width: 400px) {
-     .row .row {
+     .blog_row .blog_row {
          margin-left  : 0;
          margin-right : 0;
      }
@@ -1335,12 +1347,12 @@
  
  /* headings
   */
- h1,
+ /* h1,
  h2,
  h3,
  h4,
  h5,
- h6,
+ h6, */
  .h1,
  .h2,
  .h3,
@@ -1817,7 +1829,7 @@
   * ## spacing
   * -------------------------------------------------------------------- */
  fieldset,
- button,
+ .button,
  .btn {
      margin-bottom : var(--vspace-0_5);
  }
@@ -2240,7 +2252,7 @@
   *
   * ------------------------------------------------------------------- */
  .btn,
- button,
+ .button,
  input[type="submit"],
  input[type="reset"],
  input[type="button"] {
@@ -2269,12 +2281,12 @@
  }
  
  .btn:focus,
- button:focus,
+ .button:focus,
  input[type="submit"]:focus,
  input[type="reset"]:focus,
  input[type="button"]:focus,
  .btn:hover,
- button:hover,
+ .button:hover,
  input[type="submit"]:hover,
  input[type="reset"]:hover,
  input[type="button"]:hover {
@@ -2287,7 +2299,7 @@
  /* button primary
   */
  .btn.btn--primary,
- button.btn--primary,
+ .button.btn--primary,
  input[type="submit"].btn--primary,
  input[type="reset"].btn--primary,
  input[type="button"].btn--primary {
@@ -2297,7 +2309,7 @@
  }
  
  .btn.btn--primary:focus,
- button.btn--primary:focus,
+ .button.btn--primary:focus,
  input[type="submit"].btn--primary:focus,
  input[type="reset"].btn--primary:focus,
  input[type="button"].btn--primary:focus,
@@ -3565,7 +3577,7 @@
   *
   * ------------------------------------------------------------------- */
  .hero {
-     --entry-title-size : 7.6rem;
+     --entry-title-size : 7rem;
      --text-multiplier  : 1;
      background-color   : var(--color-body);
      width              : 100%;
@@ -4119,7 +4131,7 @@
   *
   * ------------------------------------------------------------------- */
  .s-content {
-     padding-top : var(--vspace-5);
+     padding-top : var(--vspace-0_5);
  }
  
  .s-content--blog,
@@ -4138,7 +4150,7 @@
      text-align : center;
  }
  
- .s-pageheader .row {
+ .s-pageheader .blog_row {
      max-width : 900px;
  }
  
@@ -4179,7 +4191,7 @@
  
      .s-content--blog,
      .s-content--page {
-         padding-top : var(--vspace-5);
+         padding-top : var(--vspace-0_5);
      }
  }
  
@@ -4197,7 +4209,7 @@
  
      .s-content--blog,
      .s-content--page {
-         padding-top : var(--vspace-4_5);
+         padding-top : var(--vspace-1);
      }
  
      .s-pageheader .page-title {
@@ -4207,7 +4219,7 @@
  
  @media screen and (max-width: 400px) {
      .s-content {
-         padding-top : var(--vspace-4);
+         padding-top : var(--vspace-0_5);
      }
  
      .s-pageheader .page-title {
@@ -4237,7 +4249,7 @@
      position         : relative;
  }
  
- .s-footer>.row {
+ .s-footer>.blog_row {
      max-width : 1000px;
  }
  
@@ -4458,7 +4470,7 @@
          padding-bottom : var(--vspace-2);
      }
  
-     .s-footer>.row {
+     .s-footer>.blog_row {
          max-width : 900px;
      }
  
