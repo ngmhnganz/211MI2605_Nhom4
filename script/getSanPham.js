@@ -9,7 +9,12 @@ const auth = getAuth();
 const params = new URLSearchParams(window.location.search)
 const sanphamID =Object.fromEntries(params.entries()).id
 var id = parseInt(sanphamID);
-
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+    }
+    
+    })
+    
 api(databaseRef)
 function api(ref) {
     get(child(ref, `NguyenLieu/${id}`))
@@ -78,6 +83,7 @@ function api(ref) {
 }
 
 $('#btnOrder').click(function(){
+    console.log(auth.currentUser.uid)
     set(child(databaseRef,`User/${auth.currentUser.uid}/userCart/id${id}`), {
         name: $('#sanpham-name').text(),
         price: parseFloat($('#sanpham-price').text() ),
