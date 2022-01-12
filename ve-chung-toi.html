@@ -11,24 +11,7 @@
     <script src="./script/includeHTML.js"></script>
     <script src="./script/ve-chung-toi.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-
-    <style>
-      .parallax {
-        /* The image used */
-        /* background-image: url("./assets/img/hinhNhom.png"); */
-      
-        /* Set a specific height */
-        min-height: 500px; 
-      
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      </style>
-
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <body onload="show()">
@@ -36,11 +19,8 @@
   <div w3-include-html="../component/header.html"></div>
 
   <!--Hình nhóm-->
-  <!-- <div class="hinh-nhom" style="margin-top: 100px;">
-    <img src="./assets/img/hinhNhom.png">
-  </div> -->
-  <div class="parallax" style="background-image: url('./assets/img/hinhNhom.png');">
-    
+  <div class="hinh-nhom parallax" style="margin-top: 100px;">
+    <!-- <img src="./assets/img/hinhNhom.png"> -->
   </div>
   <!--Câu chuyện của trứng-->
   <div class="grid wide">
@@ -55,32 +35,24 @@
       <div class="col l-4 m-4 c-12 img mg-t mg-r mg-l mg-b hinh-logo">
         <img src="./assets/img/logo.png" alt="Hình logo">
       </div>
-      <div class="col l-8 m-8 c-12 img mg-t mg-r mg-l mg-b hinh-logo cauchuyen">
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Est quaerat tempora, voluptatum quas facere dolorum aut cumque 
-        nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Est quaerat tempora, voluptatum quas facere dolorum aut cumque 
-        nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Est quaerat tempora, voluptatum quas facere dolorum aut cumque 
-        nihil nulla harum nemo distinctio quam blanditiis dignissimos. </p>
+      <div class="col l-8 m-8 c-12 img mg-t mg-r mg-l mg-b hinh-logo cauchuyen" style="text-align: justify;">
+        <p> <b> <i> Tiệm Trứng </i></b>, còn gọi là Trứng, chuyên cung cấp các sản phẩm về mảng đồ ăn uống tráng miệng, các loại bánh, các nguyên liệu làm bánh.</p></br> 
+        <p> Khách hàng sẽ có được trải nghiệm dịch vụ tốt nhất khi đặt mua sản phẩm online một cách tiện lợi, nhanh chóng tại website.  Ngoài ra, Trứng còn cung cấp các công thức làm bánh và những thông tin hữu ích, đầy thú vị về các món ăn tại các trang blog.</p></br>
+        <p> Trứng mong muốn có thể đem đến sản phẩm chất lượng đến khách hàng ngay cả trong thời gian bùng phát dịch bệnh. </p>
       </div>
     </div>
   </div>
-
   <!--Đội ngũ nhân viên-->
-
-  <div class="background-primary-color" >
+  <div class="background-primary-color"  >
     <div class="grid wide">
       <div class="row">
-        <div class="gioithieu">
+        <div class="gioithieu" >
           ĐỘI NGŨ NHÂN VIÊN
         </div>
       </div>      
     </div>
 
-    <div class="team" id="team">
+    <div class="team" id="team" >
     </div>
   </div>
 
@@ -120,8 +92,10 @@
       </div>
     </div>
   </div>
-
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
     <script>
         includeHTML();
