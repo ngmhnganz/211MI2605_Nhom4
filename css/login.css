@@ -1,0 +1,296 @@
+.modal {
+    padding-top: 100px; /* Location of the box */
+  }
+  .modal-content {
+  position: relative;
+  background-color: #F58A42;
+  margin: 3em auto 4em;
+  width: 70%;
+  border-radius: 5em 5em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border: 6px solid #F58A42;
+  }
+  p{
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+  .title{
+    text-align: center;
+    padding-top: 20px;
+  }
+  div.fieldset.txtbox i{
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+    /* Add Animation */
+  @-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+  }
+  .sep{
+    display: flex;
+  }
+  .left{
+    width:50%;
+    display: block;
+    background-color: #F58A42;
+    border-radius: 5em 0em 0em 5em;
+    border: 10px solid #F58A42;
+  }
+  .left .imglogin {
+    width: 50% ;
+    object-fit: cover;
+    padding-top: 90px;
+  }
+  .right{
+    width:50%;  
+    border-radius: 0 5em 5em 0;
+    background-color: white;
+  }
+  .right .cd-switcher:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+  .cd-switcher{
+        list-style: none;
+        margin-top: 0px;
+        margin-right: 0.75px;
+        width: auto;
+        padding-inline-start: 0px;
+      }
+  .cd-switcher li {
+        width: 50%;
+        float: left;
+        text-align: center;
+      }
+  #btnReg{
+    border-radius: 0em 5em 0em 0em;
+  }
+  .cd-switcher li:last-child a {
+        border-radius: 0 5em 0 0;
+      }
+  .cd-switcher a {
+        display: block;
+        width: 100%;
+        height: 100px;
+        background: #F58A42;
+        color: white;
+      } 
+  
+  .cd-switcher a:hover {
+       cursor: pointer;
+      }
+  .cd-switcher a.selected {
+        background: #fff;
+        color: #F58A42;
+      }
+  .cd-switcher a.selected {
+  cursor:default;
+  }
+  .fieldset i:hover{
+    cursor: pointer;
+  }
+  .fieldset.txtbox{
+    display: flex;
+    padding: 0px 0px 10px 35px;
+  }
+  .register.fieldset.txtbox{
+    padding: 0px 0px 0px 25px;
+  }
+  .cd-switcher a {
+    height: 70px;
+    line-height: 70px;
+    }
+  .cd-form {
+    padding: 1.5em;
+  }
+  .button {
+    padding: 12px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #F58A42;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+     -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+  }
+      #login, 
+      #register,
+      #reset {
+        display: none;
+      }
+      #login.is-selected,
+      #register.is-selected,
+      #reset.is-selected{
+        display: block;
+      }
+  .inputText{
+    height: 35px;
+    width: 90%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size:16px;
+    font-family: var(--font);
+}
+  /*----Grid system----*/
+  @media  (max-width:600px) {
+    .modal-content{
+        width: 85%;
+    }
+    .left{
+        display: none;
+    }
+    .right{
+        width:100%;
+        border-radius: 5em 5em 5em 5em;
+    }
+    .cd-switcher li:first-child a{
+        width:100%;
+        border-radius: 5em 0em 0em 0em;
+        padding-top: 5px;
+    }
+    .cd-switcher{
+        font-size: 18x;
+        text-align: center;
+    }
+    .fieldset.txtbox{
+      display: flex;
+      padding: 0px 0px 10px 7px;
+    }
+    .register.fieldset.txtbox{
+      padding: 0px 0px 0px 0px;
+    }
+  }
+  @media (min-width:600px) and (max-width:1023px){
+    .modal-content{
+        width: 75%;
+    }
+    .cd-switcher{
+        font-size: 15px;
+    }
+    .cd-user-modal-container .cd-switcher a {
+        line-height: 7px;
+      }
+      .cd-form input.has-padding {
+        padding: 6px 0px;
+      }  
+      .left .imglogin {
+        width: 90% ;
+        object-fit: cover;
+        padding-top: 90px;
+    }
+    .fieldset.txtbox{
+      display: flex;
+      padding: 0px 0px 10px 0px;
+    }
+    .register.fieldset.txtbox{
+      padding: 0px 0px 0px 0px;
+    }
+  }
+  
+  @media (min-width:1024px) and (max-width:1239px) {
+    .modal-content{
+        width: 70%;
+    }
+    .cd-form input.has-padding {
+        padding: 8px 16px;
+    }  
+    .left .imglogin {
+        width: 80% ;
+        object-fit: cover;
+        padding-top: 90px;
+    }
+  }
+  
+  .form-control {
+    position: relative;
+    margin: 0 2rem;
+  }
+      
+      .form-control label {
+          display: inline-block;
+          margin-bottom: 5px;
+          color: var(--text-color);
+          font-family: var(--font);
+          font-weight: bold;
+          width: 70%;
+          font-size: 16px;
+      }
+      .form-control input {
+          height: 2rem;
+          width: 100%;
+          outline: none;
+          border-radius: 1rem;
+          border: 1px solid var(--sub-text-color);
+          margin: 0.5rem 0;
+          padding: 1.5rem;
+          font-size:16px;
+          color: var(--text-color);
+          font-family: var(--font);
+      }
+      .form-control i {
+          visibility: collapse;
+          position: absolute;
+          top: 1.5em;
+          right: 1em;
+      }
+      .form-control.success i.fa-check-circle {
+          color: #2ecc71;
+          visibility: visible;
+      }
+  
+      .form-control.error i.fa-exclamation-circle {
+          color: #e74c3c;
+          visibility: visible;
+      }
+
+      .form-control.password i#hide-password,
+      .form-control.unhide-password i#unhide-password,
+      .form-control.unhide-password i#unhide-re-sign-up-password,
+      .form-control.unhide-password i#unhide-sign-up-password,
+      .form-control.password i#hide-re-sign-up-password,
+      .form-control.password i#hide-sign-up-password{
+        color: var(--text-color);
+        visibility: visible;
+        cursor: pointer;
+      }
+      .form-control small {
+          color: #e74c3c;
+          position: absolute;
+          bottom: -0.5rem;
+          left: 1rem;
+          font-family: var(--font);
+          font-size: 14px;
+          visibility: collapse;
+      }
+  
+      .form-control.error small {
+          visibility: visible;
+      }
+      .form-control.error {
+          padding-bottom: 0.5rem;
+      }
+  
+      .form-control.success input {
+          border-color: #2ecc71;
+      }
+  
+      .form-control.error input {
+          border-color: #e74c3c;
+      }

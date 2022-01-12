@@ -1,58 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
-    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
-    <link rel="stylesheet" href="../css/header.css" type="text/css" />
+  <link rel="stylesheet" href="../css/header_responsive.css">
+  <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css"/>
+  <link rel='stylesheet' href='../assets/font/boxicons-2.1.1/css/boxicons.min.css'/>
+  <script src="../script/header.js" type="module"></script>
 </head>
-<body>
-    <div class="header">
-        <div class="grid wide containerTrung">
-            <div class="row">
-                <div class="col l-2">
-                    <div class="logo">
-                        <a class="logo-img" href="../index.html">
-                        </a>
-                    </div>
-                </div>
-                <div class="col l-8 pc-navigation">
-                    <div class="category">
-                        <div class="category-item">
-                            <a href="../sanpham/">SẢN PHẨM</a>
-                            <div class="category-container">
-                                <div>
-                                    <a href="../sanpham/?type=NguyenLieu">NGUYÊN LIỆU</a>
-                                    <a href="../sanpham/?type=DungCu">DỤNG CỤ</a>
-                                    <a href="../sanpham/?type=Combo">COMBO</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="category-item">
-                            <a href="./cong-thuc.html">CÔNG THỨC</a>
-                        </div>
-
-                        <div class="category-item">
-                            <a href="./ve-chung-toi.html">VỀ CHÚNG TÔI</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-2 m-4 c-4 mg-r">
-                    <div class="icon">
-                        <div id="icon-item">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="icon-item">
-                            <i class="fas fa-shopping-basket" href="./gio-hang.html"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<nav>
+  <div class="navbar">
+    <i class='bx bx-menu'></i>
+    <div class="logo">
+      <a class="logo-img" href="../index.html"></a>
     </div>
-</body>
-</html>
+    
+    <!--!HEADER-->
+    <div class="nav-links">
+      <div class="sidebar-logo">
+        <span class="logo-img" id ="side-logo"></span>
+        <i class='bx bx-x' ></i>
+      </div>
+      <ul class="links">   
+        <li>
+          <a href="../sanpham/">SẢN PHẨM</a>
+          <i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
+          <ul class="htmlCss-sub-menu sub-menu">
+            <li><a href="../sanpham/?type=NguyenLieu">NGUYÊN LIỆU</a></li>
+            <li><a href="../sanpham/?type=DungCu">DỤNG CỤ</a></li>
+            <li><a href="../sanpham/?type=Combo">COMBO</a></li>
+          </ul>
+        </li>
+        <li><a href="../congthuc/">CÔNG THỨC</a></li>
+        <li><a href="/ve-chung-toi.html">VỀ CHÚNG TÔI</a></li>
+      </ul>
+    </div>
+
+    <div class="icon">
+    <!--!ICON SEARCH-->
+    <div class="search-box">
+      <i class='bx bx-search'></i>
+      <div class="input-box" >
+        <input type="text" id="inputSearch" placeholder="Search...">
+      </div>
+    </div>
+    <!--!ICON USER-->
+    <div class="signed">
+      <div class="action">
+        <div class="user-box" id="btnUserIcon">
+        <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="menu">
+          <ul class="fa-ul">
+            <li id="btnUserHome"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Thông tin cá nhân</li>
+            <li id="btnUserOrder"><span class="fa-li"><i class="fas fa-sign-out-alt"></i></span>Đơn hàng của tôi</li>
+            <li id="btnSignOut"><span class="fa-li"><i class="fas fa-sign-out-alt"></i></span>Đăng xuất</li>
+          </ul>
+        </div>
+    </div>  
+    <div id="btnUserCart" class="search-box">
+      <i class="fas fa-shopping-basket"></i>
+    </div>
+    </div>
+    <div class="unsigned">
+      <div id="btn-sigin">
+        Đăng nhập
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>

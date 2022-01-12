@@ -9,26 +9,22 @@
     <link rel="stylesheet" href="./css/constant.css" type="text/css"/>
     <link rel="stylesheet" href="./css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href="./css/product-item.css" type="text/css"/>
-
-    <script src="./data/firebase-config.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;500;600;700;900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css"/>
     <title>Trang chủ</title>
+    <script src="./data/firebase-config.js"></script>
     <script src="./lib/jQuery.js" type="text/javascript"></script>
     <script> 
         $(function(){
           $("#header").load("./component/header.html"); 
           $("#footer").load("./component/footer.html"); 
         });
-        </script>   
+    </script>
 </head>
 <body>
-
     <!-- ! Header và thanh navigation -->
-    <div id="header"></div>
+    <div id="header">
+        
+    </div>
     
     <!-- ! Banner -->
     <div class="containerTrung background-primary-color" style="padding:150px 0px 50px 0px">
@@ -103,8 +99,7 @@
             </div>
 
             <div class="row mon-ngon-cua-ngay-product">
-              
-                
+            
             </div>
 
         </div>
@@ -125,8 +120,9 @@
         </div>
     </section>
 
-    <!-- ! footer -->
-   <div id="footer"></div>
-    <script src="./script/index.js" async type="module"></script>
+    
+    <script src="./script/index.js" async type="module"></script>  
 </body>
+<!-- ! footer -->
+<div id="footer"></div>
 </html>

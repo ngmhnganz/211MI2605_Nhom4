@@ -5,65 +5,165 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../data/firebase-config.js"></script>
+    <script src="../lib/jQuery.js"></script>
+    <script src="../script/toast.js"></script>
     <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
-    <link rel="stylesheet" href="../css/header.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/footer.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/toast.css" type="text/css" />
+    <link rel="stylesheet" href="../css/product-item.css" type="text/css"/>
     <link rel="stylesheet" href="../css/san-pham.css" type="text/css"/>
-    
     <title>Sản phẩm</title>
 </head>
 <body>
+    <div id="toast"></div>
     <!-- ! Header và thanh navigation -->
-    <div class="header">
-        <div class="grid wide containerTrung">
-            <div class="row">
-                <div class="col l-2">
-                    <div class="logo">
-                        <a class="logo-img" href="./index.html">
-                        </a>
-                    </div>
-                </div>
-                <div class="col l-8 pc-navigation">
-                    <div class="category">
-                        <div class="category-item">
-                            <a href="./san-pham.html">SẢN PHẨM</a>
-                            <div class="category-container">
-                                <div>
-                                    <a href="">NGUYÊN LIỆU</a>
-                                    <a href="">DỤNG CỤ</a>
-                                    <a href="">CHẾ BIẾN SẴN</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="category-item">
-                            <a href="./cong-thuc.html">CÔNG THỨC</a>
-                        </div>
-
-                        <div class="category-item">
-                            <a href="./ve-chung-toi.html">VỀ CHÚNG TÔI</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-2 m-4 c-4 mg-r">
-                    <div class="icon">
-                        <div id="icon-item">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="icon-item">
-                            <i class="fas fa-shopping-basket" href="./gio-hang.html"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="header">
+        <script>
+            $('#header').load("../component/header.html")
+        </script>
     </div>
     
-    <div class="containerTrung" style="margin-top: 200px;">    
+    <div class="containerTrung">    
         <div class="grid wide sanpham-info">
+            <div class="row">
+                <div class="col l-6 m-6 c-12">
+                    <img id ="sanpham-img" alt="">
+                </div>
+                <div class="col l-6 m-6 c-12 sanpham-des">
+                    <p id="sanpham-name"></p>
+                    <p id="sanpham-price"></p>
+                    
+                    <div id="detail-container">
+                        <div  id="combo-border">Combo bao gồm:</div> 
+                        <div class="sanpham-detail"> <span class="detail_title">Đường kính</span> <span class="detail_content">150g</span></div>
+                        <div class="sanpham-detail"> <span class="detail_title">Đường kính</span> <span class="detail_content">150g</span></div>
+                        <div class="sanpham-detail"><span class="detail_title">Đường kính</span> <span class="detail_content">150g</span></div>
+                    </div>
+                    
+                    <div id="button-section">
+                        <div class="sanpham-form">
+                            <div class="btn-decrease btn-amount" onclick="minusItem()">-</div>
+                            <div id="sanpham-amount">1</div>
+                            <div class="btn-increase btn-amount" onclick="plusItem()">+</div>
+                        </div>
+                        <button id="btnOrder" class="btn">Đặt hàng</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row line">
+            </div>
+            <section id="info">
+                <div class="row">
+                
+                    <div class="col c-4 m-4 info-tab" id="tab-gioithieu"  onclick="tab(1)">
+                        Chi tiết
+                    </div>
+                    <div class="col c-4 m-4 l-6 info-tab selectedTab" id="tab-chitiet" onclick="tab(2)">
+                        Giới thiệu
+                    </div>
+                    <div class="col c-4 m-4 l-6 info-tab"id="tab-binhluan"  onclick="tab(3)">
+                        Vận chuyển
+                    </div>
+                </div>
+                <div class="row info-tab-content">
+                    <div class="col c-12 m-12 l-12" id="m_sanpham-detail">
+                    </div>
+                    <div class="col c-12 m-12 l-12 selectedTab-content" id="m_sanpham-descrip">
+                    </div>
+                    <div class="col c-12 m-12 l-12" id="m_sanpham-comment">
+                        <ul>
+                            Thời gian vận chuyển
+                            <li>Hà nội: 1-2 ngày</li>
+                            <li>Miền Trung: 3-5 ngày</li>
+                            <li>Miền Nam: 5-7 ngày</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
         </div>
     </div>
-    <script src="../script/sanpham.js" async type="module"></script>
+
+    <section class="suggestion background-sub-color">
+        <div class="grid wide container">
+            <div class="row">
+                <div class="col c-12 l-12 m12" id= "title">
+                        Sản phẩm tương tự
+                </div>
+            </div>
+            <div class="row suggest-products">
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <script>
+            $("#footer").load("../component/footer.html"); 
+        </script>
+    </div>
+
+    <script src="../script/getSanPham.js" async type="module"></script>
+    <script>
+        
+        var amount =1
+        function plusItem() {
+            amount+=1;
+            $('#sanpham-amount').text(amount)
+            console.log(amount)
+        }
+        console.log($(window).width())
+        window.onresize = function(){
+            if ($(window).width()>= 1024){
+                if ( $('#tab-gioithieu').hasClass('selectedTab')){
+                    $('#tab-gioithieu').removeClass('selectedTab')
+                    $('#tab-chitiet').addClass('selectedTab')
+                    $('#tab-binhluan').removeClass('selectedTab')
+                    $('#m_sanpham-detail').removeClass('selectedTab-content')
+                    $('#m_sanpham-descrip').addClass('selectedTab-content')
+                    $('#m_sanpham-comment').removeClass('selectedTab-content')
+                }
+            } 
+        }
+
+        function minusItem() {
+            if (amount!=1){
+                amount-=1;
+                $('#sanpham-amount').text(amount)
+                console.log(amount)
+            }          
+        }
+
+        function tab(index) {
+            switch (index) {
+                case 1: {
+                    $('#tab-gioithieu').addClass('selectedTab')
+                    $('#tab-chitiet').removeClass('selectedTab')
+                    $('#tab-binhluan').removeClass('selectedTab')
+                    $('#m_sanpham-detail').addClass('selectedTab-content')
+                    $('#m_sanpham-descrip').removeClass('selectedTab-content')
+                    $('#m_sanpham-comment').removeClass('selectedTab-content')
+                    break;
+                }
+                case 2: {
+                    $('#tab-gioithieu').removeClass('selectedTab')
+                    $('#tab-chitiet').addClass('selectedTab')
+                    $('#tab-binhluan').removeClass('selectedTab')
+                    $('#m_sanpham-detail').removeClass('selectedTab-content')
+                    $('#m_sanpham-descrip').addClass('selectedTab-content')
+                    $('#m_sanpham-comment').removeClass('selectedTab-content')
+                    break;
+                }
+                case 3: {
+                    $('#tab-gioithieu').removeClass('selectedTab')
+                    $('#tab-chitiet').removeClass('selectedTab')
+                    $('#tab-binhluan').addClass('selectedTab')
+                    $('#m_sanpham-detail').removeClass('selectedTab-content')
+                    $('#m_sanpham-descrip').removeClass('selectedTab-content')
+                    $('#m_sanpham-comment').addClass('selectedTab-content')
+                    break;
+                }
+            }
+        }
+    </script>
 </body>
 </html>

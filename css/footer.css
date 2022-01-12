@@ -1,46 +1,207 @@
 @import url(../css/constant.css);
-.footer-nav{
-    display: flex !important;
-    flex-direction: column;
-    justify-items: center;
-    text-align: start;
+
+.footer{
+    font-family: var(--font);
+    color: #fafafa;
 }
-.nav {
-    text-align: start;
-    color: white;
-    font-family: var(--font);  
-    font-weight: var(--regular);
-    font-size: 16px;
+.footer p{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;;
 }
-.nav li{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    list-style: none;
-    font-weight: var(--extra-light);
-    margin-bottom: 10px;
+.footer_follow{
+    font-size: 1.8rem;
+    text-align: center;
+}
+.mc-form{
+    display    : flex;
+    margin-top : 2.4rem;
+    width: 100%;
+	position: relative;
+}
+.mc-form input[type="email"]{
+    width: 100%;
+	height: 45px;
+	color: #000;
+	border-radius: 5rem;
+	background: #fff;
+	border: 0;
+	outline: none;
+	padding: 8px 12px;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+.mc-form button{
+    border: 0;
+	outline: none;
+	color: #fff;
+	font-size: 13px;
+	text-align: center;
+	text-transform: uppercase;
+	position: absolute;
+	height: 45px;
+	border-radius: 50px;
+	width: 120px;
+	right: 0;
+	top: 0;
+    background: #fdaf8b;
+	
+}
+.mc-form button:hover{
+    background: #F57F48;
+}
+
+.footer__social{
+    list-style : none;
+    display    : flex;
+    margin     : 0;
+}
+
+.footer__social li {
+    padding-left : 0;
+    margin-right : 1rem;
+    line-height  : 1;
+}
+
+.footer__social li:last-child {
+    margin-right : 0;
+}
+
+.footer__social svg {
+    height : 2.8rem;
+    width  : 2.8rem;
+}
+
+.footer__social svg path {
+    fill : black;
+}
+
+.u-screen-reader-text{
+    clip      : rect(1px, 1px, 1px, 1px);
+    clip-path : inset(50%);
+    height    : 1px;
+    width     : 1px;
+    margin    : -1px;
+    overflow  : hidden;
+    padding   : 0;
+    border    : 0;
+    position  : absolute;
+    word-wrap : normal !important;
+}
+
+.link-list li{
+    padding-left : 0;
+}
+.link-list a, .footer-a{
     
+    padding-left : 0;
+    color  : white;
+    border : none;
+    text-decoration: none;
+}
+.link-list a:focus,
+.link-list a:hover,
+.link-list a:active {
+    color : var(--text-color);
+}
+.copyright a{
+    padding-left : 0;
+    color  : white;
+    border : none;
+    text-decoration: none;
 }
 
-.footer-logo {
-    display: none !important;
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * footer
+ * ------------------------------------------------------------------- */
+ @media screen and (max-width: 1500px) {
+    .ss-go-top {
+        right : 2.4rem;
+    }
 }
 
-@media  (max-width:739px) {
-    .nav{
-        font-size: 16px;
+@media screen and (max-width: 1400px) {
+    .ss-go-top {
+        bottom : 4.8rem;
     }
-} 
 
-@media  (min-width:740px) and (max-width:1023px) {
-    .nav{
-        font-size: 16px;
+    .ss-go-top a {
+        height : 5.2rem;
+        width  : 5.2rem;
     }
-} 
+}
 
-@media  (min-width:1024px) {
-    .footer-logo {
-        display: block !important;
+@media screen and (max-width: 1200px) {
+    /* .footer {
+        padding-bottom : 6.4rem;
+    } */
+
+    /* .footer>.row {
+        max-width : 900px;
+    } */
+
+    .footer__main {
+        margin-bottom : 3.2rem;
     }
-    
+
+    .footer__social {
+        margin-bottom : 1.6rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer_follow .mc-form {
+        display : block;
+    }
+
+    .footer_follow input[type="email"],
+    .footer_follow button {
+        border-radius : 5rem;
+    }
+
+    .footer_follow button {
+        width : 30%;
+    }
+
+    .ss-copyright span {
+        display : block;
+    }
+
+    .ss-copyright span::after {
+        display : none;
+    }
+
+    .ss-go-top a {
+        height : 4.8rem;
+        width  : 4.8rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer {
+        padding-top : 11.2rem;
+    }
+
+    .footer h2 {
+        font-size   : var(--text-xxl);
+        line-height : 4rem;
+    }
+
+    .ss-go-top {
+        bottom : 4rem;
+        right  : 2rem;
+    }
+
+    .ss-go-top a {
+        height : 4rem;
+        width  : 4rem;
+    }
+
+    .ss-go-top svg {
+        height : 1.6rem;
+        width  : 1.6rem;
+    }
 }

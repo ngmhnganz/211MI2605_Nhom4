@@ -1,0 +1,857 @@
+#orderContainer{
+    background: var(--sub-background-color);
+}
+.khung-ngoai{
+    background: white;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding:2rem;
+}
+
+.title{
+    font-family: var(--font);
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* TABS*/
+
+.tabs{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.nav-tabs{
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+    border-bottom: 3px solid #ddd;
+}
+
+ul {
+    justify-content: space-between;
+    display: flex;
+}
+
+
+.nav-tabs li a{
+    display: block;
+    padding: 6px 10px;
+    text-decoration: none;
+    /* sửa*/
+    color: #A7ADB2;
+    font-family: var(--font);
+    font-size: 18px;
+    position: relative;
+}
+
+.nav-tabs li a::after{
+    content: "";
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: -3px;
+    background: transparent;
+   
+}
+
+.nav-tabs li.active a::after, .nav-tabs li:hover a::after{
+    background: var(--primary-color) ;
+
+}
+
+.nav-tabs li.active a{
+    color: var(--text-color);
+}
+
+/*Trang lịch sử đang đến*/
+.donhang{
+    margin: 1rem 2rem 0 2rem ;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.donhang:hover{
+    background-color: var(--primary-color);
+    animation-name: changeBackground;
+    animation-duration: 0.3s;
+    box-shadow: 0px 0px 10px 0px #f58a4293;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+@keyframes changeBackground {
+
+    0%   { 
+        background-color: #FFFFFF; 
+    }
+    100% { 
+        background-color: var(--primary-color); 
+    }
+  }
+
+.donhang:hover .dong-hai-center .diachi,
+.donhang:hover .dong-hai-center,
+.donhang:hover .dong-dau{
+    color: white;
+}
+
+.dong-dau{
+    color: var(--sub-text-color);
+    font-size: 16px;
+    font-family: var(--font);
+}
+.dong-dau-left{
+    display: flex;
+    flex-direction: row;
+    float: left;
+}
+
+.dong-dau-left i{
+    margin-right: 5px;
+}
+
+.dong-dau-right{
+    text-align: right;
+    float: right;
+}
+
+.dong-hai{
+    margin-top: 30px;
+}
+
+.dong-hai-left{
+    width: 170px;
+    height: 170px;
+    background: #F1DDC9;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+
+.dong-hai-left img{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+}
+.dong-hai-center{
+    float: left;
+    margin-left: 20px;
+    font-family: var(--font);
+    color: var(--sub-text-color);
+    font-size: 16px;
+}
+
+.dong-hai-center p{
+    margin-top: 5px;
+}
+
+.dong-hai-center .diachi{
+    color: var(--text-color);
+    font-weight: var(--medium);
+}
+
+.dong-hai-right{
+    float: right;
+}
+
+.dong-hai-right p{
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.dong-hai-right input{
+    border-radius: 15px;
+    font-size: 16px;
+    border: 1px var(--primary-color) solid;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: white;
+    color: var(--primary-color);
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+@media (max-width:320px) {
+    .dong-hai-left{
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        
+    }
+    
+    .dong-hai-left img{
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+    }
+
+    .donhang{
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .dong-hai-center{
+        margin-left: 5px;
+        font-size: 8px;
+    }
+
+    .dong-hai{
+        margin-top: 10px;
+    }
+
+    .dong-dau-right{
+        font-size: 10px;
+        float: left;
+    }
+
+    .dong-dau-left{
+        font-size: 10px;
+        float: left;
+    }
+
+    .dong-hai-right{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        float: left;
+    }
+    
+    .dong-hai-right p{
+        font-size: 10px;
+        font-weight: bold;
+        margin-right: 15px;
+        margin-top: 10px;
+        margin-left: 5px;
+        height: fit-content;
+    }
+    
+    .dong-hai-right input{
+        border-radius: 5px;
+        font-size: 10px;
+        border: 1px var(--primary-color) solid;
+        margin-top: 25px;
+        height: fit-content;
+    }
+}
+
+@media (min-width:321px) and (max-width:376px) {
+    .dong-hai-left{
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        
+    }
+    
+    .dong-hai-left img{
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+    }
+
+    .donhang{
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .dong-hai-center{
+        margin-left: 5px;
+        font-size: 10px;
+    }
+
+    .dong-hai{
+        margin-top: 10px;
+    }
+
+    .dong-dau-right{
+        font-size: 10px;
+        float: right;
+    }
+
+    .dong-dau-left{
+        font-size: 10px;
+        float: left;
+    }
+
+    .dong-hai-right{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        float: left;
+    }
+    
+    .dong-hai-right p{
+        font-size: 10px;
+        font-weight: bold;
+        margin-right: 15px;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    
+    .dong-hai-right input{
+        border-radius: 5px;
+        font-size: 10px;
+        border: 1px var(--primary-color) solid;
+        margin-top: 25px;
+        height: fit-content;
+    }
+}
+
+@media (min-width:376px) and (max-width:415px) {
+    .dong-hai-left{
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        
+    }
+    
+    .dong-hai-left img{
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+    }
+
+    .donhang{
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .dong-hai-center{
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .dong-hai{
+        margin-top: 10px;
+    }
+
+    .dong-dau-right{
+        font-size: 12px;
+        float: right;
+    }
+
+    .dong-dau-left{
+        font-size: 12px;
+        float: left;
+    }
+
+    .dong-hai-right{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        float: left;
+    }
+    
+    .dong-hai-right p{
+        font-size: 12px;
+        font-weight: bold;
+        margin-right: 15px;
+        margin-top: 30px;
+        margin-left: 5px;
+    }
+    
+    .dong-hai-right input{
+        border-radius: 5px;
+        font-size: 12px;
+        border: 1px var(--primary-color) solid;
+        margin-top: 25px;
+        height: fit-content;
+    }
+}
+
+@media (min-width:415px) and (max-width:601px) {
+    .dong-hai-left{
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        
+    }
+    
+    .dong-hai-left img{
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+    }
+
+    .donhang{
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .dong-hai-center{
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .dong-hai{
+        margin-top: 10px;
+    }
+
+    .dong-dau-right{
+        font-size: 12px;
+        float: right;
+    }
+
+    .dong-dau-left{
+        font-size: 12px;
+        float: left;
+    }
+
+    .dong-hai-right{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        float: right;
+    }
+    
+    .dong-hai-right p{
+        font-size: 12px;
+        font-weight: bold;
+        margin-right: 15px;
+        margin-top: 30px;
+    }
+    
+    .dong-hai-right input{
+        border-radius: 5px;
+        font-size: 12px;
+        border: 1px var(--primary-color) solid;
+        margin-top: 25px;
+        height: fit-content;
+    }
+}
+
+@media (min-width:602px) and (max-width:769px) {
+    .dong-hai-right p{
+        margin-top: 20px;
+    }
+}
+
+/*phần modal*/
+
+.modal{
+    visibility: collapse;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid var(--sub-text-color);
+    width: 70%; /* Could be more or less, depending on screen size */
+    border-radius: 20px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.thong-tin-gio-hang{
+    background: #EFF0F1;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.tieude{
+    font-family: var(--font);
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.dong-san-pham{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    font-family: var(--font);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.ten-sp{
+    width: 40%;
+}
+.soluong-sp{
+    width: 20%;
+    text-align: center;
+}
+
+.gia-sp{
+    width: 40%;
+    text-align: right;
+}
+
+.nguoi-nhan-thanh-toan{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.thong-tin-nguoi-nhan, .thong-tin-thanh-toan, .tien-hang{
+    background: #EFF0F1;
+    border-radius: 20px;
+    padding: 20px;
+    font-family: var(--font);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.thong-tin-nguoi-nhan{
+    float: left;
+    width: 55%;
+}
+
+.thong-tin-thanh-toan{
+    float: right;
+    width: 40%;
+}
+
+.nguoi-nhan, .thanh-toan{
+    margin-top: 5px;
+}
+
+.tung-dong{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 5px;
+}
+
+.tung-dong:last-child{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.tien-hang{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+.modal-content input{
+    text-align: center;
+    border-radius: 15px;
+    color: #A7ADB2;
+    margin-top: 20px;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #A7ADB2 ;
+    cursor: pointer;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*responsive cho modal*/
+@media(max-width:739px) {
+    .modal-content {
+        width: 95%; /* Could be more or less, depending on screen size */
+        border-radius: 20px;
+        padding: 10px;
+        margin: 35% auto;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+    .close {
+        font-size: 20px;
+    }
+
+    .thong-tin-gio-hang{
+        margin-top: 20px;
+        padding: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .dong-san-pham{
+       
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        font-family: var(--font);
+        color: var(--text-color);
+        font-size: 12px;
+    }
+
+    .nguoi-nhan-thanh-toan{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .thong-tin-nguoi-nhan, .thong-tin-thanh-toan, .tien-hang{
+        background: #EFF0F1;
+        border-radius: 20px;
+        padding: 15px;
+        font-family: var(--font);
+        color: var(--text-color);
+        font-size: 12px;
+    }
+    
+    .thong-tin-nguoi-nhan{
+        float: left;
+        width: 100%;
+    }
+    
+    .thong-tin-thanh-toan{
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .tien-hang{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .tung-dong{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 5px;
+    }
+    
+    .tung-dong:last-child{
+        font-weight: bold;
+        font-size: 12px;
+    }
+}
+
+@media (min-width:740px) and (max-width:1023px) {
+    .modal-content {
+        width: 70%; /* Could be more or less, depending on screen size */
+        border-radius: 20px;
+        padding: 10px;
+        margin: 25% auto;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+    .close {
+        font-size: 20px;
+    }
+
+    .thong-tin-gio-hang{
+        margin-top: 20px;
+        padding: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .dong-san-pham{
+       
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        font-family: var(--font);
+        color: var(--text-color);
+        font-size: 12px;
+    }
+
+    .nguoi-nhan-thanh-toan{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .thong-tin-nguoi-nhan, .thong-tin-thanh-toan, .tien-hang{
+        background: #EFF0F1;
+        border-radius: 20px;
+        padding: 15px;
+        font-family: var(--font);
+        color: var(--text-color);
+        font-size: 12px;
+    }
+    
+    .thong-tin-nguoi-nhan{
+        float: left;
+        margin: 0 10px 0 0;
+        width: 100%;
+    }
+
+    .ten-sp{
+        width: 50%;
+    }
+    .soluong-sp{
+        width: 20%;
+        text-align: center;
+    }
+    
+    .gia-sp{
+        width: 30%;
+        text-align: right;
+    }
+    
+    .thong-tin-thanh-toan{
+        float: left;
+        width: 100%;
+    }
+
+    .tien-hang{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .tung-dong{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 5px;
+    }
+    
+    .tung-dong:last-child{
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
+
+@media (min-width:1024px) {
+    .modal-content {
+        width: 50%; /* Could be more or less, depending on screen size */
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+    .close {
+        font-size: 25px;
+    }
+
+    .thong-tin-gio-hang{
+        margin-top: 20px;
+        padding: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .dong-san-pham{
+       
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        font-family: var(--font);
+        color: var(--text-color);
+        font-size: 14px;
+    }
+
+    .nguoi-nhan-thanh-toan{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .thong-tin-nguoi-nhan, .thong-tin-thanh-toan, .tien-hang{
+        background: #EFF0F1;
+        border-radius: 20px;
+        padding: 15px;
+        font-family: var(--font);
+        color: var(--text-color);
+        font-size: 14px;
+    }
+    
+    .thong-tin-nguoi-nhan{
+        float: left;
+        width: 55%;
+    }
+
+    .ten-sp{
+        width: 50%;
+    }
+    .soluong-sp{
+        width: 20%;
+        text-align: center;
+    }
+    
+    .gia-sp{
+        width: 30%;
+        text-align: right;
+    }
+    
+    .thong-tin-thanh-toan{
+        float: right;
+        width: 40%;
+        margin-top: 0px;
+    }
+
+    .tien-hang{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .tung-dong{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 5px;
+    }
+    
+    .tung-dong:last-child{
+        font-weight: bold;
+        font-size: 16px;
+    }
+} 

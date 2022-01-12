@@ -1,0 +1,92 @@
+@import url(./constant.css);
+
+
+/* ! Banner */
+
+.banner-img {
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    width: auto;
+    transition: 2s;
+    
+}
+
+.banner-img img{
+    width: 100%;
+    height: 50%;
+    object-fit:fill;
+    border-radius: 20px;
+}
+
+.banner-dot {
+    margin: 10px 0px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+
+.banner-btn {
+    border:  2px solid rgb(255, 255, 255);
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.banner-btn:hover {
+    background: white;
+}
+
+/* công thức */
+section {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+section .title{
+    color: var(--text-color);
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 36px;
+}
+
+section .img img{
+    width: 100%;
+    border-radius: 20px;
+    object-fit: fit;
+}
+/* phần recipe */
+.recipe-ration {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.recipe-tag{
+    margin: 3px 3px;
+    border-radius: 6px;
+    border: 1px solid #FFD5AC ;
+    padding: 5px;
+    width: fit-content;  
+}
+
+.recipe-tag span{
+    color: var(--text-color);
+    font-family: var(--font);
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}

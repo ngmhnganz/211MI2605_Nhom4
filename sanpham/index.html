@@ -4,57 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../script/includeHTML.js"></script>
+    <title>Sản phẩm</title>
     <script src="../data/firebase-config.js"></script>
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href= "../css/danhsach-sanpham.css" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <script src="../lib/jQuery.js"></script>
+    <script>
+        var lastScrollTop = 0, delta = 5;
+        $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+            
+            if (st > lastScrollTop){
+                $('#header').css('top','-10vh')
+            } else { 
+                // upscroll code
+                $('#header').css('top','0')
+       }
+       lastScrollTop = st;
+    });
+    </script>
 </head>
 <body>
     <!-- Header -->
-    <div w3-include-html="../component/header.html"></div>
-
-    
-    
-
-    <!--Title-->
-    <div class="grid wide container">
-        <div class=" title">
-            <h2 id = "titleName"></h2>
-            <p id = "titleDescription"></p>
-    
+    <div  id="header"><script>$("#header").load("../component/header.html"); </script></div>
+    <!--Banner-->
+    <div class="containerTrung background-primary-color" style="padding:150px 0px 50px 0px">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
+                    <!-- ?banner imgage -->
+                    <div class="banner-img">
+                        <img id="hinh_banner"  alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!--Bộ lọc-->
-    <div class="grid wide">
+    <!--Title-->
+    <div class="grid wide container">
+        <div class="row">
+            <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
+                <div class="title">
+                    <h2 id = "titleName"></h2>
+                <p id = "titleDescription"></p>
+                </div>
+            </div>  
+        </div>
+        
+    </div>
+
+    <!-- Bộ lọc--> 
+    <div class="grid wide" style="background: rgb(236, 235, 234); padding: 10px;">
         <div class="gia">
-            <button>
+            <button id="btnSapXep">
                 <span>Sắp xếp theo</span>
                 <i class="fas fa-angle-down"></i>
             </button>
         </div>
-
+    </div>
+    <div class="grid wide" style="padding: 0px;margin-top: 0px;">
+        <div id="container-An">
+            <div class="select-price" id="ascending" >
+                <p>Giá tăng dần</p>
+            </div>
+            <div class="select-price" id="descending">
+                <p>Giá giảm dần</p>
+            </div>
+        </div>
     </div>
     
     <!--List sản phẩm-->
-    <div class="grid wide">
+    <div class="grid wide" style="margin-top: 10px;">
         <div class="row product">
 
         </div>
     </div>
-
+    
+    <!--Pagination-->
+    <div id="pagination"> <script>$("#pagination").load("../component/pagination.html");</script> </div>
+    
     <!--Footer-->
-    <div w3-include-html="../component/footer.html"></div>
+    <div id="footer"><script>$("#footer").load("../component/footer.html");</script></div>
 
-    <script>
-        includeHTML();
-    </script>
-    <script src="../lib/jQuery.js"></script>
     <script src="../script/danhsach-sanpham.js" async type="module"></script>
-
+    
 </body>
 </html>

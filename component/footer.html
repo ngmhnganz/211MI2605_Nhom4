@@ -1,53 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/footer.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
-    <title>Document</title>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Footer</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+
+    <!-- CSS-->
+
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/grid_system.css">
+    <link rel="stylesheet" href="../css/constant.css">
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+
+
 </head>
-<body>
-    <footer class="containerTrung footer background-primary-color">
-        <div class="grid wide">
-            <div class="row">
-                <div class="col footer-nav footer-logo l-2">
-                    <img src="../assets/img/logo.png" alt="">
-                </div>
-                
-                <div class="col l-4 m-12 c-12 footer-nav">
-                    <ul class="nav">
-                        Bạn muốn gặp Trứng hở
-                        <li>669 Quốc lộ 1A khu phố 3 Thủ Đức</li>
-                        <li>Tel: 0982921920</li>
-                        <li>Thời gian mở cửa: 9h30 - 22h30</li>
-                        <li>Tất cả các ngày trong tuần</li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-12 c-12 footer-nav">
-                    <ul class="nav">
-                        Thông tin website
-                        <li>Cửa hàng</li>
-                        <li>Công thức</li>
-                        <li>Về chúng tôi</li>
-                        <li>Đăng nhập</li>
-                        <li>Đăng ký</li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-12 c-12 footer-nav">
-                    <ul class="nav">
-                        Điều khoản và chính sách
-                        <li>Chính sách mua hàng</li>
-                        <li>Hướng dẫn đặt hàng</li>
-                        <li>Chính sách</li>
-                    </ul>
-                </div>
+<footer class="footer" style="background: var(--primary-color);">
+    <div class="grid wide">
+        <div class="row">
+            <div class="footer_follow col l-10 l-o-1 m-10 m-o-1 c-10 c-o-1 mg-t mg-r mg-l mg-b">
+                    <h2>
+                        Theo dõi thông tin của Trứng nào.
+                        </h2>
+                        <p>
+                        Nhập email để nhận thông tin và khuyến mãi nhanh nhất.
+                        </p>
+                        <form id="mc-form" class="mc-form">
+                            <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center " placeholder="Nhập email tại đây" title="Nhập email tại đây" required>
+                            <button type="submit">Đăng ký <i class="fa fa-long-arrow-alt-right"></i></button>
+                            <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
+                            <div class="mc-status "></div>
+                        </form>
             </div>
         </div>
 
-    </footer>
-    
-</body>
+        <div class="row footer__main">
+
+            <div class="col l-5 l-o-1 m-6 t-6 t-o-3 mg-t mg-r mg-l mg-b">   
+                <h4>ĐỊA CHỈ</h4>
+                    <p>
+                        669 Quốc lộ 1A, khu phố 3, Thủ Đức, Tp HCM                        
+                    </p>
+
+                    <h4>THỜI GIAN HOẠT ĐỘNG</h4>
+                    <p>
+                        Tất cả các ngày trong tuần.                       
+                    </p>
+                    
+            </div> <!-- end footer__about -->
+            
+            <div class="col l-5 m-6 t-6 t-o-3 mg-t mg-r mg-l mg-b" style="padding: 0%">
+                <div class="row">
+                    <div class="col l-6 t-6 m-6 mg-t mg-r mg-l mg-b">
+                        <h4>LIÊN HỆ</h4>
+                        
+                            <p>cskh@trung.com</p>
+
+                            <p>Tel: 028 3724 4555</p>                    
+                        
+                        <div class="row">
+                            <div class="col l-6 t-6 m-6 mg-t mg-r mg-l mg-b">
+                                <a class="footer-a" href="#" ><i class="fab fa-facebook fa-2x"></i></a>
+                            </div>
+                            <div class="col l-6 t-6 m-6 mg-t mg-r mg-l mg-b">
+                                <a class="footer-a" href="#" ><i class="fab fa-instagram fa-2x"></i></a>
+                            </div>
+                        </div>                          
+                    </div>
+                    
+                    <div class="col l-6 t-6 m-6 mg-t mg-r mg-l mg-b">
+                        <h4>THÔNG TIN WEB</h4>
+                        <ul class="link-list fa-ul">
+                            <li><a class="footer-a" href="../blog/index.html" ><span class="fa-li"><i class="fas fa-newspaper"></i></span>Blog</a></li>
+                            <br>
+                            <li><a class="footer-a" href="../chinhsach.html"><span class="fa-li"><i class="far fa-check-circle"></i></span>Chính sách</a></li>
+                            <br>
+                            <li><a class="footer-a" href="../ve-chung-toi.html" ><span class="fa-li"><i class="far fa-address-card"></i></span>Về chúng tôi</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end s-footer__main -->
+
+        <div class="row s-footer__bottom">            
+            <div class="col l-10 l-o-1 m-12 t-12 mg-t mg-r mg-l mg-b">
+                <div class="copyright">
+                    <span>© Copyright Nhom4 2021</span> 
+                    <span>Design by <a class="footer-a" href="#">Trứng Team</a></span>
+                </div>
+            </div>
+
+        </div> <!-- end s-footer__bottom -->
+
+    </div>
+
+        
+    </div>
+</footer>
+
 </html>
+

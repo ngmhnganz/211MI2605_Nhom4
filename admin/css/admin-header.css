@@ -1,0 +1,46 @@
+@import url(/css/constant.css);
+
+#header-container{
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%)
+}
+
+.header-admin-icon{
+    color: var(--primary-color);
+    font-size: 20pt;
+    text-align: center;
+    line-height: 20pt;
+}
+
+.header-admin-icon i{
+    padding: 10px;
+}
+.header-admin-icon i:hover{
+    cursor: pointer;
+    border-radius: 100vw;
+    background-color: rgba(0, 0, 0, 0.05)
+}
+
+#menu-bar{
+    width: 20%;
+}
+
+.hide{
+    display: none;
+}
+
+#container-title{
+    font-size: 18pt;
+    font-family: var(--font);
+    color: var(--text);
+    font-weight: var(--bold);
+    text-align: center;
+    flex: 1;
+}
+#admin-user{
+    width: 20%;
+    text-align: center;
+}
+

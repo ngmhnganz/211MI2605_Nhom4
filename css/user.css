@@ -1,0 +1,402 @@
+
+
+.user-img img{
+    object-fit: cover;
+    border-radius:50%;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+#user-name{
+    color: var(--text-color);
+    font-family: var(--font);
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+#user-email{
+    color: var(--text-color);
+    font-family: var(--font);
+    font-size: 18px;
+    margin-top: 10px;
+
+}
+
+/* TABS*/
+
+.tabs{
+    margin-top: 15px;
+}
+
+.nav-tabs{
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+    border-bottom: 3px solid #ddd;
+}
+
+ul {
+    justify-content: space-between;
+    display: flex;
+}
+
+
+.nav-tabs li a{
+    display: block;
+    padding: 6px 10px;
+    text-decoration: none;
+    /* sửa*/
+    color: #A7ADB2;
+    font-family: var(--font);
+    font-size: 16px;
+    position: relative;
+}
+
+.nav-tabs li a::after{
+    content: "";
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: -3px;
+    background: transparent;
+   
+}
+
+.nav-tabs li.active a::after, .nav-tabs li:hover a::after{
+    background: var(--primary-color) ;
+    
+}
+
+
+@media  (max-width:739px) {
+    .nav-tabs li a{
+        font-size: 12px;
+    }
+} 
+
+@media  (min-width:740px) and (max-width:1023px) {
+    .nav-tabs li a{
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media  (min-width:415px) and (max-width:600px) {
+    .nav-tabs li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:375px) {
+    .nav-tabs li a{
+        
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.nut{
+    text-align: center;
+    padding: 10px;
+}
+
+/* button chung*/
+.btn{
+    cursor: pointer;
+    border: 0;
+    font-size: 16px;
+    line-height: 1;
+    padding: 7px 20px;
+    border-radius: 10px;
+    background: var(--primary-color);
+    font-family: var(--font);
+    color: #ffffff;
+}
+
+/* cái mới*/
+.form-control {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+
+}
+.gioitinh-container{
+    margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+    font-size:16px;
+    color: var(--text-color);
+    font-family: var(--font);
+}
+.gioitinh-container input{
+    width: 1.5em; height: 1.5em;
+    vertical-align:top;
+    cursor: pointer;
+}
+
+.gioitinh-container label{
+    vertical-align: bottom;
+    margin-right: 20px;
+}
+
+.gioitinh-container label:first-child{
+    display: inline-block;
+	margin-bottom: 5px;
+    width: 30%;
+    color: var(--text-color);
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 16px;
+}
+/* hàng ngày sinh*/
+.ngaysinh-container{
+    margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+    font-size:16px;
+    color: var(--text-color);
+    font-family: var(--font);
+}
+.ngaysinh-container label{
+    display: inline-block;
+	margin-bottom: 5px;
+    width: 30%;
+    color: var(--text-color);
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+@media (max-width:415px)  {
+    .ngaysinh-container label{
+        width: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:1279px) {
+    .ngaysinh-container label{
+        width: 100%;
+    }
+}
+
+@media (max-width:321px) {
+    .ngaysinh-container{
+        font-size: 14px;
+    }
+}
+.input_birthday{
+    height: 25px;
+    
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size:14px;
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+    color: var(--text-color);
+    font-family: var(--font);
+    font-weight: bold;
+    width: 50%;
+    font-size: 16px;
+}
+.form-control input {
+	height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size:16px;
+    color: var(--text-color);
+    font-family: var(--font);
+}
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+    top: 35px;
+	right: 10px;
+}
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+    font-family: var(--font);
+    font-size: 14px;
+}
+.form-control.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
+/* Phần trang điểm tích lũy*/
+.tieude{
+    font-family: var(--font);
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 20px;
+    border: 0;
+    margin: 0px;
+}
+
+.diemtichluy-container{
+    background: var(--primary-color);
+    border-radius: 20px;
+    height: 12vh;
+}
+#diem{
+    text-align: center;
+    font-family: var(--font);
+    color: #ffffff;
+    font-size: 25px;
+    vertical-align: middle;
+    line-height: 12vh;
+}
+
+@media (max-width:415px) {
+    .diemtichluy-container{
+        height: 10vh;
+    }
+    #diem{
+        line-height: 10vh;
+    }
+}
+
+
+
+.diemtichluy-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.diemtichluy-table tr{
+    height: 7vh;
+}
+
+.diemtichluy-table tr:first-child th:first-child{
+    border-top-left-radius: 10px;
+}
+
+.diemtichluy-table tr:first-child th:last-child{
+    border-top-right-radius: 10px;
+}
+
+.diemtichluy-table th{
+   
+    background: var(--secondary-color);
+    text-align: center;
+    font-family: var(--font);
+    color: var(--text-color);
+}
+
+.diemtichluy-table td{
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-family: var(--font);
+    color: #6D767E;
+
+}
+
+@media (max-width:375px) {
+    .diemtichluy-table th,td{
+        font-size: 12px;
+    }
+}
+
+/*phần trang công thức yêu thích*/
+
+.recipe-ration {
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.recipe-tag{
+    margin: 3px 3px;
+    border-radius: 6px;
+    border: 1px solid #FFD5AC ;
+    padding: 5px;
+    width: fit-content;  
+}
+
+.recipe-tag span{
+    color: var(--text-color);
+    font-family: var(--font);
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.recipe-name{
+
+    line-height: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.recipe-name p{
+    color: var(--primary-color);
+    font-family: var(--font);
+    font-weight: bold;
+    text-align: start;
+    font-size: 20px;
+}
+
+.fa-heart{
+    color: red;
+    width: 20%;
+}
+    
