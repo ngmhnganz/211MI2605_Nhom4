@@ -45,10 +45,6 @@ td input{
     justify-content: flex-end;
 }
 
-.button-section .hide{
-    display: none;
-}
-
 .button-section #btnPayment{
     margin: 1rem 0 1rem 1rem;
 }
