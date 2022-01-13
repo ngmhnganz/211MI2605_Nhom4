@@ -19,21 +19,24 @@ function myFunction(xml){
     
     var thanhvien = "";
     /* list 5 thành viên*/
+    var delay = 0;
     for (i=0; i<x.length; i++){
-        thanhvien += "<a href=' " +  x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + "'>" + 
+        delay = 500*i;
+        thanhvien += `<a data-aos="fade-down" data-aos-easing="linear"
+        data-aos-duration="400" data-aos-delay='` +`${delay}'`+ "href=' " +  x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + "'>" + 
                     " <div class='team_member'> <div class='team_img'> <img src=' " + 
                     x[i].getElementsByTagName("photoTron")[0].childNodes[0].nodeValue + " 'alt='Team_image'></div> <h3> " +
                     x[i].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + "</h3> <p class='role'> " +
-                    x[i].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + "</p> <p>" +
+                    x[i].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + "</p> <p style='text-align:justify'>" +
                     x[i].getElementsByTagName("gioiThieu")[0].childNodes[0].nodeValue + "</p> </div> </a> ";
     }
     document.getElementById("team").innerHTML = thanhvien;
 
     /*anh thư*/
 
-    anhthu = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
+    anhthu = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
             x[0].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-            " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
+            " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
             x[0].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
             "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
             x[0].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -50,9 +53,9 @@ function myFunction(xml){
 
     /*minh ngân */
 
-    minhngan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
+    minhngan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
     x[1].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
     x[1].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[1].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -69,9 +72,9 @@ function myFunction(xml){
 
     /*kim xuân */
 
-    kimxuan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
+    kimxuan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
     x[2].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
     x[2].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[2].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -87,9 +90,9 @@ function myFunction(xml){
     document.getElementById("kimxuan").innerHTML = kimxuan;
     
     /*anh thi */
-    anhthi = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
+    anhthi = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
     x[3].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
     x[3].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[3].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -105,9 +108,9 @@ function myFunction(xml){
     document.getElementById("anhthi").innerHTML = anhthi;
 
     /*anh phương */
-    anhphuong = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien'> <img src='" +
+    anhphuong = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
     x[4].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien'> <div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
     x[4].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[4].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 

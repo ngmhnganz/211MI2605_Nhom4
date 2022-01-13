@@ -21,9 +21,24 @@ $('#btnDangNhap').click(function(){
       window.location.href = window.location.origin
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode)
+      let message;
+      console.log(error.code)
+      switch (error.code) {
+        case 'auth/wrong-password':
+          message = 'Tài khoản hoặc mật khẩu không đúng'
+          break;
+        case 'auth/user-not-found':
+          message = "Email chưa được đăng ký"
+          break;
+        default:
+          message = 'Có lỗi xảy ra vui lòng thử lại'
+          break;
+      }
+      let bool = dialog({
+        title: "Đã có lỗi xảy ra",
+        message: message,
+        type: "error"
+      });
     });
   }
 })
@@ -50,8 +65,20 @@ $('#btnDangKy').click(function(){
       })
     })
     .catch((error) => {
-      console.log(error.code)
-      // ..
+      let message
+      switch (error.code) {
+        case 'auth/email-already-in-use':
+          message = "Email đã được đăng ký"
+          break;
+        default:
+          message = "Đăng ký không thành công. Xin hãy thử lại"
+          break;
+      }
+      let bool = dialog({
+        title: "Đã có lỗi xảy ra",
+        message: message,
+        type: "error"
+      });
     });
   }
   
@@ -114,6 +141,11 @@ function checkValidateSignUp(){
   
   if(!$('#accept-terms').is(':checked')){
     valid= false;
+    let bool = dialog({
+      title: "Lưu ý !",
+      message: "Để hoàn tất đăng ký bạn cần đồng ý với các điều khoản và chính sách",
+      type: "info"
+    });
   }
   return valid
   

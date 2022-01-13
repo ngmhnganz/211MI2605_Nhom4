@@ -5,5 +5,6 @@
     "discord.smallImage": "\"sắp chết\"",
     "discord.lowerDetailsIdling": "",
     "appService.deploySubpath": ".",
-    "appService.defaultWebAppToDeploy": "/subscriptions/c8697a7d-7163-4c0d-a48d-65e0a85084b8/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/tiemtrung"
+    "appService.defaultWebAppToDeploy": "/subscriptions/c8697a7d-7163-4c0d-a48d-65e0a85084b8/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/tiemtrung",
+    "livePreview.defaultPreviewPath": "/index.html"
 }

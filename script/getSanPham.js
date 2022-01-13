@@ -1,13 +1,20 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, child, get, query, orderByChild, equalTo, limitToFirst, set} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+import { getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 const app = initializeApp(config);
 const database = getDatabase(app);
 const databaseRef = ref(database);
+const auth = getAuth();
 
 const params = new URLSearchParams(window.location.search)
 const sanphamID =Object.fromEntries(params.entries()).id
 var id = parseInt(sanphamID);
-
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+    }
+    
+    })
+    
 api(databaseRef)
 function api(ref) {
     get(child(ref, `NguyenLieu/${id}`))
@@ -76,8 +83,8 @@ function api(ref) {
 }
 
 $('#btnOrder').click(function(){
-    var uid = localStorage.getItem('uid');
-    set(child(databaseRef,`User/${uid}/userCart/id${id}`), {
+    console.log(auth.currentUser.uid)
+    set(child(databaseRef,`User/${auth.currentUser.uid}/userCart/id${id}`), {
         name: $('#sanpham-name').text(),
         price: parseFloat($('#sanpham-price').text() ),
         quantity : parseFloat($('#sanpham-amount').text()),
