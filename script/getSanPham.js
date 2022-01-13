@@ -39,7 +39,6 @@ function api(ref) {
             `)
             
         }
-        console.log(htmlDetail)
         $('#detail-container').html(htmlDetail.join(""))
         $('#m_sanpham-detail').html(htmlDetail.join(''))
         if (sanpham.productType==="Combo"){
@@ -83,7 +82,6 @@ function api(ref) {
 }
 
 $('#btnOrder').click(function(){
-    console.log(auth.currentUser.uid)
     set(child(databaseRef,`User/${auth.currentUser.uid}/userCart/id${id}`), {
         name: $('#sanpham-name').text(),
         price: parseFloat($('#sanpham-price').text() ),
@@ -98,7 +96,7 @@ $('#btnOrder').click(function(){
             duration: 5000
           });
       })
-      .error(()=> {
+      .catch(error=> {
         toast({
             title: "Có lỗi xảy ra",
             message: "Đã có lỗi xảy ra, bạn hãy tải lại trang và thử lại nhé",

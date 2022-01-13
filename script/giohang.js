@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-import { getDatabase, ref,  get, update} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+import { getDatabase, ref,  get, update, onValue} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 import { getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 
 const app = initializeApp(config);
@@ -12,6 +12,12 @@ const vnf_regex = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}
 onAuthStateChanged(auth, (user) => {
 if (user) {
     getData(user.uid)
+    var cartRef = ref(database,  `User/${auth.currentUser.uid}/userCart`);
+    onValue(cartRef,(snapshot)=>{
+        if (snapshot.val()==null){
+           
+        }
+    })
 }
 
 })
@@ -73,7 +79,7 @@ function getData(uid){
                 let item={}
                 item[`User/${auth.currentUser.uid}/userCart/id${product.id}`] = null;
                 update(ref(database),item)
-                calculateTotal(product.id)
+                calculateTotal(product.id,'del')
             })
 
             $(`#addQty${product.id}`).click(()=>{
@@ -136,23 +142,25 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function calculateTotal(id){
+function calculateTotal(id, del){
     let discount = 5000
     let shippingFee = 10000
-    var price = $("#productPrice_value"+id).text().split(',').join('');
-    var qty=document.getElementById("productQty"+id).value;
-    if (qty==="0"){
-        document.getElementById("productQty"+id).value='1'
-        qty="1"
+    if (del==null){
+        var price = $("#productPrice_value"+id).text().split(',').join('');
+        var qty=document.getElementById("productQty"+id).value;
+        if (qty==="0"){
+            document.getElementById("productQty"+id).value='1'
+            qty="1"
+        }
+    
+        var total = parseFloat(price) *  parseFloat(qty);
+    
+        $("#totalCost"+id).text(numberWithCommas(total)+ " VNĐ");
+        
     }
-
-    var total = parseFloat(price) *  parseFloat(qty);
-
-    $("#totalCost"+id).text(numberWithCommas(total)+ " VNĐ");
     var sumTotal = $('.totalCost_payment').text().split(',').join('').split(' VNĐ')
     sumTotal[sumTotal.length-1]="0"
 
-    
     var result = sumTotal.reduce( (a,b)=> parseFloat(a)+parseFloat(b));
     $('#checkout_sum').text(numberWithCommas(result)+" đ")
     $('#checkout_total_payment').text(numberWithCommas(result-discount+shippingFee)+" đ")

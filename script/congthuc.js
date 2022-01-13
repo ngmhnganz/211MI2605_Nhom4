@@ -91,7 +91,7 @@ function loadIngredientList(ingredientList){
         <div class="checkbox">  
             <input type="checkbox" name="${ingredient.name}" id="${ingredient.id}" value="${ingredient.price}">  
             <div class="box">  
-                <div     data-text="${ingredient.name}">${ingredient.name}</div>  
+                <div>${ingredient.name}</div>  
             </div>  
         </div>  `
      })
@@ -152,7 +152,20 @@ $('#btnThemVaoGio').click(()=>{
     }
     update(ref(database), updateCart)
     .then(()=>{
-        console.log('ok')
+        toast({
+            title: "Thêm sản phẩm thành công",
+            message: "Đã thêm sản phẩm vào giỏ hàng thành công",
+            type: "success",
+            duration: 5000
+          });
+    })
+    .catch(error=>{
+        toast({
+            title: "Đã có lỗi xảy ra",
+            message: "Vui lòng tải trang và thử lại",
+            type: "error",
+            duration: 5000
+          });
     })
 })
 function loadDescription(description){

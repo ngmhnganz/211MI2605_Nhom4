@@ -240,6 +240,16 @@ nav .navbar .links li:hover .js-sub-menu{
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
+#cart_badge{
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  font-size: 1rem;
+  border-radius:20px;
+  background-color: tomato;
+}
 .navbar .search-box .input-box{
   position: absolute;
   right: calc(100% - 40px);
