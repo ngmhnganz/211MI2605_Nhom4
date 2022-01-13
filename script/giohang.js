@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-import { getDatabase, ref,  get, update} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+import { getDatabase, ref,  get, update, onValue} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 import { getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 
 const app = initializeApp(config);
@@ -12,6 +12,15 @@ const vnf_regex = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}
 onAuthStateChanged(auth, (user) => {
 if (user) {
     getData(user.uid)
+    var cartRef = ref(database,  `User/${auth.currentUser.uid}/userCart`);
+    onValue(cartRef,(snapshot)=>{
+        if (snapshot.val()==null){
+           
+        }
+    })
+}
+else{
+    window.location.href = window.location.origin +'/user/login.html'
 }
 
 })
@@ -69,11 +78,20 @@ function getData(uid){
 
         cartList.map(product =>{
             $(`#delete${product.id}`).click(()=>{
-                $(`#${product.id}`).remove()
-                let item={}
-                item[`User/${auth.currentUser.uid}/userCart/id${product.id}`] = null;
-                update(ref(database),item)
-                calculateTotal(product.id)
+                let confirm = dialog({
+                    title: "Bạn muốn xóa sản phẩm",
+                    message: `Bạn có muốn xóa sản phẩm ${product.name} khỏi giỏ hàng?` ,
+                    type: "error",
+                    choice: 'twoButton'
+                })
+                if (confirm) {
+                    $(`#${product.id}`).remove()
+                    let item={}
+                    item[`User/${auth.currentUser.uid}/userCart/id${product.id}`] = null;
+                    update(ref(database),item)
+                    calculateTotal(product.id,'del')
+                }
+              
             })
 
             $(`#addQty${product.id}`).click(()=>{
@@ -136,31 +154,40 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function calculateTotal(id){
+function calculateTotal(id, del){
     let discount = 5000
     let shippingFee = 10000
-    var price = $("#productPrice_value"+id).text().split(',').join('');
-    var qty=document.getElementById("productQty"+id).value;
-    if (qty==="0"){
-        document.getElementById("productQty"+id).value='1'
-        qty="1"
+    if (del==null){
+        var price = $("#productPrice_value"+id).text().split(',').join('');
+        var qty=document.getElementById("productQty"+id).value;
+        if (qty==="0"){
+            document.getElementById("productQty"+id).value='1'
+            qty="1"
+        }
+    
+        var total = parseFloat(price) *  parseFloat(qty);
+    
+        $("#totalCost"+id).text(numberWithCommas(total)+ " VNĐ");
+        
     }
-
-    var total = parseFloat(price) *  parseFloat(qty);
-
-    $("#totalCost"+id).text(numberWithCommas(total)+ " VNĐ");
     var sumTotal = $('.totalCost_payment').text().split(',').join('').split(' VNĐ')
     sumTotal[sumTotal.length-1]="0"
 
-    
     var result = sumTotal.reduce( (a,b)=> parseFloat(a)+parseFloat(b));
     $('#checkout_sum').text(numberWithCommas(result)+" đ")
     $('#checkout_total_payment').text(numberWithCommas(result-discount+shippingFee)+" đ")
-
-    $('#btnSaveCart').removeClass('hide')
 }
 
 $('#btnPayment').click(()=>{
+    createOrder()
+})
+
+
+$(document).on('keypress',function(e) {
+    if (e.which==13)
+        createOrder()
+})
+function createOrder() {
     if (checkValidate()) {
         var currentdate = new Date(); 
         var itemList = $('.product').children()
@@ -223,45 +250,7 @@ $('#btnPayment').click(()=>{
             })
         }
     }
-})
-
-$('#btnSaveCart').click(()=>{
-    let updateCart = {}
-    var itemList = $('.product').children()
-    var nameList = $('.productName')
-    var priceList = $('.productPrice')
-    var qtyList = $('.productQty')
-    var cartItem ={}
-    for (let i = 0; i < itemList.length; i++) {
-        cartItem = {
-            'id': itemList[i].id,
-            'name': nameList[i].innerHTML,
-            'price':priceList[i].innerHTML.split(',').join(''),
-            'quantity':qtyList[i].value
-        }
-        updateCart[`User/${auth.currentUser.uid}/userCart/id${itemList[i].id}`] = cartItem;
-        
-        console.log(cartItem)
-    }
-    update(ref(database), updateCart)
-    .then(()=>{
-        $('#btnSaveCart').addClass('hide')
-        toast({
-            title: "Cập nhật giỏ hàng thành công",
-            message: "Bạn đã cập nhật thành công",
-            type: "success",
-            duration: 5000
-          });
-    })
-    .catch(()=>{
-        toast({
-            title: "Đã có lỗi xảy",
-            message: "Cập nhật không thành công, bạn hãy tải lại trang nhé",
-            type: "error",
-            duration: 5000
-          });
-    })
-})
+}
 
 function checkValidate(){
     var valid = true

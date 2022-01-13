@@ -13,6 +13,13 @@ onAuthStateChanged(auth, (user)=>{
 })
 
 $('#btnDangNhap').click(function(){
+  logIn()
+})
+
+$('#btnDangKy').click(function(){
+  signUp()
+})
+function logIn() {
   let email = $('#emailLogin').val()
   let password = $('#passwordLogin').val()
   if (checkValidateLogin()){
@@ -41,9 +48,9 @@ $('#btnDangNhap').click(function(){
       });
     });
   }
-})
+}
 
-$('#btnDangKy').click(function(){
+function signUp() {
   let email = $('#emailSignup').val()
   let password = $('#passwordSignup').val()
   let name = $('#nameSignup').val()
@@ -82,7 +89,7 @@ $('#btnDangKy').click(function(){
     });
   }
   
-})
+}
 
 function checkValidateSignUp(){
   var valid = true
@@ -181,7 +188,16 @@ function setSuccessFor(input) {
   input.parent().addClass('success')
 }
 
-
+$(document).on('keypress',function(e) {
+  if (e.which==13){
+    if ($('#register').hasClass('is-selected')){
+      signUp()
+    }
+    if ($('#login').hasClass('is-selected')){
+      logIn()
+    }
+  }
+});
 
 
 

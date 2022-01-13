@@ -1,8 +1,12 @@
 import { getAuth, onAuthStateChanged, signOut} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+import { getDatabase, ref, onValue} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 
 const app = initializeApp(config)
 const auth = getAuth();
+const database = getDatabase(app);
+
+
 
 let navbar = document.querySelector(".navbar");
 let searchBox = document.querySelector(".search-box .bx-search");
@@ -38,9 +42,14 @@ navLinks.style.left = "-100%";
 }
 
 // sidebar submenu open close js code
-let htmlcssArrow = document.querySelector(".htmlcss-arrow");
-htmlcssArrow.onclick = function() {
+let sanPhamArrow = document.querySelector(".sanPham-arrow");
+sanPhamArrow.onclick = function() {
   navLinks.classList.toggle("show1");
+}
+
+let userArrow = document.querySelector(".user-arrow");
+userArrow.onclick = function() {
+  navLinks.classList.toggle("show3");
 }
 
 document.querySelector('.unsigned').onclick = function(){
@@ -65,9 +74,22 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
       $('.signed').addClass('showUser')
       $('.unsigned').removeClass('showUser')
+      $('.full--hide').css('display','block')
+      var cartRef = ref(database,  `User/${auth.currentUser.uid}/userCart`);
+      onValue(cartRef, (snapshot)=>{
+          if (snapshot.val()==null){
+              $('#cart_badge').css('visibility','collapse')
+              $('.total-price').css('visibility','collapse')
+          }
+          else{
+            $('#cart_badge').css('visibility','visible')
+            $('.total-price').css('visibility','visible')
+          }
+      })
   } else {
       $('.unsigned').addClass('showUser')
       $('.signed').removeClass('showUser')
+      $('.full--hide').css('display','none')
   }
 });
 

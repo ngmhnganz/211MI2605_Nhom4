@@ -29,6 +29,8 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
       getData(user.uid)
   }
+  else 
+    window.location.href = window.location.origin +'/user/login.html'
 })
   
 

@@ -871,17 +871,7 @@
     font-size: 14px;
     transition: all 0.2s;  
 }  
-.checkbox input:checked ~ .box div{  
-    transform: translateY(-30px);  
-}  
-.box div::before{  
-    content: attr(data-text);  
-    position: absolute;  
-    transform: translateY(30px);  
-}  
-.checkbox input:checked ~ .box div::before{  
-    transform: translateY(30px);  
-}  
+
 .checkbox input:checked ~ .box {  
     background: var(--primary-color);
     border: 2px solid var(--primary-color);  

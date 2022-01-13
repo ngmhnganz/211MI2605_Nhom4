@@ -72,7 +72,7 @@ onValue(productRef, (snapshot) => {
                  <div class="product-detail">
                      <p>${product.productName}</p>
                      <div class="product-info">
-                         <p>${product.productPrice}</p>
+                         <p>${numberWithCommas(product.productPrice)+" đ"}</p>
                          <i class="fas fa-plus-circle"></i>
                      </div>
                  </div>
@@ -98,6 +98,7 @@ onValue(monngonRef, (snapshot) => {
     catch{
         //
     }
+
     
    // dựa dữ liệu vào thẻ html
     let htmls = monngonList.map(product => {
@@ -110,7 +111,7 @@ onValue(monngonRef, (snapshot) => {
                     <div class="product-detail">
                         <p>${product.productName}</p>
                         <div class="product-info"> 
-                            <p>$${product.productPrice}</p>
+                            <p>${ numberWithCommas(product.productPrice)+" đ" }</p>
                             <i class="fas fa-plus-circle"></i>
                         </div>
                     </div>
@@ -138,29 +139,34 @@ onValue(recipeRef, (snapshot) => {
     catch{
         //
     }
+    $('#mon-ngon-thumb').attr('src',recipeList[1].recipeImage)
+    $('.mon-ngon-title').text(recipeList[1].recipeName)
+    $('.mon-ngon-description').text(recipeList[1].recipeShortDescription)
     
      // đựa dữ liệu vào thẻ html
     let htmls = recipeList.map(recipe => {
         return `
-        <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b">
-        <div class="recipe-container">
-            <div class="recipe-img">
-                <img src="${recipe.recipeImage}" alt="">
+        <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b" >
+                <a class="recipe-container" href="/congthuc/cong-thuc.html?id=${recipe.recipeID}">
+                    <div class="recipe-img">
+                        <img src="${recipe.recipeImage}" alt="">
+                    </div>
+                    <div class="recipe-detail">
+                            ${recipe.recipeName}
+                        <div class="recipe-description">
+                            ${recipe.recipeShortDescription}
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="recipe-detail">
-                    ${recipe.recipeName}
-                <div class="recipe-description">
-                    ${recipe.recipeShortDescription}
-                </div>
-            </div>
-        </div>
-    </div>
         `
     })
     $('.thuc-don-hom-nay-recipe').html(htmls.join(''))
 });
 
-
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 
 

@@ -11,6 +11,40 @@ const sanphamID =Object.fromEntries(params.entries()).id
 var id = parseInt(sanphamID);
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        $('#btnOrder').click(function(){
+            set(child(databaseRef,`User/${auth.currentUser.uid}/userCart/id${id}`), {
+                name: $('#sanpham-name').text(),
+                price: parseFloat($('#sanpham-price').text() ),
+                quantity : parseFloat($('#sanpham-amount').text()),
+                id: id
+              })
+              .then(()=>{
+                toast({
+                    title: "Đặt hành thành công!",
+                    message: "Bạn đã thêm thành công sản phẩm "+ $('#sanpham-name').text(),
+                    type: "success",
+                    duration: 5000
+                  });
+              })
+              .catch(error=> {
+                toast({
+                    title: "Có lỗi xảy ra",
+                    message: "Đã có lỗi xảy ra, bạn hãy tải lại trang và thử lại nhé",
+                    type: "error",
+                    duration: 5000
+                  });
+              });
+        })
+    }
+    else {
+        $('#btnOrder').click(()=>{
+            let bool = dialog({
+                title: "Bạn cần đăng nhập",
+                message: "Để thực hiện, bạn cần đăng nhập. Hãy tạo tài khoản để hưởng nhiều ưu đãi từ Trứng nhé",
+                type: "info"
+              });
+
+        })
     }
     
     })
@@ -23,6 +57,7 @@ function api(ref) {
         return sanpham
     })
     .then(sanpham => {
+        document.title = sanpham.productName
         $('#sanpham-name').text(sanpham.productName)
         $('#sanpham-price').text(sanpham.productPrice)
         $('#sanpham-type').text(sanpham.productType)
@@ -39,7 +74,6 @@ function api(ref) {
             `)
             
         }
-        console.log(htmlDetail)
         $('#detail-container').html(htmlDetail.join(""))
         $('#m_sanpham-detail').html(htmlDetail.join(''))
         if (sanpham.productType==="Combo"){
@@ -61,6 +95,7 @@ function api(ref) {
             return productList
         })
         .then(productList => {
+            
             var htmls = productList.map(product => {
                 return `<div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
                 <a href="./san-pham.html?id=${product.productID}" class="product-container">
@@ -82,28 +117,4 @@ function api(ref) {
     })
 }
 
-$('#btnOrder').click(function(){
-    console.log(auth.currentUser.uid)
-    set(child(databaseRef,`User/${auth.currentUser.uid}/userCart/id${id}`), {
-        name: $('#sanpham-name').text(),
-        price: parseFloat($('#sanpham-price').text() ),
-        quantity : parseFloat($('#sanpham-amount').text()),
-        id: id
-      })
-      .then(()=>{
-        toast({
-            title: "Đặt hành thành công!",
-            message: "Bạn đã thêm thành công sản phẩm "+ $('#sanpham-name').text(),
-            type: "success",
-            duration: 5000
-          });
-      })
-      .error(()=> {
-        toast({
-            title: "Có lỗi xảy ra",
-            message: "Đã có lỗi xảy ra, bạn hãy tải lại trang và thử lại nhé",
-            type: "error",
-            duration: 5000
-          });
-      });
-})
+

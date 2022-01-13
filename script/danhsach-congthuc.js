@@ -69,24 +69,19 @@ onValue(recipeRef, (snapshot) => {
      // đựa dữ liệu vào thẻ html
     let htmls = recipeList.map(recipe => {
         return `
-        <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b">
-            <a  href="./cong-thuc.html?id=${recipe.recipeID}">
-                <div class="recipe-container">
+        <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b" >
+                <a class="recipe-container" href="/congthuc/cong-thuc.html?id=${recipe.recipeID}">
                     <div class="recipe-img">
                         <img src="${recipe.recipeImage}" alt="">
                     </div>
                     <div class="recipe-detail">
                             ${recipe.recipeName}
-                        <div class="recipe-ration">
-                            Khẩu phần ${recipe.recipeRation} người
-                        </div>
-                        <div class="recipe-tag">
-                            <span>Bột mì</span>
+                        <div class="recipe-description">
+                            ${recipe.recipeShortDescription}
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
         `
     })
     $('.list-recipe').innerHTML = htmls.join('');
