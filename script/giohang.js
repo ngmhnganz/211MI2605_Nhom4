@@ -19,6 +19,9 @@ if (user) {
         }
     })
 }
+else{
+    window.location.href = window.location.origin +'/user/login.html'
+}
 
 })
 

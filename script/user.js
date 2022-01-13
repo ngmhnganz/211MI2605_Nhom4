@@ -22,6 +22,9 @@ onAuthStateChanged(auth, (user) => {
         $('#email').val(user.email)
         get_user_info(user.uid);
     }
+    else{
+        window.location.href = window.location.origin +'/user/login.html'
+    }
   })
 
 function get_user_info(id){

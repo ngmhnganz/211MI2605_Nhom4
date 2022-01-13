@@ -52,6 +52,7 @@ function dialog({ title = "", message = "", type = "info", choice = "oneButton"}
         }
         const html = htmls[choice]
         $('#dialog').css('z-index','99999')
+        $('#dialog').css('display','block')
         
         main.innerHTML = html;
         switch (type) {
@@ -66,6 +67,7 @@ function dialog({ title = "", message = "", type = "info", choice = "oneButton"}
         $('.btn_cancel').click(()=>{
             $('#dialog').html('')
             $('#dialog').css('z-index','')
+            $('#dialog').css('display','none')
             return false
         })
 
@@ -73,6 +75,7 @@ function dialog({ title = "", message = "", type = "info", choice = "oneButton"}
         $('.btn_confirm').click(()=>{
             $('#dialog').html('')
             $('#dialog').css('z-index','')
+            $('#dialog').css('display','none')
             return true
         })
 

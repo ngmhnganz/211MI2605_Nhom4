@@ -12,6 +12,46 @@ const recipeID =Object.fromEntries(params.entries()).id
 onAuthStateChanged(auth, (user) => {
     if (user) {
         checkLiked(user.uid)
+        $('#btnThemVaoGio').click(()=>{
+            let cartItem;
+            let updateCart={}
+            var checkboxes = $('.cac-nguyen-lieu').children().children('input:checkbox:checked')
+            for (let i = 0; i < checkboxes.length; i++) {
+                cartItem = {
+                    id : checkboxes[i].id,
+                    price : checkboxes[i].value,
+                    name : checkboxes[i].name,
+                    quantity : 1
+                }
+                updateCart[`User/${auth.currentUser.uid}/userCart/id${checkboxes[i].id}`] = cartItem; 
+            }
+            update(ref(database), updateCart)
+            .then(()=>{
+                toast({
+                    title: "Thêm sản phẩm thành công",
+                    message: "Đã thêm sản phẩm vào giỏ hàng thành công",
+                    type: "success",
+                    duration: 5000
+                  });
+            })
+            .catch(error=>{
+                toast({
+                    title: "Đã có lỗi xảy ra",
+                    message: "Vui lòng tải trang và thử lại",
+                    type: "error",
+                    duration: 5000
+                  });
+            })
+        })
+    }
+    else{
+        $('#btnThemVaoGio').click(()=>{
+            dialog({
+                title: "Bạn cần đăng nhập",
+                message: "Để thực hiện, bạn cần đăng nhập. Hãy tạo tài khoản để hưởng nhiều ưu đãi từ Trứng nhé",
+                type: "info"
+            })
+        })
     }
     
 })
@@ -50,7 +90,7 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
         try {
             snapshot.forEach(function(child){
                 if (child.recipeID !=id) {
-                    if (i>2) throw 'break';  //forEach không hỗ trợ break nên dùng throw exception để break
+                    if (i>2) throw 'break';
                     recipeList.push(child.val())
                     i++;
                 }})
@@ -136,38 +176,6 @@ $('#chkLike').change(()=>{
     }
 })
 
-
-$('#btnThemVaoGio').click(()=>{
-    let cartItem;
-    let updateCart={}
-    var checkboxes = $('.cac-nguyen-lieu').children().children('input:checkbox:checked')
-    for (let i = 0; i < checkboxes.length; i++) {
-        cartItem = {
-            id : checkboxes[i].id,
-            price : checkboxes[i].value,
-            name : checkboxes[i].name,
-            quantity : 1
-        }
-        updateCart[`User/${auth.currentUser.uid}/userCart/id${checkboxes[i].id}`] = cartItem; 
-    }
-    update(ref(database), updateCart)
-    .then(()=>{
-        toast({
-            title: "Thêm sản phẩm thành công",
-            message: "Đã thêm sản phẩm vào giỏ hàng thành công",
-            type: "success",
-            duration: 5000
-          });
-    })
-    .catch(error=>{
-        toast({
-            title: "Đã có lỗi xảy ra",
-            message: "Vui lòng tải trang và thử lại",
-            type: "error",
-            duration: 5000
-          });
-    })
-})
 function loadDescription(description){
     var steps = description.split('#')
     var html =''
