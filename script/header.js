@@ -27,8 +27,12 @@ let menuOpenBtn = document.querySelector(".navbar .bx-menu");
 let menuCloseBtn = document.querySelector(".nav-links .bx-x");
 menuOpenBtn.onclick = function() {
   console.log("ok")
-navLinks.style.left = "0";
+
 }
+$('.bx-menu').click(()=>{
+  console.log('0l')
+  navLinks.style.left = "0";
+})
 menuCloseBtn.onclick = function() {
 navLinks.style.left = "-100%";
 }
@@ -64,7 +68,6 @@ onAuthStateChanged(auth, (user) => {
   } else {
       $('.unsigned').addClass('showUser')
       $('.signed').removeClass('showUser')
-      console.log("out")
   }
 });
 

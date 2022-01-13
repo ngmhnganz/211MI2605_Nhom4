@@ -5,17 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/dialog.css" type="text/css"/>
     <script src="../data/firebase-config.js"></script>
+    <script src="../script/dialog.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Đăng ký</title>
     <script src="../lib/jQuery.js"></script>
 </head>
 <body onload="initUI()">
-    <div id="header"></div>
+
+  <div id="dialog">
+  </div>
+
+  <div id="header">
     <script> 
-    $('#header').load('../component/header.html')
-    </script>
-    <button id="myBtn">Register</button>
+      $('#header').load('../component/header.html')
+      </script>
+  </div>
+  
+  <button id="myBtn">Register</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
