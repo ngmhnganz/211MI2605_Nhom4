@@ -42,9 +42,14 @@ navLinks.style.left = "-100%";
 }
 
 // sidebar submenu open close js code
-let htmlcssArrow = document.querySelector(".htmlcss-arrow");
-htmlcssArrow.onclick = function() {
+let sanPhamArrow = document.querySelector(".sanPham-arrow");
+sanPhamArrow.onclick = function() {
   navLinks.classList.toggle("show1");
+}
+
+let userArrow = document.querySelector(".user-arrow");
+userArrow.onclick = function() {
+  navLinks.classList.toggle("show3");
 }
 
 document.querySelector('.unsigned').onclick = function(){
