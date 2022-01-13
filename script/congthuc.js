@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, child, get, update} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 import { getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
@@ -32,6 +31,7 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
     return snapshot.val()
 })
 .then(recipe => {
+    document.title = 'Công thức '+recipe.recipeName
     $('#recipeDescrip').text(recipe.recipeShortDescription)
     $('#title-name').text( recipe.recipeName.toUpperCase())
     $('#recipeRation').text(recipe.recipeRation+' người')

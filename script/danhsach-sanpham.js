@@ -7,24 +7,28 @@ var search = Object.fromEntries(params.entries()).search
 var tiltleDes, type, hinhBanner
 switch (queryType) {
     case "NguyenLieu" : {
+        document.title = 'Danh sách nguyên liệu'
         type = "Nguyên liệu"
         tiltleDes ="Một chiếc bánh ngon chỉ có thể đến từ  những nguyên liệu tươi, sạch và an toàn. "
         hinhBanner = "../assets/img/BannerNVL.jpg"
         break;
     }
     case "DungCu" : {
+        document.title = 'Danh sách dụng cụ'
         type = "Dụng cụ"
         tiltleDes ="Đã làm bánh thì không thể thiếu những dụng cụ chất lượng"
         hinhBanner = "../assets/img/BannerDC.jpg"
         break;
     }
     case "Combo" : {
+        document.title = 'Danh sách combo'
         type = "Combo"
         tiltleDes ="Combo - một phần không thể thiếu cho những người bận rộn nhưng vẫn muốn ăn ngon"
         hinhBanner = "../assets/img/BannerCombo.jpg"
         break;
     }
     case undefined: {
+        document.title = 'Danh sách sản phẩm'
         type = "Sản phẩm"
         tiltleDes ="Đầy đủ - Tiện lợi - Chất lượng"
         hinhBanner = "../assets/img/banner-product.jpg"

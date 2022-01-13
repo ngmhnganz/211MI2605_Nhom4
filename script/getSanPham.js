@@ -23,6 +23,7 @@ function api(ref) {
         return sanpham
     })
     .then(sanpham => {
+        document.title = sanpham.productName
         $('#sanpham-name').text(sanpham.productName)
         $('#sanpham-price').text(sanpham.productPrice)
         $('#sanpham-type').text(sanpham.productType)
@@ -60,6 +61,7 @@ function api(ref) {
             return productList
         })
         .then(productList => {
+            
             var htmls = productList.map(product => {
                 return `<div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
                 <a href="./san-pham.html?id=${product.productID}" class="product-container">
