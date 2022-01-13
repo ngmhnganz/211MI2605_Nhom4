@@ -8,25 +8,28 @@
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href="./css/ve-chung-toi.css" type="text/css"/>
-    <script src="./script/includeHTML.js"></script>
     <script src="lib/jQuery.js" type="text/javascript"></script>
     <script src="/data/firebase-config.js"></script>
     <script src="./script/ve-chung-toi.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <script> 
+      $(function(){
+        $("#header").load("./component/header.html"); 
+        $("#footer").load("./component/footer.html"); 
+      });
+  </script>
+
+
 </head>
 <body onload="show()">
   <!-- Header -->
-  <div id="#header">
-    <script>
-      $('#header').load('./component/header.html')
-    </script>
-  </div>
+  <div id="header"></div>
 
   <!--Hình nhóm-->
-  <div class="hinh-nhom parallax" style="margin-top: 100px;">
-    <!-- <img src="./assets/img/hinhNhom.png"> -->
+  <div class="hinh-nhom parallax" style="margin-top: 70px;">
+    <img src="./assets/img/hinhNhom.png">
   </div>
   <!--Câu chuyện của trứng-->
   <div class="grid wide">
@@ -98,6 +101,8 @@
       </div>
     </div>
   </div>
+  <!-- ! footer -->
+  <div id="footer"></div>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();

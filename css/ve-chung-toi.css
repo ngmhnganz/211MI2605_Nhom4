@@ -18,33 +18,35 @@
 }
 
 @media (max-width:414px) {
-  .hinh-nhom img{
+  .hinh-nhom {
     width: 100%;
     object-fit: cover;
     height: 150px;
   }
 }
 
-/* @media (min-width:375px) {
+ /* @media (min-width:375px) {
   .hinh-nhom img{
     width: 100%;
     object-fit: cover;
     height: 120px;
   }
-} */
+}  */
 /*!animayion*/
 .parallax {
   /* The image used */
-  background-image: url("../assets/img/hinhNhom.png");
+  /* background-image: url("../assets/img/hinhNhom.png"); */
 
   /* Set a specific height */
-  min-height: 500px; 
+  /* min-height: 500px;  */
 
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+
+ 
 }
 
 .wrapper {
@@ -300,24 +302,20 @@
 
 
   .ten-thanhvien{
-    font-family: var(--font);
-    color: var(--primary-color);
+    
     font-size: 24px;
     font-weight: bold;
   }
 
 
   .thongtin-thanhvien{
-    font-family: var(--font);
-    color: var(--text-color);
+    
     font-size: 16px;
     margin-top: 10px;
     
   }
 
   .lienhe-thanhvien{
-    font-family: var(--font);
-    color: var(--text-color);
     font-size: 16px;
     margin-top: 10px;
     font-weight: bold;
@@ -330,3 +328,8 @@
   .fa-facebook-f{
     color: var(--primary-color);
   }
+
+
+
+  html { scroll-behavior: smooth; } 
+
