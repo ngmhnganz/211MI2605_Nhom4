@@ -74,6 +74,7 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
       $('.signed').addClass('showUser')
       $('.unsigned').removeClass('showUser')
+      $('.full--hide').css('display','block')
       var cartRef = ref(database,  `User/${auth.currentUser.uid}/userCart`);
       onValue(cartRef, (snapshot)=>{
           if (snapshot.val()==null){
@@ -88,6 +89,7 @@ onAuthStateChanged(auth, (user) => {
   } else {
       $('.unsigned').addClass('showUser')
       $('.signed').removeClass('showUser')
+      $('.full--hide').css('display','none')
   }
 });
 
