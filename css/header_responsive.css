@@ -393,6 +393,9 @@ nav .navbar .links li:hover .js-sub-menu{
   /* nav{
     position: relative;
   } */
+  .medium--hide {
+    display: none !important; }
+
   .logo {
     justify-content: center;
   }
@@ -501,3 +504,4 @@ nav .navbar .links li .sub-menu li{
   justify-content: center;
 }
 }
+
