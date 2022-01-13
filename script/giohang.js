@@ -78,11 +78,20 @@ function getData(uid){
 
         cartList.map(product =>{
             $(`#delete${product.id}`).click(()=>{
-                $(`#${product.id}`).remove()
-                let item={}
-                item[`User/${auth.currentUser.uid}/userCart/id${product.id}`] = null;
-                update(ref(database),item)
-                calculateTotal(product.id,'del')
+                let confirm = dialog({
+                    title: "Bạn muốn xóa sản phẩm",
+                    message: `Bạn có muốn xóa sản phẩm ${product.name} khỏi giỏ hàng?` ,
+                    type: "error",
+                    choice: 'twoButton'
+                })
+                if (confirm) {
+                    $(`#${product.id}`).remove()
+                    let item={}
+                    item[`User/${auth.currentUser.uid}/userCart/id${product.id}`] = null;
+                    update(ref(database),item)
+                    calculateTotal(product.id,'del')
+                }
+              
             })
 
             $(`#addQty${product.id}`).click(()=>{

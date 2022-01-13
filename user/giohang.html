@@ -7,16 +7,20 @@
     <title>Giỏ hàng của bạn</title>
     <script src="../lib/jQuery.js" type="text/javascript"></script>
     <script src="../script/toast.js" type="text/javascript"></script>
+    <script src="../script/dialog.js" type="text/javascript"></script>
     <script src="../data/firebase-config.js" type="text/javascript"></script>
     <link rel="stylesheet" href="../css/giohang.css" type="text/css"/>
     <link rel="stylesheet" href="/css/grid_system.css">
     <link rel="stylesheet" href="/css/toast.css">
+    <link rel="stylesheet" href="/css/dialog.css">
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
 </head>
+<div id="dialog" style="display: none;"></div>
 <body class="background-secondary-color">
     
+    <div id="toast"></div>
     <div id="header">
         <script>$("#header").load("/component/header.html"); </script>
     </div>
