@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, child, get, update} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 import { getAuth, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
@@ -13,6 +12,46 @@ const recipeID =Object.fromEntries(params.entries()).id
 onAuthStateChanged(auth, (user) => {
     if (user) {
         checkLiked(user.uid)
+        $('#btnThemVaoGio').click(()=>{
+            let cartItem;
+            let updateCart={}
+            var checkboxes = $('.cac-nguyen-lieu').children().children('input:checkbox:checked')
+            for (let i = 0; i < checkboxes.length; i++) {
+                cartItem = {
+                    id : checkboxes[i].id,
+                    price : checkboxes[i].value,
+                    name : checkboxes[i].name,
+                    quantity : 1
+                }
+                updateCart[`User/${auth.currentUser.uid}/userCart/id${checkboxes[i].id}`] = cartItem; 
+            }
+            update(ref(database), updateCart)
+            .then(()=>{
+                toast({
+                    title: "Thêm sản phẩm thành công",
+                    message: "Đã thêm sản phẩm vào giỏ hàng thành công",
+                    type: "success",
+                    duration: 5000
+                  });
+            })
+            .catch(error=>{
+                toast({
+                    title: "Đã có lỗi xảy ra",
+                    message: "Vui lòng tải trang và thử lại",
+                    type: "error",
+                    duration: 5000
+                  });
+            })
+        })
+    }
+    else{
+        $('#btnThemVaoGio').click(()=>{
+            dialog({
+                title: "Bạn cần đăng nhập",
+                message: "Để thực hiện, bạn cần đăng nhập. Hãy tạo tài khoản để hưởng nhiều ưu đãi từ Trứng nhé",
+                type: "info"
+            })
+        })
     }
     
 })
@@ -32,6 +71,7 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
     return snapshot.val()
 })
 .then(recipe => {
+    document.title = 'Công thức '+recipe.recipeName
     $('#recipeDescrip').text(recipe.recipeShortDescription)
     $('#title-name').text( recipe.recipeName.toUpperCase())
     $('#recipeRation').text(recipe.recipeRation+' người')
@@ -50,7 +90,7 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
         try {
             snapshot.forEach(function(child){
                 if (child.recipeID !=id) {
-                    if (i>2) throw 'break';  //forEach không hỗ trợ break nên dùng throw exception để break
+                    if (i>2) throw 'break';
                     recipeList.push(child.val())
                     i++;
                 }})
@@ -63,10 +103,10 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
         return recipeList
     })
     .then(recipeList=>{
-        console.log(recipeList)
+        let delay =0;
         let htmls = recipeList.map(recipe=>{
             return`
-            <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b" >
+            <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b"  data-aos="fade-down" data-aos-anchor-placement="top-center" data-aos-delay="${delay=delay+100}" >
                 <a class="recipe-container" href="/congthuc/cong-thuc.html?id=${recipe.recipeID}">
                     <div class="recipe-img">
                         <img src="${recipe.recipeImage}" alt="">
@@ -82,6 +122,7 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
             `
         })
         $('.danh-sach-recipe-khac').html(htmls.join(''))
+        AOS.init()
     })
 })
 
@@ -91,7 +132,7 @@ function loadIngredientList(ingredientList){
         <div class="checkbox">  
             <input type="checkbox" name="${ingredient.name}" id="${ingredient.id}" value="${ingredient.price}">  
             <div class="box">  
-                <div     data-text="${ingredient.name}">${ingredient.name}</div>  
+                <div>${ingredient.name}</div>  
             </div>  
         </div>  `
      })
@@ -136,30 +177,11 @@ $('#chkLike').change(()=>{
     }
 })
 
-
-$('#btnThemVaoGio').click(()=>{
-    let cartItem;
-    let updateCart={}
-    var checkboxes = $('.cac-nguyen-lieu').children().children('input:checkbox:checked')
-    for (let i = 0; i < checkboxes.length; i++) {
-        cartItem = {
-            id : checkboxes[i].id,
-            price : checkboxes[i].value,
-            name : checkboxes[i].name,
-            quantity : 1
-        }
-        updateCart[`User/${auth.currentUser.uid}/userCart/id${checkboxes[i].id}`] = cartItem; 
-    }
-    update(ref(database), updateCart)
-    .then(()=>{
-        console.log('ok')
-    })
-})
 function loadDescription(description){
     var steps = description.split('#')
     var html =''
     for (let i =0; i< steps.length;i+=2){
-        html += ` <p class="khung-content"><b>${steps[i]}</b>: ${steps[i+1]}</p>`
+        html += ` <p class="khung-content"  style="margin-bottom:20px"><b>${steps[i]}</b> ${steps[i+1]}</p>`
     }
     $('#recipeStep').html(html) 
 }

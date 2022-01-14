@@ -22,6 +22,9 @@ onAuthStateChanged(auth, (user) => {
         $('#email').val(user.email)
         get_user_info(user.uid);
     }
+    else{
+        window.location.href = window.location.origin +'/user/login.html'
+    }
   })
 
 function get_user_info(id){
@@ -47,9 +50,8 @@ function get_user_info(id){
             $('#phone').val(mUser.userPhone)
         }
 
-        if (mUser.userPoint && mUser.userPoint!= null){
-            $('#diem').text(mUser.userPoint)
-        }
+        $('#diem').text(mUser.userPoint == 0 ? "Chưa có điểm" : mUser.userPoint)
+
         if (mUser.userLikeRecipe && mUser.userLikeRecipe!=null){
             let recipeList = Object.values(mUser.userLikeRecipe);
             console.log(recipeList)
@@ -140,7 +142,8 @@ document.getElementById("btnSave").addEventListener("click", function() {
 
     if (checkValidatePhone() && Name.value.trim()!==""){
         updateProfile(auth.currentUser, {
-            displayName: Name.value.trim()
+            displayName: Name.value.trim(),
+            photoURL : $('#avatar').attr('src')
         })
         .then(()=>{
             console.log(auth.currentUser)
@@ -200,3 +203,14 @@ function checkValidatePhone(){
     }
     return true
 }
+
+document.querySelector('#uploadFile').addEventListener('change', function() {
+    if (this.files && this.files[0]) {
+        var img = document.querySelector('#avatar');
+        img.onload = () => {
+            URL.revokeObjectURL(img.src);  // no longer needed, free memory
+        }
+
+        img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+    }
+});

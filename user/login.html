@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/img/logo.png">
     <link rel="stylesheet" href="/css/login.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/dialog.css" type="text/css"/>
     <script src="../data/firebase-config.js"></script>
+    <script src="../script/dialog.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Đăng ký</title>
     <script src="../lib/jQuery.js"></script>
 </head>
 <body onload="initUI()">
-    <div id="header"></div>
+
+  <div id="dialog">
+  </div>
+
+  <div id="header">
     <script> 
-    $('#header').load('../component/header.html')
-    </script>
-    <button id="myBtn">Register</button>
+      $('#header').load('../component/header.html')
+      </script>
+  </div>
+  
+  <button id="myBtn">Register</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -30,10 +38,10 @@
             <div class="right" >
                 <ul class="cd-switcher" >
                     <li>
-                      <a class="slogin">Đăng nhập</a>
+                      <a style="text-decoration: none;" class="slogin">Đăng nhập</a>
                     </li>
                     <li>
-                      <a class="ssignup">Đăng ký</a>
+                      <a style="text-decoration: none;" class="ssignup">Đăng ký</a>
                     </li>
                 </ul>
                 <div id="login" class="login">
@@ -57,7 +65,7 @@
 
                     </div>
                   </form>
-                  <p> <a href="#0" class="forgot">Quên mật khẩu?</a></p>
+                  <p> <a style="text-decoration: none; color: var(--text-color);" href="#0" class="forgot">Quên mật khẩu?</a></p>
                 </div>
                 <div id="register" style="text-align: center;">
                    <!-- log in form -->
@@ -96,7 +104,7 @@
                       <p class="fieldset">
                         <input type="checkbox" id="accept-terms">
                         <label for="accept-terms">Tôi đồng ý với 
-                          <a href="#0">Điều khoản & Chính sách</a>
+                          <a style="text-decoration: none; color: var(--text-color);" href="/chinhsach.html">Điều khoản & Chính sách</a>
                         </label>
                       </p>
                       <button type="button" id="btnDangKy" class="button">Đăng ký</button>
@@ -108,13 +116,16 @@
                   <h4 class="title"> QUÊN MẬT KHẨU </h4>
                   <form style="text-align: center;" class="cd-form">
                     <div style="display: inline-block">
-                      <div class="fieldset txtbox">
-                        <input class="has-padding inputText" type="email" id="emailReset" placeholder="Nhập email" required >
-                      </div>        
+                      <div class="form-control">
+                        <input type="text" id="emailReset" placeholder="Email" value="">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                      </div>    
                       <button type="button" class="button" id="btnGui">Gửi</button> 
                     </div>
                   </form>
-                  <p> <a href="#0" class="back">Đăng nhập?</a></p>
+                  <p> <a style="text-decoration: none; color: var(--text-color);" href="#0" class="back">Đăng nhập?</a></p>
                 </div>
             </div>
             

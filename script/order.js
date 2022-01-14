@@ -29,6 +29,8 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
       getData(user.uid)
   }
+  else 
+    window.location.href = window.location.origin +'/user/login.html'
 })
   
 
@@ -161,19 +163,35 @@ function numberWithCommas(x) {
 }
 
 function updateCart(item){
-    let updateLocation = {}
-    updateLocation[`User/${auth.currentUser.uid}/userCart`] = item
-    update(ref(database), updateLocation)
-    .then(()=>{
-        window.location.href = window.location.origin +'/user/giohang.html'
-    })
+    var confirmUpdate = dialog({
+        title : "Đặt lại đơn hàng", 
+        message : "Bạn muốn đặt lại đơn hàng này?", 
+        type : "info", 
+        choice : "twoButton"
+    });
+    $('.btn_confirm').click(()=>{
+        let updateLocation = {}
+        updateLocation[`User/${auth.currentUser.uid}/userCart`] = item
+        update(ref(database), updateLocation)
+        .then(()=>{
+            window.location.href = window.location.origin +'/user/giohang.html'
+        })
+        })
 }
 
 function cancelOrder(orderId){
-    let updateLocation = {}
-    updateLocation[`User/${auth.currentUser.uid}/userOrder/${orderId}/statusOrder`]=0;
-    update(ref(database), updateLocation)
-    .then(()=>{
-        window.location.reload();
-    })
+    var confirmDel = dialog({
+        title :  'Hủy đơn hàng', 
+        message : 'Bạn muốn hủy đơn hàng này?', 
+        type : "error", 
+        choice : "twoButton"
+    });
+    $('.btn_confirm').click(()=>{
+        let updateLocation = {}
+        updateLocation[`User/${auth.currentUser.uid}/userOrder/${orderId}/statusOrder`]=0;
+        update(ref(database), updateLocation)
+        .then(()=>{
+            window.location.reload();
+        })
+})
 }

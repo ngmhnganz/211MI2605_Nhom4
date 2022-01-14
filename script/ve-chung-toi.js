@@ -125,3 +125,6 @@ function myFunction(xml){
 
     document.getElementById("anhphuong").innerHTML = anhphuong;
 }
+
+
+     

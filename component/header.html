@@ -21,8 +21,8 @@
       <ul class="links">   
         <li>
           <a href="../sanpham/">SẢN PHẨM</a>
-          <i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
-          <ul class="htmlCss-sub-menu sub-menu">
+          <i class='bx bxs-chevron-down sanPham-arrow arrow'></i>
+          <ul class="sanPham-sub-menu sub-menu">
             <li><a href="../sanpham/?type=NguyenLieu">NGUYÊN LIỆU</a></li>
             <li><a href="../sanpham/?type=DungCu">DỤNG CỤ</a></li>
             <li><a href="../sanpham/?type=Combo">COMBO</a></li>
@@ -30,6 +30,18 @@
         </li>
         <li><a href="../congthuc/">CÔNG THỨC</a></li>
         <li><a href="/ve-chung-toi.html">VỀ CHÚNG TÔI</a></li>
+        <li><a href="/blog/">BLOG</a></li>
+        <li>
+          <li class="full--hide">
+            <a>NGUỜI DÙNG</a>
+            <i class='bx bxs-chevron-down user-arrow arrow'></i>
+            <ul class="user-sub-menu sub-menu">
+              <li id="btnUserHome2">THÔNG TIN CÁ NHÂN</li>
+              <li id="btnUserOrder2">ĐƠN HÀNG</li>
+              <li id="btnSignOut2">ĐĂNG XUẤT</li>
+            </ul>
+          </li>
+        </li>
       </ul>
     </div>
 
@@ -43,20 +55,21 @@
     </div>
     <!--!ICON USER-->
     <div class="signed">
-      <div class="action">
+      <div class="action medium--hide">
         <div class="user-box" id="btnUserIcon">
         <i class="fas fa-user-circle"></i>
         </div>
         <div class="menu">
           <ul class="fa-ul">
             <li id="btnUserHome"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Thông tin cá nhân</li>
-            <li id="btnUserOrder"><span class="fa-li"><i class="fas fa-sign-out-alt"></i></span>Đơn hàng của tôi</li>
+            <li id="btnUserOrder"><span class="fa-li"><i class="fas fa-boxes"></i></span>Đơn hàng của tôi</li>
             <li id="btnSignOut"><span class="fa-li"><i class="fas fa-sign-out-alt"></i></span>Đăng xuất</li>
           </ul>
         </div>
     </div>  
     <div id="btnUserCart" class="search-box">
       <i class="fas fa-shopping-basket"></i>
+      <span id="cart_badge" style="visibility: collapse;"></span>
     </div>
     </div>
     <div class="unsigned">

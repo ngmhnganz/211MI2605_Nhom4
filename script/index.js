@@ -3,13 +3,6 @@ import { getDatabase, ref, onValue, child, get } from "https://www.gstatic.com/f
 
 const app = initializeApp(config)
 const database = getDatabase(app);
-
-//? bind document
-
-
-//? query element
-
-//? data
 const bannerList= [
     {
         bannerImg: "./assets/img/1.jpg",
@@ -46,7 +39,8 @@ document.querySelectorAll('.banner-btn').forEach(function(btn, index) {
 
 var productRef = ref(database, 'NguyenLieu');
 // hàm lấy giá trị
-onValue(productRef, (snapshot) => {
+get(productRef)
+.then(snapshot=>{
     const productList =[]
     let i=0;
     //láy dữ liệu về từ firebase
@@ -61,7 +55,7 @@ onValue(productRef, (snapshot) => {
     catch{
         //
     }
-     // đưa dữ liệu vào thẻ html
+    i=0;
     var htmls = productList.map(product => {
         return `
         <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
@@ -72,7 +66,7 @@ onValue(productRef, (snapshot) => {
                  <div class="product-detail">
                      <p>${product.productName}</p>
                      <div class="product-info">
-                         <p>${product.productPrice}</p>
+                         <p>${numberWithCommas(product.productPrice)+" đ"}</p>
                          <i class="fas fa-plus-circle"></i>
                      </div>
                  </div>
@@ -80,87 +74,101 @@ onValue(productRef, (snapshot) => {
          </div>`
     })
     $('.product').html( htmls.join(''))
-});
-
-var monngonRef = ref(database, 'NguyenLieu');
-onValue(monngonRef, (snapshot) => {
-    const monngonList =[]
-    let i=0;
-     
-    //láy dữ liệu về từ firebase
-    try {
-        snapshot.forEach(function(child){
-            monngonList.push(child.val())
-            i++;
-            if (i>3) throw 'break';  //forEach không hỗ trợ break nên dùng throw exception để break
-    })
-    }
-    catch{
-        //
-    }
+})
+.then(()=>{
+    var monngonRef = ref(database, 'NguyenLieu');
+    get(monngonRef)
+    .then(snapshot=>{
+        const monngonList =[]
+        let i=0;
+         
+        //láy dữ liệu về từ firebase
+        try {
+            snapshot.forEach(function(child){
+                monngonList.push(child.val())
+                i++;
+                if (i>3) throw 'break';  //forEach không hỗ trợ break nên dùng throw exception để break
+        })
+        }
+        catch{
+            //
+        }
     
-   // dựa dữ liệu vào thẻ html
-    let htmls = monngonList.map(product => {
-        return `
-        <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b">
-            <a href="./sanpham/san-pham.html?id=${product.productID}" class="product-container" style="box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%);">
-                    <div class="product-img">
-                        <img src="${product.productImg}" alt="">
-                    </div>
-                    <div class="product-detail">
-                        <p>${product.productName}</p>
-                        <div class="product-info"> 
-                            <p>$${product.productPrice}</p>
-                            <i class="fas fa-plus-circle"></i>
+        
+       // dựa dữ liệu vào thẻ html
+        let htmls = monngonList.map(product => {
+            return `
+            <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b" data-aos="zoom-out-up"  data-aos-offset="100">
+                <a href="./sanpham/san-pham.html?id=${product.productID}" class="product-container" style="box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%);">
+                        <div class="product-img">
+                            <img src="${product.productImg}" alt="">
                         </div>
-                    </div>
-            </a>
-           
-        </div>
-        `
-    })
-    $('.mon-ngon-cua-ngay-product').html(htmls.join(''));
-});
-
-var recipeRef = ref(database, 'CongThuc');
-onValue(recipeRef, (snapshot) => {
-    const recipeList =[]
-    let i=0;
-     
-    //láy dữ liệu về từ firebase
-    try {
-        snapshot.forEach(function(child){
-            recipeList.push(child.val())
-            i++;
-            if (i>2) throw 'break';  //forEach không hỗ trợ break nên dùng throw exception để break
-    })
-    }
-    catch{
-        //
-    }
-    
-     // đựa dữ liệu vào thẻ html
-    let htmls = recipeList.map(recipe => {
-        return `
-        <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b">
-        <div class="recipe-container">
-            <div class="recipe-img">
-                <img src="${recipe.recipeImage}" alt="">
+                        <div class="product-detail">
+                            <p>${product.productName}</p>
+                            <div class="product-info"> 
+                                <p>${ numberWithCommas(product.productPrice)+" đ" }</p>
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                        </div>
+                </a>
+               
             </div>
-            <div class="recipe-detail">
-                    ${recipe.recipeName}
-                <div class="recipe-description">
-                    ${recipe.recipeShortDescription}
+            `
+        })
+        $('.mon-ngon-cua-ngay-product').html(htmls.join(''));
+    })
+})
+.then(()=>{
+    var recipeRef = ref(database, 'CongThuc');
+    get(recipeRef)
+    .then(snapshot=>{
+        const recipeList =[]
+        let i=0;
+         
+        //láy dữ liệu về từ firebase
+        try {
+            snapshot.forEach(function(child){
+                recipeList.push(child.val())
+                i++;
+                if (i>2) throw 'break';  //forEach không hỗ trợ break nên dùng throw exception để break
+        })
+        }
+        catch{
+            //
+        }
+        $('#mon-ngon-thumb').attr('src',recipeList[1].recipeImage)
+        $('.mon-ngon-title').text(recipeList[1].recipeName)
+        $('.mon-ngon-description').text(recipeList[1].recipeShortDescription)
+        
+         // đựa dữ liệu vào thẻ html
+         i=0;
+        let htmls = recipeList.map(recipe => {
+            return `
+            <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay="${i=i+100}" data-aos-offset="200" >
+                    <a class="recipe-container" href="/congthuc/cong-thuc.html?id=${recipe.recipeID}">
+                        <div class="recipe-img">
+                            <img src="${recipe.recipeImage}" alt="">
+                        </div>
+                        <div class="recipe-detail">
+                                ${recipe.recipeName}
+                            <div class="recipe-description">
+                                ${recipe.recipeShortDescription}
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </div>
-        `
+            `
+        })
+        $('.thuc-don-hom-nay-recipe').html(htmls.join(''))
     })
-    $('.thuc-don-hom-nay-recipe').html(htmls.join(''))
-});
+})
+.then(()=>{
+    AOS.init();
+})
 
-
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 
 
