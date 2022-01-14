@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
 import { getDatabase, ref, set, child} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 const app = initializeApp(config);
@@ -19,6 +19,44 @@ $('#btnDangNhap').click(function(){
 $('#btnDangKy').click(function(){
   signUp()
 })
+
+$('#btnGui').click(()=>{
+  resetPassword()
+})
+
+function resetPassword() {
+  if (checkReset()){
+    let email = $('emailReset').val()
+    sendPasswordResetEmail(auth, email)
+    .then(() => {
+      let annouce = dialog({
+        title: "Thành công!",
+        message: "Đường link đặt lại mật khẩu đã được gửi tới email của bạn, vui lòng kiểm tra hộp thư nhé",
+        type: "success"
+      })
+    })
+    .catch((error) => {
+      var resetMessage
+      switch (error.code) {
+        case 'auth/missing-email':
+          resetMessage = 'Email chưa được đăng ký'
+          break;
+      
+        default:
+          resetMessage = error.code
+          break;
+      }
+      let annouce = dialog({
+        title: "Có lỗi!",
+        message: resetMessage,
+        type: "error"
+      })
+      // ..
+    });
+  }
+
+}
+
 function logIn() {
   let email = $('#emailLogin').val()
   let password = $('#passwordLogin').val()
@@ -89,6 +127,26 @@ function signUp() {
     });
   }
   
+}
+
+function checkReset() {
+  let valid = true
+  if ($('#emailReset').val().trim()==''||$('#emailReset')==null){
+    valid = false;
+    setErrorFor($('#emailReset'),"Không được để trống")
+  }
+  else {
+    const mailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var mail = $('#emailReset').val().trim();
+    if (mailRegex.test(mail)==false){
+      valid = false
+      setErrorFor($('#emailReset'),'Email không hợp lệ')
+    }
+    else {
+      setSuccessFor($('#emailReset'))
+    }
+  }
+  return valid
 }
 
 function checkValidateSignUp(){
