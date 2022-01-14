@@ -84,14 +84,13 @@ function getData(uid){
                     type: "error",
                     choice: 'twoButton'
                 })
-                if (confirm) {
-                    $(`#${product.id}`).remove()
-                    let item={}
-                    item[`User/${auth.currentUser.uid}/userCart/id${product.id}`] = null;
-                    update(ref(database),item)
-                    calculateTotal(product.id,'del')
-                }
-              
+                $('.btn_confirm').click(()=>{
+                        $(`#${product.id}`).remove()
+                        let item={}
+                        item[`User/${auth.currentUser.uid}/userCart/id${product.id}`] = null;
+                        update(ref(database),item)
+                        calculateTotal(product.id,'del')
+                })
             })
 
             $(`#addQty${product.id}`).click(()=>{

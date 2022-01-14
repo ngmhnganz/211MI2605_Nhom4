@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang đơn hàng</title>
     <script src="../lib/jQuery.js"></script>
-    <script src="../data/firebase-config.js"></script>
+    <script src="../data/firebase-config.js"></script> 
     <script src="../script/toast.js"></script>
+    <script src="../script/dialog.js"></script>
     <link rel="stylesheet" href="../css/toast.css" type="text/css" />
+    <link rel="stylesheet" href="../css/dialog.css" type="text/css" />
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
     <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
     <link rel="stylesheet" href="../css/order.css" type="text/css"/>
@@ -16,6 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
 <body id="orderContainer">
+    <div id="dialog" style="display: none;"></div>
     <div id="toast"></div>
     <!-- Header -->
     <div id="header">

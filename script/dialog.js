@@ -62,21 +62,17 @@ function dialog({ title = "", message = "", type = "info", choice = "oneButton"}
             case 'info':
                 $('#dialog_icon').css('color','var(-primary-color)')
                 break;
-
         }
         $('.btn_cancel').click(()=>{
             $('#dialog').html('')
             $('#dialog').css('z-index','')
             $('#dialog').css('display','none')
-            return false
         })
-
 
         $('.btn_confirm').click(()=>{
             $('#dialog').html('')
             $('#dialog').css('z-index','')
             $('#dialog').css('display','none')
-            return true
         })
 
     }

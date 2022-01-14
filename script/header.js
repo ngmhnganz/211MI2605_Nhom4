@@ -52,6 +52,14 @@ userArrow.onclick = function() {
   navLinks.classList.toggle("show3");
 }
 
+document.querySelector('#btnUserHome2').onclick = function () {
+  window.location.href = window.location.origin +"/user/"
+}
+
+document.querySelector('#btnUserOrder2').onclick = function () {
+  window.location.href = window.location.origin +"/user/order.html"
+}
+
 document.querySelector('.unsigned').onclick = function(){
   window.location.href = window.location.origin +"/user/login.html"
 }
@@ -101,6 +109,13 @@ $('#btnSignOut').click(function(){
     });
 })
 
+$('#btnSignOut2').click(()=>{
+  signOut(auth).then(() => {
+    window.location.href = window.location.origin
+  }).catch((error) => {
+    alert(error.errorMessage)
+  });
+})
 $('#inputSearch').on("keyup", function(e) {
   if (e.keyCode == 13) {
       window.location.href = window.location.origin+"/sanpham/?search="+$('#inputSearch').val()
