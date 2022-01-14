@@ -3,6 +3,24 @@
 
 /* ! Banner */
 
+.banner{
+    padding:150px 0px 50px 0px;
+}
+
+@media (max-width:415px){
+    .banner{
+        padding: 90px 0px 0px 0px;
+    }
+}
+
+@media (min-width:416px) and (max-width:769px){
+    .banner{
+        padding: 100px 0px 20px 0px;
+    }
+}
+
+ 
+
 .banner-img {
     margin: 0 auto;
     overflow: hidden;

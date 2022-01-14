@@ -2,6 +2,28 @@
 
 /* ! Banner */
 
+.banner{
+    padding: 120px 0px 50px 0px;
+}
+
+@media (max-width:415px){
+    .banner{
+        padding: 90px 0px 20px 0px;
+    }
+}
+
+@media (min-width:416px) and (max-width:769px){
+    .banner{
+        padding: 110px 30px 40px 30px;
+    }
+}
+
+@media (min-width:770px) and (max-width:1280) {
+    .banner{
+        padding: 110px 30px 40px 30px;
+    }
+}
+
 .banner-img {
     margin: 0 auto;
     overflow: hidden;
@@ -13,8 +35,8 @@
 
 .banner-img img{
     width: 100%;
-    height: 500px;
-    object-fit:cover;
+    height: 10%;
+    object-fit:fill;
 }
 
 /* ! Title */

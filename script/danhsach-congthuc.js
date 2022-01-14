@@ -16,15 +16,15 @@ const bannerBtns = $$('.banner-btn');
 //? data
 const bannerList= [
     {
-        bannerImg: "../assets/img/BannerCT_1.jpg",
+        bannerImg: "../assets/img/Banner1_CongThuc.png",
         bannerLink:""
     },
     {
-        bannerImg: "../assets/img/2.jpg",
+        bannerImg: "../assets/img/Banner2_CongThuc.png",
         bannerLink :""
     },
     {
-        bannerImg: "../assets/img/3.jpg",
+        bannerImg: "../assets/img/Banner3_CongThuc.png",
         bannerLink :""
     },
 ]
