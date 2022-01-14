@@ -1,17 +1,28 @@
 $('#menu-bar').click(function(){
+    // if ($('#menu-section').hasClass('open-menu')){
+    //     $('#menu-section').removeClass('open-menu')
+    //     $('#menu-bar').removeClass('hide')
+    // } 
+    // else{
+    //     $('#menu-section').addClass('open-menu')
+    //     $('#menu-bar').addClass('hide')
+    // }
     if ($('#menu-section').hasClass('open-menu')){
         $('#menu-section').removeClass('open-menu')
         $('#menu-bar').removeClass('hide')
+        $('#close_menu_id').addClass('hide')
     } 
     else{
         $('#menu-section').addClass('open-menu')
         $('#menu-bar').addClass('hide')
+        $('#close_menu_id').removeClass('hide')
     }
 })
 
 $('.close_menu').click(function(){
     $('#menu-section').removeClass('open-menu')
     $('#menu-bar').removeClass('hide')
+    $('#close_menu_id').addClass('hide')
 })
 
 switch(window.location.pathname){
