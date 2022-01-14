@@ -1,0 +1,37 @@
+<products>
+    <product>
+        <MaSP> NL1</MaSP>
+        <TonKho> 50</TonKho>
+        <TenSP> Bột mì</TenSP>
+        <LoaiSP> Nguyên liệu </LoaiSP>
+        <Gia> 24.000đ </Gia>
+    </product>
+    <product>
+        <MaSP> NL2</MaSP>
+        <TonKho> 50</TonKho>
+        <TenSP> Bơ mặn Anchor </TenSP>
+        <LoaiSP> Nguyên liệu </LoaiSP>
+        <Gia> 77.000đ </Gia>
+    </product>
+    <product>
+        <MaSP> DC3</MaSP>
+        <TonKho> 50 </TonKho>
+        <TenSP> Cây cán gỗ </TenSP>
+        <LoaiSP> Dụng cụ </LoaiSP>
+        <Gia> 19.000đ </Gia>
+    </product>
+    <product>
+        <MaSP> CB4</MaSP>
+        <TonKho> 50 </TonKho>
+        <TenSP> Combo làm bánh flan </TenSP>
+        <LoaiSP> Combo </LoaiSP>
+        <Gia> 69.000đ</Gia>
+    </product>
+    <product>
+        <MaSP> CB5</MaSP>
+        <TonKho> 50 </TonKho>
+        <TenSP> Combo bánh su kem</TenSP>
+        <LoaiSP> Combo </LoaiSP>
+        <Gia> 99.000đ </Gia>
+    </product>
+</products>

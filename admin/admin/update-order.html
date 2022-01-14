@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng</title>
+    <link rel="stylesheet" href="./css/constant_admin.css">
+    <link rel="stylesheet" href="/admin/css/admin-header.css">
+    <link rel="stylesheet" href="/admin/css/menu.css">
+    <link rel="stylesheet" href="/admin/css/update-order.css">
+    <link rel="stylesheet" href="../css/constant.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="./js/update-order.js"></script>
+    <script src="/lib/jQuery.js"></script>
+</head>
+<body onload="show()" >
+    <div id="admin-container">
+        <div id="menu-section">
+            <script>$('#menu-section').load('./component/menu.html')</script>
+        </div>
+        <div id="body-section">
+            <div id="admin-header">
+                <script>$('#admin-header').load('./component/admin-header.html')   </script>
+            </div>
+            <div id="container-section">
+                <div id="content-section" >
+                    <div class="grid wide">
+                        <div class="base">
+                            <div class="tieu-de">
+                                <div class="ma">Mã</div>
+                                <div class="ngay">Ngày đặt</div>
+                                <div class="kh">Khách</div>
+                                <div class="giaohang">Giao hàng</div>
+                                <div class="thanhtoan">Thanh toán</div>
+                                <div class="cod">COD</div>
+                                <div class="tongtien">Tổng tiền</div>
+                            </div>
+                            <div class="noi-dung" id="don-hang">
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

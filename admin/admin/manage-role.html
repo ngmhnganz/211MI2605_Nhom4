@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân quyền</title>
+    <link rel="stylesheet" href="./css/constant_admin.css">
+    <link rel="stylesheet" href="/css/grid_system.css">
+    <link rel="stylesheet" href="/admin/css/admin-header.css">
+    <link rel="stylesheet" href="/admin/css/menu.css">
+    <link rel="stylesheet" href="/admin/css/role.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="/lib/jQuery.js"></script>
+    
+</head>
+<body onload="show()"> 
+    <div id="admin-container">
+        <div id="menu-section">
+            <script>
+                 $('#menu-section').load('./component/menu.html')
+            </script>
+        </div>
+        <div id="body-section">
+            <div id="admin-header">
+                <script>
+                      $('#admin-header').load('./component/admin-header.html')
+                </script>
+            </div>
+                <div id="content-section" class="grid wide base">
+                    <div class="row btntop">
+                        <a class=" btnne" href="create-role.html">
+                            <button class="btn" id="Create"> <i class="fas fa-plus-circle"></i> Tạo chức vụ</button>
+                        </a>
+                        <a class=" btnne" href="addStaff.html">
+                            <button class="btn" id="Add"><i class="fas fa-user-plus"></i> Thêm nhân viên</button>
+                        </a>
+                    </div>
+                    <div >
+                        <table rules="rows" id="tblRole" >
+                            
+                        </table>
+                    </div>
+                </div>
+                <div id="detail-section">
+                </div>
+            
+        </div>
+    </div>
+    <script src="/admin/js/role.js"></script>   
+</body>
+
+</html>
