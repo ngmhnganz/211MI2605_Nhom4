@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <title>Blog</title>
+  <script src="/data/firebase-config.js"></script>
+  <link rel="stylesheet" href="../css/danhsach_blog.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"/>
+  <link rel="stylesheet" href="../css/recipe-item.css" type="text/css"/>
+  <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
+  <link rel="stylesheet" href="../css/grid_system.css" type="text/css" />
+  <link rel="stylesheet" href="../css/product-item.css" type="text/css"/>
+  <link rel="stylesheet" href="../css/index.css" type="text/css"/>
+  
+  <script src="../script/preloader.js"></script>
+  
+  <script src="../lib/jQuery.js" type="text/javascript"></script>
+    <script> 
+        $(function(){
+          $("#pagination").load("../component/pagination.html");
+        });
+    </script>
+ 
+</head>
+<body>
+  <div class="preloader"></div>
+
+  <!-- !Header -->
+  <div id="header">
+    <script>
+         $("#header").load("../component/header.html"); 
+    </script>
+  </div>
+
+  <!-- ! BÁNH MÌ -->
+  <section style="padding: 80px 0px 0px 0px">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12 m-12 c-12">
+                <h1 class="title" style="text-align:center">
+                    BLOG 
+                </h1>
+            </div>
+        </div>
+
+        <div class="grid wide">
+
+          <div class="row mon-ngon-cua-ngay">
+            <div class="col l-2 c-1"></div>          
+            <div class="col l-4 m-6 c-12 img mg-t mg-r mg-l mg-b" >
+                <img src="../assets/img/blog/banner_600.jpg" alt="">
+            </div>
+            <div class="col l-4 m-5 c-12 mg-t mg-r mg-l mg-b ">
+              <div class="row mon-ngon-description">
+                <p>Cách đây không lâu, bánh mì Việt Nam đã vinh dự đứng đầu top 10 món ăn đường phố được yêu thích nhất thế giới. Đó chính là một niềm vinh dự lớn cho ẩm thực Việt Nam. Vậy món bánh này có gì đặc biệt?</p>
+                <button id="btnXemThem1" class="btn">Xem thêm</button>
+              </div>
+              <div class="row">
+                <div class="col l-3 m-6 l-o-9 m-o-6 mon-ngon-seemore">
+
+                </div>
+              </div>
+            </div>
+
+              
+          </div>
+          </div>
+
+        </div>
+      
+
+
+        <div class="grid wide">
+          <div class="row mon-ngon-cua-ngay">
+            <div class="col l-2 c-1"></div> 
+            <div class="col l-4 m-6 c-12 img mg-t mg-r mg-l mg-b" >
+              <img src="../assets/img/BannerCT_1.jpg" alt="">
+
+          </div>
+              <div class="col l-4 m-5 c-12 mg-t mg-r mg-l mg-b ">
+                  <div class="row mon-ngon-description">
+                     <p>Ngày Valentine bạn có thể sáng tạo nên những món tráng miệng độc đáo và vô cùng thơm ngon. Những hương vị tuyệt vời mà Team Trứng tổng hợp dưới đây sẽ cho bạn những ý tưởng thú vị làm những món ăn đặc biệt chỉ riêng có vào dịp Valentine.</p>
+                     <button id="btnXemThem2" class="btn">Xem thêm</button>
+                  </div>
+                  <div class="row">
+                      <div class="col l-3 m-6 l-o-9 m-o-6 mon-ngon-seemore">
+
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+          </div>
+
+          <div class="grid wide">
+            <div class="row mon-ngon-cua-ngay">
+              <div class="col l-2 c-1"></div> 
+              <div class="col l-4 m-6 c-12 img mg-t mg-r mg-l mg-b" >
+                <img src="../assets/img/blog/tiramisu_1_600.png" alt="">
+  
+            </div>
+                <div class="col l-4 m-5 c-12 mg-t mg-r mg-l mg-b ">
+                    <div class="row mon-ngon-description">
+                       <p>Tiramisu là thức bánh được nhiều tín đồ ẩm thực trên thế giới biết đến nhờ sự thơm ngon, béo ngậy và bắt mắt. Tại Việt Nam, menu của các cửa hàng bánh ngọt hay coffee không thể thiếu tên bánh Tiramisu được đông đảo các bạn trẻ lựa chọn. Bạn đã biết về bánh Tiramisu chưa?</p>
+                       <button id="btnXemThem3" class="btn">Xem thêm</button>
+                    </div>
+                    <div class="row">
+                        <div class="col l-3 m-6 l-o-9 m-o-6 mon-ngon-seemore">
+  
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+  
+        </div>
+
+  </section>
+  <!--Pagination-->
+  <div id="pagination"></div>
+
+  
+  
+  
+  <script>
+    
+    document.getElementById("btnXemThem1").onclick = function () {
+        location.href = "./banhmi.html";
+    };
+    document.getElementById("btnXemThem2").onclick = function () {
+        location.href = "./valentine.html";
+    };
+    document.getElementById("btnXemThem3").onclick = function () {
+        location.href = "./tiramisu.html";
+    };
+  </script>
+  
+</body>
+<!--!Footer-->
+<div id="footer">
+  <script>
+    $("#footer").load("../component/footer.html"); 
+  </script>
+</div>
+</html>
