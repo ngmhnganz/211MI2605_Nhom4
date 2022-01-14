@@ -103,10 +103,10 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
         return recipeList
     })
     .then(recipeList=>{
-        console.log(recipeList)
+        let delay =0;
         let htmls = recipeList.map(recipe=>{
             return`
-            <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b" >
+            <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b"  data-aos="fade-down" data-aos-anchor-placement="top-center" data-aos-delay="${delay=delay+100}" >
                 <a class="recipe-container" href="/congthuc/cong-thuc.html?id=${recipe.recipeID}">
                     <div class="recipe-img">
                         <img src="${recipe.recipeImage}" alt="">
@@ -122,6 +122,7 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
             `
         })
         $('.danh-sach-recipe-khac').html(htmls.join(''))
+        AOS.init()
     })
 })
 
@@ -180,7 +181,7 @@ function loadDescription(description){
     var steps = description.split('#')
     var html =''
     for (let i =0; i< steps.length;i+=2){
-        html += ` <p class="khung-content"><b>${steps[i]}</b>: ${steps[i+1]}</p>`
+        html += ` <p class="khung-content"  style="margin-bottom:20px"><b>${steps[i]}</b> ${steps[i+1]}</p>`
     }
     $('#recipeStep').html(html) 
 }
