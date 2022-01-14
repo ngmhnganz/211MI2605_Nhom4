@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/img/logo.png">
+    <title>Document</title>
+    <script src="../script/includeHTML.js"></script>
+    <script src="../lib/jQuery.js"></script>
+    <script src="../data/firebase-config.js"></script>
+    <script src="../script/toast.js"></script>
+    <script src="../script/dialog.js"></script>
+    <link rel="stylesheet" href="../css/toast.css" type="text/css" />
+    <link rel="stylesheet" href="../css/dialog.css" type="text/css" />
+    <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
+    <link rel="stylesheet" href=" ../css/grid_system.css" type="text/css" />
+    <link rel="stylesheet" href="../css/congthuc.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/recipe-item.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="toast"></div>
+    <div id="dialog" style="display: none;"></div>
+    <!-- Header -->
+    <div id="header">
+        <script>
+             $("#header").load("../component/header.html"); 
+        </script>
+    </div>
+
+    <!-- Section -->
+    <section class="containerTrung">
+        <div class="grid wide">
+            <div class="row"> 
+                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b recipe-dau">
+                    <div class="banner-img">
+                        <img id="recipeImg" src="" alt="">
+                    </div>
+            
+                    <div class="title">
+                        <div class="title-dong-dau">
+                            <p id="title-name"></p>
+                            <p id="thoigian">
+                                <script>
+                                    var today = new Date();
+                                    var dd = today.getDate();
+                                    var mm = today.getMonth() + 1;
+                                    var yyyy = today.getFullYear();
+                                    var thu = today.getDay(); 
+                                    if(dd <10) {
+                                        dd = '0' +dd
+                                    }
+                                    switch (thu) {
+                                        case 0:
+                                            thu = "Chủ nhật"
+                                            break;
+                                        case 1:
+                                            thu = "Thứ hai"
+                                            break;
+                                        case 2:
+                                            thu = "Thứ ba"
+                                            break;
+                                        case 3:
+                                            thu ="Thứ tư"
+                                            break;
+                                        case 4:
+                                            thu = 'Thứ năm'
+                                            break;
+                                        case 5:
+                                            thu ='Thứ sáu'
+                                            break;
+                                        case 6:
+                                            thu='Thứ bảy'
+                                            break;
+                                    }
+                                    $("#thoigian").html(thu +", " + dd+"/"+mm+"/"+yyyy);
+                                </script>
+                            </p>
+                        </div>
+                        
+                        <p class="des-recipe" id="recipeDescrip"></p>
+                        
+                    </div>
+                    <div class="info-recipe">
+                        <div class="ration">
+                            <i class="fas fa-utensils fa-2x"></i>
+                            <div class="ration-content">
+                                <p class="tieu-de">Khẩu phần</p>
+                                <p class="noidung" id="recipeRation"></p>
+                            </div>
+                        </div>
+                        <hr class="hr-dung">
+                        <div class="ration">
+                            <i class="far fa-clock fa-2x"></i>
+                            <div class="ration-content">
+                                <p class="tieu-de">Thời gian nấu</p>
+                                <p class="noidung" id="recipeTime"></p>
+                            </div>
+                            
+                        </div>
+                        <hr class="hr-dung">
+                        <div class="ration">
+                            <i class="fas fa-bullseye fa-2x"></i>
+                            <div class="ration-content">
+                                <p class="tieu-de">Mức độ</p>
+                                <p class="noidung" id="recipeLevel"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="grid wide" >
+            <div class="row content">
+                <div class="col l-8 m-8 c-12 mg-t mg-r mg-l mg-b content-left">
+                    <p class="tieu-de">CÁCH LÀM</p>
+                    <p class="cach-lam" id='recipeStep'></p>
+                </div>
+                <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b content-right">
+                    <div class="yeu-thich">
+                        Hãy yêu thích công thức để xem lại sau nhé!
+                        <div class="checkbox">  
+                            <input type="checkbox" name="" id="chkLike" value="">  
+                            <div class="box">  
+                                <i id="icHeart" class="far fa-heart"></i>
+                                <div data-text="Thích">Thích</div>  
+                            </div>  
+                        </div> 
+                    </div>
+                    <div class="nguyen-lieu-can-co">
+                        <p class="tieu-de">Nguyên liệu cần có</p>
+                        <div class="chon-tat-ca">
+                            <input type="checkbox" id="chooseAll" name="chooseAll" value="Chọn tất cả">
+                            <label>Chọn tất cả</label>
+                        </div>
+                        <div class="cac-nguyen-lieu">
+                        </div>
+                        <div class="them-vao-gio-hang" id="btnThemVaoGio">
+                            <p>Thêm vào giỏ hàng</p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="grid wide">
+            <div class="row ">
+                <div class="col l-8 m-8 c-12 mg-t mg-r mg-l mg-b cong-thuc-khac">
+                    <p class="tieu-de-cong-thuc-khac">Các công thức khác</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="row danh-sach-recipe-khac">
+            
+               
+            </div>
+            
+        </div>
+    </section>
+    <!--Footer-->
+    <div id="footer">
+        <script>
+            $("#footer").load("../component/footer.html"); 
+        </script>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script/congthuc.js" async type="module"></script>
+</body>
+</html>

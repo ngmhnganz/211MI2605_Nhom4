@@ -1,0 +1,82 @@
+<head>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../css/header_responsive.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <script src="../script/header.js" type="module"></script>
+</head>
+<nav>
+  <div class="navbar">
+    <i class='bx bx-menu'></i>
+    <div class="logo">
+      <a class="logo-img" href="../index.html"></a>
+    </div>
+    
+    <!--!HEADER-->
+    <div class="nav-links">
+      <div class="sidebar-logo">
+        <span class="logo-img" id ="side-logo"></span>
+        <i class='bx bx-x' ></i>
+      </div>
+      <ul class="links">   
+        <li>
+          <a href="../sanpham/">SẢN PHẨM</a>
+          <i class='bx bxs-chevron-down sanPham-arrow arrow'></i>
+          <ul class="sanPham-sub-menu sub-menu">
+            <li><a href="../sanpham/?type=NguyenLieu">NGUYÊN LIỆU</a></li>
+            <li><a href="../sanpham/?type=DungCu">DỤNG CỤ</a></li>
+            <li><a href="../sanpham/?type=Combo">COMBO</a></li>
+          </ul>
+        </li>
+        <li><a href="../congthuc/">CÔNG THỨC</a></li>
+        <li><a href="/ve-chung-toi.html">VỀ CHÚNG TÔI</a></li>
+        <li><a href="/blog/">BLOG</a></li>
+        <li>
+          <li class="full--hide">
+            <a>NGUỜI DÙNG</a>
+            <i class='bx bxs-chevron-down user-arrow arrow'></i>
+            <ul class="user-sub-menu sub-menu">
+              <li id="btnUserHome2">THÔNG TIN CÁ NHÂN</li>
+              <li id="btnUserOrder2">ĐƠN HÀNG</li>
+              <li id="btnSignOut2">ĐĂNG XUẤT</li>
+            </ul>
+          </li>
+        </li>
+      </ul>
+    </div>
+
+    <div class="icon">
+    <!--!ICON SEARCH-->
+    <div class="search-box">
+      <i class='bx bx-search'></i>
+      <div class="input-box" >
+        <input type="text" id="inputSearch" placeholder="Search...">
+      </div>
+    </div>
+    <!--!ICON USER-->
+    <div class="signed">
+      <div class="action medium--hide">
+        <div class="user-box" id="btnUserIcon">
+        <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="menu">
+          <ul class="fa-ul">
+            <li id="btnUserHome"><span class="fa-li"><i class="fas fa-user-circle"></i></span>Thông tin cá nhân</li>
+            <li id="btnUserOrder"><span class="fa-li"><i class="fas fa-boxes"></i></span>Đơn hàng của tôi</li>
+            <li id="btnSignOut"><span class="fa-li"><i class="fas fa-sign-out-alt"></i></span>Đăng xuất</li>
+          </ul>
+        </div>
+    </div>  
+    <div id="btnUserCart" class="search-box">
+      <i class="fas fa-shopping-basket"></i>
+      <span id="cart_badge" style="visibility: collapse;"></span>
+    </div>
+    </div>
+    <div class="unsigned">
+      <div id="btn-sigin">
+        Đăng nhập
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>

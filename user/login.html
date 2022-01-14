@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="/css/login.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/dialog.css" type="text/css"/>
+    <script src="../data/firebase-config.js"></script>
+    <script src="../script/dialog.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <title>Đăng ký</title>
+    <script src="../lib/jQuery.js"></script>
+</head>
+<body onload="initUI()">
+
+  <div id="dialog">
+  </div>
+
+  <div id="header">
+    <script> 
+      $('#header').load('../component/header.html')
+      </script>
+  </div>
+  
+  <button id="myBtn">Register</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+        <div class="sep" style="text-align: center;">
+            <div class="left">
+                <img class="imglogin" src="/assets/img/login.png"  >
+            </div>
+            <div class="right" >
+                <ul class="cd-switcher" >
+                    <li>
+                      <a style="text-decoration: none;" class="slogin">Đăng nhập</a>
+                    </li>
+                    <li>
+                      <a style="text-decoration: none;" class="ssignup">Đăng ký</a>
+                    </li>
+                </ul>
+                <div id="login" class="login">
+                  <h4 class="title"> ĐĂNG NHẬP</h4>
+                  <form style="text-align: center;" class="cd-form">
+                    <div>
+                      <div class="form-control">
+                        <input type="text" id="emailLogin" placeholder="Email" value="">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                      </div>
+
+                      <div class="form-control unhide-password">
+                        <input type="password" id="passwordLogin" placeholder="Mật khẩu" value="">
+                        <small>Error message</small>
+                        <i id ="hide-password"class="fas fa-eye"> </i>
+                        <i id ="unhide-password"class="fas fa-eye-slash"> </i>
+                      </div>
+                      <button type="button" class="button" id='btnDangNhap'>Đăng nhập</button>
+
+                    </div>
+                  </form>
+                  <p> <a style="text-decoration: none; color: var(--text-color);" href="#0" class="forgot">Quên mật khẩu?</a></p>
+                </div>
+                <div id="register" style="text-align: center;">
+                   <!-- log in form -->
+                   <h4 class="title"> ĐĂNG KÝ</h4>
+                   <form style="text-align: center;" class="cd-form">
+                    <div>
+                      <div class="form-control">
+                        <input type="text" id="nameSignup" placeholder="Nhập tên của bạn" value="">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                      </div>
+
+                      <div class="form-control">
+                        <input type="text" id="emailSignup" placeholder="Nhập email của bạn" value="">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                      </div>
+
+                      <div class="form-control unhide-password">
+                        <input type="password" id="passwordSignup" placeholder="Mật khẩu" value="">
+                        <small>Error message</small>
+                        <i id ="hide-sign-up-password"class="fas fa-eye"> </i>
+                        <i id ="unhide-sign-up-password"class="fas fa-eye-slash"> </i>
+                      </div>
+
+                      <div class="form-control unhide-password">
+                        <input type="password" id="re-passwordSignup" placeholder="Nhập lại mật khẩu" value="">
+                        <small>Error message</small>
+                        <i id ="hide-re-sign-up-password"class="fas fa-eye"> </i>
+                        <i id ="unhide-re-sign-up-password"class="fas fa-eye-slash"> </i>
+                      </div>
+
+                    </div>
+                      <p class="fieldset">
+                        <input type="checkbox" id="accept-terms">
+                        <label for="accept-terms">Tôi đồng ý với 
+                          <a style="text-decoration: none; color: var(--text-color);" href="/chinhsach.html">Điều khoản & Chính sách</a>
+                        </label>
+                      </p>
+                      <button type="button" id="btnDangKy" class="button">Đăng ký</button>
+                  
+                  </form>
+                  
+                </div>
+                <div id="reset">
+                  <h4 class="title"> QUÊN MẬT KHẨU </h4>
+                  <form style="text-align: center;" class="cd-form">
+                    <div style="display: inline-block">
+                      <div class="form-control">
+                        <input type="text" id="emailReset" placeholder="Email" value="">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                      </div>    
+                      <button type="button" class="button" id="btnGui">Gửi</button> 
+                    </div>
+                  </form>
+                  <p> <a style="text-decoration: none; color: var(--text-color);" href="#0" class="back">Đăng nhập?</a></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+
+</div>
+</body>
+<script>
+  function initUI(){
+    login_selected()
+  }
+  
+  var  $form_modal = $('.right'),
+      $form_login = $form_modal.find('#login'),
+      $form_signup = $form_modal.find('#register'),
+      $form_modal_tab = $('.cd-switcher'),
+      $tab_login = $form_modal_tab.children('li').eq(0).children('a'),
+      $tab_signup = $form_modal_tab.children('li').eq(1).children('a'),
+      $form_forgot_password = $form_modal.find('#reset');
+
+      $('.cd-switcher').click(function() {
+        event.preventDefault();
+          ( $(event.target).is( $tab_login) ) ? login_selected() : signup_selected();
+      });
+      $('.forgot').click(function(){
+        event.preventDefault();
+        forgot_password_selected();
+      });
+      $('.back').click(function(){
+        event.preventDefault();
+        login_selected();
+      });
+
+  function login_selected(){
+    $form_login.addClass('is-selected');
+    $form_signup.removeClass('is-selected');
+    $tab_login.addClass('selected');
+    $tab_signup.removeClass('selected');
+    $form_forgot_password.removeClass('is-selected');
+  }
+  function signup_selected(){
+    $form_login.removeClass('is-selected');
+    $form_signup.addClass('is-selected');
+    $tab_login.removeClass('selected');
+    $tab_signup.addClass('selected');
+    $form_forgot_password.removeClass('is-selected');
+  }
+  function forgot_password_selected(){
+    $form_login.removeClass('is-selected');
+    $form_signup.removeClass('is-selected');
+    $form_forgot_password.addClass('is-selected');
+  }
+  
+  // passwordToggle
+{
+    $("#hide-password").click(function(){
+      $("#passwordLogin").attr("type", "password")
+      $('#passwordLogin').parent().removeClass('password')
+      $('#passwordLogin').parent().addClass('unhide-password')
+  });
+
+    $('#unhide-password').click(()=>{
+      $("#passwordLogin").attr("type", "text")
+      $('#passwordLogin').parent().removeClass('unhide-password')
+      $('#passwordLogin').parent().addClass('password')
+    })
+
+    $("#hide-sign-up-password").click(function(){
+      $("#passwordSignup").attr("type", "password")
+      $('#passwordSignup').parent().removeClass('password')
+      $('#passwordSignup').parent().addClass('unhide-password')
+  });
+
+    $('#unhide-sign-up-password').click(()=>{
+      $("#passwordSignup").attr("type", "text")
+      $('#passwordSignup').parent().removeClass('unhide-password')
+      $('#passwordSignup').parent().addClass('password')
+    })
+
+    $("#hide-re-sign-up-password").click(function(){
+      $("#re-passwordSignup").attr("type", "password")
+      $('#re-passwordSignup').parent().removeClass('password')
+      $('#re-passwordSignup').parent().addClass('unhide-password')
+  });
+
+    $('#unhide-re-sign-up-password').click(()=>{
+      $("#re-passwordSignup").attr("type", "text")
+      $('#re-passwordSignup').parent().removeClass('unhide-password')
+      $('#re-passwordSignup').parent().addClass('password')
+    })
+}
+ 
+
+
+</script>
+<script src="../script/auth.js" type="module"></script>
+</html>

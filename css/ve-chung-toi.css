@@ -1,0 +1,380 @@
+@import url(./constant.css);
+
+/* phần hình nhóm*/
+
+
+.hinh-nhom img{
+  width: 100%;
+  object-fit: cover;
+  height: 500px;
+}
+
+@media (max-width:600px) {
+  .hinh-nhom img{
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+  }
+}
+
+@media (max-width:414px) {
+  .hinh-nhom {
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+  }
+
+  .parallax{
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+  }
+}
+
+ /* @media (min-width:375px) {
+  .hinh-nhom img{
+    width: 100%;
+    object-fit: cover;
+    height: 120px;
+  }
+}  */
+/*!animayion*/
+.parallax {
+  /* The image used */
+  background-image: url("../assets/img/hinhNhom.png");
+  background-size: flex;
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate3d(0px, 0px, 0px);
+  margin-top: 70px
+}
+
+@media (max-width:601px) {
+  .parallax{
+    background-size: 100vw 50vh;
+    margin-top: 70px;
+    min-height: 220px;
+  }
+  
+}
+
+@media (min-width:602px) and (max-width:1023px) {
+  .parallax{
+    background-size: 100vw 50vh;
+    margin-top: 70px;
+    min-height: 400px;
+  }
+  .team .team_member{
+    height: 55vh;
+  }
+} 
+
+@media (max-width:320px) {
+  .team .team_member{
+    height: 50vh;
+  }
+}
+
+@media (min-width:321px) and (max-width:376px) {
+  .team .team_member{
+    height: 40vh;
+  }
+}
+
+@media (min-width:602px) and (max-width:769px) {
+  .team .team_member{
+    height: 25vh;
+  }
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100px; 
+  border: 1px solid black;
+}
+
+#slide {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  background: blue;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
+}
+
+.w3-animate-top{
+  position:relative;
+  animation:animatetop 0.4s
+}
+@keyframes animatetop{
+  from{top:-300px;opacity:0} 
+  to{top:0;opacity:1}
+}
+
+
+.title{
+    color: var(--text-color);
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 375px) {
+  .title{
+    margin-left : 15px;
+    margin-right: 15px;
+    font-size: 30px;
+}
+  
+}
+
+.hinh-logo img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cauchuyen{
+  font-family: var(--font);
+  color: var(--text-color);
+  font-size: 18px;
+
+}
+
+.gioithieu{
+    font-family: var(--font);
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 415px) {
+   
+    .gioithieu{
+        font-size: 20px;
+        margin-top: 25px;
+    }
+}
+
+.team{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+    flex-wrap: wrap;
+    
+  }
+
+.team a{
+  text-decoration: none;
+}
+
+  @media (min-width:1279px) {
+    .team{
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .team{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  
+  .team .team_member{
+    /* height: 35vh; */
+    background: #fff;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding: 20px;
+    line-height: 20px;
+    color: #8e8b8b;  
+    position: relative;
+    border-radius: 20px 20px 20px 20px;
+  }
+
+  @media (max-width:375px) {
+    .team .team_member{
+      width: 280px;
+    }
+  }
+  
+  .team .team_member h3{
+    color: var(--primary-color);
+    font-family:var(--font);
+    font-size: 20px;
+    margin-top: 50px;
+  }
+  
+  .team .team_member p.role{
+    color: var(--secondary-color);
+    margin: 12px 0;
+    font-size: 14px;
+    font-family:var(--font);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .team .team_member p{
+    color: var(--text-color);
+    margin: 12px 0;
+    font-size: 14px;
+    font-family:var(--font);
+    
+    
+  }
+
+  
+  .team .team_member .team_img{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+  }
+  
+  .team .team_member .team_img img{
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+  /*phần từng thông tin thành viên*/
+  .hinh-thanhvien{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .hang-thanhvien img{
+    width: 80%;
+    border-radius: 20px;
+  }
+  .hang-thanhvien{
+    line-height: 30px;
+  }
+  .noidung-thanhvien{
+    margin-top: 20px;
+  }
+
+  @media (max-width:415px) {
+    .noidung-thanhvien{
+      margin-top: 0px;
+      padding-top: 0px;
+      margin-bottom: 15px;
+    }
+    .ten-thanhvien{
+    text-align: center;
+    }
+
+    
+    
+
+    .hinh-thanhvien{
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (max-width:601px) {
+    .noidung-thanhvien{
+      margin-top: 0px;
+      padding-top: 0px;
+      margin-bottom: 15px;
+    }
+    .ten-thanhvien{
+    text-align: center;
+    }
+
+    .thongtin-thanhvien{
+      text-align: center;
+      
+    }
+    .lienhe-thanhvien{
+      text-align: center;
+    }
+    .hinh-thanhvien{
+      margin-bottom: 0px;
+    }
+  }
+
+  @media  (min-width:601px) and (max-width: 769px) {
+    .hang-thanhvien {
+      display: flex;
+      align-items: center;
+    }
+
+    .noidung-thanhvien{
+      margin-top: 0px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+    }
+  }
+  
+
+
+  .ten-thanhvien{
+    
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+
+  .thongtin-thanhvien{
+    
+    font-size: 16px;
+    margin-top: 10px;
+    
+  }
+
+  .lienhe-thanhvien{
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .lienhe-thanhvien a{
+    text-decoration: none;
+  }
+
+  .fa-facebook-f{
+    color: var(--primary-color);
+  }
+
+
+
+  html { scroll-behavior: smooth; } 
+

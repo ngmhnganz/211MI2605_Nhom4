@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LOPHOC>
+    <sinhvien>
+        <mssv>K194111632</mssv>
+        <id>#anhthu</id>
+        <hoTen>Vũ Nguyễn Anh Thư</hoTen>
+        <ngaySinh>1/9/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0779695415</sdt>
+        <email>thuvna19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_Thu.png </photoVuong>
+        <photoTron>../assets/img/HinhTron_Thu.png </photoTron>
+        <soThich>Thích ăn, thích ngủ</soThich>
+        <cauChamNgon>No pain No gain</cauChamNgon>
+        <fb>https://www.facebook.com/profile.php?id=100071907420267</fb>
+        <gioiThieu>Buổi chiều khuôn viên, mây trời xanh ngát, bước chân trên đường vẫn chưa phai nhạt. Có thấy bơ vơ ngày tháng đợi chờ. </gioiThieu>
+    </sinhvien>
+
+    <sinhvien>
+        <mssv>K194111615</mssv>
+        <id>#minhngan</id>
+        <hoTen>Nguyễn Minh Ngân</hoTen>
+        <ngaySinh>12/3/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0961118724</sdt>
+        <email>ngannm19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_Ngan.png </photoVuong>
+        <photoTron>../assets/img/HinhTron_Ngan.png </photoTron>
+        <soThich>Thích chơi Minecraft</soThich>
+        <cauChamNgon>No pain No gain</cauChamNgon>
+        <fb>https://www.facebook.com/ngmhngan/</fb>
+        <gioiThieu>Buổi sáng Hà Nội mùa hè chợt đổ mùa đông, nếu ai mà giữ lời hứa mùa đông giống mùa hè thì họ thua rồi.</gioiThieu>
+    </sinhvien>
+
+    <sinhvien>
+        <mssv>K194111640</mssv>
+        <id>#kimxuan</id>
+        <hoTen>Huỳnh Kim Xuân</hoTen>
+        <ngaySinh>22/04/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0932191506</sdt>
+        <email>xuanhk19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_kimxuan.png </photoVuong>
+        <photoTron>../assets/img/HinhTron_kimxuan.png </photoTron>
+        <soThich>Thích đọc truyện tranh</soThich>
+        <cauChamNgon>What doesn't kill you make you stronger</cauChamNgon>
+        <fb>https://www.facebook.com/kimxuan.sunhuynh/</fb>
+        <gioiThieu>Vì tôi mơ được ăn thoả thích, vì tôi thấy rất vui vào những lúc ăn no. Giấc mơ đồ ăn ngập tràn ngập tràn muôn năm</gioiThieu>
+    </sinhvien>
+
+    <sinhvien>
+        <mssv>K194111629</mssv>
+        <id>#anhthi</id>
+        <hoTen>Võ Nguyễn Anh Thi</hoTen>
+        <ngaySinh>16/08/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0356776396</sdt>
+        <email>thivna19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_Thi.png</photoVuong>
+        <photoTron>../assets/img/HinhTron_Thi.png </photoTron>
+        <soThich> không có </soThich>
+        <cauChamNgon>Nơi nào có sự sống nơi đó công lý </cauChamNgon>
+        <fb>https://www.facebook.com/nim.nisb/</fb>
+        <gioiThieu> Sấm sét bầu trời, Fang Ninja, Kuwaga Raijer. Đối mặt với bóng đêm tiêu diệt bóng đêm, đối mặt với ánh sáng, tiêu diệt ánh sáng. Lightening speed. </gioiThieu>
+    </sinhvien>
+
+    <sinhvien>
+        <mssv>K194111623</mssv>
+        <id>#anhphuong</id>
+        <hoTen>Trần Thị Anh Phương</hoTen>
+        <ngaySinh>12/02/2001</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <lop>K19411C</lop>
+        <sdt>0963532278</sdt>
+        <email>phuongtta19411c@st.uel.edu.vn</email>
+        <photoVuong>../assets/img/HinhVuong_anhphuong.png </photoVuong>
+        <photoTron>../assets/img/HinhTron_anhphuong.png </photoTron>
+        <soThich>Thích học lập trình</soThich>
+        <cauChamNgon>No pain No gain No sleep</cauChamNgon>
+        <fb>https://www.facebook.com/PPongPongg/</fb>
+        <gioiThieu>Thức giấc lại thấy mình phản chiếu trong gương, Tàn úa vào xác xơ, Mong một bình minh có gì khác hơn, Như là nỗi đau lần đầu (nỗi đau lần đầu)</gioiThieu>
+    </sinhvien>
+</LOPHOC>
+

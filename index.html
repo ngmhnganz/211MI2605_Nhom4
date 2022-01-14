@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/img/logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/index.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/recipe-item.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/constant.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/grid_system.css" type="text/css" />
+    <link rel="stylesheet" href="./css/product-item.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    
+    <title>Trang chủ</title>
+    <script src="./data/firebase-config.js"></script>
+    <script src="./lib/jQuery.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- ! Header và thanh navigation -->
+    <div id="header">
+        <script>
+             $("#header").load("./component/header.html"); 
+        </script>
+    </div>
+    
+    <!-- ! Banner -->
+    <div class="containerTrung background-primary-color banner">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
+                    <!-- ?banner imgage -->
+                    <div class="banner-img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <div class="banner-dot">
+                        <!-- ?start banner -->
+                            <span class="banner-btn"></span>
+                            <span class="banner-btn"></span>
+                            <span class="banner-btn"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </div>
+    
+    <!-- ! Hôm nay ăn gì -->
+    <section class="containerTrung hom-nay-an-gi background-secondary-color">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <p class="title">
+                        Hôm nay ăn gì
+                    </p>
+                </div>
+            </div>
+
+            <div class="row product">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ! Món ăn của ngày -->
+    <section class="containerTrung">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <p class="title">
+                        Món ăn của ngày 
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mon-ngon-cua-ngay">
+                <div class="col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b" data-aos="zoom-in" >
+                    <img id="mon-ngon-thumb" src="" alt="">
+                </div>
+
+                <div class="col l-6 m-6 c-12 mg-t mg-r mg-l mg-b ">
+                    <div class="row mon-ngon-title" >
+                        
+                    </div>
+                    <div class="row mon-ngon-description" data-aos="fade-left"> 
+                    </div>
+                    <div class="row">
+                        <div class="col l-3 m-6 l-o-9 m-o-6 mon-ngon-seemore">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mon-ngon-cua-ngay-product">
+            
+            </div>
+
+        </div>
+    </section>
+
+    <!-- !Thực đơn hôm nay -->
+    <section class="containerTrung background-secondary-color">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <p class="title">
+                        Thực đơn hôm nay
+                    </p>
+            </div>
+        </div>
+        
+        <div class="row thuc-don-hom-nay-recipe">
+        </div>
+    </section>
+
+    
+  
+    <div id="footer">
+        <script>
+            $("#footer").load("./component/footer.html"); 
+        </script>
+    </div>
+  
+    <script src="./script/index.js" async type="module"></script>  
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        
+</body>
+
+</html>
