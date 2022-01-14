@@ -1,13 +1,5 @@
 @import url(../../css/constant.css);
-.base{
-    background-color: white;
-    border-radius: 15px;
-    width: auto;
-    margin: 2rem;
-    position: relative;
-    padding: 2rem;
 
-}
 .tieude{
     width: 100%;
     background-color: white;

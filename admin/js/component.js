@@ -30,6 +30,21 @@ switch(window.location.pathname){
         $('#container-title').text('PHÂN QUYỀN')
         break;
     }
+    case '/admin/create-role.html':{
+        $('#menu-manage').addClass('current-menu')
+        $('#container-title').text('TẠO CHỨC VỤ')
+        break;
+    }
+    case '/admin/update-product.html':{
+        $('#menu-product').addClass('current-menu')
+        $('#container-title').text('TẠO SẢN PHẨM')
+        break;
+    }
+    case '/admin/addStaff.html':{
+        $('#menu-manage').addClass('current-menu')
+        $('#container-title').text('THÊM NHÂN VIÊN')
+        break;
+    }
 }
 
 
