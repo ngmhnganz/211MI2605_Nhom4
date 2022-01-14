@@ -15,14 +15,14 @@ $('.close_menu').click(function(){
 })
 
 switch(window.location.pathname){
-    case '/admin/update-product.html':{
+    case '/admin/product-list.html':{
         $('#menu-product').addClass('current-menu')
         $('#container-title').text('CẬP NHẬT SẢN PHẨM')
         break;
     }
     case '/admin/update-order.html':{
         $('#menu-order').addClass('current-menu')
-        $('#container-title').text('CẬP NHẬT ĐƠN HÀNH')
+        $('#container-title').text('CẬP NHẬT ĐƠN HÀNG')
         break;
     }
     case '/admin/manage-role.html':{

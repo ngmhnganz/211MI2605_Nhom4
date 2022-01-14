@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Phân quyền</title>
     <link rel="stylesheet" href="./css/constant_admin.css">
+    <link rel="stylesheet" href="/css/grid_system.css">
     <link rel="stylesheet" href="/admin/css/admin-header.css">
     <link rel="stylesheet" href="/admin/css/menu.css">
-    <link rel="stylesheet" href="/assets/font/bootstrap-icons-1.7.2/bootstrap-icons.css">
+    <link rel="stylesheet" href="/admin/css/role.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="/lib/jQuery.js"></script>
+    <script src="/admin/js/role.js"></script>
 </head>
-<body">
+<body onload="show()"> 
     <div id="admin-container">
         <div id="menu-section">
             <script>
@@ -24,15 +27,28 @@
                       $('#admin-header').load('./component/admin-header.html')
                 </script>
             </div>
-            <div id="container-section">
-                <div id="content-section" style="background-color: tomato; height: 100vh;">
-                    //chỗ code đoạn giữa, lúc code nhớ bỏ thuộc tính style
+            <div id="container-section" class="grid">
+                <div id="content-section" class="wide">
+                    <div class="row btntop">
+                        <a class=" btnne" href="create-role.html">
+                            <button class="btn" id="Create"> <i class="fas fa-plus-circle"></i> Tạo chức vụ</button>
+                        </a>
+                        <a class=" btnne" href="addStaff.html">
+                            <button class="btn" id="Add"><i class="fas fa-user-plus"></i> Thêm nhân viên</button>
+                        </a>
+                    </div>
+                    <div >
+                        <table rules="rows" id="tblRole" >
+                            
+                        </table>
+                    </div>
                 </div>
-                <div id="detail-section"style="background-color: yellow; height: 100vh;">
-                    //chỗ code đoạn bên phải, ko dùng thì bỏ trống, lúc code nhớ bỏ thuộc tính style</div>
+                <div id="detail-section">
+                </div>
             </div>
             
         </div>
     </div>
 </body>
+
 </html>

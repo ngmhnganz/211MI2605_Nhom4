@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sản phẩm</title>
     <link rel="stylesheet" href="./css/constant_admin.css">
     <link rel="stylesheet" href="/admin/css/admin-header.css">
     <link rel="stylesheet" href="/admin/css/menu.css">
     <link rel="stylesheet" href="/assets/font/bootstrap-icons-1.7.2/bootstrap-icons.css">
+    <link rel="stylesheet" href="/admin/css/grid_system.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-5.15.4-web/css/all.min.css"/>
+
     <script src="/lib/jQuery.js"></script>
+
 </head>
 <body>
     <div id="admin-container">
@@ -25,13 +30,238 @@
                 </script>
             </div>
             <div id="container-section">
-                <div id="content-section" style="background-color: tomato; height: 100vh;">
-                    //chỗ code đoạn giữa, lúc code nhớ bỏ thuộc tính style
+                <div id="content-section">
+        <!--! Thông tin chung-->
+                    <div class="Aproduct-container">
+                    <div class="grid wide">
+                        <div class="row">
+                            <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                <h3>Thông tin chung</h3>
+                                <hr>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                    <h4>Tên sản phẩm</h4>
+                                    <input name="productName" type="text" placeholder="Nhập tên sản phẩm">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                        <h4>Nhà cung cấp</h4>
+                                        <select>
+                                            <option selected>Tên nhà cung cấp</option>
+                                            <option value="1">NCC 1</option>
+                                            <option value="2">NCC 2</option>
+                                            <option value="3">NCC 3</option>
+                                        </select>
+                                </div>
+                                    <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                        <h4>Loại sản phẩm</h4>
+                                        <select>
+                                                <option selected>Tên loại sản phẩm</option>
+                                                <option value="1">Nguyên liệu</option>
+                                                <option value="2">Dụng cụ</option>
+                                                <option value="3">Combo</option>
+                                            </select>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                        <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
+                                            <h4>Mô tả</h4>
+                                            <textarea class="form-control validate" rows="3" required></textarea>
+                                        </div>
+                            </div>
+                    </div>
+                    </div>
+
+        <!--! Hình ảnh-->
+                    <div class="Aproduct-container">
+                        <div class="grid wide">
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                    <h3>Hình ảnh sản phẩm</h3>
+                                    <hr><br>
+                                    <div class="row">
+                                        <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                            <div class="product-img mx-auto">
+                                                <img id="preview_img">
+                                                <input type="file" accept="image/*" onchange="showPreview(event);">
+                                            </div>
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+        <!--! Giá-->
+                    <div class="Aproduct-container">
+                        <div class="grid wide">
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                    <h3>Giá</h3>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                            <h4>Giá bán</h4>
+                                            <input name="productPrice" type="number" placeholder="Nhập tên sản phẩm">
+                                        </div>
+                                        <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                            <h4>Giá gốc</h4>
+                                            <input name="productPriceGoc" type="number" placeholder="Nhập tên sản phẩm">
+                                        </div>
+                                    </div>                          
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+
+        <!--! Tồn kho-->
+                    <div class="Aproduct-container">
+                        <div class="grid wide">
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                    <h3>Tồn kho</h3>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                            <h4>Số lượng sản phẩm</h4>
+                                            <input name="productName" type="bumber" placeholder="Nhập tên sản phẩm">
+                                        </div>
+                                        <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                            <h4>Giá vốn</h4>
+                                            <input name="productPriceVon" type="number" placeholder="Nhập tên sản phẩm">                                         
+                                        </div>
+                                    </div>   
+                                </div>                         
+                            </div>
+                        </div>
+                    </div>
+        <!--! Thuộc tính-->
+                    <div class="Aproduct-container">
+                        <div class="grid wide">
+
+                                    <div class="row">
+                                        <div class="col l-2 m-3 c-3 mg-t mg-r mg-l mg-b ">
+                                            <h3>Thuộc tính</h3>
+                                        </div>
+                                        <div class="col l-10 m-9 c-9 mg-t mg-r mg-l mg-b ">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            
+                                        </div>
+                            <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b"><hr></div>  
+                            <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b">
+                                    <div class="row">
+                                        <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                            <h4>Tên thuộc tính</h4>
+                                            <select>
+                                                <option value="1">Cân nặng</option>
+                                                <option value="2">Màu sắc</option>
+                                            </select>
+                                        </div>
+                                        <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                            <h4>Giá trị</h4>
+                                            <input name="productName" type="text" placeholder="Nhập tên sản phẩm">                                           
+                                        </div>
+                                    </div>  
+                                </div>
+                                                         
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div id="detail-section"style="background-color: yellow; height: 100vh;">
-                    //chỗ code đoạn bên phải, ko dùng thì bỏ trống, lúc code nhớ bỏ thuộc tính style</div>
+
+                    
+
+                <div id="detail-section">
+                    <!-- //chỗ code đoạn bên phải, ko dùng thì bỏ trống, lúc code nhớ bỏ thuộc tính style -->
+        <!--?Trạng thái-->
+                    <div class="Aproduct-container no-padding">
+                        <div class="grid wide">
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12 mg-t mg-r mg-l mg-b ">
+                                    <h3>Thông tin chung</h3>
+                                    <hr>
+                                    <h4 style="margin-top: 10px;">Trạng thái</h4> 
+                                    <div class="row">
+                                        <div class="col l-8 m-8 c-8 mg-t mg-r mg-l mg-b ">
+                                            <h4>Cho phép bán</h4>                                         
+                                        </div>
+                                        <div class="col l-4 m-4 c-4 mg-t mg-r mg-l mg-b">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col l-8 m-8 c-8 mg-t mg-r mg-l mg-b ">
+                                            <h4>Khuyến mãi</h4>                                         
+                                        </div>
+                                        <div class="col l-4 m-4 c-4 mg-t mg-r mg-l mg-b">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>    
+                                </div>                         
+                            </div>
+                        </div>
+                    </div>
+        <!--!Nhóm sản phẩm-->
+                    <div class="Aproduct-container no-padding">
+                        <div class="grid wide">
+                            <div class="row">
+                                <div class="col l-10 m-10 c-10 mg-t mg-r mg-l mg-b ">
+                                        <h4>Tag</h4>
+                                        <select>
+                                            <option value="1">Cân nặng</option>
+                                            <option value="2">Màu sắc</option>
+                                        </select>
+                                </div>
+                                <div class="col l-10 m-10 c-10 mg-t mg-r mg-l mg-b ">
+                                    <h4>Nhóm sản phẩm</h4>
+                                    <select>
+                                        <option value="1">Cân nặng</option>
+                                        <option value="2">Màu sắc</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid wide ">
+                        <div class="row no-padding">
+                            <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                <button type="submit">Lưu</button>
+                            </div>
+                            <div class="col l-6 m-6 c-6 mg-t mg-r mg-l mg-b ">
+                                <button class="cancel-btn" onClick="window.location.href='product-list.html';">Hủy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function showPreview(event){
+        if(event.target.files.length > 0){
+          var src = URL.createObjectURL(event.target.files[0]);
+          var preview = document.getElementById("preview_img");
+          preview.src = src;
+          preview.style.display = "block";
+        }
+      }
+      </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sản phẩm</title>
     <script src="../script/includeHTML.js"></script>
     <script src="../data/firebase-config.js"></script>
     <link rel="stylesheet" href="../css/constant.css" type="text/css"/>
@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../lib/jQuery.js"></script>
     <script>
+        function loadComponent() {
+            $("#header").load("../component/header.html"); 
+            $("#footer").load("../component/footer.html"); 
+        }
+       
         var lastScrollTop = 0, delta = 5;
         $(window).scroll(function(event){
             var st = $(this).scrollTop();
@@ -21,18 +26,18 @@
                 return;
             
             if (st > lastScrollTop){
-                $('.header').css('top','-10vh')
+                $('#header').css('top','-10vh')
             } else { 
                 // upscroll code
-                $('.header').css('top','0')
+                $('#header').css('top','0')
        }
        lastScrollTop = st;
     });
     </script>
 </head>
-<body>
+<body onload="loadComponent()">
     <!-- Header -->
-    <div  class="header" w3-include-html="../component/header.html"></div>
+    <div  id="header"></div>
     <!--Banner-->
     <div class="containerTrung background-primary-color" style="padding:150px 0px 50px 0px">
         <div class="grid wide">
@@ -92,7 +97,7 @@
     
 
     <!--Footer-->
-    <div w3-include-html="../component/footer.html"></div>
+    <div id="footer"></div>
 
     <script>
         includeHTML();
