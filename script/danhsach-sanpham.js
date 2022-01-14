@@ -9,13 +9,13 @@ switch (queryType) {
     case "NguyenLieu" : {
         type = "Nguyên liệu"
         tiltleDes ="Một chiếc bánh ngon chỉ có thể đến từ  những nguyên liệu tươi, sạch và an toàn. "
-        hinhBanner = "../assets/img/BannerNVL.jpg"
+        hinhBanner = "../assets/img/BannerNVL.png"
         break;
     }
     case "DungCu" : {
         type = "Dụng cụ"
         tiltleDes ="Đã làm bánh thì không thể thiếu những dụng cụ chất lượng"
-        hinhBanner = "../assets/img/BannerDC.jpg"
+        hinhBanner = "../assets/img/BannerDC.png"
         break;
     }
     case "Combo" : {
