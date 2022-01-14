@@ -1,0 +1,189 @@
+.tieu-de{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    font-family: var(--font);
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 5px;
+    margin: 10px;
+    border-bottom: 1px solid #ccc
+}
+.ma{
+    width: 8%;
+}
+
+.ngay{
+    width: 12%;
+}
+.kh{
+    width: 15%;
+}
+.giaohang{
+    width: 15%;
+}
+
+.thanhtoan{
+    width: 20%;
+}
+.cod{
+    width: 15%;
+}
+
+.tongtien{
+    width: 15%;
+}
+/*từng dòng*/
+.tung-dong{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    font-family: var(--font);
+    color: var(--text-color);
+    padding: 5px;
+    margin: 10px;
+    border-bottom: 1px solid #ccc
+}
+
+
+
+.giaohang p, .thanhtoan p, .cod p{
+    background: var(--primary-color);
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: fit-content;
+    margin-bottom: 8px;
+    color: white;
+}
+
+/*responsive*/
+
+@media (max-width:320px) {
+    .giaohang, .cod, .thanhtoan{
+        display: none;
+    }
+
+    .ma{
+        width: 20%;
+    }
+    .ngay{
+        width: 30%;
+    }
+
+    .kh{
+        width: 25%;
+    }
+
+    .tongtien{
+        width: 25%;
+    }
+
+    .tieu-de{
+        font-size: 9px;
+    }
+
+    .tung-dong{
+        font-size: 8px;
+    }
+}
+
+@media (min-width:321px) and (max-width:376px) {
+    .giaohang, .cod, .thanhtoan{
+        display: none;
+    }
+
+    .ma{
+        width: 20%;
+    }
+    .ngay{
+        width: 30%;
+    }
+
+    .kh{
+        width: 25%;
+    }
+
+    .tongtien{
+        width: 25%;
+    }
+
+    .tieu-de{
+        font-size: 10px;
+    }
+
+    .tung-dong{
+        font-size: 10px;
+    }
+}
+
+@media (min-width:377px) and (max-width:415px) {
+    .giaohang, .cod, .thanhtoan{
+        display: none;
+    }
+
+    .ma{
+        width: 20%;
+    }
+    .ngay{
+        width: 30%;
+    }
+
+    .kh{
+        width: 25%;
+    }
+
+    .tongtien{
+        width: 25%;
+    }
+
+    .tieu-de{
+        font-size: 12px;
+    }
+
+    .tung-dong{
+        font-size: 11px;
+    }
+}
+
+@media (min-width:416px) and (max-width:601px) {
+    .giaohang, .cod, .thanhtoan{
+        display: none;
+    }
+
+    .ma{
+        width: 20%;
+    }
+    .ngay{
+        width: 30%;
+    }
+
+    .kh{
+        width: 25%;
+    }
+
+    .tongtien{
+        width: 25%;
+    }
+
+    .tieu-de{
+        font-size: 15px;
+    }
+
+    .tung-dong{
+        font-size: 13px;
+    }
+}
+
+@media (min-width:602px) and (max-width:769px) {
+    .tieu-de{
+        font-size: 10px;
+    }
+
+    .tung-dong{
+        font-size: 10px;
+    }
+
+    .giaohang p, .thanhtoan p, .cod p{
+        border-radius: 8px;
+    }
+}

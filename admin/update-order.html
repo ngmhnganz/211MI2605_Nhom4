@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quản lý đơn hàng</title>
     <link rel="stylesheet" href="./css/constant_admin.css">
     <link rel="stylesheet" href="/admin/css/admin-header.css">
     <link rel="stylesheet" href="/admin/css/menu.css">
+    <link rel="stylesheet" href="/admin/css/update-order.css">
+    <link rel="stylesheet" href="../css/constant.css">
     <link rel="stylesheet" href="/assets/font/bootstrap-icons-1.7.2/bootstrap-icons.css">
+    <script src="./js/update-order.js"></script>
     <script src="/lib/jQuery.js"></script>
 </head>
-<body>
+<body onload="show()" >
     <div id="admin-container">
         <div id="menu-section">
             <script>$('#menu-section').load('./component/menu.html')</script>
@@ -21,11 +24,36 @@
                 <script>$('#admin-header').load('./component/admin-header.html')   </script>
             </div>
             <div id="container-section">
-                <div id="content-section" style="background-color: tomato; height: 100vh;">
-                    //chỗ code đoạn giữa, lúc code nhớ bỏ thuộc tính style
+                <div id="content-section" >
+                    <div class="tieu-de">
+                        <div class="ma">Mã</div>
+                        <div class="ngay">Ngày đặt</div>
+                        <div class="kh">Khách</div>
+                        <div class="giaohang">Giao hàng</div>
+                        <div class="thanhtoan">Thanh toán</div>
+                        <div class="cod">COD</div>
+                        <div class="tongtien">Tổng tiền</div>
+                    </div>
+                    <div class="noi-dung" id="don-hang">
+                        <!-- <div class="tung-dong">
+                            <div class="ma">#0001</div>
+                            <div class="ngay">21/11/2021</div>
+                            <div class="kh">Anh Thư</div>
+                            <div class="giaohang ">
+                               <p>Chưa</p>
+                            </div>
+                            <div class="thanhtoan ">
+                                <p>Đã thanh toán</p>
+                            </div>
+                            <div class="cod ">
+                                <p>Không</p>
+                            </div>
+                            <div class="tongtien ">678,000 đ</div>
+                        </div> -->
+                    </div>
                 </div>
-                <div id="detail-section"style="background-color: yellow; height: 100vh;">
-                    //chỗ code đoạn bên phải, ko dùng thì bỏ trống, lúc code nhớ bỏ thuộc tính style</div>
+                <div id="detail-section"style="">
+                   </div>
             </div>
             
         </div>
