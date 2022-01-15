@@ -46,35 +46,60 @@ function getData(uid){
         var productHtml = cartList.map(product => {
             let total = product.quantity* product.price
             sumTotal.push(total)
-            return `
-            <table id="${product.id}">
-            <tr>
-            <td class="cart-info-row">
-                <div class="cart-info">
-                    <img class="prod-img" src="${product.img}"/>
-                    <div>
-                        <p class='productName'>${product.name}</p>
-                        <p>Price: <span class="productPrice" id="productPrice_value${product.id}">${ numberWithCommas(product.price) }</span>đ</p>
-                    </div>
-                </div>
-            </td>
-            <td class="qty">
-                <table>
-                    <tr class="id${product.id}">
-                        <td><img class="icon" id='minusQty${product.id}' src="/assets/img/icon-minus.svg" /></td>
-                        <td><input class="productQty" type="number" id="productQty${product.id}" style="border: none;" value="${product.quantity}" name="proQty" onchange="calculateTotal(${product.id})"/></td>
-                        <td><img class="icon" id="addQty${product.id}" src="/assets/img/icon-plus.svg"/></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="totalCost_payment" id="totalCost${product.id}">${numberWithCommas(total)} VNĐ</td>
-            <td>
-                <img id="delete${product.id}" class="icon" src="/assets/img/icon-cancel-cart.svg"/>
-            </td>
-        </tr>
-        </table>`
+
+            return`
+            <div id="${product.id}" class="product">
+                        <div class="info-product">
+                            <img class="img-product" src="${product.img}">
+                            
+                        </div>
+                        <div class="cart-container">
+                            <div class="ten-gia-product">
+                                <p class="productName">${product.name}</p>
+                                <p class="productPrice" id="productPrice_value${product.id}">${ numberWithCommas(product.price) } đ</p>
+                            </div>
+                            <div class="dieu-chinh-gia">
+                                <img class="icon" id='minusQty${product.id}' src="/assets/img/icon-minus.svg">
+                                <input class="productQty"  value="${product.quantity}" type="number" name="proQty"  id="productQty${product.id}" style="border: none;">
+                                <img class="icon"  id="addQty${product.id}" src="/assets/img/icon-plus.svg">
+                                <p class="totalCost_payment"  id="totalCost${product.id}">${numberWithCommas(total)} VNĐ</p>
+                                <img class="icon" id="delete${product.id}" src="/assets/img/icon-cancel-cart.svg" >
+                            </div>
+                        </div>
+                       
+
+                        <div></div>
+                    </div>`
+
+        //     return `
+        //     <table id="${product.id}">
+        //     <tr>
+        //     <td class="cart-info-row">
+        //         <div class="cart-info">
+        //             <img class="prod-img" src="${product.img}"/>
+        //             <div>
+        //                 <p class='productName'>${product.name}</p>
+        //                 <p>Price: <span class="productPrice" id="productPrice_value${product.id}">${ numberWithCommas(product.price) }</span>đ</p>
+        //             </div>
+        //         </div>
+        //     </td>
+        //     <td class="qty">
+        //         <table>
+        //             <tr class="id${product.id}">
+        //                 <td><img class="icon" id='minusQty${product.id}' src="/assets/img/icon-minus.svg" /></td>
+        //                 <td><input class="productQty" type="number" id="productQty${product.id}" style="border: none;" value="${product.quantity}" name="proQty" onchange="calculateTotal(${product.id})"/></td>
+        //                 <td><img class="icon" id="addQty${product.id}" src="/assets/img/icon-plus.svg"/></td>
+        //             </tr>
+        //         </table>
+        //     </td>
+        //     <td class="totalCost_payment" id="totalCost${product.id}">${numberWithCommas(total)} VNĐ</td>
+        //     <td>
+        //         <img id="delete${product.id}" class="icon" src="/assets/img/icon-cancel-cart.svg"/>
+        //     </td>
+        // </tr>
+        // </table>`
         })
-        $('.product').html(productHtml.join(''))
+        $('.product-list').html(productHtml.join(''))
 
         cartList.map(product =>{
             $(`#delete${product.id}`).click(()=>{
@@ -95,6 +120,7 @@ function getData(uid){
 
             $(`#addQty${product.id}`).click(()=>{
                 var qty= parseFloat($("#productQty"+product.id).val());
+                console.log(qty)
                 $("#productQty"+product.id).val(qty+1);
                 let item={}
                 item[`User/${auth.currentUser.uid}/userCart/id${product.id}/quantity`] = qty+1;
@@ -192,7 +218,7 @@ $(document).on('keypress',function(e) {
 function createOrder() {
     if (checkValidate()) {
         var currentdate = new Date(); 
-        var itemList = $('.product').children()
+        var itemList = $('.product-list').children()
         if (itemList.length===0){
             toast({
                 title: "Đã có lỗi xảy",
@@ -233,7 +259,7 @@ function createOrder() {
                 'dateOrder':currentdate.getDate()+'/'+(currentdate.getMonth()+1)+'/'+currentdate.getFullYear(),
                 'discountOrder':5000,
                 'idOrder': auth.currentUser.uid+currentdate.getTime(),
-                'imgOrder':$('.prod-img')[0].getAttribute('src'),
+                'imgOrder':$('.img-product')[0].getAttribute('src'),
                 'itemOrder': cart,
                 'paymentOrder':'Tiền mặt',
                 'priceOrder': parseFloat(sum),

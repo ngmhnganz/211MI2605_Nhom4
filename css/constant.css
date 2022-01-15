@@ -30,6 +30,7 @@ body{
 
 .containerTrung{
     text-align: center;
+    overflow: hidden;
 }
     
 .background-primary-color {
