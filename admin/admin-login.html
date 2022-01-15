@@ -5,19 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="/admin/css/admin-header.css">
     <link rel="stylesheet" href="/css/login.css" type="text/css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Đăng nhập</title>
     <script src="../lib/jQuery.js"></script>
 </head>
 <body onload="initUI()">
-
   <div id="dialog"></div>
-
-  <div id="header">
-    <script> 
-      $('#header').load('../component/header.html')
-      </script>
+  <div id="admin-header">
+    <script>$('#admin-header').load('./component/admin-header.html')   </script>
   </div>
   
 
@@ -97,7 +94,6 @@
 
   function login_selected(){
     $form_login.addClass('is-selected');
-    $tab_login.addClass('selected');
     $form_forgot_password.removeClass('is-selected');
   }
  
