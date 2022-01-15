@@ -113,3 +113,16 @@
 #dialog .dialog_box.active{
 	display: block;
 }
+@media  (max-width:739px) {
+	#dialog .dialog_box .dialog_box_wrap{
+		width: 90%;
+	}
+} 
+
+@media  (min-width:740px) and (max-width:1023px) {
+   
+} 
+
+@media  (min-width:1024px) {
+  
+}
