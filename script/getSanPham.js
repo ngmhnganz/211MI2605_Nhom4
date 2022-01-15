@@ -14,7 +14,7 @@ onAuthStateChanged(auth, (user) => {
         $('#btnOrder').click(function(){
             set(child(databaseRef,`User/${auth.currentUser.uid}/userCart/id${id}`), {
                 name: $('#sanpham-name').text(),
-                price: parseFloat($('#sanpham-price').text() ),
+                price: parseFloat($('#sanpham-price').text().split(',').join('') ),
                 quantity : parseFloat($('#sanpham-amount').text()),
                 id: id
               })
