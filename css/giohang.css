@@ -76,6 +76,7 @@ button{
 {
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 .qty{
     width: 1vw;
@@ -89,9 +90,9 @@ button{
     width: 70%;
 }
 
-.product {
+/* .product {
     padding: 1rem ;
-}
+} */
 
 
 /* hide nút tăng giảm */
@@ -233,7 +234,7 @@ input[type=number] {
     } 
 }
 
-@media  (max-width:415px) {
+@media  (max-width:1024px) {
     .cart-page{
         margin-left: 20px;
         margin-right: 20px;
@@ -242,3 +243,168 @@ input[type=number] {
     }
 }
 
+/* cái mới*/
+.product{
+    display: flex;
+    flex-direction: row;
+}
+
+.info-product{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.info-product img{
+    width: 100%;
+    height: auto;
+    object-fit: fit;
+}
+
+.ten-gia-product{
+    flex: 1;
+}
+.ten-gia-product p{
+    font-family: var(--font);
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.dieu-chinh-gia{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    font-family: var(--font);
+    color: var(--text-color);
+    font-size: 18px;
+    align-items: center;
+}
+
+.productQty {
+    height: fit-content;
+    font-size: 18px;
+    text-align: center;
+    width: 5vw;
+}
+
+.dieu-chinh-gia p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.cart-container{
+    display: flex;
+    flex: 1;
+}
+@media  (max-width:739px){
+    .cart-container{
+        flex-direction: column;
+    }
+    .product{
+        flex-direction: row;
+    }
+
+    .img-product{
+        width: 20vw;
+        height: 15vh;
+    }
+
+    .ten-gia-product p{
+        
+        font-size: 14px;
+    }
+
+    button{
+        width: fit-content;
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 25px;
+    }
+    .dieu-chinh-gia{
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .dieu-chinh-gia img{
+        flex: 2;
+    }
+    .dieu-chinh-gia p{
+        flex: 2;
+    }
+    .dieu-chinh-gia input{
+        flex: 2;
+    }
+    .productQty{
+        font-size: 14px;
+    }
+    
+}
+
+@media  (min-width:740px) and (max-width:1023px)  {
+    .cart-container{
+        flex-direction: column;
+    }
+    .product{
+       
+        flex-direction: row;
+    }
+
+    .ten-gia-product p{
+        font-size: 16px;
+    }
+
+    button{
+        font-size: 14px;
+        width: fit-content;
+        padding: 5px 10px;
+        border-radius: 25px;
+    }
+    .dieu-chinh-gia{
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .dieu-chinh-gia img{
+        flex: 2;
+    }
+    .dieu-chinh-gia p{
+        flex: 2;
+    }
+    .dieu-chinh-gia input{
+        flex: 2;
+    }
+    .productQty{
+        font-size: 16px;
+    }
+}
+
+
+@media  (min-width:1024px){
+    .img-product{
+        width: 20vw;
+    }
+    button{
+        font-size: 16px;
+        width: fit-content;
+        padding: 5px 10px;
+        border-radius: 25px;
+    }
+    .dieu-chinh-gia img{
+        flex: 2;
+    }
+    .dieu-chinh-gia p{
+        flex: 2;
+    }
+    .dieu-chinh-gia input{
+        flex: 2;
+    }
+    .productQty{
+        font-size: 16px;
+        margin: 0px 20px;
+    }
+    .ten-gia-product p{
+        font-size: 16px;
+    }
+}

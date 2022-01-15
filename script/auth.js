@@ -26,7 +26,7 @@ $('#btnGui').click(()=>{
 
 function resetPassword() {
   if (checkReset()){
-    let email = $('emailReset').val()
+    let email = $('#emailReset').val()
     sendPasswordResetEmail(auth, email)
     .then(() => {
       let annouce = dialog({
@@ -253,6 +253,9 @@ $(document).on('keypress',function(e) {
     }
     if ($('#login').hasClass('is-selected')){
       logIn()
+    }
+    if($('#reset').hasClass('is-seleted')){
+      resetPassword()
     }
   }
 });

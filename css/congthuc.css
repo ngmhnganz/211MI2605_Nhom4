@@ -515,7 +515,7 @@
         margin-top: 10px;
         text-align: left;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
     }
     
     .tung-hang{

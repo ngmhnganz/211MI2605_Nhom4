@@ -98,7 +98,7 @@ get(productRef)
        // dựa dữ liệu vào thẻ html
         let htmls = monngonList.map(product => {
             return `
-            <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b" data-aos="zoom-out-up"  data-aos-offset="100">
+            <div class="col l-3 m-6 c-12 mg-t mg-r mg-l mg-b" data-aos="fade-up"  data-aos-offset="100">
                 <a href="./sanpham/san-pham.html?id=${product.productID}" class="product-container" style="box-shadow: 0px 0px 10px 0px rgb(131 131 131 / 18%);">
                         <div class="product-img">
                             <img src="${product.productImg}" alt="">

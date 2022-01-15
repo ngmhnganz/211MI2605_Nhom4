@@ -114,6 +114,7 @@ button {
 }
 
 .product-container{
+    border-radius: 2rem;
     text-align: center;
     padding: 12px 0;
 }

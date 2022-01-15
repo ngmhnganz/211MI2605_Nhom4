@@ -34,9 +34,9 @@ function myFunction(xml){
 
     /*anh thư*/
 
-    anhthu = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
+    anhthu = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='fade-down'> <img src='" +
             x[0].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-            " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
+            " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-down' data-aos-duration='500'> <div class='ten-thanhvien'>" +
             x[0].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
             "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
             x[0].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -53,9 +53,9 @@ function myFunction(xml){
 
     /*minh ngân */
 
-    minhngan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
+    minhngan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='fade-down'> <img src='" +
     x[1].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-down' data-aos-duration='500'> <div class='ten-thanhvien'>" +
     x[1].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[1].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -72,9 +72,9 @@ function myFunction(xml){
 
     /*kim xuân */
 
-    kimxuan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
+    kimxuan = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='fade-down'> <img src='" +
     x[2].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-down' data-aos-duration='500'> <div class='ten-thanhvien'>" +
     x[2].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[2].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -90,9 +90,9 @@ function myFunction(xml){
     document.getElementById("kimxuan").innerHTML = kimxuan;
     
     /*anh thi */
-    anhthi = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
+    anhthi = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='fade-down'> <img src='" +
     x[3].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-down' data-aos-duration='500'> <div class='ten-thanhvien'>" +
     x[3].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[3].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 
@@ -108,9 +108,9 @@ function myFunction(xml){
     document.getElementById("anhthi").innerHTML = anhthi;
 
     /*anh phương */
-    anhphuong = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='zoom-out'> <img src='" +
+    anhphuong = "<div class='col l-6 m-6 c-12 img mg-t mg-r mg-l mg-b hinh-thanhvien' data-aos='fade-down'> <img src='" +
     x[4].getElementsByTagName("photoVuong")[0].childNodes[0].nodeValue + 
-    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-left' data-aos-duration='500'> <div class='ten-thanhvien'>" +
+    " '> </div><div class='col l-6 m-6 c-12 mg-t mg-r mg-l mg-b noidung-thanhvien' data-aos='fade-down' data-aos-duration='500'> <div class='ten-thanhvien'>" +
     x[4].getElementsByTagName("hoTen")[0].childNodes[0].nodeValue + 
     "</div> <div class='thongtin-thanhvien'> <p>MSSV:" + 
     x[4].getElementsByTagName("mssv")[0].childNodes[0].nodeValue + 

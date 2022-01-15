@@ -18,6 +18,24 @@ box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
 transition: all linear 0.3s;
 }
 
+@media  (max-width:739px) {
+   
+    .toast{
+        max-width: 8vw;
+        min-width: 70vw
+    }
+
+} 
+
+@media  (min-width:740px) and (max-width:1023px) {
+    
+} 
+
+@media  (min-width:1024px) {
+  
+}
+
+
 @keyframes slideInLeft {
 from {
     opacity: 0;
