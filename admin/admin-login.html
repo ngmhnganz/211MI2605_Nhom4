@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="/css/login.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <title>Đăng nhập</title>
+    <script src="../lib/jQuery.js"></script>
+</head>
+<body onload="initUI()">
+
+  <div id="dialog"></div>
+
+  <div id="header">
+    <script> 
+      $('#header').load('../component/header.html')
+      </script>
+  </div>
+  
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+        <div class="sep" style="text-align: center;">
+            <div class="left">
+                <img class="imglogin" src="/assets/img/login.png"  >
+            </div>
+            <div class="right" >
+                <div id="login" class="login">
+                  <h4 class="title"> ĐĂNG NHẬP</h4>
+                  <form style="text-align: center;" class="cd-form">
+                    <div>
+                      <div class="form-control">
+                        <input type="text" id="emailLogin" placeholder="Email" value="">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                      </div>
+
+                      <div class="form-control unhide-password">
+                        <input type="password" id="passwordLogin" placeholder="Mật khẩu" value="">
+                        <small>Error message</small>
+                        <i id ="hide-password"class="fas fa-eye"> </i>
+                        <i id ="unhide-password"class="fas fa-eye-slash"> </i>
+                      </div>
+                      <button type="button" class="button" id='btnDangNhap' onClick="window.location.href='update-order.html';">Đăng nhập</button>
+
+                    </div>
+                  </form>
+                  <p> <a style="text-decoration: none; color: var(--text-color);" href="#0" class="forgot">Quên mật khẩu?</a></p>
+                </div>
+                <div id="reset">
+                  <h4 class="title"> QUÊN MẬT KHẨU </h4>
+                  <form style="text-align: center;" class="cd-form">
+                    <div style="display: inline-block">
+                      <div class="form-control">
+                        <input type="text" id="emailReset" placeholder="Email" value="">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                      </div>    
+                      <button type="button" class="button" id="btnGui">Gửi</button> 
+                    </div>
+                  </form>
+                  <p> <a style="text-decoration: none; color: var(--text-color);" href="#0" class="back">Đăng nhập?</a></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+
+</div>
+</body>
+<script>
+  function initUI(){
+    login_selected()
+  }
+  
+  var  $form_modal = $('.right'),
+      $form_login = $form_modal.find('#login'),
+      $form_forgot_password = $form_modal.find('#reset');
+
+      $('.forgot').click(function(){
+        event.preventDefault();
+        forgot_password_selected();
+      });
+      $('.back').click(function(){
+        event.preventDefault();
+        login_selected();
+      });
+
+  function login_selected(){
+    $form_login.addClass('is-selected');
+    $tab_login.addClass('selected');
+    $form_forgot_password.removeClass('is-selected');
+  }
+ 
+  function forgot_password_selected(){
+    $form_login.removeClass('is-selected');
+    $form_forgot_password.addClass('is-selected');
+  }
+  
+  // passwordToggle
+{
+    $("#hide-password").click(function(){
+      $("#passwordLogin").attr("type", "password")
+      $('#passwordLogin').parent().removeClass('password')
+      $('#passwordLogin').parent().addClass('unhide-password')
+  });
+
+    $('#unhide-password').click(()=>{
+      $("#passwordLogin").attr("type", "text")
+      $('#passwordLogin').parent().removeClass('unhide-password')
+      $('#passwordLogin').parent().addClass('password')
+    })
+
+    $("#hide-sign-up-password").click(function(){
+      $("#passwordSignup").attr("type", "password")
+      $('#passwordSignup').parent().removeClass('password')
+      $('#passwordSignup').parent().addClass('unhide-password')
+  });
+
+    $('#unhide-sign-up-password').click(()=>{
+      $("#passwordSignup").attr("type", "text")
+      $('#passwordSignup').parent().removeClass('unhide-password')
+      $('#passwordSignup').parent().addClass('password')
+    })
+
+    $("#hide-re-sign-up-password").click(function(){
+      $("#re-passwordSignup").attr("type", "password")
+      $('#re-passwordSignup').parent().removeClass('password')
+      $('#re-passwordSignup').parent().addClass('unhide-password')
+  });
+
+    $('#unhide-re-sign-up-password').click(()=>{
+      $("#re-passwordSignup").attr("type", "text")
+      $('#re-passwordSignup').parent().removeClass('unhide-password')
+      $('#re-passwordSignup').parent().addClass('password')
+    })
+}
+</script>
+</html>

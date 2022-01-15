@@ -26,6 +26,11 @@ $('.close_menu').click(function(){
 })
 
 switch(window.location.pathname){
+    case '/admin/admin-login.html':{
+        $('#menu-product').addClass('current-menu')
+        $('#container-title').text('ĐĂNG NHẬP')
+        break;
+    }
     case '/admin/product-list.html':{
         $('#menu-product').addClass('current-menu')
         $('#container-title').text('CẬP NHẬT SẢN PHẨM')
