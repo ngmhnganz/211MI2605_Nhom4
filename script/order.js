@@ -48,6 +48,9 @@ function getData(uid){
         loadUI(historyList, $('#lichsu'), 0)
         loadUI(incomingList,$('#dangden'), 1)
     })
+    .then(()=>{
+        preloaderFadeOutInit()
+    })
 }
 
 function loadUI(orderList, element, type) {

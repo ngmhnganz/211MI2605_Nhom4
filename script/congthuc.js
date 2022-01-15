@@ -106,7 +106,7 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
         let delay =0;
         let htmls = recipeList.map(recipe=>{
             return`
-            <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b"  data-aos="fade-down" data-aos-anchor-placement="top-center" data-aos-delay="${delay=delay+100}" >
+            <div class="col l-4 m-4 c-12 mg-t mg-r mg-l mg-b"  data-aos="fade-down"  data-aos-delay="${delay=delay+100}" >
                 <a class="recipe-container" href="/congthuc/cong-thuc.html?id=${recipe.recipeID}">
                     <div class="recipe-img">
                         <img src="${recipe.recipeImage}" alt="">

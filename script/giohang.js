@@ -147,6 +147,9 @@ function getData(uid){
 `
         $('.total-price').html(totalHtml)
     })
+    .then(()=>{
+        preloaderFadeOutInit()
+    })
 }
 
 function numberWithCommas(x) {
