@@ -97,7 +97,7 @@ function loadUI(productList) {
                     <p>${product.productName}</p>
                 </div>
                 <div class="product-price">
-                        <p>${product.productPrice}đ</p>
+                        <p>${numberWithCommas( product.productPrice)} đ</p>
                 </div>
             </a>
         </div>`
@@ -144,4 +144,8 @@ document.getElementById("descending").onclick = function descending(){
             window.location.search += "&sort=descending";
             break;
     }
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

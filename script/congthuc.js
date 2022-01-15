@@ -125,6 +125,9 @@ get(child(databaseRef,`CongThuc/${recipeID}`))
         AOS.init()
     })
 })
+.then(()=>{
+    preloaderFadeOutInit()
+})
 
 function loadIngredientList(ingredientList){
     let html = ingredientList.map(ingredient => {
