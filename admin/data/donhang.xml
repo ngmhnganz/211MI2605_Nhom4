@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRUNG>
+    <donhang>
+        <ma>#0001</ma>
+        <ngayDat>21/11/2021</ngayDat>
+        <khachHang>Anh Thư</khachHang>
+        <giaoHang>Chưa</giaoHang>
+        <thanhToan>Đã thanh toán</thanhToan>
+        <cod>Không</cod>
+        <tongTien>678,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#0002</ma>
+        <ngayDat>21/12/2021</ngayDat>
+        <khachHang>Anh Thi</khachHang>
+        <giaoHang>Rồi</giaoHang>
+        <thanhToan>Chưa</thanhToan>
+        <cod>Có</cod>
+        <tongTien>278,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#0003</ma>
+        <ngayDat>21/09/2021</ngayDat>
+        <khachHang>Anh Thi</khachHang>
+        <giaoHang>Chưa</giaoHang>
+        <thanhToan>Đã thanh toán</thanhToan>
+        <cod>Không</cod>
+        <tongTien>878,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#0004</ma>
+        <ngayDat>21/07/2021</ngayDat>
+        <khachHang>Ngân</khachHang>
+        <giaoHang>Chưa</giaoHang>
+        <thanhToan>Hoàn tất</thanhToan>
+        <cod>Có</cod>
+        <tongTien>999,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#0005</ma>
+        <ngayDat>21/04/2021</ngayDat>
+        <khachHang>Kim Xuân</khachHang>
+        <giaoHang>Rồi</giaoHang>
+        <thanhToan>Hoàn tất</thanhToan>
+        <cod>Không</cod>
+        <tongTien>777,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#0006</ma>
+        <ngayDat>11/04/2021</ngayDat>
+        <khachHang>Phương</khachHang>
+        <giaoHang>Chưa</giaoHang>
+        <thanhToan>Hoàn tất</thanhToan>
+        <cod>Có</cod>
+        <tongTien>787,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#0007</ma>
+        <ngayDat>22/04/2021</ngayDat>
+        <khachHang>Kim Xuân</khachHang>
+        <giaoHang>Chưa</giaoHang>
+        <thanhToan>Hoàn tất</thanhToan>
+        <cod>Có</cod>
+        <tongTien>757,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#0008</ma>
+        <ngayDat>21/04/2021</ngayDat>
+        <khachHang>Kim Xuân</khachHang>
+        <giaoHang>Rồi</giaoHang>
+        <thanhToan>Hoàn tất</thanhToan>
+        <cod>Không</cod>
+        <tongTien>717,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#0009</ma>
+        <ngayDat>21/04/2021</ngayDat>
+        <khachHang>Kim Xuân</khachHang>
+        <giaoHang>Rồi</giaoHang>
+        <thanhToan>Hoàn tất</thanhToan>
+        <cod>Không</cod>
+        <tongTien>377,000 đ</tongTien>
+    </donhang>
+    <donhang>
+        <ma>#00010</ma>
+        <ngayDat>21/04/2021</ngayDat>
+        <khachHang>Kim Xuân</khachHang>
+        <giaoHang>Rồi</giaoHang>
+        <thanhToan>Hoàn tất</thanhToan>
+        <cod>Không</cod>
+        <tongTien>727,000 đ</tongTien>
+    </donhang>
+</TRUNG>

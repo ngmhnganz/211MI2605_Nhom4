@@ -430,9 +430,17 @@ ul {
     }
 }
 
-@media (min-width:602px) and (max-width:769px) {
+@media (max-width:769px) {
     .dong-hai-right p{
         margin-top: 20px;
+    }
+    .dong-hai-center {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .dong-hai-center p{
+        word-break: break-all;
     }
 }
 

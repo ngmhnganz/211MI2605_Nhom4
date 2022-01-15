@@ -50,7 +50,10 @@ function get_user_info(id){
             $('#phone').val(mUser.userPhone)
         }
 
-        $('#diem').text(mUser.userPoint == 0 ? "Chưa có điểm" : mUser.userPoint)
+        if (mUser.userPoint && mUser.userPoint != null && mUser.userPoint != 0){
+            $('#diem').text(mUser.userPoint)
+        }
+        else $('#diem').text('Chưa có điểm')
 
         if (mUser.userLikeRecipe && mUser.userLikeRecipe!=null){
             let recipeList = Object.values(mUser.userLikeRecipe);

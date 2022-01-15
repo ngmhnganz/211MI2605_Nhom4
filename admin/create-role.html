@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo chức vụ</title>
+    <link rel="stylesheet" href="./css/constant_admin.css">
+    <link rel="stylesheet" href="/admin/css/admin-header.css">
+    <link rel="stylesheet" href="/css/grid_system.css">
+    <link rel="stylesheet" href="/admin/css/menu.css">
+    <link rel="stylesheet" href="/admin/css/createRole.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="/lib/jQuery.js"></script>
+</head>
+<body>
+    <div id="admin-container">
+        <div id="menu-section">
+            <script>
+                 $('#menu-section').load('./component/menu.html')
+            </script>
+        </div>
+        <div id="body-section">
+            <div id="admin-header">
+                <script>
+                      $('#admin-header').load('./component/admin-header.html')
+                </script>
+            </div>
+
+            <div id="container-section">
+                <div id="content-section">
+
+                    <div class="grid wide" >
+                        <div class="row base chucvu-container">
+                            <div class="col l-2 m-3 c-4">
+                                <div class="role-title">Tên chức vụ</div>
+                            </div>
+                            <div class="col l-10 m-9 c-8">
+                                <input class="role" type="text" placeholder="Điền chức vụ"/>
+                            </div>
+                        </div>
+                               
+                        <div class="row base">
+                            
+                                <div class="col l-12 m-12 c-12 vaitro-text">
+                                    VAI TRÒ
+                                </div>
+                    
+                           
+                                <div class="col l-4 m-4 c-12 vaitro-container" >
+                                    <p class="vaitro-title">Sản phẩm</p>
+                                    <div class="vaitro-box">
+                                        <input type="checkbox" value="view" id="view" name="product"/> <label for="view"> Xem sản phẩm</label><br/>
+                                        <input type="checkbox" value="create" id="create" name="product"/> <label for="view"> Tạo sản phẩm</label><br/>
+                                        <input type="checkbox" value="edit" id="edit" name="product"/> <label for="view"> Sửa sản phẩm</label><br/>
+                                        <input type="checkbox" value="delete" id="delete" name="product"/> <label for="view"> Xóa sản phẩm</label><br/>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col l-4 m-4 c-12 vaitro-container" >
+                                    <p class="vaitro-title">Đơn hàng</p>
+                                    <div class="vaitro-box">
+                                        <input type="checkbox" value="view-ord" id="view-ord" name="order"/> Xem đơn hàng<br/>
+                                        <input type="checkbox" value="create-ord" id="create-ord" name="order"/> Tạo đơn hàng<br/>
+                                        <input type="checkbox" value="edit-ord" id="edit-ord" name="order"/> Sửa đơn hàng<br/>
+                                        <input type="checkbox" value="delete-ord" id="delete-ord" name="order"/> Xóa đơn hàng<br/>
+                                        <input type="checkbox" value="change-ord" id="change-ord" name="order"/> Thay đổi trạng thái đơn hàng<br/>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col l-4 m-4 c-12 vaitro-container" >
+                                    <p class="vaitro-title">Phân quyền</p>
+                                    <div class="vaitro-box">
+                                        <input type="checkbox" value="create-role" id="create-role" name="role"/> Tạo mới chức vụ<br/>
+                                        <input type="checkbox" value="delete-role" id="delete-role" name="role"/> Xóa chức vụ<br/>
+                                        <input type="checkbox" value="add-staff" id="add-staff" name="role"/> Thêm nhân viên<br/>
+                                        <input type="checkbox" value="edit-staff" id="edit-staff" name="role"/> Sửa nhân viên<br/>
+                                        <input type="checkbox" value="delete-staff" id="delete-staff" name="role"/> Xóa nhân viên<br/>
+                                    </div>
+                                    
+                                </div>
+                                    
+                                <div class="col l-4 l-o-4  m-4 m-o-4 c-8 c-o-2 mg-t mg-r mg-l mg-b">
+                                    <button class="btnLuu">Lưu</button>
+                                </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
