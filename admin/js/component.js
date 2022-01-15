@@ -26,7 +26,7 @@ $('.close_menu').click(function(){
 })
 
 switch(window.location.pathname){
-    case '/admin/admin-login.html':{
+    case '/admin/index.html':{
         $('#menu-product').addClass('current-menu')
         $('#container-title').text('ĐĂNG NHẬP')
         break;
